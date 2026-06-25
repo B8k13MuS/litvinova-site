@@ -94,12 +94,26 @@ button {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--color-gold);
+    color: var(--color-navy);
     margin-bottom: 16px;
 }
 
+.section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-gold);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 .section-header.light .section-tag {
-    color: var(--color-gold-light);
+    color: var(--color-white);
+}
+
+.section-header.light .section-tag::before {
+    background: var(--color-gold);
 }
 
 .section-title {
