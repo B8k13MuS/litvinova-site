@@ -1,4 +1,57 @@
 /* ============================================
+   LOCAL FONTS - Self-hosted
+   ============================================ */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/OpenSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+}
+
+/* ============================================
    VARIABLES & RESET
    ============================================ */
 :root {
@@ -16,8 +69,8 @@
     --color-error: #E74C3C;
     --color-success: #27AE60;
 
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Playfair Display', 'Noto Serif', 'Liberation Serif', Georgia, 'Times New Roman', serif;
+    --font-body: 'Open Sans', 'Noto Sans', 'Liberation Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 
     --shadow-sm: 0 2px 8px rgba(26, 43, 74, 0.08);
     --shadow-md: 0 4px 20px rgba(26, 43, 74, 0.12);
