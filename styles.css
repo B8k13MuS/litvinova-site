@@ -1400,3 +1400,123 @@ summary:focus-visible {
     color: var(--color-gold);
     margin-bottom: 20px;
 }
+
+
+/* ============================================
+   ARTICLE STYLES
+   ============================================ */
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.article-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-navy);
+    margin: 48px 0 20px;
+    line-height: 1.3;
+}
+
+.article-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    margin: 32px 0 16px;
+}
+
+.article-content p {
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.article-content ul,
+.article-content ol {
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+}
+
+.article-content strong {
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+.article-lead {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(200, 169, 126, 0.3);
+}
+
+.article-cta {
+    background: var(--color-cream);
+    padding: 40px;
+    border-radius: var(--radius-md);
+    margin: 48px 0;
+    text-align: center;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+}
+
+.article-cta h3 {
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.article-cta p {
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.95rem;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 16px;
+    text-align: left;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+}
+
+.compare-table th {
+    background: var(--color-navy);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.compare-table td {
+    background: var(--color-cream);
+    color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+    .article-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .article-cta {
+        padding: 28px 20px;
+    }
+
+    .compare-table {
+        font-size: 0.85rem;
+    }
+
+    .compare-table th,
+    .compare-table td {
+        padding: 10px;
+    }
+}
