@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /about
+Allow: /services
+Allow: /reviews
+Allow: /blog
+Allow: /contact
+Allow: /privacy
+
+Sitemap: https://b8k13mus.github.io/litvinova-site/sitemap.xml
+Host: https://b8k13mus.github.io/litvinova-site/
