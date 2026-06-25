@@ -1,6 +1,19 @@
 /* ============================================
    VARIABLES & RESET
    ============================================ */
+/* Font display swap for Google Fonts */
+@font-face {
+    font-family: 'Playfair Display';
+    font-display: swap;
+    src: local('Playfair Display');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-display: swap;
+    src: local('Open Sans');
+}
+
 :root {
     --color-cream: #FDF6EC;
     --color-cream-dark: #F5E6D0;
@@ -1518,5 +1531,69 @@ summary:focus-visible {
     .compare-table th,
     .compare-table td {
         padding: 10px;
+    }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 8px 16px;
+    z-index: 10000;
+    transition: top 0.3s;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Telegram Float Button */
+.telegram-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #0088cc, #0099e6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 136, 204, 0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    animation: float-pulse 2s infinite;
+}
+
+.telegram-float:hover {
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 136, 204, 0.5);
+}
+
+.telegram-float svg {
+    width: 28px;
+    height: 28px;
+}
+
+@keyframes float-pulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(0, 136, 204, 0.4); }
+    50% { box-shadow: 0 4px 24px rgba(0, 136, 204, 0.6); }
+}
+
+@media (max-width: 768px) {
+    .telegram-float {
+        width: 48px;
+        height: 48px;
+        bottom: 16px;
+        right: 16px;
+    }
+    .telegram-float svg {
+        width: 24px;
+        height: 24px;
     }
 }

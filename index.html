@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
     <meta charset="UTF-8">
+    <!-- Yandex.Webmaster verification (замените YANDEX_CODE на код из Вебмастера) -->
+    <meta name="yandex-verification" content="YANDEX_CODE" />
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io;">
+
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- Google Search Console verification (замените YOUR_CODE на код из GSC) -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="a8djQwa7IY69ANgZE0gHnjkM_q-q5IQjOe5zvVwMU_4" />" />
+    <meta name="google-site-verification" content="YOUR_CODE" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Надежда Литвинова — психолог, EMDR и Brainspotting терапевт. Помогаю со страхами, тревогой, травмами, стрессом. Очно в Москве и онлайн. Запишитесь на консультацию.">
@@ -57,8 +73,49 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(YA_METRIKA_ID, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/YA_METRIKA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'FB_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+
 </head>
 <body>
+    <!-- Skip link for screen readers -->
+    <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Главное меню">
         <div class="nav-container">
@@ -84,7 +141,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <main><header class="hero" role="banner">
+    <main id="main-content"><header class="hero" role="banner">
         <div class="hero-container">
             <div class="hero-content">
                 <p class="hero-subtitle">Психолог · EMDR-терапевт · Brainspotting-терапевт</p>
@@ -441,7 +498,7 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 
     <!-- FAQ Schema.org -->
     <script type="application/ld+json">
@@ -493,5 +550,42 @@
     }
     </script>
 </main>
+
+    <!-- Telegram Chat Widget -->
+    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion="nadezhda_litvinova_coach" data-comments-limit="5" data-color="343638" data-dark-color="F0F0F0"></script>
+    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener" class="telegram-float" aria-label="Написать в Telegram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 4.5L2.5 12.5L9.5 14.5L12.5 21.5L21.5 4.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14.5L12.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+
+    <!-- Yandex Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Надежда Литвинова — психолог",
+        "url": "https://b8k13mus.github.io/litvinova-site/",
+        "logo": "https://b8k13mus.github.io/litvinova-site/images/og-image.jpg",
+        "description": "Психолог, EMDR и Brainspotting терапевт. Помогаю справиться с тревогой, травмой, стрессом. Очно в Москве и онлайн.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва",
+            "addressCountry": "RU"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+7-904-348-13-35",
+                "contactType": "customer service",
+                "availableLanguage": ["Russian"]
+            }
+        ],
+        "sameAs": [
+            "https://t.me/nadezhda_litvinova_coach",
+            "https://t.me/uspeh_prosto"
+        ]
+    }
+    </script>
+
 </body>
 </html>
