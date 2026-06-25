@@ -13,7 +13,7 @@
     <meta property="og:description" content="Помогаю справиться со страхами, тревогой, травмами и стрессом. Очно в Москве и онлайн.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nadezhda-litvinova.ru/">
-    <meta property="og:image" content="https://nadezhda-litvinova.ru/images/og-image.jpg">
+    <meta property="og:image" content="https://nadezhda-litvinova.ru/images/og-image.webp">
     <meta property="og:locale" content="ru_RU">
 
     <!-- Twitter Card -->
@@ -52,6 +52,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="images/photo-main.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/photo-main.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 </head>
 <body>
@@ -106,7 +108,10 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/photo-main.jpg" alt="Надежда Литвинова — психолог" width="500" height="600" loading="eager">
+                <picture>
+                    <source srcset="images/photo-main.webp" type="image/webp">
+                    <img src="images/photo-main.jpg" alt="Надежда Литвинова — психолог" width="500" height="600" loading="eager" style="background: url(images/photo-main-thumb.jpg) no-repeat center/cover;">
+                </picture>
                 <div class="hero-badge">
                     <span class="badge-icon">✓</span>
                     <span class="badge-text">Сертифицированный<br>EMDR-терапевт</span>
@@ -198,7 +203,10 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="images/photo-session.jpg" alt="Сессия с Надеждой Литвиновой" width="500" height="600" loading="lazy">
+                    <picture>
+                        <source srcset="images/photo-session.webp" type="image/webp">
+                        <img src="images/photo-session.jpg" alt="Сессия с Надеждой Литвиновой" width="500" height="600" loading="lazy" style="background: url(images/photo-session-thumb.jpg) no-repeat center/cover;">
+                    </picture>
                 </div>
                 <div class="about-content">
                     <span class="section-tag">Обо мне</span>
