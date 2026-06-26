@@ -13,6 +13,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/checklists.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://b8k13mus.github.io/litvinova-site/blog/emdr-trauma.html</loc>
         <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
@@ -38,6 +44,36 @@
     </url>
     <url>
         <loc>https://b8k13mus.github.io/litvinova-site/blog/mmil-diagnosis.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/brainspotting-trauma.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/ptsd-symptoms-treatment.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/panic-attack-techniques.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/toxic-relationships.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/depression-signs-treatment.html</loc>
         <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
