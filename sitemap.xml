@@ -78,4 +78,16 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+  <url>
+    <loc>https://b8k13mus.github.io/litvinova-site/blog/karpman-triangle.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b8k13mus.github.io/litvinova-site/blog/anxious-attachment.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
