@@ -7,6 +7,12 @@
     <meta name="description" content="Надежда Литвинова — психолог, специалист по EMDR, Brainspotting и ММИЛ. Онлайн-приём по всему миру. Помогаю с травмой, тревогой, выгоранием, отношениями.">
     <meta name="keywords" content="психолог, EMDR, Brainspotting, ММИЛ, травма, тревога, выгорание, онлайн консультация, Надежда Литвинова">
     <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/">
+    <meta property="og:title" content="Надежда Литвинова — Психолог, специалист по EMDR и Brainspotting">
+    <meta property="og:description" content="Помогаю справиться с травмой, тревогой, выгоранием и сложностями в отношениях. Онлайн по всему миру.">
+    <meta property="og:image" content="https://b8k13mus.github.io/litvinova-site/images/og-image.jpg">
+    <meta property="og:url" content="https://b8k13mus.github.io/litvinova-site/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -208,6 +214,8 @@
             nav.active { display: block; }
             nav ul { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 1.8rem; }
+            .hero .container { grid-template-columns: 1fr !important; text-align: center !important; }
+            .hero img { max-width: 280px !important; height: 350px !important; margin-top: 30px; }
             .about-grid { grid-template-columns: 1fr; }
             .process-steps { flex-direction: column; }
             .cta-contacts { flex-direction: column; gap: 15px; }
@@ -235,11 +243,16 @@
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-badge">Онлайн по всему миру</div>
-            <h1>Надежда Литвинова<br><strong>Психолог, специалист по EMDR и Brainspotting</strong></h1>
-            <p class="hero-subtitle">Помогаю справиться с травмой, тревогой, выгоранием и сложностями в отношениях<br>с помощью современных доказательных методов</p>
-            <a href="#contact" class="cta-btn">Записаться на консультацию</a>
+        <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; text-align: left;">
+            <div>
+                <div class="hero-badge">Онлайн по всему миру</div>
+                <h1>Надежда Литвинова<br><strong>Психолог, специалист по EMDR и Brainspotting</strong></h1>
+                <p class="hero-subtitle">Помогаю справиться с травмой, тревогой, выгоранием и сложностями в отношениях<br>с помощью современных доказательных методов</p>
+                <a href="#contact" class="cta-btn">Записаться на консультацию</a>
+            </div>
+            <div style="text-align: center;">
+                <img src="images/photo-main.jpg" alt="Надежда Литвинова — психолог" style="width: 100%; max-width: 380px; height: 450px; object-fit: cover; border-radius: 15px; border: 3px solid #C9A96E; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            </div>
         </div>
     </section>
 
@@ -247,9 +260,8 @@
         <div class="container">
             <h2 class="section-title">Обо мне</h2>
             <p class="section-subtitle">Профессиональный подход и глубокая забота о каждом клиенте</p>
-            <div class="about-grid">
-                <div class="about-photo">Фото психолога</div>
-                <div class="about-text">
+            <div class="about-grid" style="grid-template-columns: 1fr;">
+                <div class="about-text" style="max-width: 800px; margin: 0 auto;">
                     <h3>Надежда Литвинова</h3>
                     <p>Я — психолог, специализирующийся на работе с травмой, тревожными расстройствами, выгоранием и кризисами в отношениях. В своей практике использую современные доказательные методы: EMDR (десенсибилизация и переработка движением глаз), Brainspotting и метод ММИЛ (метафорические ассоциативные карты).</p>
                     <p>Работаю <strong>онлайн по всему миру</strong>, что позволяет мне помогать людям независимо от их местоположения. Каждая сессия проходит в безопасной и конфиденциальной обстановке.</p>
