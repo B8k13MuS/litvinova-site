@@ -1,197 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta     <meta name="robots" content="all">
-    <meta name="description" content="Блог психолога Надежды Литвиновой: статьи о тревоге, травме, EMDR, самопомощи. Полезные материалы для тех, кто заботится о психическом здоровье.">
-    <meta name="keywords" content="блог психолога, как справиться с тревогой, EMDR что это, травма психология, самопомощь">
-    <title>Блог — Статьи о психологии | Надежда Литвинова</title>
-    <link rel="canonical" href="https://nadezhda-litvinova.ru/blog.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-       ym(YA_METRIKA_ID, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/YA_METRIKA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'FB_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
-
+    <meta name="description" content="Блог психолога Надежды Литвиновой. Статьи о EMDR, тревожности, выгорании, выборе психолога.">
+    <meta name="keywords" content="блог психолога, EMDR, тревожность, выгорание, психолог онлайн, Надежда Литвинова">
+    <meta name="yandex-verification" content="94cb1003e6ae7f19" />
+    <title>Блог — статьи о психологии | Надежда Литвинова</title>
+    <style>
+        :root { --color-cream: #FAF7F2; --color-navy: #1E3A5F; --color-gold: #C9A96E; --color-gold-light: #D4B87A; --color-text: #2C3E50; --color-text-light: #5D6D7E; --font-heading: 'Georgia', serif; --font-body: 'Segoe UI', system-ui, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background: var(--color-cream); color: var(--color-text); line-height: 1.7; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header { background: var(--color-navy); padding: 20px 0; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); color: white; font-size: 1.3rem; text-decoration: none; }
+        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 24px; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--color-gold); }
+        .page-header { padding: 80px 0 40px; text-align: center; }
+        .page-header h1 { font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-navy); margin-bottom: 16px; }
+        .page-header p { color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 32px; padding-bottom: 80px; }
+        .blog-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .blog-card-content { padding: 32px; }
+        .blog-card-tag { display: inline-block; background: rgba(201, 169, 110, 0.15); color: var(--color-gold); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 12px; }
+        .blog-card h3 { font-family: var(--font-heading); color: var(--color-navy); font-size: 1.3rem; margin-bottom: 12px; }
+        .blog-card p { color: var(--color-text-light); font-size: 0.95rem; margin-bottom: 20px; }
+        .blog-card-meta { color: var(--color-text-light); font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+        .blog-card-link { color: var(--color-gold); text-decoration: none; font-weight: 600; }
+        .blog-card-link:hover { color: var(--color-navy); }
+        footer { background: var(--color-navy); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 0.9rem; }
+        @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .page-header h1 { font-size: 1.8rem; } }
+    </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Главное меню">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">Надежда Литвинова</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navMenu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Главная</a></li>
-                <li role="none"><a href="about.html" class="nav-link" role="menuitem">Обо мне</a></li>
-                <li role="none"><a href="methods.html" class="nav-link" role="menuitem">Методы</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">Услуги</a></li>
-                <li role="none"><a href="blog.html" class="nav-link active" role="menuitem">Блог</a></li>
-                <li role="none"><a href="contacts.html" class="nav-link" role="menuitem">Контакты</a></li>
-            </ul>
-            <a href="contacts.html#contact-form" class="nav-cta">Записаться</a>
-        </div>
-    </nav>
-
-    <header class="page-header" style="padding-top: 120px; padding-bottom: 60px; background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);">
-        <div class="container" style="text-align: center;">
-            <span class="section-tag">Блог</span>
-            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Полезные материалы<br>о психологии</h1>
-            <p style="color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Статьи, которые помогут лучше понять себя и найти путь к спокойствию</p>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">🌿 Надежда Литвинова</a>
+            <nav class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="about.html">Обо мне</a>
+                <a href="methods.html">Методы</a>
+                <a href="services.html">Услуги</a>
+                <a href="blog.html">Блог</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
         </div>
     </header>
 
-    <section style="padding: 80px 0; background: var(--color-white);">
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>Блог</h1>
+                <p>Полезные статьи о психологии, психическом здоровье и методах работы. Пишу просто о сложном.</p>
+            </div>
+        </div>
+
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;">
-                <article style="background: var(--color-cream); border-radius: var(--radius-md); overflow: hidden; transition: all var(--transition);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="height: 200px; background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🧠</div>
-                    <div style="padding: 32px;">
-                        <span style="font-size: 0.8rem; color: var(--color-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">EMDR</span>
-                        <h2 style="font-family: var(--font-heading); color: var(--color-navy); margin: 12px 0; font-size: 1.3rem;"><a href="blog-emdr.html" style="color: inherit;">EMDR: как работает терапия, которая меняет мозг</a></h2>
-                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Что такое двусторонняя стимуляция, почему движения глаз помогают переработать травму и как проходит типичная сессия EMDR.</p>
-                        <span style="font-size: 0.85rem; color: var(--color-text-muted);">15 минут чтения</span>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">EMDR</span>
+                        <h3>Что такое EMDR и как он помогает при травме</h3>
+                        <p>Доказательный метод, который помогает мозгу «перезаписать» травматические воспоминания. Как работает, что происходит на сессии, сколько нужно сессий.</p>
+                        <div class="blog-card-meta">
+                            <span>26 июня 2026 · 7 мин</span>
+                            <a href="blog/emdr-trauma.html" class="blog-card-link">Читать →</a>
+                        </div>
                     </div>
                 </article>
-                <article style="background: var(--color-cream); border-radius: var(--radius-md); overflow: hidden; transition: all var(--transition);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="height: 200px; background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">😰</div>
-                    <div style="padding: 32px;">
-                        <span style="font-size: 0.8rem; color: var(--color-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Тревога</span>
-                        <h2 style="font-family: var(--font-heading); color: var(--color-navy); margin: 12px 0; font-size: 1.3rem;"><a href="blog-trevoga.html" style="color: inherit;">5 техник самопомощи при тревоге и панических атаках</a></h2>
-                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Простые и эффективные способы снизить уровень тревоги прямо сейчас: дыхание, заземление, работа с мыслями.</p>
-                        <span style="font-size: 0.85rem; color: var(--color-text-muted);">10 минут чтения</span>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Выгорание</span>
+                        <h3>Эмоциональное выгорание: признаки и восстановление</h3>
+                        <p>12 признаков выгорания, отличие от депрессии, 5 шагов восстановления и профилактика. Когда пора обращаться к специалисту.</p>
+                        <div class="blog-card-meta">
+                            <span>26 июня 2026 · 8 мин</span>
+                            <a href="blog/emotional-burnout.html" class="blog-card-link">Читать →</a>
+                        </div>
                     </div>
                 </article>
-                <article style="background: var(--color-cream); border-radius: var(--radius-md); overflow: hidden; transition: all var(--transition);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="height: 200px; background: linear-gradient(135deg, #2A3B5A 0%, #1A2B4A 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">💔</div>
-                    <div style="padding: 32px;">
-                        <span style="font-size: 0.8rem; color: var(--color-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Травма</span>
-                        <h2 style="font-family: var(--font-heading); color: var(--color-navy); margin: 12px 0; font-size: 1.3rem;"><a href="blog-trauma.html" style="color: inherit;">Как понять, что вам нужна помощь психолога после травмы</a></h2>
-                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Признаки, которые говорят о том, что пережитое событие всё ещё влияет на вашу жизнь, и когда стоит обратиться к специалисту.</p>
-                        <span style="font-size: 0.85rem; color: var(--color-text-muted);">12 минут чтения</span>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Тревожность</span>
+                        <h3>Признаки тревожности: как распознать и что делать</h3>
+                        <p>Физические, эмоциональные и поведенческие признаки тревоги. Когда это норма, а когда — повод обратиться к психологу.</p>
+                        <div class="blog-card-meta">
+                            <span>26 июня 2026 · 6 мин</span>
+                            <a href="blog/anxiety-signs.html" class="blog-card-link">Читать →</a>
+                        </div>
                     </div>
                 </article>
-                <article style="background: var(--color-cream); border-radius: var(--radius-md); overflow: hidden; transition: all var(--transition);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="height: 200px; background: linear-gradient(135deg, var(--color-cream-dark) 0%, #E8D5C0 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🎯</div>
-                    <div style="padding: 32px;">
-                        <span style="font-size: 0.8rem; color: var(--color-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Brainspotting</span>
-                        <h2 style="font-family: var(--font-heading); color: var(--color-navy); margin: 12px 0; font-size: 1.3rem;"><a href="blog-brainspotting.html" style="color: inherit;">Brainspotting: терапия через положение глаз</a></h2>
-                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Что такое "brainspot", как положение глаз связано с нейронными сетями и почему этот метод эффективен для глубинной работы.</p>
-                        <span style="font-size: 0.85rem; color: var(--color-text-muted);">12 минут чтения</span>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Выбор психолога</span>
+                        <h3>Как выбрать психолога: 7 важных критериев</h3>
+                        <p>На что обращать внимание при выборе специалиста. Как отличить профессионала от шарлатана. Красные флаги и зелёные сигналы.</p>
+                        <div class="blog-card-meta">
+                            <span>26 июня 2026 · 7 мин</span>
+                            <a href="blog/choose-psychologist.html" class="blog-card-link">Читать →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">ММИЛ</span>
+                        <h3>Что такое ММИЛ: диагностика перед работой</h3>
+                        <p>Метод многоуровневого исследования личности. Как проводится диагностика, зачем нужна перед терапией, что показывает.</p>
+                        <div class="blog-card-meta">
+                            <span>26 июня 2026 · 5 мин</span>
+                            <a href="blog/mmil-diagnosis.html" class="blog-card-link">Читать →</a>
+                        </div>
                     </div>
                 </article>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section style="padding: 60px 0; background: var(--color-navy); text-align: center;">
+    <footer>
         <div class="container">
-            <h2 style="font-family: var(--font-heading); color: white; margin-bottom: 16px; font-size: 1.8rem;">Больше полезного в моём Telegram-канале</h2>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto;">Ежедневные инсайты, техники самопомощи, ответы на вопросы подписчиков</p>
-            <a href="https://t.me/uspeh_prosto" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;" target="_blank" rel="noopener">Подписаться на канал</a>
-        </div>
-    </section>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="footer-logo">🌿 Надежда Литвинова</span>
-                    <p class="footer-desc">Психолог, EMDR и Brainspotting терапевт.</p>
-                </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Разделы</p>
-                    <ul>
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="about.html">Обо мне</a></li>
-                        <li><a href="methods.html">Методы</a></li>
-                        <li><a href="services.html">Услуги</a></li>
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Методы</p>
-                    <ul>
-                        <li><a href="methods.html#emdr">EMDR / ДПДГ</a></li>
-                        <li><a href="methods.html#brainspotting">Brainspotting</a></li>
-                        <li><a href="methods.html#mmil">ММИЛ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <p class="footer-heading">Контакты</p>
-                    <a href="tel:+79043481335">+7 (904) 348-13-35</a>
-                    <a href="mailto:denas111222@gmail.com">denas111222@gmail.com</a>
-                    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener">Telegram</a>
-                    <a href="https://t.me/uspeh_prosto" target="_blank" rel="noopener">Канал в Telegram</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Надежда Литвинова. Все права защищены.</p>
-                <p><a href="privacy.html">Политика конфиденциальности</a></p>
-            </div>
+            <p>© 2026 Надежда Литвинова · Психолог · Онлайн по всему миру</p>
         </div>
     </footer>
-
-    <script src="scripts.js" defer></script>
-
-    <!-- Telegram Chat Widget -->
-    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion="nadezhda_litvinova_coach" data-comments-limit="5" data-color="343638" data-dark-color="F0F0F0"></script>
-    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener" class="telegram-float" aria-label="Написать в Telegram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 4.5L2.5 12.5L9.5 14.5L12.5 21.5L21.5 4.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14.5L12.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-
 </body>
 </html>
