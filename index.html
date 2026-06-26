@@ -1,590 +1,424 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
     <meta charset="UTF-8">
-    <!-- Yandex.Webmaster verification (замените YANDEX_CODE на код из Вебмастера) -->
-    <meta name="yandex-verification" content="YANDEX_CODE" />
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io;">
-
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-
-    <!-- Google Search Console verification (замените YOUR_CODE на код из GSC) -->
-    <meta name="google-site-verification" content="YOUR_CODE" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Надежда Литвинова — психолог, специалист по EMDR и Интегративный подход. Помогаю со страхами, тревогой, травмами, стрессом. Онлайн. Запишитесь на консультацию.">
-    <meta name="keywords" content="психолог, специалист по EMDR, тревога, страхи, травма, психолог онлайн, консультация психолога">
-    <meta name="author" content="Надежда Литвинова">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Надежда Литвинова — Психолог, специалист по EMDR и Интегративный подход">
-    <meta property="og:description" content="Помогаю справиться со страхами, тревогой, травмами и стрессом. Онлайн.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nadezhda-litvinova.ru/">
-    <meta property="og:image" content="https://nadezhda-litvinova.ru/images/og-image.jpg">
-    <meta property="og:locale" content="ru_RU">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Надежда Литвинова — Психолог, специалист по EMDR и Интегративный подход">
-    <meta name="twitter:description" content="Помогаю справиться со страхами, тревогой, травмами и стрессом.">
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Надежда Литвинова",
-        "jobTitle": "Психолог, специалист по EMDR и Интегративный подход",
-        "description": "Помогаю справиться со страхами, тревогой, травмами и стрессом",
-        "url": "https://nadezhda-litvinova.ru",
-        "telephone": "+7-904-348-13-35",
-        "email": "denas111222@gmail.com",
-        "sameAs": [
-            "https://t.me/nadezhda_litvinova_coach",
-            "https://t.me/uspeh_prosto"
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "",
-            "addressCountry": "RU"
+    <title>Надежда Литвинова — Психолог, специалист по EMDR и Brainspotting</title>
+    <meta name="description" content="Надежда Литвинова — психолог, специалист по EMDR, Brainspotting и ММИЛ. Онлайн-приём по всему миру. Помогаю с травмой, тревогой, выгоранием, отношениями.">
+    <meta name="keywords" content="психолог, EMDR, Brainspotting, ММИЛ, травма, тревога, выгорание, онлайн консультация, Надежда Литвинова">
+    <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #F5F0E8;
+            color: #1A2B4A;
+            line-height: 1.7;
         }
-    }
-    </script>
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-    <title>Надежда Литвинова — Психолог, специалист по EMDR и Интегративный подход | и онлайн</title>
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(26,43,74,0.3);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: #C9A96E; }
+        .logo span { color: #F5F0E8; font-weight: normal; font-size: 0.9rem; display: block; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #F5F0E8; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: #C9A96E; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: #C9A96E; font-size: 1.5rem; cursor: pointer; }
 
-    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
-    <link rel="canonical" href="https://nadezhda-litvinova.ru/">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 50%, #1A2B4A 100%);
+            color: #F5F0E8;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: normal; }
+        .hero h1 strong { color: #C9A96E; }
+        .hero-subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201,169,110,0.2);
+            border: 1px solid #C9A96E;
+            color: #C9A96E;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #C9A96E;
+            color: #1A2B4A;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(201,169,110,0.4); }
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+        /* Sections */
+        section { padding: 60px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1A2B4A;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #C9A96E;
+            margin: 15px auto 0;
+        }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem; }
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
+        .about-photo {
+            width: 100%;
+            max-width: 300px;
+            height: 350px;
+            background: linear-gradient(135deg, #ddd, #bbb);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0 auto;
+            border: 3px solid #C9A96E;
+        }
+        .about-text h3 { color: #C9A96E; font-size: 1.3rem; margin-bottom: 15px; }
+        .about-text p { margin-bottom: 15px; font-size: 1.05rem; }
+        .credentials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .credential-tag {
+            background: rgba(201,169,110,0.15);
+            color: #1A2B4A;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(201,169,110,0.3);
+        }
 
-       ym(YA_METRIKA_ID, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/YA_METRIKA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+        /* Methods */
+        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .method-card {
+            background: #FAF8F4;
+            padding: 35px;
+            border-radius: 10px;
+            border-top: 4px solid #C9A96E;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .method-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(26,43,74,0.1); }
+        .method-card h3 { color: #1A2B4A; font-size: 1.2rem; margin-bottom: 12px; }
+        .method-card p { color: #555; font-size: 0.95rem; }
+        .method-icon { font-size: 2rem; margin-bottom: 15px; }
 
+        /* Issues */
+        .issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .issue-card {
+            background: #FAF8F4;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(201,169,110,0.2);
+        }
+        .issue-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .issue-card h3 { color: #1A2B4A; font-size: 1.1rem; margin-bottom: 10px; }
+        .issue-card p { color: #666; font-size: 0.9rem; }
 
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'FB_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
+        /* Process */
+        .process-steps { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        .step-number {
+            width: 50px; height: 50px;
+            background: #C9A96E;
+            color: #1A2B4A;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.2rem;
+            margin: 0 auto 20px;
+        }
+        .step h3 { color: #1A2B4A; margin-bottom: 10px; }
+        .step p { color: #666; font-size: 0.9rem; }
 
+        /* Testimonials */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial {
+            background: #FAF8F4;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #C9A96E;
+            font-style: italic;
+        }
+        .testimonial-author { margin-top: 15px; font-style: normal; color: #C9A96E; font-weight: bold; }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            text-align: center;
+            padding: 60px 0;
+        }
+        .cta-section h2 { font-size: 2rem; margin-bottom: 15px; }
+        .cta-section p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+        .cta-contacts { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
+        .cta-contact { text-align: center; }
+        .cta-contact a { color: #C9A96E; text-decoration: none; font-size: 1.1rem; }
+        .cta-contact a:hover { text-decoration: underline; }
+        .cta-contact span { display: block; font-size: 0.85rem; opacity: 0.7; margin-top: 5px; }
+
+        /* Footer */
+        footer {
+            background: #1A2B4A;
+            color: #F5F0E8;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #C9A96E; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer-copy { opacity: 0.6; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #1A2B4A; padding: 20px; }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 1.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; }
+            .cta-contacts { flex-direction: column; gap: 15px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip link for screen readers -->
-    <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Главное меню">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo" aria-label="На главную">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">Надежда Литвинова</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navMenu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Главная</a></li>
-                <li role="none"><a href="about.html" class="nav-link" role="menuitem">Обо мне</a></li>
-                <li role="none"><a href="methods.html" class="nav-link" role="menuitem">Методы</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">Услуги</a></li>
-                <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Блог</a></li>
-                <li role="none"><a href="contacts.html" class="nav-link" role="menuitem">Контакты</a></li>
-            </ul>
-            <a href="#contact-form" class="nav-cta">Записаться</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <main id="main-content"><header class="hero" role="banner">
-        <div class="hero-container">
-            <div class="hero-content">
-                <p class="hero-subtitle">Психолог · специалист по EMDR · специалист по интегративному подходу</p>
-                <h1 class="hero-title">Вернём спокойствие<br>и внутреннюю опору</h1>
-                <p class="hero-description">Помогаю справиться со <strong>страхами</strong>, <strong>тревогой</strong>, <strong>травмами</strong> и <strong>стрессом</strong>. Работаю онлайн по всему миру.</p>
-                <div class="hero-buttons">
-                    <a href="#contact-form" class="btn btn-primary">Записаться на консультацию</a>
-                    <a href="methods.html" class="btn btn-secondary">Узнать о методах</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">лет практики</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">клиентов</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">EMDR</span>
-                        <span class="stat-label"></span>
-                    </div>
-                </div>
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                Надежда Литвинова
+                <span>Психолог · EMDR · Brainspotting</span>
             </div>
-            <div class="hero-image">
-                <img src="images/photo-main.jpg" srcset="images/photo-main.jpg 1x, images/photo-main.jpg 2x" alt="Надежда Литвинова — психолог" width="500" height="500" loading="eager">
-                <div class="hero-badge">
-                    <span class="badge-icon">✓</span>
-                    <span class="badge-text"><br>специалист по EMDR</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <a href="#problems" aria-label="Прокрутить вниз">
-                <span class="scroll-arrow"></span>
-            </a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#methods">Методы</a></li>
+                    <li><a href="#issues">С чем работаю</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Problems Section -->
-    <section class="problems" id="problems" aria-labelledby="problems-title">
+    <section class="hero">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">С чем работаю</span>
-                <h2 id="problems-title" class="section-title">Если вы чувствуете, что жизнь зашла в тупик</h2>
-                <p class="section-desc">Я помогаю в ситуациях, когда кажется, что сил больше нет, а выхода — не видно</p>
-            </div>
-            <div class="problems-grid">
-                <article class="problem-card">
-                    <div class="problem-icon">😰</div>
-                    <h3>Тревога и панические атаки</h3>
-                    <p>Постоянное внутреннее напряжение, страх неизвестности, физические симптомы тревоги</p>
-                </article>
-                <article class="problem-card">
-                    <div class="problem-icon">💔</div>
-                    <h3>Травматический опыт</h3>
-                    <p>Последствия пережитых событий, которые мешают жить полной жизнью сегодня</p>
-                </article>
-                <article class="problem-card">
-                    <div class="problem-icon">😔</div>
-                    <h3>Стресс и выгорание</h3>
-                    <p>Эмоциональное истощение, потеря смысла, ощущение "бега по кругу"</p>
-                </article>
-                <article class="problem-card">
-                    <div class="problem-icon">🚫</div>
-                    <h3>Страхи и фобии</h3>
-                    <p>Ограничивающие убеждения и страхи, которые мешают двигаться к целям</p>
-                </article>
-                <article class="problem-card">
-                    <div class="problem-icon">🔄</div>
-                    <h3>Кризисные ситуации</h3>
-                    <p>Развод, утрата, переезд, потеря работы — когда жизнь требует перемен</p>
-                </article>
-                <article class="problem-card">
-                    <div class="problem-icon">💪</div>
-                    <h3>Низкая самооценка</h3>
-                    <p>Сомнения в себе, внутренний критик, сложности с принятием себя</p>
-                </article>
-            </div>
+            <div class="hero-badge">Онлайн по всему миру</div>
+            <h1>Надежда Литвинова<br><strong>Психолог, специалист по EMDR и Brainspotting</strong></h1>
+            <p class="hero-subtitle">Помогаю справиться с травмой, тревогой, выгоранием и сложностями в отношениях<br>с помощью современных доказательных методов</p>
+            <a href="#contact" class="cta-btn">Записаться на консультацию</a>
         </div>
     </section>
 
-    <!-- Methods Preview -->
-    <section class="methods-preview" aria-labelledby="methods-preview-title">
+    <section id="about">
         <div class="container">
-            <div class="section-header light">
-                <span class="section-tag">Методы</span>
-                <h2 id="methods-preview-title" class="section-title">Доказательные подходы<br>для глубинной работы</h2>
-            </div>
-            <div class="methods-grid">
-                <article class="method-card">
-                    <div class="method-number">01</div>
-                    <h3>EMDR / ДПДГ</h3>
-                    <p>Терапия десенсибилизации и переработки движением глаз. Эффективный метод работы с травмой, ПТСР, тревожностью и фобиями. Помогает мозгу переработать «застрявшие» воспоминания.</p>
-                    <a href="methods.html#emdr" class="method-link">Подробнее →</a>
-                </article>
-                <article class="method-card">
-                    <div class="method-number">02</div>
-                    <h3>Интегративный подход</h3>
-                    <p>Метод, использующий положение глаз для доступа к глубинным эмоциональным и телесным переживаниям. Особенно эффективен при работе с травмой, хронической болью и спортивной травмой.</p>
-                    <a href="methods.html#brainspotting" class="method-link">Подробнее →</a>
-                </article>
-                <article class="method-card">
-                    <div class="method-number">03</div>
-                    <h3>ММИЛ</h3>
-                    <p>Метод многоуровневого исследования личности. Диагностический подход, позволяющий исследовать разные уровни психики: от поведенческих паттернов до глубинных убеждений.</p>
-                    <a href="methods.html#mmil" class="method-link">Подробнее →</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Preview -->
-    <section class="about-preview" aria-labelledby="about-preview-title">
-        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <p class="section-subtitle">Профессиональный подход и глубокая забота о каждом клиенте</p>
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="images/photo-session.jpg" srcset="images/photo-session.jpg 1x, images/photo-session.jpg 2x" alt="Сессия с Надеждой Литвиновой" width="500" height="500" loading="lazy">
-                </div>
-                <div class="about-content">
-                    <span class="section-tag">Обо мне</span>
-                    <h2 id="about-preview-title" class="section-title">Надежда Литвинова</h2>
-                    <p class="about-lead">Я верю, что каждый человек обладает внутренними ресурсами для восстановления. Моя задача — помочь вам их найти и активировать.</p>
-                    <p>Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. Использую доказательные методы: EMDR и ММИЛ. Постоянно прохожу супервизии и повышение квалификации.</p>
-                    <ul class="about-list">
-                        <li><span class="check">✓</span>  специалист по EMDR</li>
-                        <li><span class="check">✓</span> специалист по интегративному подходу</li>
-                        <li><span class="check">✓</span> Регулярная супервизия и личная терапия</li>
-                    </ul>
-                    <a href="about.html" class="btn btn-primary">Подробнее обо мне</a>
+                <div class="about-photo">Фото психолога</div>
+                <div class="about-text">
+                    <h3>Надежда Литвинова</h3>
+                    <p>Я — психолог, специализирующийся на работе с травмой, тревожными расстройствами, выгоранием и кризисами в отношениях. В своей практике использую современные доказательные методы: EMDR (десенсибилизация и переработка движением глаз), Brainspotting и метод ММИЛ (метафорические ассоциативные карты).</p>
+                    <p>Работаю <strong>онлайн по всему миру</strong>, что позволяет мне помогать людям независимо от их местоположения. Каждая сессия проходит в безопасной и конфиденциальной обстановке.</p>
+                    <p>Мой подход — <strong>интегративный</strong>: я сочетаю элементы когнитивно-поведенческой терапии (КПТ), эмоционально-образной терапии (ЭОТ), эмоционально-фокусированной терапии (ЭФТ), осознанности (ОРКТ), работу с внутренними частями личности (RPT) и диалектической поведенческой терапии (DBT).</p>
+                    <div class="credentials">
+                        <span class="credential-tag">EMDR</span>
+                        <span class="credential-tag">Brainspotting</span>
+                        <span class="credential-tag">ММИЛ</span>
+                        <span class="credential-tag">КПТ</span>
+                        <span class="credential-tag">ЭОТ</span>
+                        <span class="credential-tag">ЭФТ</span>
+                        <span class="credential-tag">ОРКТ</span>
+                        <span class="credential-tag">RPT</span>
+                        <span class="credential-tag">DBT</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" aria-labelledby="testimonials-title">
+    <section id="methods" style="background: #FAF8F4;">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Отзывы</span>
-                <h2 id="testimonials-title" class="section-title">Что говорят клиенты</h2>
-            </div>
-            <div class="testimonials-slider" id="testimonialsSlider">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"После нескольких сессий EMDR я наконец смогла спокойно вспоминать события, которые раньше вызывали панику. Надежда — очень внимательный и профессиональный специалист."</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Анна К.</span>
-                        <span class="author-info">работа с травмой</span>
-                    </div>
+            <h2 class="section-title">Методы работы</h2>
+            <p class="section-subtitle">Современные доказательные подходы для эффективной помощи</p>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">🧠</div>
+                    <h3>EMDR</h3>
+                    <p>Десенсибилизация и переработка движением глаз — мощный метод работы с травмой, ПТСР, тревогой и фобиями. Помогает мозгу переработать болезненные воспоминания и снизить их эмоциональную напряжённость.</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Обращался с тревожностью и проблемами сна. Интегративный подход помог найти корень проблемы, о котором я даже не подозревал. Сейчас сплю нормально и чувствую себя увереннее."</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Дмитрий М.</span>
-                        <span class="author-info">тревожность, бессонница</span>
-                    </div>
+                <div class="method-card">
+                    <div class="method-icon">👁️</div>
+                    <h3>Brainspotting</h3>
+                    <p>Метод, основанный на работе с точками фиксации взгляда, которые активируют обработку травматического опыта на глубинном уровне. Особенно эффективен при работе с телесными проявлениями травмы.</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Прошла курс из 8 сессий. Результат превзошёл ожидания — научилась справляться со стрессом, восстановила отношения с близкими. Очень благодарна!"</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Елена В.</span>
-                        <span class="author-info">стресс, отношения</span>
-                    </div>
+                <div class="method-card">
+                    <div class="method-icon">🃏</div>
+                    <h3>ММИЛ (Метафорические ассоциативные карты)</h3>
+                    <p>Исследовательский и диагностический подход, позволяющий через метафоры и образы обращаться к бессознательному, выявлять скрытые ресурсы и барьеры, работать с внутренними конфликтами.</p>
                 </div>
-            </div>
-            <div class="testimonials-nav">
-                <button class="testimonial-btn" id="prevBtn" aria-label="Предыдущий отзыв">←</button>
-                <button class="testimonial-btn" id="nextBtn" aria-label="Следующий отзыв">→</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="contact-section" id="contact-form" aria-labelledby="contact-title">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-tag light">Запись</span>
-                    <h2 id="contact-title" class="section-title light">Запишитесь на консультацию</h2>
-                    <p class="contact-desc">Оставьте заявку, и я свяжусь с вами в течение 24 часов для согласования удобного времени.</p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <div>
-                                <span class="contact-label">Телефон</span>
-                                <a href="tel:+79043481335" class="contact-value">+7 (904) 348-13-35</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <div>
-                                <span class="contact-label">Email</span>
-                                <a href="mailto:denas111222@gmail.com" class="contact-value">denas111222@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">💬</span>
-                            <div>
-                                <span class="contact-label">Telegram</span>
-                                <a href="https://t.me/nadezhda_litvinova_coach" class="contact-value" target="_blank" rel="noopener">@nadezhda_litvinova_coach</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <span class="contact-label">Формат</span>
-                                <span class="contact-value">Онлайн</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://t.me/uspeh_prosto" class="telegram-channel" target="_blank" rel="noopener">
-                        <span class="tg-icon">📢</span>
-                        <span>Мой канал в Telegram: полезные материалы и инсайты</span>
-                        <span class="tg-arrow">→</span>
-                    </a>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgqgvly" method="POST" novalidate>
-                        <div class="form-group">
-                            <label for="name">Ваше имя <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required placeholder="Как к вам обращаться?" autocomplete="name">
-                            <span class="error-message" id="nameError">Пожалуйста, введите имя</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Телефон <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__" autocomplete="tel">
-                            <span class="error-message" id="phoneError">Пожалуйста, введите телефон</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
-                            <span class="error-message" id="emailError">Введите корректный email</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="format">Предпочтительный формат</label>
-                            <select id="format" name="format">
-                                <option value="">Выберите формат</option>
-                                <option value="online">Онлайн (Zoom/Skype)</option>
-                                <option value="offline">Онлайн</option>
-                                <option value="either">Любой</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Опишите ваш запрос</label>
-                            <textarea id="message" name="message" rows="4" placeholder="С чем хотели бы поработать?"></textarea>
-                        </div>
-                        <div class="form-group form-checkbox">
-                            <input type="checkbox" id="consent" name="consent" required>
-                            <label for="consent">Я согласен(а) на обработку персональных данных</label>
-                            <span class="error-message" id="consentError">Необходимо согласие</span>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-                            <span class="btn-text">Отправить заявку</span>
-                            <span class="btn-loader" hidden>Отправка...</span>
-                        </button>
-                        <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
-                            <span class="success-icon">✓</span>
-                            <p>Спасибо! Я получила вашу заявку и свяжусь с вами в ближайшее время.</p>
-                        </div>
-                    </form>
+                <div class="method-card">
+                    <div class="method-icon">🔄</div>
+                    <h3>Интегративный подход</h3>
+                    <p>Сочетание КПТ, ЭОТ, ЭФТ, ОРКТ, RPT и DBT позволяет подбирать индивидуальную стратегию для каждого клиента, учитывая его уникальность и запрос.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-title">
+    <section id="issues">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">FAQ</span>
-                <h2 id="faq-title" class="section-title">Часто задаваемые вопросы</h2>
-            </div>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary><span>Сколько длится одна сессия?</span><span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">
-                        <p>Одна сессия длится 50–60 минут. Для EMDR и Интегративный подход иногда требуются более длительные сессии (до 90 минут) — это обсуждается индивидуально.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary><span>Сколько сессий обычно нужно?</span><span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">
-                        <p>Это зависит от запроса. Для решения конкретной проблемы часто достаточно 5–10 сессий. Сложные случаи могут требовать более длительной работы. Мы обсудим ориентировочный план на первой встрече.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary><span>Что лучше — очно или онлайн?</span><span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">
-                        <p>Оба формата эффективны. EMDR и Интегративный подход успешно проводятся онлайн. Онлайн-формат позволяет работать из любой точки мира. Выбирайте то, что комфортнее вам.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary><span>Как подготовиться к первой сессии?</span><span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">
-                        <p>Никакой специальной подготовки не требуется. Просто приходите с вашим запросом. На первой встрече мы познакомимся, я задам уточняющие вопросы, и вместе определим, какой подход будет наиболее эффективен.</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary><span>Есть ли противопоказания?</span><span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">
-                        <p>EMDR и Интегративный подход не рекомендуются при активной психотической симптоматике, некоторых неврологических состояниях и при злоупотреблении психоактивными веществами. На первой консультации мы обсудим, подходит ли вам выбранный метод.</p>
-                    </div>
-                </details>
+            <h2 class="section-title">С чем я работаю</h2>
+            <p class="section-subtitle">Помогаю в сложных жизненных ситуациях</p>
+            <div class="issues-grid">
+                <div class="issue-card">
+                    <div class="icon">💔</div>
+                    <h3>Травма и ПТСР</h3>
+                    <p>Пережитые события, которые продолжают влиять на жизнь: тревожные воспоминания, кошмары, избегание</p>
+                </div>
+                <div class="issue-card">
+                    <div class="icon">😰</div>
+                    <h3>Тревога и панические атаки</h3>
+                    <p>Постоянное беспокойство, страхи, панические атаки, социальная тревожность</p>
+                </div>
+                <div class="issue-card">
+                    <div class="icon">🔥</div>
+                    <h3>Выгорание</h3>
+                    <p>Эмоциональное истощение, потеря смысла, хроническая усталость, профессиональное выгорание</p>
+                </div>
+                <div class="issue-card">
+                    <div class="icon">💑</div>
+                    <h3>Отношения</h3>
+                    <p>Сложности в паре, семейные конфликты, токсичные отношения, страх близости</p>
+                </div>
+                <div class="issue-card">
+                    <div class="icon">😔</div>
+                    <h3>Депрессия и апатия</h3>
+                    <p>Подавленное настроение, потеря интереса, чувство бессмысленности, эмоциональная пустота</p>
+                </div>
+                <div class="issue-card">
+                    <div class="icon">🎯</div>
+                    <h3>Самооценка и идентичность</h3>
+                    <p>Низкая самооценка, неуверенность, поиск себя, работа с внутренним критиком</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <section style="background: #FAF8F4;">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="footer-logo">🌿 Надежда Литвинова</span>
-                    <p class="footer-desc">Психолог, специалист по EMDR и Интегративный подход. Помогаю найти внутреннюю опору и спокойствие.</p>
+            <h2 class="section-title">Как проходит работа</h2>
+            <p class="section-subtitle">Прозрачный и понятный процесс от первой встречи до результата</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Знакомство</h3>
+                    <p>Первая встреча — диагностическая. Обсуждаем запрос, цели, ожидания. Определяем, подходим ли мы друг другу.</p>
                 </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Разделы</p>
-                    <ul>
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="about.html">Обо мне</a></li>
-                        <li><a href="methods.html">Методы</a></li>
-                        <li><a href="services.html">Услуги</a></li>
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>План работы</h3>
+                    <p>Формируем индивидуальный план, выбираем методы, определяем примерные сроки и частоту встреч.</p>
                 </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Методы</p>
-                    <ul>
-                        <li><a href="methods.html#emdr">EMDR / ДПДГ</a></li>
-                        <li><a href="methods.html#brainspotting">Интегративный подход</a></li>
-                        <li><a href="methods.html#mmil">ММИЛ</a></li>
-                    </ul>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Терапия</h3>
+                    <p>Регулярные сессии с применением выбранных методов. Глубокая работа с запросом, поддержка на каждом этапе.</p>
                 </div>
-                <div class="footer-contact">
-                    <p class="footer-heading">Контакты</p>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Результат</h3>
+                    <p>Закрепление достижений, обсуждение дальнейших шагов. При необходимости — план самостоятельной работы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <p class="section-subtitle">Истории людей, которые нашли в себе силы изменить жизнь</p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"После нескольких сессий EMDR я наконец смогла спокойно вспоминать о том, что пережила. Тревога ушла, сон нормализовался. Надежда — очень внимательный и профессиональный специалист."</p>
+                    <div class="testimonial-author">— Анна, 34 года</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Долго искал психолога, который работает с Brainspotting. Надежда помогла мне разобраться с хроническим напряжением в теле, которое мучило годами. Рекомендую!"</p>
+                    <div class="testimonial-author">— Дмитрий, 41 год</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Работа с метафорическими картами открыла мне глаза на многие вещи. Я поняла, почему повторяю одни и те же сценарии в отношениях. Огромная благодарность!"</p>
+                    <div class="testimonial-author">— Елена, 29 лет</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Готовы начать путь к изменениям?</h2>
+            <p>Запишитесь на консультацию удобным для вас способом</p>
+            <a href="https://t.me/nadezhda_litvinova_coach" class="cta-btn" target="_blank">Написать в Telegram</a>
+            <div class="cta-contacts">
+                <div class="cta-contact">
                     <a href="tel:+79043481335">+7 (904) 348-13-35</a>
+                    <span>Телефон / WhatsApp</span>
+                </div>
+                <div class="cta-contact">
                     <a href="mailto:denas111222@gmail.com">denas111222@gmail.com</a>
-                    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener">Telegram</a>
-                    <a href="https://t.me/uspeh_prosto" target="_blank" rel="noopener">Канал в Telegram</a>
+                    <span>Email</span>
+                </div>
+                <div class="cta-contact">
+                    <a href="https://t.me/uspeh_prosto" target="_blank">@uspeh_prosto</a>
+                    <span>Telegram-канал</span>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 Надежда Литвинова. Все права защищены.</p>
-                <p><a href="privacy.html">Политика конфиденциальности</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="blog.html">Блог</a>
+                <a href="#contact">Контакты</a>
             </div>
+            <p class="footer-copy">© 2026 Надежда Литвинова. Все права защищены.</p>
         </div>
     </footer>
-
-    <script src="scripts.js" defer></script>
-
-    <!-- FAQ Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Сколько длится одна сессия?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Одна сессия длится 50–60 минут. Для EMDR и Интегративный подход иногда требуются более длительные сессии (до 90 минут) — это обсуждается индивидуально."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Сколько сессий обычно нужно?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Для решения конкретной проблемы часто достаточно 5–10 сессий. Сложные случаи могут требовать более длительной работы. Мы обсудим ориентировочный план на первой встрече."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Что лучше — очно или онлайн?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Оба формата эффективны. EMDR и Интегративный подход успешно проводятся онлайн. Онлайн-формат позволяет работать из любой точки мира."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Как подготовиться к первой сессии?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Никакой специальной подготовки не требуется. Просто приходите с вашим запросом. На первой встрече мы познакомимся и определим оптимальный подход."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Есть ли противопоказания к EMDR?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "EMDR не рекомендуется при активной психотической симптоматике, некоторых неврологических состояниях и злоупотреблении психоактивными веществами. На первой консультации мы обсудим, подходит ли вам метод."
-                }
-            }
-        ]
-    }
-    </script>
-</main>
-
-    <!-- Telegram Chat Widget -->
-    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion="nadezhda_litvinova_coach" data-comments-limit="5" data-color="343638" data-dark-color="F0F0F0"></script>
-    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener" class="telegram-float" aria-label="Написать в Telegram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 4.5L2.5 12.5L9.5 14.5L12.5 21.5L21.5 4.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14.5L12.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-
-
-    <!-- Yandex Organization Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Надежда Литвинова — психолог",
-        "url": "https://b8k13mus.github.io/litvinova-site/",
-        "logo": "https://b8k13mus.github.io/litvinova-site/images/og-image.jpg",
-        "description": "Психолог, специалист по EMDR и Интегративный подход. Помогаю справиться с тревогой, травмой, стрессом. Онлайн.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "",
-            "addressCountry": "RU"
-        },
-        "contactPoint": [
-            {
-                "@type": "ContactPoint",
-                "telephone": "+7-904-348-13-35",
-                "contactType": "customer service",
-                "availableLanguage": ["Russian"]
-            }
-        ],
-        "sameAs": [
-            "https://t.me/nadezhda_litvinova_coach",
-            "https://t.me/uspeh_prosto"
-        ]
-    }
-    </script>
-
 </body>
 </html>

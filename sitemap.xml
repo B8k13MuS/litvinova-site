@@ -7,39 +7,39 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://b8k13mus.github.io/litvinova-site/about.html</loc>
-        <lastmod>2026-06-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://b8k13mus.github.io/litvinova-site/methods.html</loc>
-        <lastmod>2026-06-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://b8k13mus.github.io/litvinova-site/services.html</loc>
-        <lastmod>2026-06-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://b8k13mus.github.io/litvinova-site/blog.html</loc>
         <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://b8k13mus.github.io/litvinova-site/contacts.html</loc>
-        <lastmod>2026-06-26</lastmod>
-        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://b8k13mus.github.io/litvinova-site/privacy.html</loc>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/emdr-trauma.html</loc>
         <lastmod>2026-06-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/emotional-burnout.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/anxiety-signs.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/choose-psychologist.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://b8k13mus.github.io/litvinova-site/blog/mmil-diagnosis.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

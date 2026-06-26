@@ -3,146 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Что такое EMDR (ДПДГ) — метод десенсибилизации и переработки движением глаз. Как помогает при травме, ПТСР, панических атаках. Онлайн-EMDR.">
-    <meta name="keywords" content="EMDR, ДПДГ, травма, ПТСР, панические атаки, онлайн EMDR, психолог, Надежда Литвинова">
-    <meta name="yandex-verification" content="94cb1003e6ae7f19" />
-    <title>Что такое EMDR и как он помогает при травме | Надежда Литвинова</title>
+    <title>Что такое EMDR и как он помогает при травме — Надежда Литвинова</title>
+    <meta name="description" content="EMDR — эффективный метод работы с травмой и ПТСР. Узнайте, как проходит терапия, кому она подходит и что говорят исследования.">
+    <meta name="keywords" content="EMDR, травма, ПТСР, психотерапия, десенсибилизация, Надежда Литвинова">
     <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/blog/emdr-trauma.html">
     <style>
-        :root {
-            --color-cream: #FAF7F2;
-            --color-navy: #1E3A5F;
-            --color-gold: #C9A96E;
-            --color-gold-light: #D4B87A;
-            --color-text: #2C3E50;
-            --color-text-light: #5D6D7E;
-            --font-heading: 'Georgia', serif;
-            --font-body: 'Segoe UI', system-ui, sans-serif;
-        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background: var(--color-cream); color: var(--color-text); line-height: 1.7; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        header { background: var(--color-navy); padding: 20px 0; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: var(--font-heading); color: white; font-size: 1.3rem; text-decoration: none; }
-        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 24px; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--color-gold); }
-        .article-header { padding: 60px 0 40px; text-align: center; }
-        .article-header h1 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--color-navy); margin-bottom: 16px; }
-        .article-meta { color: var(--color-text-light); font-size: 0.9rem; }
-        .article-content { padding-bottom: 60px; }
-        .article-content h2 { font-family: var(--font-heading); color: var(--color-navy); font-size: 1.5rem; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--color-gold); }
-        .article-content h3 { color: var(--color-navy); font-size: 1.2rem; margin: 24px 0 12px; }
-        .article-content p { margin-bottom: 16px; color: var(--color-text); }
-        .article-content ul { margin: 16px 0 16px 24px; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #F5F0E8;
+            color: #1A2B4A;
+            line-height: 1.8;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(26,43,74,0.3);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: #C9A96E; }
+        .logo span { color: #F5F0E8; font-weight: normal; font-size: 0.9rem; display: block; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #F5F0E8; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: #C9A96E; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: #C9A96E; font-size: 1.5rem; cursor: pointer; }
+
+        .article-header {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 50px 0 40px;
+            text-align: center;
+        }
+        .article-header h1 { font-size: 2rem; margin-bottom: 15px; line-height: 1.3; }
+        .article-meta { opacity: 0.8; font-size: 0.9rem; }
+        .article-meta .tag {
+            display: inline-block;
+            background: rgba(201,169,110,0.2);
+            color: #C9A96E;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0 5px;
+            border: 1px solid rgba(201,169,110,0.3);
+        }
+
+        .article-content {
+            background: #FAF8F4;
+            padding: 50px 40px;
+            margin: 30px auto;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+        .article-content h2 {
+            color: #1A2B4A;
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #C9A96E;
+        }
+        .article-content h3 {
+            color: #1A2B4A;
+            font-size: 1.2rem;
+            margin: 25px 0 10px;
+        }
+        .article-content p { margin-bottom: 15px; font-size: 1.05rem; }
+        .article-content ul, .article-content ol {
+            margin: 15px 0 15px 25px;
+        }
         .article-content li { margin-bottom: 8px; }
-        .article-content strong { color: var(--color-navy); }
-        .highlight-box { background: rgba(201, 169, 110, 0.1); border-left: 4px solid var(--color-gold); padding: 20px 24px; margin: 24px 0; border-radius: 0 8px 8px 0; }
-        .cta-box { background: var(--color-navy); color: white; padding: 40px; border-radius: 16px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { color: var(--color-gold-light); font-family: var(--font-heading); margin-bottom: 16px; }
-        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 24px; }
-        .btn { display: inline-block; padding: 14px 32px; background: var(--color-gold); color: var(--color-navy); text-decoration: none; border-radius: 8px; font-weight: 600; }
-        .btn:hover { background: var(--color-gold-light); }
-        footer { background: var(--color-navy); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 0.9rem; }
+        .article-content blockquote {
+            border-left: 4px solid #C9A96E;
+            padding: 15px 20px;
+            margin: 20px 0;
+            background: rgba(201,169,110,0.1);
+            font-style: italic;
+        }
+
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .article-nav a {
+            color: #C9A96E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .article-nav a:hover { text-decoration: underline; }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-box h3 { color: #C9A96E; margin-bottom: 15px; }
+        .cta-box a {
+            display: inline-block;
+            background: #C9A96E;
+            color: #1A2B4A;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #1A2B4A;
+            color: #F5F0E8;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .footer-links a { color: #C9A96E; text-decoration: none; }
+        .footer-copy { opacity: 0.6; font-size: 0.9rem; }
+
         @media (max-width: 768px) {
-            .article-header h1 { font-size: 1.6rem; }
-            .article-content h2 { font-size: 1.3rem; }
+            .mobile-menu-btn { display: block; }
+            nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #1A2B4A; padding: 20px; }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 15px; }
+            .article-header h1 { font-size: 1.5rem; }
+            .article-content { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="../index.html" class="logo">🌿 Надежда Литвинова</a>
-            <nav class="nav-links">
-                <a href="../index.html">Главная</a>
-                <a href="../about.html">Обо мне</a>
-                <a href="../services.html">Услуги</a>
-                <a href="../contacts.html">Контакты</a>
+        <div class="container header-inner">
+            <div class="logo">
+                Надежда Литвинова
+                <span>Психолог · EMDR · Brainspotting</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#about">Обо мне</a></li>
+                    <li><a href="../index.html#methods">Методы</a></li>
+                    <li><a href="../blog.html">Блог</a></li>
+                    <li><a href="../index.html#contact">Контакты</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <div class="article-header">
+    <div class="article-header">
+        <div class="container">
             <h1>Что такое EMDR и как он помогает при травме</h1>
-            <div class="article-meta">26 июня 2026 · Чтение 7 минут</div>
+            <div class="article-meta">
+                <span>Надежда Литвинова</span> · <span>26 июня 2026</span><br><br>
+                <span class="tag">EMDR</span><span class="tag">Травма</span><span class="tag">ПТСР</span>
+            </div>
         </div>
+    </div>
 
-        <article class="article-content">
-            <p><strong>EMDR</strong> (Eye Movement Desensitization and Reprocessing) — или по-русски <strong>ДПДГ</strong> (Десенсибилизация и Переработка Движением Глаз) — это доказательный метод психологии, который помогает мозгу «перезаписать» травматические воспоминания.</p>
+    <div class="article-content">
+        
+<p>EMDR (Eye Movement Desensitization and Reprocessing) — десенсибилизация и переработка движением глаз — это структурированный метод психотерапии, разработанный американской психологом Франсин Шапиро в 1987 году. Сегодня EMDR признан одним из наиболее эффективных методов работы с посттравматическим стрессовым расстройством (ПТСР) и другими травматическими переживаниями.</p>
 
-            <h2>Как работает EMDR</h2>
-            <p>Когда человек переживает травму, воспоминание «застревает» в мозге в необработанном виде. Оно может всплывать в виде:</p>
-            <ul>
-                <li>навязчивых образов и мыслей</li>
-                <li>панических атак</li>
-                <li>физических реакций (сердцебиение, потливость)</li>
-                <li>избегания ситуаций, связанных с травмой</li>
-            </ul>
-            <p>EMDR помогает мозгу <strong>переработать</strong> это воспоминание — не забыть его, а сделать менее болезненным. Процесс похож на то, как мозг обрабатывает информацию во время быстрого сна (фазы REM).</p>
+<h2>Как работает EMDR?</h2>
+<p>Основа метода — двусторонняя стимуляция мозга через ритмичные движения глаз (или другие формы стимуляции: тактильные, звуковые). Во время сессии клиент вспоминает травматическое событие, одновременно следяя движениями глаз за пальцами терапевта или световой точкой.</p>
 
-            <h2>Что происходит на сессии</h2>
-            <ol>
-                <li><strong>Подготовка</strong> — специалист объясняет процесс, настраивает безопасное состояние</li>
-                <li><strong>Активация</strong> — вы вспоминаете травматическое событие</li>
-                <li><strong>Билатеральная стимуляция (БЛС)</strong> — попеременная стимуляция правого и левого полушарий мозга, которая запускает естественный механизм переработки «застрявшего» травматического опыта, имитируя активность мозга в фазе быстрого сна. Используются визуальные, аудиальные и тактильные приёмы.</li>
-                <li><strong>Переработка</strong> — мозг сам «перемещается» между воспоминаниями, связывая их с положительным опытом</li>
-                <li><strong>Закрепление</strong> — фиксируем новое, менее тревожное восприятие</li>
-            </ol>
+<p>Этот процесс активирует естественный механизм переработки информации мозгом, аналогичный тому, что происходит во время фазы быстрого сна (REM). В результате болезненные воспоминания теряют свою эмоциональную остроту и интегрируются в общую картину жизненного опыта.</p>
 
-            <h2>Когда помогает EMDR</h2>
-            <div class="highlight-box">
-                <ul>
-                    <li>ПТСР (посттравматическое стрессовое расстройство)</li>
-                    <li>Панические атаки</li>
-                    <li>Фобии</li>
-                    <li>Тревожность</li>
-                    <li>Потеря близкого человека</li>
-                    <li>Детские травмы</li>
-                    <li>Выгорание</li>
-                </ul>
-            </div>
+<h2>8 фаз протокола EMDR</h2>
+<ol>
+    <li><strong>Сбор анамнеза</strong> — изучение истории клиента, определение подходящих целей для работы.</li>
+    <li><strong>Подготовка</strong> — объяснение метода, установление доверительных отношений, обучение техникам саморегуляции.</li>
+    <li><strong>Оценка</strong> — выделение целевого воспоминания, негативных убеждений, эмоций и телесных ощущений.</li>
+    <li><strong>Десенсибилизация</strong> — основная фаза с двусторонней стимуляцией для снижения напряжённости.</li>
+    <li><strong>Установка</strong> — формирование позитивных убеждений, заменяющих негативные.</li>
+    <li><strong>Проверка тела</strong> — выявление и обработка остаточных телесных напряжений.</li>
+    <li><strong>Завершение</strong> — возвращение клиента в спокойное состояние, инструкции для периода между сессиями.</li>
+    <li><strong>Пересмотр</strong> — оценка результатов на следующей сессии.</li>
+</ol>
 
-            <h2>Почему EMDR — не гипноз</h2>
-            <p>Многие боятся, что во время EMDR их «загипнотизируют». Это <strong>не так</strong>:</p>
-            <ul>
-                <li>Вы полностью в сознании и контролируете процесс</li>
-                <li>Можете остановить сессию в любой момент</li>
-                <li>Специалист не внушает вам мысли — мозг работает сам</li>
-            </ul>
+<h2>Кому подходит EMDR?</h2>
+<p>EMDR эффективен при работе с:</p>
+<ul>
+    <li>Посттравматическим стрессовым расстройством (ПТСР)</li>
+    <li>Тревожными расстройствами и паническими атаками</li>
+    <li>Фобиями</li>
+    <li>Депрессивными состояниями, связанными с травмой</li>
+    <li>Сложным горем</li>
+    <li>Низкой самооценкой, корни которой уходят в детство</li>
+</ul>
 
-            <h2>Сколько нужно сессий</h2>
-            <p>Количество зависит от сложности травмы:</p>
-            <ul>
-                <li><strong>Однократная травма</strong> (авария, нападение) — 3-6 сессий</li>
-                <li><strong>Сложная травма</strong> (детство, насилие) — 8-15 сессий</li>
-                <li><strong>ПТСР</strong> — от 12 сессий</li>
-            </ul>
+<h2>Что говорят исследования?</h2>
+<p>Многочисленные исследования подтверждают эффективность EMDR. По данным ВОЗ, EMDR входит в список рекомендуемых методов лечения ПТСР. Мета-анализы показывают, что EMDR не уступает по эффективности когнитивно-поведенческой терапии, а в некоторых случаях даёт более быстрые результаты.</p>
 
-            <h2>EMDR онлайн — работает ли</h2>
-            <p>Да. Билатеральная стимуляция успешно проводится онлайн через специальные платформы с визуальной, аудиальной и тактильной стимуляцией. Исследования показывают, что онлайн-EMDR <strong>не уступает</strong> очному по эффективности.</p>
+<blockquote>
+"EMDR помогает мозгу делать то, что он умеет делать естественным образом — исцелять себя. Мы просто ускоряем этот процесс." — Франсин Шапиро
+</blockquote>
 
-            <h2>Когда EMDR не подходит</h2>
-            <ul>
-                <li>Необработанная шизофрения</li>
-                <li>Активная наркозависимость</li>
-                <li>Неспособность выдержать эмоциональную нагрузку (в этом случае сначала стабилизируем состояние)</li>
-            </ul>
+<h2>Частые вопросы</h2>
+<h3>Болезненно ли вспоминать травму?</h3>
+<p>На начальных этапах сессии может быть некоторое напряжение, но терапевт постоянно контролирует процесс и помогает клиенту оставаться в ресурсном состоянии. С каждым циклом стимуляции напряжённость снижается.</p>
 
-            <div class="cta-box">
-                <h3>Хотите узнать, подходит ли вам EMDR?</h3>
-                <p>Запишитесь на первичную диагностику. Определим запрос, подберём метод и составим план работы.</p>
-                <a href="../contacts.html" class="btn">Записаться на консультацию</a>
-            </div>
+<h3>Сколько сессий нужно?</h3>
+<p>Для простых случаев — от 3 до 6 сессий. Сложные травмы могут потребовать 10–15 сессий. Точное количество определяется индивидуально.</p>
 
-            <p><em>Статья подготовлена психологом Надеждой Литвиновой. Для получения консультации напишите в Telegram <a href="https://t.me/nadezhda_litvinova_coach">@nadezhda_litvinova_coach</a> или заполните форму на сайте.</em></p>
-        </article>
-    </main>
+<h3>Можно ли делать EMDR онлайн?</h3>
+<p>Да, EMDR успешно адаптирован для онлайн-формата. Используются специальные программы для двусторонней стимуляции через экран.</p>
+
+
+        <div class="cta-box">
+            <h3>Нужна помощь?</h3>
+            <p>Если вы узнали себя в описании — не откладывайте. Запишитесь на консультацию, и мы вместе найдём выход.</p>
+            <a href="https://t.me/nadezhda_litvinova_coach" target="_blank">Написать в Telegram</a>
+        </div>
+    </div>
+
+    <div class="article-nav">
+        <a href="../blog.html">← Все статьи</a>
+        <a href="../index.html#contact">Контакты →</a>
+    </div>
 
     <footer>
         <div class="container">
-            <p>© 2026 Надежда Литвинова · Психолог · Онлайн по всему миру</p>
+            <div class="footer-links">
+                <a href="../index.html">Главная</a>
+                <a href="../blog.html">Блог</a>
+                <a href="../index.html#contact">Контакты</a>
+            </div>
+            <p class="footer-copy">© 2026 Надежда Литвинова. Все права защищены.</p>
         </div>
     </footer>
 </body>

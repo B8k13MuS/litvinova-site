@@ -3,136 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Что такое ММИЛ — метод многоуровневого исследования личности. Как проводится диагностика, зачем нужна перед терапией, что показывает. Надежда Литвинова.">
-    <meta name="keywords" content="ММИЛ, метод многоуровневого исследования личности, диагностика психолога, психолог онлайн, Надежда Литвинова">
-    <meta name="yandex-verification" content="94cb1003e6ae7f19" />
-    <title>Что такое ММИЛ: диагностика перед работой | Надежда Литвинова</title>
+    <title>Что такое ММИЛ: метод исследования через метафоры — Надежда Литвинова</title>
+    <meta name="description" content="Как метафорические ассоциативные карты помогают заглянуть в бессознательное и найти новые решения.">
+    <meta name="keywords" content="ММИЛ, метафорические карты, метафорические ассоциативные карты, психология, Надежда Литвинова">
+    <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/blog/mmil-diagnosis.html">
     <style>
-        :root { --color-cream: #FAF7F2; --color-navy: #1E3A5F; --color-gold: #C9A96E; --color-gold-light: #D4B87A; --color-text: #2C3E50; --color-text-light: #5D6D7E; --font-heading: 'Georgia', serif; --font-body: 'Segoe UI', system-ui, sans-serif; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background: var(--color-cream); color: var(--color-text); line-height: 1.7; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        header { background: var(--color-navy); padding: 20px 0; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: var(--font-heading); color: white; font-size: 1.3rem; text-decoration: none; }
-        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 24px; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--color-gold); }
-        .article-header { padding: 60px 0 40px; text-align: center; }
-        .article-header h1 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--color-navy); margin-bottom: 16px; }
-        .article-meta { color: var(--color-text-light); font-size: 0.9rem; }
-        .article-content { padding-bottom: 60px; }
-        .article-content h2 { font-family: var(--font-heading); color: var(--color-navy); font-size: 1.5rem; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--color-gold); }
-        .article-content h3 { color: var(--color-navy); font-size: 1.2rem; margin: 24px 0 12px; }
-        .article-content p { margin-bottom: 16px; color: var(--color-text); }
-        .article-content ul { margin: 16px 0 16px 24px; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #F5F0E8;
+            color: #1A2B4A;
+            line-height: 1.8;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(26,43,74,0.3);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: #C9A96E; }
+        .logo span { color: #F5F0E8; font-weight: normal; font-size: 0.9rem; display: block; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #F5F0E8; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: #C9A96E; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: #C9A96E; font-size: 1.5rem; cursor: pointer; }
+
+        .article-header {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 50px 0 40px;
+            text-align: center;
+        }
+        .article-header h1 { font-size: 2rem; margin-bottom: 15px; line-height: 1.3; }
+        .article-meta { opacity: 0.8; font-size: 0.9rem; }
+        .article-meta .tag {
+            display: inline-block;
+            background: rgba(201,169,110,0.2);
+            color: #C9A96E;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0 5px;
+            border: 1px solid rgba(201,169,110,0.3);
+        }
+
+        .article-content {
+            background: #FAF8F4;
+            padding: 50px 40px;
+            margin: 30px auto;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+        .article-content h2 {
+            color: #1A2B4A;
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #C9A96E;
+        }
+        .article-content h3 {
+            color: #1A2B4A;
+            font-size: 1.2rem;
+            margin: 25px 0 10px;
+        }
+        .article-content p { margin-bottom: 15px; font-size: 1.05rem; }
+        .article-content ul, .article-content ol {
+            margin: 15px 0 15px 25px;
+        }
         .article-content li { margin-bottom: 8px; }
-        .article-content strong { color: var(--color-navy); }
-        .highlight-box { background: rgba(201, 169, 110, 0.1); border-left: 4px solid var(--color-gold); padding: 20px 24px; margin: 24px 0; border-radius: 0 8px 8px 0; }
-        .cta-box { background: var(--color-navy); color: white; padding: 40px; border-radius: 16px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { color: var(--color-gold-light); font-family: var(--font-heading); margin-bottom: 16px; }
-        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 24px; }
-        .btn { display: inline-block; padding: 14px 32px; background: var(--color-gold); color: var(--color-navy); text-decoration: none; border-radius: 8px; font-weight: 600; }
-        footer { background: var(--color-navy); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 0.9rem; }
-        @media (max-width: 768px) { .article-header h1 { font-size: 1.6rem; } .article-content h2 { font-size: 1.3rem; } }
+        .article-content blockquote {
+            border-left: 4px solid #C9A96E;
+            padding: 15px 20px;
+            margin: 20px 0;
+            background: rgba(201,169,110,0.1);
+            font-style: italic;
+        }
+
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .article-nav a {
+            color: #C9A96E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .article-nav a:hover { text-decoration: underline; }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
+            color: #F5F0E8;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-box h3 { color: #C9A96E; margin-bottom: 15px; }
+        .cta-box a {
+            display: inline-block;
+            background: #C9A96E;
+            color: #1A2B4A;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #1A2B4A;
+            color: #F5F0E8;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .footer-links a { color: #C9A96E; text-decoration: none; }
+        .footer-copy { opacity: 0.6; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #1A2B4A; padding: 20px; }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 15px; }
+            .article-header h1 { font-size: 1.5rem; }
+            .article-content { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="../index.html" class="logo">🌿 Надежда Литвинова</a>
-            <nav class="nav-links">
-                <a href="../index.html">Главная</a>
-                <a href="../about.html">Обо мне</a>
-                <a href="../methods.html">Методы</a>
-                <a href="../services.html">Услуги</a>
-                <a href="../blog.html">Блог</a>
-                <a href="../contacts.html">Контакты</a>
+        <div class="container header-inner">
+            <div class="logo">
+                Надежда Литвинова
+                <span>Психолог · EMDR · Brainspotting</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#about">Обо мне</a></li>
+                    <li><a href="../index.html#methods">Методы</a></li>
+                    <li><a href="../blog.html">Блог</a></li>
+                    <li><a href="../index.html#contact">Контакты</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <div class="article-header">
-            <h1>Что такое ММИЛ: диагностика перед работой</h1>
-            <div class="article-meta">26 июня 2026 · Чтение 5 минут</div>
+    <div class="article-header">
+        <div class="container">
+            <h1>Что такое ММИЛ: метод исследования через метафоры</h1>
+            <div class="article-meta">
+                <span>Надежда Литвинова</span> · <span>26 июня 2026</span><br><br>
+                <span class="tag">ММИЛ</span><span class="tag">Метафорические карты</span><span class="tag">Самопознание</span>
+            </div>
         </div>
+    </div>
 
-        <article class="article-content">
-            <p><strong>ММИЛ</strong> (Метод Многоуровневого Исследования Личности) — это профессиональная диагностика, которая помогает увидеть «карту» вашей психики.</p>
+    <div class="article-content">
+        
+<p>ММИЛ (Метафорические ассоциативные карты) — это метод психологической работы, основанный на использовании изображений для исследования внутреннего мира человека. Карты помогают обойти защитные механизмы разума и обратиться напрямую к бессознательному.</p>
 
-            <h2>Зачем нужна диагностика перед терапией</h2>
-            <p>Представьте, что вы пришли к врачу с болью в животе. Врач не назначает лечение сразу — сначала узнаёт симптомы, делает анализы, ставит диагноз. Только потом — лечение.</p>
-            <p>С психикой то же самое. Прежде чем начать работу, нужно понять:</p>
-            <ul>
-                <li>на каком уровне «застряла» проблема</li>
-                <li>какие внутренние ресурсы есть у человека</li>
-                <li>какой метод будет наиболее эффективен</li>
-                <li>готов ли человек к работе</li>
-            </ul>
+<h2>Что такое метафорические карты?</h2>
+<p>Метафорические карты — это наборы изображений (фотографии, рисунки, абстрактные картинки), которые не имеют однозначного значения. Человек проецирует на них свой внутренний опыт, чувства, конфликты и ресурсы.</p>
 
-            <h2>Какие уровни исследует ММИЛ</h2>
-            <p>Метод работает с 7 уровнями психики:</p>
-            <ol>
-                <li><strong>Поведенческий</strong> — что вы делаете, какие привычки</li>
-                <li><strong>Ситуационный</strong> — в каких ситуациях проблема проявляется</li>
-                <li><strong>Эмоциональный</strong> — какие чувства связаны с запросом</li>
-                <li><strong>Когнитивный</strong> — какие мысли и убеждения поддерживают проблему</li>
-                <li><strong>Телесный</strong> — где в теле «застыла» тревога</li>
-                <li><strong>Образный</strong> — внутренние образы, метафоры, сны</li>
-                <li><strong>Глубинный</strong> — смыслы, ценности, жизненная позиция</li>
-            </ol>
+<p>Ключевой принцип: <strong>карта не говорит сама за себя</strong> — она отражает то, что видит в ней конкретный человек в конкретный момент. Одна и та же карта может вызвать совершенно разные ассоциации у разных людей.</p>
 
-            <h2>Как проходит диагностика ММИЛ</h2>
-            <p>Процесс занимает одну встречу (60-90 минут):</p>
-            <ol>
-                <li><strong>Сбор анамнеза</strong> — обсуждаем запрос, историю, текущее состояние</li>
-                <li><strong>Тестирование</strong> — специальная методика, показывающая работу всех 7 уровней</li>
-                <li><strong>Анализ результатов</strong> — строим «карту» личности</li>
-                <li><strong>Обратная связь</strong> — обсуждаем результаты, определяем готовность к работе</li>
-                <li><strong>План работы</strong> — если диагностика показывает, что работа возможна, составляем план</li>
-            </ol>
+<h2>Как работает метод?</h2>
 
-            <h2>Что показывает ММИЛ</h2>
-            <div class="highlight-box">
-                <ul>
-                    <li><strong>Корень проблемы</strong> — не симптом, а источник</li>
-                    <li><strong>Внутренние конфликты</strong> — когда разные части личности «тянут» в разные стороны</li>
-                    <li><strong>Ресурсы</strong> — что уже работает хорошо</li>
-                    <li><strong>Блоки</strong> — что мешает движению вперёд</li>
-                    <li><strong>Прогноз</strong> — насколько реально решить запрос</li>
-                </ul>
-            </div>
+<h3>Исследовательский подход</h3>
+<p>Клиент выбирает карты, которые его привлекают или отталкивают, и рассказывает, что он видит в них. Психолог задаёт наводящие вопросы, помогая углубиться в метафору:</p>
+<ul>
+    <li>«Что происходит на этой карте?»</li>
+    <li>«Какие чувства вызывает это изображение?»</li>
+    <li>«Если бы это была ситуация из вашей жизни — что бы это было?»</li>
+    <li>«Что бы вы хотели изменить на этой карте?»</li>
+</ul>
 
-            <h2>ММИЛ — это не терапия</h2>
-            <p>ММИЛ — это <strong>диагностика</strong>, а не проработка. Она не решает проблему, но даёт чёткое понимание:</p>
-            <ul>
-                <li>стоит ли начинать работу</li>
-                <li>какой метод выбрать</li>
-                <li>сколько примерно потребуется сессий</li>
-            </ul>
+<h3>Диагностический подход</h3>
+<p>Карты помогают выявить:</p>
+<ul>
+    <li>Скрытые конфликты и противоречия</li>
+    <li>Неосознанные ресурсы и сильные стороны</li>
+    <li>Барьеры и ограничивающие убеждения</li>
+    <li>Эмоциональные блоки</li>
+    <li>Жизненные сценарии и паттерны поведения</li>
+</ul>
 
-            <h2>Когда ММИЛ не подходит</h2>
-            <p>Диагностика может показать, что сейчас не время для терапии:</p>
-            <ul>
-                <li>активная психотическая симптоматика</li>
-                <li>острое суицидальное состояние</li>
-                <li>тяжёлая зависимость без мотивации</li>
-            </ul>
-            <p>В таких случаях специалист направит к психиатру или в стационар.</p>
+<h2>Сферы применения ММИЛ</h2>
 
-            <div class="cta-box">
-                <h3>Хотите пройти диагностику ММИЛ?</h3>
-                <p>Запишитесь на первую встречу — разберёмся в запросе, определим, подходит ли вам работа, и составим план.</p>
-                <a href="../contacts.html" class="btn">Записаться на диагностику</a>
-            </div>
+<h3>1. Личностный рост</h3>
+<p>Карты помогают лучше понять себя: свои желания, страхи, ценности, жизненные сценарии. Это инструмент самопознания и рефлексии.</p>
 
-            <p><em>Статья подготовлена психологом Надеждой Литвиновой. Telegram: <a href="https://t.me/nadezhda_litvinova_coach">@nadezhda_litvinova_coach</a></em></p>
-        </article>
-    </main>
+<h3>2. Работа с отношениями</h3>
+<p>С помощью карт можно исследовать динамику отношений: роли, ожидания, конфликты, неудовлетворённые потребности. Особенно эффективно в парной и семейной работе.</p>
+
+<h3>3. Разрешение внутренних конфликтов</h3>
+<p>Когда человек «застрял» между двумя противоречивыми желаниями или решениями, карты помогают визуализировать конфликт и найти новые варианты.</p>
+
+<h3>4. Работа с травмой</h3>
+<p>Карты позволяют обращаться к травматическому опыту на безопасной дистанции, через метафору. Это снижает риск ре-травматизации.</p>
+
+<h3>5. Профессиональное развитие</h3>
+<p>Карты используются для выявления профессиональных ценностей, определения направления развития, разрешения конфликтов в команде.</p>
+
+<h2>Преимущества метода</h2>
+<ul>
+    <li><strong>Безопасность</strong> — работа идёт через метафору, что снижает защитные реакции</li>
+    <li><strong>Доступность</strong> — не требует специальной подготовки клиента</li>
+    <li><strong>Универсальность</strong> — подходит для взрослых, подростков, детей</li>
+    <li><strong>Наглядность</strong> — визуальный образ легче запоминается и перерабатывается</li>
+    <li><strong>Творческий подход</strong> — активизирует воображение и интуицию</li>
+</ul>
+
+<h2>ММИЛ и другие методы</h2>
+<p>ММИЛ часто используется в сочетании с другими подходами:</p>
+<ul>
+    <li>С <strong>EMDR</strong> — для подготовки к работе с травмой или для интеграции опыта</li>
+    <li>С <strong>КПТ</strong> — для выявления автоматических мыслей и убеждений</li>
+    <li>С <strong>гештальт-терапией</strong> — для работы с незавершёнными ситуациями</li>
+    <li>С <strong>арт-терапией</strong> — для углубления творческого процесса</li>
+</ul>
+
+<blockquote>
+"Метафорические карты — это зеркало, в котором человек видит отражение своего внутреннего мира. И это отражение всегда уникально."
+</blockquote>
+
+
+        <div class="cta-box">
+            <h3>Нужна помощь?</h3>
+            <p>Если вы узнали себя в описании — не откладывайте. Запишитесь на консультацию, и мы вместе найдём выход.</p>
+            <a href="https://t.me/nadezhda_litvinova_coach" target="_blank">Написать в Telegram</a>
+        </div>
+    </div>
+
+    <div class="article-nav">
+        <a href="../blog.html">← Все статьи</a>
+        <a href="../index.html#contact">Контакты →</a>
+    </div>
 
     <footer>
         <div class="container">
-            <p>© 2026 Надежда Литвинова · Психолог · Онлайн по всему миру</p>
+            <div class="footer-links">
+                <a href="../index.html">Главная</a>
+                <a href="../blog.html">Блог</a>
+                <a href="../index.html#contact">Контакты</a>
+            </div>
+            <p class="footer-copy">© 2026 Надежда Литвинова. Все права защищены.</p>
         </div>
     </footer>
 </body>
