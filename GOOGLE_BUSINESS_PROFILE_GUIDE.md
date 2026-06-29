@@ -1,4 +1,4 @@
-# Инструкция: Google Business Profile для психолога
+﻿# Инструкция: Google Business Profile для психолога
 
 ## Зачем нужен Google Business Profile?
 
@@ -23,7 +23,7 @@
 
 | Поле | Что указать |
 |------|-------------|
-| Телефон | +7 (904) 348-13-35 |
+| Телефон | +7 (918) 505-57-15 |
 | Сайт | https://b8k13mus.github.io/litvinova-site/ |
 | Email | denas111222@gmail.com |
 | Часы работы | Укажите реальные часы приёма |
