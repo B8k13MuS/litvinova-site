@@ -20,11 +20,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://formspree.io;">
+  <!-- ===== SECURITY HEADERS ===== -->
+  <!-- Content Security Policy: strict resource loading rules -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://formspree.io/f/xzdlvqyb; upgrade-insecure-requests; block-all-mixed-content;">
+  <!-- Prevent MIME type sniffing -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <!-- Prevent clickjacking -->
   <meta http-equiv="X-Frame-Options" content="DENY">
+  <!-- Control referrer information -->
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  <!-- Restrict browser features -->
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()">
+  <!-- DNS prefetch control -->
+  <meta http-equiv="X-DNS-Prefetch-Control" content="off">
+  <!-- Disable IE compatibility mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- HSTS preload (via meta for static sites) -->
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <!-- Cache control for dynamic content -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <style>
     :root{--bg-primary:#0A0A0A;--bg-secondary:#111111;--bg-card:#141414;--bg-card-hover:#1A1A1A;--bg-elevated:#1C1C1C;--gold:#C9A96E;--gold-light:#D4AF37;--gold-dark:#A68B4B;--gold-glow:rgba(201,169,110,0.15);--gold-glow-strong:rgba(201,169,110,0.3);--text-primary:#FFFFFF;--text-secondary:rgba(255,255,255,0.65);--text-muted:rgba(255,255,255,0.4);--text-dim:rgba(255,255,255,0.2);--border:rgba(255,255,255,0.06);--border-gold:rgba(201,169,110,0.25);--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--radius:16px;--radius-xl:24px;--radius-sm:10px;--shadow:0 4px 32px rgba(0,0,0,0.4);--shadow-gold:0 0 40px rgba(201,169,110,0.12);--trans:0.35s cubic-bezier(0.4,0,0.2,1);--container:1200px;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -201,6 +217,8 @@
   </script>
 </head>
 <body>
+  <!-- Anti-clickjacking protection -->
+  <script>(function(){if(window.top!==window.self){window.top.location=window.self.location;}})();</script>
 
   <header id="header" role="banner">
     <div class="header-inner">
@@ -324,10 +342,14 @@
   <section class="section" aria-labelledby="form-heading">
     <div class="section-header reveal"><span class="eyebrow">Контакт</span><h2 id="form-heading">Задать вопрос</h2><p>Напишите — отвечу в течение 24 часов</p></div>
     <div class="form-wrap">
-      <form class="form reveal" action="https://formspree.io/f/xzdlvqyb" method="POST" novalidate>
-        <div class="form-row"><label for="name">Ваше имя</label><input type="text" id="name" name="name" required placeholder="Как к вам обращаться" autocomplete="name"></div>
-        <div class="form-row"><label for="contact-input">Telegram или Email</label><input type="text" id="contact-input" name="contact" required placeholder="@username или email" autocomplete="email"></div>
-        <div class="form-row"><label for="message">Ваш вопрос</label><textarea id="message" name="message" rows="4" required placeholder="О чём хотите поговорить?"></textarea></div>
+      <form class="form reveal" action="https://formspree.io/f/xzdlvqyb" method="POST" novalidate autocomplete="off">
+        <!-- Honeypot field: hidden from humans, traps bots -->
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-row"><label for="name">Ваше имя</label><input type="text" id="name" name="name" required placeholder="Как к вам обращаться" autocomplete="name" maxlength="100"></div>
+        <div class="form-row"><label for="contact-input">Telegram или Email</label><input type="text" id="contact-input" name="contact" required placeholder="@username или email" autocomplete="email" maxlength="200"></div>
+        <div class="form-row"><label for="message">Ваш вопрос</label><textarea id="message" name="message" rows="4" required placeholder="О чём хотите поговорить?" maxlength="2000"></textarea></div>
         <button type="submit" class="btn btn-lg form-submit"><span>Отправить сообщение</span></button>
         <p class="form-note">Данные конфиденциальны и не передаются третьим лицам</p>
       </form>
@@ -395,12 +417,25 @@
     });
     (function(){
       var form=document.querySelector(".form");
+      var lastSubmit=0;
+      var submitCount=0;
+      var blockUntil=0;
       if(form){
         form.addEventListener("submit",function(e){
+          var now=Date.now();
+          // Rate limiting: max 3 submissions per minute
+          if(now<blockUntil){e.preventDefault();alert("Слишком много попыток. Пожалуйста, подождите.");return;}
+          if(now-lastSubmit<20000){submitCount++;}else{submitCount=1;}
+          lastSubmit=now;
+          if(submitCount>3){blockUntil=now+60000;e.preventDefault();alert("Превышен лимит отправок. Попробуйте через минуту.");return;}
+          // Validation
           var inputs=form.querySelectorAll("input,textarea");
           var valid=true;
           inputs.forEach(function(input){
-            if(!input.value.trim()){valid=false;input.style.borderColor="#C9A96E";}else{input.style.borderColor="";}});
+            if(!input.value.trim()){valid=false;input.style.borderColor="#C9A96E";}else{input.style.borderColor="";}
+            // Sanitize: remove script tags and on* attributes
+            if(input.value.match(/<script|javascript:|on\w+\s*=/i)){valid=false;input.style.borderColor="#ff4444";}
+          });
           if(!valid){e.preventDefault();}
         });
       }
