@@ -2,8 +2,6 @@ backend:
   name: github
   repo: B8k13MuS/litvinova-site
   branch: main
-  base_url: https://sveltia-cms-auth.pages.dev
-  auth_endpoint: auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -13,72 +11,37 @@ locale: 'ru'
 publish_mode: simple
 
 collections:
-  - name: "index"
-    label: "Главная страница"
-    folder: "."
-    create: false
-    delete: false
-    extension: html
-    format: frontmatter
+  - name: "pages"
+    label: "Страницы сайта"
     files:
       - name: "index"
-        label: "Главная"
+        label: "Главная страница"
         file: "index.html"
         fields:
-          - { label: "Заголовок (title)", name: "title", widget: "string", default: "Надежда Литвинова — психолог · EMDR · Онлайн" }
+          - { label: "Заголовок (title)", name: "title", widget: "string" }
           - { label: "Meta описание", name: "description", widget: "text" }
-          - { label: "Телефон", name: "phone", widget: "string", default: "+7 (918) 505-57-15" }
-          - { label: "Email", name: "email", widget: "string", default: "denas111222@gmail.com" }
-          - { label: "Telegram", name: "telegram", widget: "string", default: "@nadezhda_litvinova_coach" }
 
-  - name: "about"
-    label: "Обо мне"
-    folder: "."
-    create: false
-    delete: false
-    extension: html
-    format: frontmatter
-    files:
       - name: "about"
-        label: "Страница Обо мне"
+        label: "Обо мне"
         file: "about.html"
         fields:
           - { label: "Заголовок", name: "title", widget: "string" }
-          - { label: "Имя", name: "name", widget: "string", default: "Надежда Литвинова" }
-          - { label: "Специализация", name: "specialization", widget: "string" }
-          - { label: "Биография", name: "bio", widget: "markdown" }
+          - { label: "Контент", name: "body", widget: "markdown" }
 
-  - name: "services"
-    label: "Услуги"
-    folder: "."
-    create: false
-    delete: false
-    extension: html
-    format: frontmatter
-    files:
       - name: "services"
-        label: "Страница Услуги"
+        label: "Услуги"
         file: "services.html"
         fields:
           - { label: "Заголовок", name: "title", widget: "string" }
-          - { label: "Описание", name: "description", widget: "markdown" }
+          - { label: "Контент", name: "body", widget: "markdown" }
 
-  - name: "contacts"
-    label: "Контакты"
-    folder: "."
-    create: false
-    delete: false
-    extension: html
-    format: frontmatter
-    files:
       - name: "contacts"
-        label: "Страница Контакты"
+        label: "Контакты"
         file: "contacts.html"
         fields:
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Telegram", name: "telegram", widget: "string" }
-          - { label: "Адрес", name: "address", widget: "string", required: false }
 
   - name: "blog"
     label: "Статьи блога"
@@ -90,9 +53,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Заголовок", name: "title", widget: "string" }
-      - { label: "Дата публикации", name: "date", widget: "datetime", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: "Дата публикации", name: "date", widget: "datetime" }
       - { label: "Meta описание (SEO)", name: "description", widget: "text" }
-      - { label: "Ключевые слова (через запятую)", name: "keywords", widget: "string", required: false }
       - { label: "Изображение", name: "image", widget: "image", required: false }
       - { label: "Теги", name: "tags", widget: "list", required: false }
       - { label: "Контент статьи", name: "body", widget: "markdown" }
@@ -106,6 +68,6 @@ collections:
     format: frontmatter
     fields:
       - { label: "Имя клиента", name: "name", widget: "string" }
-      - { label: "Дата", name: "date", widget: "datetime", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: "Дата", name: "date", widget: "datetime" }
       - { label: "Текст отзыва", name: "body", widget: "markdown" }
       - { label: "Рейтинг", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
