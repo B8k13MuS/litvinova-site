@@ -1,17 +1,5 @@
 content:
-  - name: pages
-    label: Страницы
-    type: collection
-    path: .
-    view:
-      fields: [title]
-    fields:
-      - name: title
-        label: Заголовок
-        type: string
-      - name: body
-        label: Контент
-        type: rich-text
+
 
   - name: blog
     label: Блог
