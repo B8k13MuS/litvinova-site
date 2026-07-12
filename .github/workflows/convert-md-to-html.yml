@@ -1,0 +1,286 @@
+name: Convert Markdown to HTML
+
+on:
+  push:
+    paths:
+      - 'blog/*.md'
+    branches: [main]
+
+  # Ручной запуск (на всякий случай)
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install -g markdown-it
+
+      - name: Convert MD to HTML
+        run: |
+          mkdir -p blog
+
+          for file in blog/*.md; do
+            [ -e "$file" ] || continue
+
+            filename=$(basename "$file" .md)
+
+            # Извлекаем title из frontmatter
+            title=$(grep -m1 "^title:" "$file" | sed 's/title: //' | sed 's/^"//;s/"$//' | sed "s/^'//;s/'$//" | xargs)
+            [ -z "$title" ] && title="Статья"
+
+            # Извлекаем date из frontmatter
+            date_str=$(grep -m1 "^date:" "$file" | sed 's/date: //' | xargs)
+            [ -z "$date_str" ] && date_str=$(date +%Y-%m-%d)
+
+            # Форматируем дату для отображения (2026-07-12 → 12 июля 2026)
+            day=$(echo "$date_str" | cut -d'-' -f3)
+            month_num=$(echo "$date_str" | cut -d'-' -f2)
+            year=$(echo "$date_str" | cut -d'-' -f1)
+
+            case "$month_num" in
+              01) month="января";;
+              02) month="февраля";;
+              03) month="марта";;
+              04) month="апреля";;
+              05) month="мая";;
+              06) month="июня";;
+              07) month="июля";;
+              08) month="августа";;
+              09) month="сентября";;
+              10) month="октября";;
+              11) month="ноября";;
+              12) month="декабря";;
+              *) month="месяца";;
+            esac
+
+            display_date="${day} ${month} ${year}"
+
+            # Извлекаем контент (после frontmatter --- ... ---)
+            content=$(sed '1{/^---$/!q};1,/^---$/d' "$file")
+
+            # Конвертируем Markdown в HTML
+            html_content=$(echo "$content" | npx markdown-it)
+
+            # Создаем HTML файл с полным шаблоном сайта
+            cat > "blog/${filename}.html" << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE_PLACEHOLDER — Надежда Литвинова | Психолог-коуч</title>
+    <meta name="description" content="TITLE_PLACEHOLDER. Статья психолога Надежды Литвиновой.">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e8e0d5;
+        }
+        .article-title {
+            font-size: 2.5rem;
+            color: #4a3728;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: #8b7355;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+        .article-date, .article-reading-time {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .article-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #3d2e1f;
+        }
+        .article-content p {
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+        .article-content p:first-of-type::first-letter {
+            font-size: 3rem;
+            float: left;
+            line-height: 1;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: #6b8e5e;
+            font-weight: bold;
+        }
+        .article-content h2, .article-content h3 {
+            color: #4a3728;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .article-content ul, .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 30px;
+        }
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        .article-content strong {
+            color: #4a3728;
+        }
+        .article-tags {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e8e0d5;
+        }
+        .article-tags h3 {
+            font-size: 1.1rem;
+            color: #4a3728;
+            margin-bottom: 15px;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: #f5f0e8;
+            color: #6b8e5e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .tag:hover {
+            background: #6b8e5e;
+            color: white;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: #6b8e5e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #4a3728;
+        }
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+            .article-content {
+                font-size: 1rem;
+            }
+            .article-page {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">Надежда Литвинова</a>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../about.html">Обо мне</a>
+                <a href="../services.html">Услуги</a>
+                <a href="../blog.html" class="active">Блог</a>
+                <a href="../contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <a href="../blog.html" class="back-link">← Вернуться к статьям</a>
+
+        <article>
+            <header class="article-header">
+                <h1 class="article-title">TITLE_PLACEHOLDER</h1>
+                <div class="article-meta">
+                    <span class="article-date">📅 DATE_PLACEHOLDER</span>
+                    <span class="article-reading-time">⏱️ ~2 мин чтения</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                CONTENT_PLACEHOLDER
+            </div>
+
+            <div class="article-tags">
+                <h3>Теги:</h3>
+                <div class="tag-list">
+                    <span class="tag">Психология</span>
+                    <span class="tag">Самопомощь</span>
+                    <span class="tag">Здоровье</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Надежда Литвинова. Все права защищены.</p>
+            <div class="footer-contacts">
+                <a href="tel:+79043481335">+7 (904) 348-13-35</a>
+                <a href="mailto:denas111222@gmail.com">denas111222@gmail.com</a>
+                <a href="https://t.me/nadezhda_litvinova_coach" target="_blank">Telegram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+HTMLEOF
+
+            # Заменяем плейсхолдеры
+            sed -i "s/TITLE_PLACEHOLDER/${title}/g" "blog/${filename}.html"
+            sed -i "s/DATE_PLACEHOLDER/${display_date}/g" "blog/${filename}.html"
+
+            # Заменяем CONTENT_PLACEHOLDER на реальный HTML-контент
+            # Используем awk для безопасной замены многострочного контента
+            awk -v content="${html_content}" '
+            /CONTENT_PLACEHOLDER/ {
+                print content
+                next
+            }
+            { print }
+            ' "blog/${filename}.html" > "blog/${filename}.html.tmp" && mv "blog/${filename}.html.tmp" "blog/${filename}.html"
+
+            echo "✅ Сконвертировано: $file → blog/${filename}.html"
+          done
+
+      - name: Commit and push HTML files
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+          git add blog/*.html
+
+          if git diff --cached --quiet; then
+            echo "Нет изменений для коммита"
+          else
+            git commit -m "🤖 Автоконвертация Markdown → HTML [skip ci]"
+            git push
+          fi
