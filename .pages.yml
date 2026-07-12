@@ -1,0 +1,38 @@
+content:
+  - name: pages
+    label: Страницы
+    type: collection
+    path: .
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Заголовок
+        type: string
+      - name: body
+        label: Контент
+        type: rich-text
+
+  - name: blog
+    label: Блог
+    type: collection
+    path: blog
+    view:
+      fields: [title, date]
+    fields:
+      - name: title
+        label: Заголовок
+        type: string
+      - name: date
+        label: Дата
+        type: date
+      - name: body
+        label: Контент
+        type: rich-text
+
+  - name: images
+    label: Изображения
+    type: collection
+    path: images
+    view:
+      type: gallery
