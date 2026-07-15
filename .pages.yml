@@ -26,3 +26,162 @@ content:
     path: images
     view:
       type: gallery
+
+  - name: pages
+    label: Страницы сайта
+    type: collection
+    path: content/pages
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Заголовок страницы (SEO)
+        type: string
+      - name: description
+        label: Описание (SEO)
+        type: string
+      - name: keywords
+        label: Ключевые слова (SEO)
+        type: string
+      - name: header_tag
+        label: Тег-заголовок секции
+        type: string
+      - name: header_title
+        label: Заголовок страницы
+        type: string
+      - name: header_subtitle
+        label: Подзаголовок
+        type: string
+      - name: lead_text
+        label: Вводный текст
+        type: rich-text
+      - name: bio_paragraph_1
+        label: Биография — абзац 1
+        type: rich-text
+      - name: bio_paragraph_2
+        label: Биография — абзац 2
+        type: rich-text
+      - name: education_title
+        label: Заголовок раздела образования
+        type: string
+      - name: education_items
+        label: Образование (список)
+        type: list
+      - name: approach_title
+        label: Заголовок раздела подхода
+        type: string
+      - name: approach_text
+        label: Текст о подходе
+        type: rich-text
+      - name: intro_text
+        label: Вводный текст
+        type: rich-text
+      - name: services
+        label: Услуги (список)
+        type: object-list
+        fields:
+          - name: title
+            label: Название услуги
+            type: string
+          - name: description
+            label: Описание
+            type: rich-text
+          - name: duration
+            label: Длительность
+            type: string
+          - name: price
+            label: Стоимость
+            type: string
+      - name: how_it_works_title
+        label: Заголовок "Как проходит работа"
+        type: string
+      - name: how_it_works_steps
+        label: Шаги работы (список)
+        type: list
+      - name: cta_title
+        label: Заголовок призыва к действию
+        type: string
+      - name: cta_text
+        label: Текст призыва к действию
+        type: rich-text
+      - name: cta_button
+        label: Текст кнопки
+        type: string
+      - name: cta_link
+        label: Ссылка кнопки
+        type: string
+      - name: contact_info_title
+        label: Заголовок контактов
+        type: string
+      - name: phone
+        label: Телефон
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: location
+        label: Локация
+        type: string
+      - name: form_title
+        label: Заголовок формы
+        type: string
+      - name: form_description
+        label: Описание формы
+        type: rich-text
+      - name: form_submit_button
+        label: Текст кнопки отправки
+        type: string
+      - name: form_privacy_text
+        label: Текст о конфиденциальности
+        type: string
+      - name: response_time
+        label: Время ответа
+        type: string
+      - name: hero_title
+        label: Заголовок главного экрана
+        type: string
+      - name: hero_subtitle
+        label: Подзаголовок главного экрана
+        type: string
+      - name: hero_description
+        label: Описание главного экрана
+        type: rich-text
+      - name: hero_cta
+        label: Текст кнопки главного экрана
+        type: string
+      - name: hero_cta_link
+        label: Ссылка кнопки главного экрана
+        type: string
+      - name: specialization_title
+        label: Заголовок специализации
+        type: string
+      - name: about_preview_title
+        label: Заголовок превью "Обо мне"
+        type: string
+      - name: about_preview_text
+        label: Текст превью "Обо мне"
+        type: rich-text
+      - name: about_preview_cta
+        label: Текст кнопки превью
+        type: string
+      - name: services_preview_title
+        label: Заголовок превью услуг
+        type: string
+      - name: services_preview_cta
+        label: Текст кнопки превью услуг
+        type: string
+      - name: contact_phone
+        label: Телефон в контактах
+        type: string
+      - name: contact_email
+        label: Email в контактах
+        type: string
+      - name: contact_cta
+        label: Текст кнопки контактов
+        type: string
+      - name: call_to_action
+        label: Текст призыва к действию
+        type: string
+      - name: call_to_action_link
+        label: Ссылка призыва к действию
+        type: string
