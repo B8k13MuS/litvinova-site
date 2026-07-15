@@ -1,6 +1,8 @@
+media:
+  input: images
+  output: /images
+
 content:
-
-
   - name: blog
     label: Блог
     type: collection
