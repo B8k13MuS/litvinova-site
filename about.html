@@ -41,9 +41,9 @@
 
     <header class="page-header" style="padding-top: 120px; padding-bottom: 60px; background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);">
         <div class="container" style="text-align: center;">
-            <span class="section-tag">Обо мне</span>
-            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Надежда Литвинова</h1>
-            <p style="color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Психолог, специалист по EMDR и Интегративный подход</p>
+            <span class="section-tag" data-content="header_tag">Обо мне</span>
+            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);" data-content="header_title">Надежда Литвинова</h1>
+            <p style="color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;" data-content="header_subtitle">Психолог, специалист по EMDR и Интегративный подход</p>
         </div>
     </header>
 
@@ -54,11 +54,11 @@
                     <img src="images/photo-main.jpg" alt="Надежда Литвинова" width="500" height="600" loading="eager">
                 </div>
                 <div class="about-content">
-                    <p class="about-lead">Я верю, что каждый человек обладает внутренними ресурсами для восстановления. Моя задача — помочь вам их найти и активировать.</p>
+                    <p class="about-lead" data-content="lead_text">Я верю, что каждый человек обладает внутренними ресурсами для восстановления. Моя задача — помочь вам их найти и активировать.</p>
 
-                    <p>Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. За это время я работала с сотнями клиентов, помогая им преодолевать страхи, тревогу, последствия травм и стресса.</p>
+                    <p data-content="bio_paragraph_1">Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. За это время я работала с сотнями клиентов, помогая им преодолевать страхи, тревогу, последствия травм и стресса.</p>
 
-                    <p>Использую доказательные методы: EMDR и ММИЛ. Постоянно прохожу супервизии и повышение квалификации, чтобы предлагать клиентам самые эффективные подходы.</p>
+                    <p data-content="bio_paragraph_2">Использую доказательные методы: EMDR и ММИЛ. Постоянно прохожу супервизии и повышение квалификации, чтобы предлагать клиентам самые эффективные подходы.</p>
 
                     <h3 style="font-family: var(--font-heading); color: var(--color-navy); margin: 32px 0 16px; font-size: 1.3rem;">Образование и квалификация</h3>
                     <ul class="about-list">
@@ -155,5 +155,6 @@
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 4.5L2.5 12.5L9.5 14.5L12.5 21.5L21.5 4.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14.5L12.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
 
+<script src="content-loader.js"></script>
 </body>
 </html>
