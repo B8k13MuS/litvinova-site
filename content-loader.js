@@ -10,7 +10,8 @@
   // Загружаем YAML-контент
   async function loadContent() {
     try {
-      const response = await fetch(`content/pages/${pageName}.yml`);
+      const basePath = window.location.pathname.includes("/litvinova-site/") ? "/litvinova-site/" : "/";
+      const response = await fetch(`${basePath}content/pages/${pageName}.yml`);
       if (!response.ok) {
         console.log('Content file not found for page:', pageName);
         return;
