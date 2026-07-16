@@ -182,6 +182,33 @@ content:
       - name: call_to_action
         label: Текст призыва к действию
         type: string
+      - name: issues_title
+        label: Заголовок "С чем я работаю"
+        type: string
+      - name: about_title
+        label: Заголовок "Обо мне"
+        type: string
+      - name: methods_title
+        label: Заголовок "Как я работаю"
+        type: string
+      - name: process_title
+        label: Заголовок "Как проходит работа"
+        type: string
+      - name: trust_title
+        label: Заголовок "Гарантии и конфиденциальность"
+        type: string
+      - name: testimonials_title
+        label: Заголовок "Клиенты о работе"
+        type: string
+      - name: pricing_title
+        label: Заголовок "Форматы консультаций"
+        type: string
+      - name: form_title
+        label: Заголовок формы
+        type: string
+      - name: cta_title
+        label: Заголовок призыва к действию
+        type: string
       - name: call_to_action_link
         label: Ссылка призыва к действию
         type: string
