@@ -7,6 +7,7 @@ content:
     label: "📝 Блог"
     type: collection
     path: blog
+    format: raw 
     view:
       fields: [title]
     fields:
