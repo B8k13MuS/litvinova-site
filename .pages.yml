@@ -7,9 +7,8 @@ content:
     label: "📝 Блог"
     type: collection
     path: blog
-    format: raw 
     view:
-      fields: [title]
+      fields: [title, date]
     fields:
       - name: title
         label: Заголовок поста
