@@ -1,9 +1,9 @@
-title: "Контакты — Надежда Литвинова | Психолог"
+title: "Контакты — записаться к психологу Надежде Литвиновой"
 description: "Запись на консультацию к психологу Надежде Литвиновой. Онлайн-приём по всему миру."
 keywords: "контакты психолога, запись на консультацию, психолог онлайн"
 
 header_tag: "Контакты"
-header_title: "Свяжитесь со мной"
+header_title: "Записаться на консультацию"
 header_subtitle: "Запишитесь на консультацию или задайте вопрос"
 
 contact_info_title: "Контактная информация"
@@ -11,24 +11,19 @@ phone: "+7 (918) 505-57-15"
 email: ""
 location: "Онлайн по всему миру"
 
+telegram_label: "Telegram: @nadezhda_litvinova_coach"
+telegram_link: "https://t.me/nadezhda_litvinova_coach"
+channel_label: "Канал в Telegram: @uspeh_prosto"
+channel_link: "https://t.me/uspeh_prosto"
+whatsapp_label: "WhatsApp: Написать в WhatsApp"
+whatsapp_link: "https://wa.me/79185055715"
+email_label: "Email: contact@litvinova-site.com"
+email_link: "mailto:contact@litvinova-site.com"
+
 form_title: "Записаться на консультацию"
 form_description: "Заполните форму, и я свяжусь с вами в ближайшее время для согласования деталей."
-
-form_fields:
-  - name: "name"
-    label: "Ваше имя"
-    required: true
-  - name: "phone"
-    label: "Телефон"
-    required: true
-  - name: "email"
-    label: "Email"
-    required: false
-  - name: "message"
-    label: "Ваш запрос (кратко)"
-    required: false
-
 form_submit_button: "Отправить"
 form_privacy_text: "Отправляя форму, вы соглашаетесь с политикой конфиденциальности"
-
 response_time: "Отвечаю в течение 24 часов"
+
+footer_text: "© 2026 Надежда Литвинова"
