@@ -1,13 +1,10 @@
 // content-loader.js — подстановка контента из YAML в HTML-страницы
-// Автоматически загружает данные из content/pages/{page}.yml
 
 (function() {
   'use strict';
 
-  // Определяем текущую страницу по имени файла
   const pageName = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
 
-  // Загружаем YAML-контент
   async function loadContent() {
     try {
       const basePath = window.location.pathname.includes("/litvinova-site/") ? "/litvinova-site/" : "/";
@@ -19,8 +16,6 @@
 
       const yamlText = await response.text();
       const data = parseYAML(yamlText);
-
-      // Применяем данные к странице
       applyContent(data);
 
     } catch (error) {
@@ -28,32 +23,39 @@
     }
   }
 
-  // Простой парсер YAML
   function parseYAML(text) {
     const data = {};
     const lines = text.split('\n');
     let currentKey = null;
     let currentList = null;
     let currentObject = null;
-    let indent = 0;
 
-    for (let line of lines) {
+    for (let i = 0; i < lines.length; i++) {
+      let line = lines[i];
       const trimmed = line.trim();
       if (!trimmed || trimmed.startsWith('#')) continue;
 
-      // Простые ключ-значение
-      const simpleMatch = line.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
-      if (simpleMatch && !line.startsWith('  ') && !line.startsWith('\t')) {
+      const lineIndent = line.search(/\S/);
+      if (lineIndent === -1) continue;
+
+      const simpleMatch = trimmed.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
+      if (simpleMatch && lineIndent === 0) {
         currentKey = simpleMatch[1];
         const value = simpleMatch[2].trim();
-
-        if (value === '') {
-          // Может быть список или объект ниже
+        
+        if (value === '' || value === '[]') {
           data[currentKey] = [];
           currentList = data[currentKey];
           currentObject = null;
+        } else if (value === 'true') {
+          data[currentKey] = true;
+          currentList = null;
+          currentObject = null;
+        } else if (value === 'false') {
+          data[currentKey] = false;
+          currentList = null;
+          currentObject = null;
         } else {
-          // Убираем кавычки
           data[currentKey] = value.replace(/^["']|["']$/g, '');
           currentList = null;
           currentObject = null;
@@ -61,15 +63,13 @@
         continue;
       }
 
-      // Элементы списка
-      const listMatch = line.match(/^\s*-\s+(.*)$/);
+      const listMatch = trimmed.match(/^-\s+(.*)$/);
       if (listMatch && currentList !== null) {
         const value = listMatch[1].trim();
-
-        // Проверяем, является ли элемент объектом
         const objMatch = value.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
+        
         if (objMatch) {
-          if (!currentObject) {
+          if (!currentObject || lineIndent <= 2) {
             currentObject = {};
             currentList.push(currentObject);
           }
@@ -81,100 +81,35 @@
         continue;
       }
 
-      // Поля объекта (с отступом)
-      const fieldMatch = line.match(/^\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
-      if (fieldMatch && currentObject !== null) {
-        currentObject[fieldMatch[1]] = fieldMatch[2].replace(/^["']|["']$/g, '');
+      const fieldMatch = trimmed.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
+      if (fieldMatch && currentObject !== null && lineIndent > 0) {
+        const val = fieldMatch[2].trim();
+        if (val === 'true') {
+          currentObject[fieldMatch[1]] = true;
+        } else if (val === 'false') {
+          currentObject[fieldMatch[1]] = false;
+        } else {
+          currentObject[fieldMatch[1]] = val.replace(/^["']|["']$/g, '');
+        }
       }
     }
 
     return data;
   }
 
-  // Применяем данные к элементам страницы
-  function applyContent(data) {
-    // SEO
-    if (data.title) document.title = data.title;
-    if (data.description) {
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = data.description;
-    }
-    if (data.keywords) {
-      const metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) metaKeywords.content = data.keywords;
-    }
-
-    // Заголовки
-    updateText('[data-content="header_tag"]', data.header_tag);
-    updateText('[data-content="header_title"]', data.header_title);
-    updateText('[data-content="header_subtitle"]', data.header_subtitle);
-
-    // Тексты
-    updateText('[data-content="lead_text"]', data.lead_text);
-    updateText('[data-content="bio_paragraph_1"]', data.bio_paragraph_1);
-    updateText('[data-content="bio_paragraph_2"]', data.bio_paragraph_2);
-    updateText('[data-content="intro_text"]', data.intro_text);
-    updateText('[data-content="approach_text"]', data.approach_text);
-
-    // Образование
-    updateText('[data-content="education_title"]', data.education_title);
-    updateList('[data-content="education_items"]', data.education_items);
-
-    // Услуги
-    updateText('[data-content="how_it_works_title"]', data.how_it_works_title);
-    updateList('[data-content="how_it_works_steps"]', data.how_it_works_steps);
-
-    // CTA
-    updateText('[data-content="cta_title"]', data.cta_title);
-    updateText('[data-content="cta_text"]', data.cta_text);
-    updateText('[data-content="cta_button"]', data.cta_button);
-    updateLink('[data-content="cta_link"]', data.cta_link);
-
-    // Контакты
-    updateText('[data-content="contact_info_title"]', data.contact_info_title);
-    updateText('[data-content="phone"]', data.phone);
-    updateText('[data-content="email"]', data.email);
-    updateText('[data-content="location"]', data.location);
-
-    // Форма
-    updateText('[data-content="form_title"]', data.form_title);
-    updateText('[data-content="form_description"]', data.form_description);
-    updateText('[data-content="form_submit_button"]', data.form_submit_button);
-    updateText('[data-content="form_privacy_text"]', data.form_privacy_text);
-    updateText('[data-content="response_time"]', data.response_time);
-
-    // Главная страница
-    updateText('[data-content="hero_title"]', data.hero_title);
-    updateText('[data-content="hero_subtitle"]', data.hero_subtitle);
-    updateText('[data-content="hero_description"]', data.hero_description);
-    updateText('[data-content="hero_cta"]', data.hero_cta);
-    updateLink('[data-content="hero_cta_link"]', data.hero_cta_link);
-
-    updateText('[data-content="specialization_title"]', data.specialization_title);
-    updateText('[data-content="about_preview_title"]', data.about_preview_title);
-    updateText('[data-content="about_preview_text"]', data.about_preview_text);
-    updateText('[data-content="about_preview_cta"]', data.about_preview_cta);
-    updateText('[data-content="services_preview_title"]', data.services_preview_title);
-    updateText('[data-content="services_preview_cta"]', data.services_preview_cta);
-
-    updateText('[data-content="contact_phone"]', data.contact_phone);
-    updateText('[data-content="contact_email"]', data.contact_email);
-    updateText('[data-content="contact_cta"]', data.contact_cta);
-
-    updateText('[data-content="call_to_action"]', data.call_to_action);
-    updateLink('[data-content="call_to_action_link"]', data.call_to_action_link);
-
-    // Услуги (список объектов)
-    if (data.services && Array.isArray(data.services)) {
-      updateServices(data.services);
-    }
-  }
-
   function updateText(selector, value) {
-    if (!value) return;
+    if (value === undefined || value === null) return;
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
       el.innerHTML = value;
+    });
+  }
+
+  function updateAttr(selector, attr, value) {
+    if (!value) return;
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+      el.setAttribute(attr, value);
     });
   }
 
@@ -182,38 +117,180 @@
     if (!value) return;
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
-      if (el.tagName === 'A') {
-        el.href = value;
-      }
+      if (el.tagName === 'A') el.href = value;
+      else el.setAttribute('href', value);
     });
   }
 
-  function updateList(selector, items) {
+  function updateCards(selector, items, templateFn) {
     if (!items || !Array.isArray(items)) return;
     const container = document.querySelector(selector);
     if (!container) return;
+    container.innerHTML = items.map(templateFn).join('');
+  }
 
-    const list = container.tagName === 'UL' || container.tagName === 'OL' ? container : container.querySelector('ul, ol');
-    if (list) {
-      list.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+  function applyContent(data) {
+    if (!data) return;
+
+    if (data.title) document.title = data.title;
+    updateAttr('meta[name="description"]', 'content', data.description);
+    updateAttr('meta[name="keywords"]', 'content', data.keywords);
+
+    updateText('[data-content="header_tag"]', data.header_tag);
+    updateText('[data-content="header_title"]', data.header_title);
+    updateText('[data-content="header_subtitle"]', data.header_subtitle);
+
+    updateText('[data-content="hero_title"]', data.hero_title);
+    updateText('[data-content="hero_subtitle"]', data.hero_subtitle);
+    updateText('[data-content="hero_description"]', data.hero_description);
+    updateText('[data-content="hero_cta"]', data.hero_cta);
+    updateLink('[data-content="hero_cta_link"]', data.hero_cta_link);
+
+    updateText('[data-content="issues_title"]', data.issues_title);
+    if (data.issues) {
+      updateCards('[data-content="issues_list"]', data.issues, item => `
+        <div class="issue-card">
+          <h3>${item.title || ''}</h3>
+          <p>${item.description || ''}</p>
+        </div>
+      `);
     }
+
+    updateText('[data-content="about_title"]', data.about_title);
+    updateText('[data-content="about_preview_text"]', data.about_preview_text);
+    updateText('[data-content="about_preview_subtitle"]', data.about_preview_subtitle);
+    updateText('[data-content="about_preview_details"]', data.about_preview_details);
+    updateText('[data-content="about_preview_cta"]', data.about_preview_cta);
+    updateLink('[data-content="about_preview_link"]', data.about_preview_link);
+
+    updateText('[data-content="methods_title"]', data.methods_title);
+    if (data.methods) {
+      updateCards('[data-content="methods_list"]', data.methods, item => `
+        <div class="method-card">
+          <h3>${item.title || ''}</h3>
+          <p>${item.description || ''}</p>
+        </div>
+      `);
+    }
+
+    updateText('[data-content="process_title"]', data.process_title);
+    if (data.process_steps) {
+      updateCards('[data-content="process_list"]', data.process_steps, item => `
+        <div class="process-step">
+          <h3>${item.title || ''}</h3>
+          <p>${item.description || ''}</p>
+        </div>
+      `);
+    }
+
+    updateText('[data-content="trust_title"]', data.trust_title);
+    if (data.trust_items) {
+      updateCards('[data-content="trust_list"]', data.trust_items, item => `
+        <div class="trust-item">
+          <h3>${item.title || ''}</h3>
+          <p>${item.description || ''}</p>
+        </div>
+      `);
+    }
+
+    updateText('[data-content="testimonials_title"]', data.testimonials_title);
+    if (data.testimonials) {
+      updateCards('[data-content="testimonials_list"]', data.testimonials, item => `
+        <blockquote>
+          <p>${item.text || ''}</p>
+          ${item.author ? `<cite>${item.author}</cite>` : ''}
+        </blockquote>
+      `);
+    }
+
+    updateText('[data-content="pricing_title"]', data.pricing_title);
+    updateText('[data-content="pricing_subtitle"]', data.pricing_subtitle);
+    updateText('[data-content="pricing_note"]', data.pricing_note);
+    if (data.pricing_items) {
+      updateCards('[data-content="pricing_list"]', data.pricing_items, item => `
+        <div class="pricing-card${item.featured ? ' featured' : ''}">
+          ${item.badge ? `<div class="pricing-badge">${item.badge}</div>` : ''}
+          <div class="pricing-label">${item.label || ''}</div>
+          <div class="pricing-value">${item.duration || ''}</div>
+          <p class="pricing-desc">${item.description || ''}</p>
+          <a href="${item.cta_link || '#'}" class="btn"><span>${item.cta || 'Записаться'}</span></a>
+        </div>
+      `);
+    }
+
+    updateText('[data-content="form_title"]', data.form_title);
+    updateText('[data-content="form_subtitle"]', data.form_subtitle);
+
+    updateText('[data-content="cta_title"]', data.cta_title);
+    updateText('[data-content="cta_subtitle"]', data.cta_subtitle);
+    updateText('[data-content="cta_button"]', data.cta_button);
+    updateLink('[data-content="cta_button_link"]', data.cta_button_link);
+
+    updateText('[data-content="lead_text"]', data.lead_text);
+    updateText('[data-content="bio_paragraph_1"]', data.bio_paragraph_1);
+    updateText('[data-content="bio_paragraph_2"]', data.bio_paragraph_2);
+    updateText('[data-content="education_title"]', data.education_title);
+    
+    if (data.education_items) {
+      const container = document.querySelector('[data-content="education_items"]');
+      if (container) {
+        const list = container.tagName === 'UL' || container.tagName === 'OL' ? container : container.querySelector('ul, ol');
+        if (list) list.innerHTML = data.education_items.map(item => `<li>${item}</li>`).join('');
+      }
+    }
+
+    updateText('[data-content="approach_title"]', data.approach_title);
+    updateText('[data-content="approach_text"]', data.approach_text);
+    updateText('[data-content="call_to_action"]', data.call_to_action);
+    updateLink('[data-content="call_to_action_link"]', data.call_to_action_link);
+
+    updateText('[data-content="intro_text"]', data.intro_text);
+    if (data.services) {
+      updateCards('[data-content="services_list"]', data.services, item => `
+        <div class="service-card">
+          <h3>${item.title || ''}</h3>
+          <p>${item.description || ''}</p>
+          ${item.duration ? `<span class="service-duration">${item.duration}</span>` : ''}
+          ${item.price ? `<span class="service-price">${item.price}</span>` : ''}
+        </div>
+      `);
+    }
+    updateText('[data-content="how_it_works_title"]', data.how_it_works_title);
+    
+    if (data.how_it_works_steps) {
+      const container = document.querySelector('[data-content="how_it_works_steps"]');
+      if (container) {
+        const list = container.tagName === 'UL' || container.tagName === 'OL' ? container : container.querySelector('ul, ol');
+        if (list) list.innerHTML = data.how_it_works_steps.map(item => `<li>${item}</li>`).join('');
+      }
+    }
+    
+    updateText('[data-content="cta_text"]', data.cta_text);
+    updateText('[data-content="cta_button"]', data.cta_button);
+    updateLink('[data-content="cta_link"]', data.cta_link);
+
+    updateText('[data-content="contact_info_title"]', data.contact_info_title);
+    updateText('[data-content="phone"]', data.phone);
+    updateText('[data-content="email"]', data.email);
+    updateText('[data-content="location"]', data.location);
+    
+    updateText('[data-content="telegram_label"]', data.telegram_label);
+    updateLink('[data-content="telegram_link"]', data.telegram_link);
+    updateText('[data-content="channel_label"]', data.channel_label);
+    updateLink('[data-content="channel_link"]', data.channel_link);
+    updateText('[data-content="whatsapp_label"]', data.whatsapp_label);
+    updateLink('[data-content="whatsapp_link"]', data.whatsapp_link);
+    updateText('[data-content="email_label"]', data.email_label);
+    updateLink('[data-content="email_link"]', data.email_link);
+
+    updateText('[data-content="form_description"]', data.form_description);
+    updateText('[data-content="form_submit_button"]', data.form_submit_button);
+    updateText('[data-content="form_privacy_text"]', data.form_privacy_text);
+    updateText('[data-content="response_time"]', data.response_time);
+
+    updateText('[data-content="footer_text"]', data.footer_text);
   }
 
-  function updateServices(services) {
-    const container = document.querySelector('[data-content="services_list"]');
-    if (!container) return;
-
-    container.innerHTML = services.map(service => `
-      <div class="service-card">
-        <h3>${service.title || ''}</h3>
-        <p>${service.description || ''}</p>
-        ${service.duration ? `<span class="service-duration">${service.duration}</span>` : ''}
-        ${service.price ? `<span class="service-price">${service.price}</span>` : ''}
-      </div>
-    `).join('');
-  }
-
-  // Запускаем загрузку контента
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadContent);
   } else {
