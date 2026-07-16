@@ -289,6 +289,7 @@
     updateText('[data-content="response_time"]', data.response_time);
 
     updateText('[data-content="footer_text"]', data.footer_text);
+    updateAttr('[data-content="contact_image"]', 'src', data.contact_image);
   }
 
   if (document.readyState === 'loading') {
