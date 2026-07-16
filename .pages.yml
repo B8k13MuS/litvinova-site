@@ -26,6 +26,7 @@ content:
     label: "🖼️ Изображения"
     type: collection
     path: images
+    filename: "{primary}.{extension}"
     view:
       type: gallery
 
