@@ -247,6 +247,10 @@ content:
         path: content/pages/about.yml
         format: yaml
         fields:
+          - name: about_image
+            label: "🖼️ Фото в профиле"
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg"
           - name: title
             label: "🔍 SEO — Заголовок"
             type: string
@@ -315,6 +319,10 @@ content:
         path: content/pages/services.yml
         format: yaml
         fields:
+          - name: services_image
+            label: "🖼️ Фоновое фото"
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg"
           - name: title
             label: "🔍 SEO — Заголовок"
             type: string
@@ -397,6 +405,10 @@ content:
         path: content/pages/contact.yml
         format: yaml
         fields:
+          - name: contact_image
+            label: "🖼️ Фото в контактах"
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg"
           - name: title
             label: "🔍 SEO — Заголовок"
             type: string
