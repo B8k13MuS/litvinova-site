@@ -22,17 +22,6 @@ content:
         label: Текст поста
         type: rich-text
 
-  - name: images
-    label: "🖼️ Изображения"
-    type: collection
-    path: images
-    include: ["*.jpg", "*.jpeg", "*.webp", "*.png"]
-    view:
-      fields: [name]
-    fields:
-      - name: name
-        label: Имя файла
-        type: string
 
   - name: site_pages
     label: "🌐 Страницы сайта"
