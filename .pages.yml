@@ -307,6 +307,14 @@ content:
             label: "🚀 Ссылка кнопки"
             type: string
 
+          - name: about_image
+            label: "🖼️ Фото в профиле"
+            type: image
+            options:
+              input: images
+              output: /images
+            description: "Выберите фото для страницы Обо мне"
+
       - name: services_page
         label: "🛠️ Услуги"
         type: file
@@ -383,6 +391,14 @@ content:
           - name: cta_link
             label: "🚀 Ссылка кнопки"
             type: string
+
+          - name: services_image
+            label: "🖼️ Фоновое фото"
+            type: image
+            options:
+              input: images
+              output: /images
+            description: "Выберите фоновое фото для страницы Услуги"
 
       - name: contact_page
         label: "📞 Контакты"
@@ -467,3 +483,11 @@ content:
           - name: footer_text
             label: "📄 Текст в подвале"
             type: string
+
+          - name: contact_image
+            label: "🖼️ Фото в контактах"
+            type: image
+            options:
+              input: images
+              output: /images
+            description: "Выберите фото для страницы Контакты
