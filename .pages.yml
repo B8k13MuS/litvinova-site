@@ -61,6 +61,14 @@ content:
             type: string
             description: "Например: contacts.html#contact-form"
 
+          - name: hero_image
+            label: "🖼️ Фото на главной"
+            type: image
+            options:
+              input: images
+              output: /images
+            description: "Выберите фото для главного экрана"
+
           - name: issues_title
             label: "🎯 Заголовок 'С чем я работаю'"
             type: string
