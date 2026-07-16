@@ -26,7 +26,7 @@ content:
     label: "🖼️ Изображения"
     type: collection
     path: images
-    filename: "{primary}.{extension}"
+    include: ["*.jpg", "*.jpeg", "*.webp", "*.png"]
     view:
       fields: [name]
     fields:
