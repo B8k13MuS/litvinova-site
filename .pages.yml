@@ -28,7 +28,11 @@ content:
     path: images
     filename: "{primary}.{extension}"
     view:
-      type: gallery
+      fields: [name]
+    fields:
+      - name: name
+        label: Имя файла
+        type: string
 
   - name: site_pages
     label: "🌐 Страницы сайта"
