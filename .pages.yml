@@ -8,7 +8,7 @@ content:
     type: collection
     path: blog
     view:
-      fields: [title, date]
+      fields: [title]
     fields:
       - name: title
         label: Заголовок поста
