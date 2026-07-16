@@ -63,11 +63,8 @@ content:
 
           - name: hero_image
             label: "🖼️ Фото на главной"
-            type: image
-            options:
-              input: images
-              output: /images
-            description: "Выберите фото для главного экрана"
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg"
 
           - name: issues_title
             label: "🎯 Заголовок 'С чем я работаю'"
@@ -309,11 +306,8 @@ content:
 
           - name: about_image
             label: "🖼️ Фото в профиле"
-            type: image
-            options:
-              input: images
-              output: /images
-            description: "Выберите фото для страницы Обо мне"
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg"
 
       - name: services_page
         label: "🛠️ Услуги"
@@ -394,11 +388,8 @@ content:
 
           - name: services_image
             label: "🖼️ Фоновое фото"
-            type: image
-            options:
-              input: images
-              output: /images
-            description: "Выберите фоновое фото для страницы Услуги"
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg"
 
       - name: contact_page
         label: "📞 Контакты"
@@ -486,8 +477,5 @@ content:
 
           - name: contact_image
             label: "🖼️ Фото в контактах"
-            type: image
-            options:
-              input: images
-              output: /images
-            description: "Выберите фото для страницы Контакты
+            type: string
+            description: "Введите путь к фото, например: /images/photo-main.jpg
