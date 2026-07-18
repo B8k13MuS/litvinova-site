@@ -252,4 +252,182 @@ content:
           - name: bio_paragraph_1
             label: " Биография — абзац 1"
             type: wysiwyg
-          - name
+          - name: bio_paragraph_2
+            label: " Биография — абзац 2"
+            type: wysiwyg
+
+          - name: education_title
+            label: "🎓 Заголовок раздела образования"
+            type: string
+          - name: education_items
+            label: " Образование (список)"
+            type: wysiwyg
+
+          - name: approach_title
+            label: "🧠 Заголовок раздела подхода"
+            type: string
+          - name: approach_text
+            label: " Текст о подходе"
+            type: wysiwyg
+
+          - name: call_to_action
+            label: "🚀 Текст кнопки"
+            type: string
+          - name: call_to_action_link
+            label: "🚀 Ссылка кнопки"
+            type: string
+
+      - name: services_page
+        label: "🛠️ Услуги"
+        type: file
+        path: content/pages/services.yml
+        format: yaml
+        fields:
+          - name: title
+            label: "🔍 SEO — Заголовок"
+            type: string
+          - name: description
+            label: "🔍 SEO — Описание"
+            type: text
+          - name: keywords
+            label: "🔍 SEO — Ключевые слова"
+            type: string
+
+          - name: header_tag
+            label: "🏷️ Тег-заголовок"
+            type: string
+          - name: header_title
+            label: "⭐ Заголовок страницы"
+            type: string
+          - name: header_subtitle
+            label: "⭐ Подзаголовок"
+            type: string
+
+          - name: intro_text
+            label: " Вводный текст"
+            type: wysiwyg
+
+          - name: services
+            label: "📋 Список услуг"
+            type: object
+            list:
+              collapsible:
+                collapsed: false
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Название услуги
+                type: string
+              - name: description
+                label: Описание
+                type: wysiwyg
+              - name: duration
+                label: Длительность
+                type: string
+              - name: price
+                label: Стоимость
+                type: string
+
+          - name: how_it_works_title
+            label: "📋 Заголовок 'Как проходит работа'"
+            type: string
+          - name: how_it_works_steps
+            label: " Шаги работы"
+            type: wysiwyg
+
+          - name: cta_title
+            label: "🚀 Заголовок призыва"
+            type: string
+          - name: cta_text
+            label: "🚀 Текст призыва"
+            type: wysiwyg
+          - name: cta_button
+            label: "🚀 Текст кнопки"
+            type: string
+          - name: cta_link
+            label: "🚀 Ссылка кнопки"
+            type: string
+
+      - name: contact_page
+        label: "📞 Контакты"
+        type: file
+        path: content/pages/contact.yml
+        format: yaml
+        fields:
+          - name: title
+            label: "🔍 SEO — Заголовок"
+            type: string
+          - name: description
+            label: "🔍 SEO — Описание"
+            type: text
+          - name: keywords
+            label: "🔍 SEO — Ключевые слова"
+            type: string
+
+          - name: header_tag
+            label: "🏷️ Тег-заголовок"
+            type: string
+          - name: header_title
+            label: "⭐ Заголовок страницы"
+            type: string
+          - name: header_subtitle
+            label: "⭐ Подзаголовок"
+            type: string
+
+          - name: contact_info_title
+            label: "📞 Заголовок контактов"
+            type: string
+          - name: phone
+            label: "📞 Телефон"
+            type: string
+          - name: email
+            label: "✉️ Email"
+            type: string
+          - name: location
+            label: "📍 Локация"
+            type: string
+
+          - name: telegram_label
+            label: "💬 Подпись Telegram"
+            type: string
+          - name: telegram_link
+            label: "💬 Ссылка Telegram"
+            type: string
+          - name: channel_label
+            label: "💬 Подпись Канал"
+            type: string
+          - name: channel_link
+            label: "💬 Ссылка Канал"
+            type: string
+          - name: whatsapp_label
+            label: "💬 Подпись WhatsApp"
+            type: string
+          - name: whatsapp_link
+            label: "💬 Ссылка WhatsApp"
+            type: string
+          - name: email_label
+            label: "💬 Подпись Email"
+            type: string
+          - name: email_link
+            label: "💬 Ссылка Email"
+            type: string
+
+          - name: form_title
+            label: "📝 Заголовок формы"
+            type: string
+          - name: form_description
+            label: "📝 Описание формы"
+            type: wysiwyg
+          - name: form_submit_button
+            label: " Текст кнопки отправки"
+            type: string
+          - name: form_privacy_text
+            label: "📝 Текст о конфиденциальности"
+            type: string
+          - name: response_time
+            label: "⏱️ Время ответа"
+            type: string
+
+          - name: footer_text
+            label: "📄 Текст в подвале"
+            type: string
