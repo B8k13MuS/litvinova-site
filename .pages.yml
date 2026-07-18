@@ -20,21 +20,21 @@ content:
         type: date
       - name: body
         label: Текст поста
-        type: rich-text
-
+        type: wysiwyg
 
   - name: site_pages
     label: "🌐 Страницы сайта"
     type: group
     items:
       - name: homepage
-        label: "🏠 Главная страница"
+        label: " Главная страница"
         type: file
         path: content/pages/index.yml
         format: yaml
         fields:
+          # SEO поля
           - name: title
-            label: "🔍 SEO — Заголовок страницы"
+            label: " SEO — Заголовок страницы"
             type: string
             description: "Отображается во вкладке браузера"
           - name: description
@@ -46,28 +46,47 @@ content:
             type: string
             description: "Через запятую"
 
+          # Hero блок
           - name: hero_title
             label: "⭐ Главный заголовок"
-            type: rich-text
+            type: string
             description: "Большой текст на первом экране"
           - name: hero_description
             label: "⭐ Описание под заголовком"
-            type: rich-text
-          - name: hero_cta
+            type: wysiwyg
+          - name: hero_cita
             label: "⭐ Текст кнопки"
             type: string
-          - name: hero_cta_link
+          - name: hero_cita_link
             label: "⭐ Ссылка кнопки"
             type: string
             description: "Например: contacts.html#contact-form"
 
-          - name: hero_image
-            label: "🖼️ Фото на главной"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
+          # Статистика
+          - name: hero_stats
+            label: " Статистика в hero"
+            type: object
+            list:
+              collapsible:
+                collapsed: false
+                summary: "{number} — {label}"
+            fields:
+              - name: number
+                label: Число/эмодзи
+                type: string
+              - name: label
+                label: Подпись
+                type: string
 
+          # О себе (кратко)
+          - name: about_preview
+            label: " Текст 'О себе' (кратко)"
+            type: wysiwyg
+            description: "Текст будет отображаться с форматированием"
+
+          # Услуги
           - name: issues_title
-            label: "🎯 Заголовок 'С чем я работаю'"
+            label: " Заголовок 'С чем я работаю'"
             type: string
           - name: issues
             label: "🎯 Список проблем"
@@ -82,27 +101,12 @@ content:
                 type: string
               - name: description
                 label: Описание
-                type: rich-text
+                type: wysiwyg
+              - name: icon
+                label: Иконка (эмодзи)
+                type: string
 
-          - name: about_title
-            label: "👤 Заголовок 'Обо мне'"
-            type: string
-          - name: about_preview_text
-            label: "👤 Текст 'Обо мне'"
-            type: rich-text
-          - name: about_preview_subtitle
-            label: "👤 Подзаголовок"
-            type: rich-text
-          - name: about_preview_details
-            label: "👤 Детали подхода"
-            type: rich-text
-          - name: about_preview_cta
-            label: "👤 Текст кнопки"
-            type: string
-          - name: about_preview_link
-            label: "👤 Ссылка кнопки"
-            type: string
-
+          # Методы работы
           - name: methods_title
             label: "🧠 Заголовок 'Как я работаю'"
             type: string
@@ -119,10 +123,14 @@ content:
                 type: string
               - name: description
                 label: Описание
-                type: rich-text
+                type: wysiwyg
+              - name: icon
+                label: Иконка (эмодзи)
+                type: string
 
+          # Процесс работы
           - name: process_title
-            label: "📋 Заголовок 'Как проходит работа'"
+            label: " Заголовок 'Как проходит работа'"
             type: string
           - name: process_steps
             label: "📋 Шаги работы"
@@ -130,59 +138,51 @@ content:
             list:
               collapsible:
                 collapsed: false
-                summary: "{title}"
+                summary: "{step}"
             fields:
-              - name: title
+              - name: step
                 label: Название шага
                 type: string
               - name: description
                 label: Описание
-                type: rich-text
+                type: wysiwyg
+              - name: icon
+                label: Иконка (эмодзи)
+                type: string
 
-          - name: trust_title
+          # Гарантии
+          - name: safety_title
             label: "🛡️ Заголовок 'Гарантии'"
             type: string
-          - name: trust_items
+          - name: safety_items
             label: "🛡️ Гарантии"
             type: object
             list:
               collapsible:
                 collapsed: false
-                summary: "{title}"
+                summary: "{name}"
             fields:
-              - name: title
+              - name: name
                 label: Заголовок
                 type: string
               - name: description
                 label: Описание
-                type: rich-text
-
-          - name: testimonials_title
-            label: "💬 Заголовок 'Отзывы'"
-            type: string
-          - name: testimonials
-            label: "💬 Отзывы"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "Отзыв #{index}"
-            fields:
-              - name: text
-                label: Текст отзыва
-                type: rich-text
-              - name: author
-                label: Автор (можно оставить пустым)
+                type: wysiwyg
+              - name: icon
+                label: Иконка (эмодзи)
                 type: string
 
+          # Отзывы
+          - name: review_text
+            label: "💬 Текст отзыва"
+            type: wysiwyg
+          - name: review_author
+            label: "💬 Автор отзыва"
+            type: string
+
+          # Цены
           - name: pricing_title
             label: "💰 Заголовок 'Форматы консультаций'"
-            type: string
-          - name: pricing_subtitle
-            label: "💰 Подзаголовок"
-            type: string
-          - name: pricing_note
-            label: "💰 Примечание"
             type: string
           - name: pricing_items
             label: "💰 Тарифы"
@@ -190,67 +190,41 @@ content:
             list:
               collapsible:
                 collapsed: false
-                summary: "{label}"
+                summary: "{name}"
             fields:
-              - name: label
+              - name: name
                 label: Название тарифа
                 type: string
               - name: duration
                 label: Длительность
                 type: string
-                description: "Например: 60 мин"
               - name: description
                 label: Описание
-                type: rich-text
-              - name: cta
-                label: Текст кнопки
+                type: wysiwyg
+              - name: price
+                label: Стоимость
                 type: string
-              - name: cta_link
-                label: Ссылка кнопки
-                type: string
-              - name: featured
-                label: Популярный?
-                type: boolean
-                description: "Отметьте для выделения карточки"
-              - name: badge
-                label: Бейдж
-                type: string
-                description: "Например: Популярно"
 
-          - name: form_title
-            label: "📝 Заголовок формы"
-            type: string
-          - name: form_subtitle
-            label: "📝 Подзаголовок формы"
-            type: string
-
+          # CTA блок
           - name: cta_title
             label: "🚀 Заголовок призыва к действию"
             type: string
-          - name: cta_subtitle
+          - name: cta_text
             label: "🚀 Подзаголовок призыва"
+            type: wysiwyg
+          - name: cta_button_primary
+            label: "🚀 Текст основной кнопки"
             type: string
-          - name: cta_button
-            label: "🚀 Текст кнопки"
-            type: string
-          - name: cta_button_link
-            label: "🚀 Ссылка кнопки"
-            type: string
-
-          - name: contact_phone
-            label: "📞 Телефон"
+          - name: cta_button_secondary
+            label: "🚀 Текст второй кнопки"
             type: string
 
       - name: about_page
-        label: "👤 Обо мне"
+        label: " Обо мне"
         type: file
         path: content/pages/about.yml
         format: yaml
         fields:
-          - name: about_image
-            label: "🖼️ Фото в профиле"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
           - name: title
             label: "🔍 SEO — Заголовок"
             type: string
@@ -264,7 +238,6 @@ content:
           - name: header_tag
             label: "🏷️ Тег-заголовок"
             type: string
-            description: "Маленький текст над заголовком"
           - name: header_title
             label: "⭐ Имя и фамилия"
             type: string
@@ -274,220 +247,9 @@ content:
 
           - name: lead_text
             label: "💬 Вводный текст (о подходе)"
-            type: rich-text
+            type: wysiwyg
 
           - name: bio_paragraph_1
-            label: "📖 Биография — абзац 1"
-            type: rich-text
-          - name: bio_paragraph_2
-            label: "📖 Биография — абзац 2"
-            type: rich-text
-
-          - name: education_title
-            label: "🎓 Заголовок раздела образования"
-            type: string
-          - name: education_items
-            label: "🎓 Образование (список)"
-            type: string
-            list:
-              collapsible:
-                collapsed: false
-                summary: "Пункт #{index}"
-
-          - name: approach_title
-            label: "🧠 Заголовок раздела подхода"
-            type: string
-          - name: approach_text
-            label: "🧠 Текст о подходе"
-            type: rich-text
-
-          - name: call_to_action
-            label: "🚀 Текст кнопки"
-            type: string
-          - name: call_to_action_link
-            label: "🚀 Ссылка кнопки"
-            type: string
-
-          - name: about_image
-            label: "🖼️ Фото в профиле"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
-
-      - name: services_page
-        label: "🛠️ Услуги"
-        type: file
-        path: content/pages/services.yml
-        format: yaml
-        fields:
-          - name: services_image
-            label: "🖼️ Фоновое фото"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
-          - name: title
-            label: "🔍 SEO — Заголовок"
-            type: string
-          - name: description
-            label: "🔍 SEO — Описание"
-            type: text
-          - name: keywords
-            label: "🔍 SEO — Ключевые слова"
-            type: string
-
-          - name: header_tag
-            label: "🏷️ Тег-заголовок"
-            type: string
-          - name: header_title
-            label: "⭐ Заголовок страницы"
-            type: string
-          - name: header_subtitle
-            label: "⭐ Подзаголовок"
-            type: string
-
-          - name: intro_text
-            label: "💬 Вводный текст"
-            type: rich-text
-
-          - name: services
-            label: "📋 Список услуг"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
-            fields:
-              - name: title
-                label: Название услуги
-                type: string
-              - name: description
-                label: Описание
-                type: rich-text
-              - name: duration
-                label: Длительность
-                type: string
-                description: "Например: 50 минут"
-              - name: price
-                label: Стоимость
-                type: string
-                description: "Оставьте пустым, если не нужно"
-
-          - name: how_it_works_title
-            label: "📋 Заголовок 'Как проходит работа'"
-            type: string
-          - name: how_it_works_steps
-            label: "📋 Шаги работы"
-            type: string
-            list:
-              collapsible:
-                collapsed: false
-                summary: "Шаг #{index}"
-
-          - name: cta_title
-            label: "🚀 Заголовок призыва"
-            type: string
-          - name: cta_text
-            label: "🚀 Текст призыва"
-            type: rich-text
-          - name: cta_button
-            label: "🚀 Текст кнопки"
-            type: string
-          - name: cta_link
-            label: "🚀 Ссылка кнопки"
-            type: string
-
-          - name: services_image
-            label: "🖼️ Фоновое фото"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
-
-      - name: contact_page
-        label: "📞 Контакты"
-        type: file
-        path: content/pages/contact.yml
-        format: yaml
-        fields:
-          - name: contact_image
-            label: "🖼️ Фото в контактах"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
-          - name: title
-            label: "🔍 SEO — Заголовок"
-            type: string
-          - name: description
-            label: "🔍 SEO — Описание"
-            type: text
-          - name: keywords
-            label: "🔍 SEO — Ключевые слова"
-            type: string
-
-          - name: header_tag
-            label: "🏷️ Тег-заголовок"
-            type: string
-          - name: header_title
-            label: "⭐ Заголовок страницы"
-            type: string
-          - name: header_subtitle
-            label: "⭐ Подзаголовок"
-            type: string
-
-          - name: contact_info_title
-            label: "📞 Заголовок контактов"
-            type: string
-          - name: phone
-            label: "📞 Телефон"
-            type: string
-          - name: email
-            label: "✉️ Email"
-            type: string
-          - name: location
-            label: "📍 Локация"
-            type: string
-
-          - name: telegram_label
-            label: "💬 Подпись Telegram"
-            type: string
-          - name: telegram_link
-            label: "💬 Ссылка Telegram"
-            type: string
-          - name: channel_label
-            label: "💬 Подпись Канал"
-            type: string
-          - name: channel_link
-            label: "💬 Ссылка Канал"
-            type: string
-          - name: whatsapp_label
-            label: "💬 Подпись WhatsApp"
-            type: string
-          - name: whatsapp_link
-            label: "💬 Ссылка WhatsApp"
-            type: string
-          - name: email_label
-            label: "💬 Подпись Email"
-            type: string
-          - name: email_link
-            label: "💬 Ссылка Email"
-            type: string
-
-          - name: form_title
-            label: "📝 Заголовок формы"
-            type: string
-          - name: form_description
-            label: "📝 Описание формы"
-            type: rich-text
-          - name: form_submit_button
-            label: "📝 Текст кнопки отправки"
-            type: string
-          - name: form_privacy_text
-            label: "📝 Текст о конфиденциальности"
-            type: string
-          - name: response_time
-            label: "⏱️ Время ответа"
-            type: string
-
-          - name: footer_text
-            label: "📄 Текст в подвале"
-            type: string
-
-          - name: contact_image
-            label: "🖼️ Фото в контактах"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg
+            label: " Биография — абзац 1"
+            type: wysiwyg
+          - name
