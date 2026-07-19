@@ -1,198 +1,82 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="yandex-verification" content="94cb1003e6ae7f19" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="all">
-    <meta name="description" content="Контакты психолога Надежды Литвиновой. Телефон, email, Telegram. Запись на консультацию онлайн.">
-    <meta name="keywords" content="записаться к психологу, психолог контакты, консультация психолога">
-    <title>Контакты — Надежда Литвинова | Психолог</title>
-    <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/contacts.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Контакты Надежды Литвиновой","mainEntity":{"@type":"Person","name":"Надежда Литвинова","jobTitle":"Психолог, специалист по EMDR","telephone":"+79185055715","email":"denas111222@gmail.com","url":"https://b8k13mus.github.io/litvinova-site/","sameAs":["https://t.me/uspeh_prosto","https://t.me/nadezhda_litvinova_coach"]}}</script>
-
+    <title data-content="seo_title">Контакты | Психолог Надежда Литвинова</title>
+    <meta name="description" data-content="seo_description" content="Запишитесь на консультацию онлайн или свяжитесь через Telegram.">
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Главное меню">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">Надежда Литвинова</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navMenu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Главная</a></li>
-                <li role="none"><a href="about.html" class="nav-link" role="menuitem">Обо мне</a></li>
-                <li role="none"><a href="methods.html" class="nav-link" role="menuitem">Методы</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">Услуги</a></li>
-                <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Блог</a></li>
-                <li role="none"><a href="contacts.html" class="nav-link active" role="menuitem">Контакты</a></li>
-            </ul>
-            <a href="#contact-form" class="nav-cta">Записаться</a>
-        </div>
-    </nav>
-
-    <header class="page-header" style="padding-top: 120px; padding-bottom: 60px; background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);">
-        <div class="container" style="text-align: center;">
-            <span class="section-tag">Контакты</span>
-            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Свяжитесь со мной</h1>
-            <p style="color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Запишитесь на консультацию удобным способом</p>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Надежда Литвинова</a>
+            <nav class="main-nav">
+                <a href="index.html">Главная</a>
+                <a href="about.html">Обо мне</a>
+                <a href="services.html">Услуги</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="blog.html">Блог</a>
+            </nav>
         </div>
     </header>
 
-    <section class="contact-section" id="contact-form" aria-labelledby="contact-title" style="padding-top: 80px;">
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1 data-content="contact_title">Запишитесь на консультацию</h1>
+                <p data-content="contact_subtitle">Оставьте заявку, и я свяжусь с вами в течение 24 часов.</p>
+            </div>
+        </section>
+
+        <section class="contact-details">
+            <div class="container">
+                <div class="contact-info" data-content="contact_info_items"></div>
+                
+                <form class="contact-form" id="contactForm">
+                    <h3>Отправить заявку</h3>
+                    <label>
+                        Ваше имя *
+                        <input type="text" name="name" required placeholder="Пожалуйста, введите имя">
+                    </label>
+                    <label>
+                        Телефон *
+                        <input type="tel" name="phone" required placeholder="Пожалуйста, введите телефон">
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" name="email" placeholder="Введите корректный email">
+                    </label>
+                    <label>
+                        Предпочтительный формат
+                        <select name="format">
+                            <option value="online">Онлайн (Zoom/Skype)</option>
+                            <option value="any">Любой</option>
+                        </select>
+                    </label>
+                    <label>
+                        Опишите ваш запрос
+                        <textarea name="message" rows="4"></textarea>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="consent" required>
+                        Я согласен(а) на обработку персональных данных
+                    </label>
+                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    <p class="form-note">Данные конфиденциальны и не передаются третьим лицам.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-tag light">Запись</span>
-                    <h2 id="contact-title" class="section-title light">Запишитесь на консультацию</h2>
-                    <p class="contact-desc">Оставьте заявку, и я свяжусь с вами в течение 24 часов для согласования удобного времени.</p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <div>
-                                <span class="contact-label">Телефон</span>
-                                <a href="tel:+79185055715" class="contact-value">+7 (918) 505-57-15</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <div>
-                                <span class="contact-label">Email</span>
-                                <a href="mailto:denas111222@gmail.com" class="contact-value">denas111222@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">💬</span>
-                            <div>
-                                <span class="contact-label">Telegram</span>
-                                <a href="https://t.me/nadezhda_litvinova_coach" class="contact-value" target="_blank" rel="noopener">@nadezhda_litvinova_coach</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <span class="contact-label">Формат</span>
-                                <span class="contact-value">Онлайн</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://t.me/uspeh_prosto" class="telegram-channel" target="_blank" rel="noopener">
-                        <span class="tg-icon">📢</span>
-                        <span>Мой канал в Telegram: полезные материалы и инсайты</span>
-                        <span class="tg-arrow">→</span>
-                    </a>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mlgygezw" method="POST" novalidate>
-                        <div class="form-group">
-                            <label for="name">Ваше имя <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required placeholder="Как к вам обращаться?" autocomplete="name">
-                            <span class="error-message" id="nameError">Пожалуйста, введите имя</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Телефон <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__" autocomplete="tel">
-                            <span class="error-message" id="phoneError">Пожалуйста, введите телефон</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
-                            <span class="error-message" id="emailError">Введите корректный email</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="format">Предпочтительный формат</label>
-                            <select id="format" name="format">
-                                <option value="">Выберите формат</option>
-                                <option value="online">Онлайн (Zoom/Skype)</option>
-                                <option value="offline">Онлайн</option>
-                                <option value="either">Любой</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Опишите ваш запрос</label>
-                            <textarea id="message" name="message" rows="4" placeholder="С чем хотели бы поработать?"></textarea>
-                        </div>
-                        <div class="form-group form-checkbox">
-                            <input type="checkbox" id="consent" name="consent" required>
-                            <label for="consent">Я согласен(а) на обработку персональных данных</label>
-                            <span class="error-message" id="consentError">Необходимо согласие</span>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-                            <span class="btn-text">Отправить заявку</span>
-                            <span class="btn-loader" hidden>Отправка...</span>
-                        </button>
-                        <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
-                            <span class="success-icon">✓</span>
-                            <p>Спасибо! Я получила вашу заявку и свяжусь с вами в ближайшее время.</p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="footer-logo">🌿 Надежда Литвинова</span>
-                    <p class="footer-desc">Психолог, специалист по EMDR и Интегративный подход.</p>
-                </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Разделы</p>
-                    <ul>
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="about.html">Обо мне</a></li>
-                        <li><a href="methods.html">Методы</a></li>
-                        <li><a href="services.html">Услуги</a></li>
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Методы</p>
-                    <ul>
-                        <li><a href="methods.html#emdr">EMDR / ДПДГ</a></li>
-                        <li><a href="methods.html#brainspotting">Интегративный подход</a></li>
-                        <li><a href="methods.html#mmil">ММИЛ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <p class="footer-heading">Контакты</p>
-                    <a href="tel:+79185055715">+7 (918) 505-57-15</a>
-                    <a href="mailto:denas111222@gmail.com">denas111222@gmail.com</a>
-                    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener">Telegram</a>
-                    <a href="https://t.me/uspeh_prosto" target="_blank" rel="noopener">Канал в Telegram</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Надежда Литвинова. Все права защищены.</p>
-                <p><a href="privacy.html">Политика конфиденциальности</a></p>
-            </div>
+            <p>&copy; 2026 Надежда Литвинова. Все права защищены.</p>
         </div>
     </footer>
 
-    <script src="scripts.js" defer></script>
-
-    <!-- Telegram Chat Widget -->
-    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion="nadezhda_litvinova_coach" data-comments-limit="5" data-color="343638" data-dark-color="F0F0F0"></script>
-    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener" class="telegram-float" aria-label="Написать в Telegram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 4.5L2.5 12.5L9.5 14.5L12.5 21.5L21.5 4.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14.5L12.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-
+    <script src="content-loader.js"></script>
 </body>
 </html>
