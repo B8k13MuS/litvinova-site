@@ -11,7 +11,7 @@
   <meta name="author" content="Надежда Литвинова">
   <meta property="og:title" content="Надежда Литвинова — Психолог, специалист по EMDR">
   <meta property="og:description" content="Помогаю справиться с травмой, тревогой, выгоранием. Онлайн по всему миру.">
-  <meta property="og:image" content="https://litvinova-psy.ru/images/hero-photo.png">
+  <meta property="og:image" content="https://litvinova-psy.ru/images/hero-photo.jpg">
   <meta property="og:url" content="https://litvinova-psy.ru/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
@@ -101,12 +101,13 @@
     .trust-item{display:flex;flex-direction:column;gap:4px;}
     .trust-item strong{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--gold);line-height:1;}
     .trust-item span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;}
-    /* DIVA-style: intense warm glow wrapping the figure, breathing animation */
-    .hero-image-wrapper{position:relative;z-index:2;background:#0A0A0A;border-radius:0;overflow:visible;}
-    .hero-image-wrapper::before{content:'';position:absolute;inset:-30px;background:radial-gradient(ellipse at 50% 45%,rgba(255,200,100,0.5) 0%,rgba(212,175,55,0.25) 20%,rgba(201,169,110,0.08) 45%,transparent 70%);pointer-events:none;z-index:1;animation:divaGlow 4s ease-in-out infinite;}
-    .hero-image-wrapper::after{content:'';position:absolute;inset:-60px;background:radial-gradient(ellipse at 50% 50%,rgba(255,180,80,0.15) 0%,rgba(212,175,55,0.05) 30%,transparent 60%);pointer-events:none;z-index:0;animation:divaGlow 4s ease-in-out infinite 0.5s;}
-    .hero-image-wrapper img{width:100%;height:720px;object-fit:cover;object-position:center 15%;display:block;background:transparent !important;position:relative;z-index:2;transform:scale(1.15);transform-origin:center top;}
-    @keyframes divaGlow{0%,100%{transform:scale(1);opacity:0.7;filter:blur(0px);}50%{transform:scale(1.15);opacity:1;filter:blur(2px);}}
+    /* DIVA-style: black background photo + atmospheric glow behind figure */
+    .hero-image-wrapper{position:relative;z-index:2;}
+    .hero-image-wrapper img{width:100%;height:720px;object-fit:cover;object-position:center 15%;display:block;border-radius:var(--radius-xl);position:relative;z-index:2;transform:scale(1.15);transform-origin:center top;}
+    /* Warm glow positioned BEHIND the figure - visible around silhouette */
+    .hero-image-glow{position:absolute;top:10%;left:-10%;width:120%;height:90%;background:radial-gradient(ellipse at 50% 50%,rgba(255,200,100,0.35) 0%,rgba(212,175,55,0.18) 20%,rgba(201,169,110,0.06) 40%,transparent 65%);pointer-events:none;z-index:1;animation:divaGlow 4s ease-in-out infinite;}
+    .hero-image-glow-outer{position:absolute;top:0;left:-20%;width:140%;height:100%;background:radial-gradient(ellipse at 50% 55%,rgba(255,180,80,0.12) 0%,rgba(212,175,55,0.04) 30%,transparent 55%);pointer-events:none;z-index:0;animation:divaGlow 4s ease-in-out infinite 0.5s;}
+    @keyframes divaGlow{0%,100%{transform:scale(1) translateY(0);opacity:0.7;}50%{transform:scale(1.12) translateY(-3%);opacity:1;}}
     /* Gold decorative leaves */
     .hero-ornament{position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:280px;height:520px;pointer-events:none;z-index:3;}
     .hero-ornament svg{width:100%;height:100%;}
@@ -284,7 +285,9 @@
     </div>
     <div class="hero-grid">
       <div class="hero-image-wrapper reveal reveal-delay-2">
-        <picture><source srcset="images/hero-photo.png" type="image/png"><img src="images/hero-photo.png" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image"></picture>
+        <div class="hero-image-glow"></div>
+        <div class="hero-image-glow-outer"></div>
+        <picture><source srcset="images/hero-photo.jpg" type="image/jpeg"><img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image"></picture>
       </div>
       <div class="hero-content reveal">
         <span class="eyebrow" data-content="eyebrow">Психолог · EMDR · ММИЛ · Онлайн по всему миру</span>
