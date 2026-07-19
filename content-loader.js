@@ -1,6 +1,6 @@
 /**
- * Content Loader для Pages CMS v2.0
- * Улучшения: sessionStorage, таймаут fetch, UI-индикаторы, универсальные рендереры
+ * Content Loader для Pages CMS v2.1
+ * Улучшения: sessionStorage, таймаут fetch, UI-индикаторы, универсальные рендереры, поддержка ссылок
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const CACHE_TIME_KEY = `${CACHE_KEY}_time`;
     const CACHE_DURATION = 60 * 60 * 1000; // 1 час
 
-    // Проверка библиотек
     if (typeof jsyaml === 'undefined') {
         console.error('CMS: js-yaml не загружен');
         showIndicator('Ошибка загрузки библиотеки', 'error');
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         let data;
         let fromCache = false;
 
-        // Проверка кеша (sessionStorage)
         const cachedData = sessionStorage.getItem(CACHE_KEY);
         const cachedTime = sessionStorage.getItem(CACHE_TIME_KEY);
 
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             data = jsyaml.load(cachedData);
             fromCache = true;
         } else {
-            // Загрузка с таймаутом
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 8000);
 
@@ -46,7 +43,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             data = jsyaml.load(yamlText);
             if (!data || typeof data !== 'object') throw new Error('YAML невалиден');
 
-            // Сохранение в кеш
             sessionStorage.setItem(CACHE_KEY, yamlText);
             sessionStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
         }
@@ -125,7 +121,7 @@ function renderContent(data) {
             if (typeof DOMPurify !== 'undefined') {
                 el.innerHTML = DOMPurify.sanitize(value);
             } else {
-                el.textContent = value; // Безопасный fallback без HTML
+                el.textContent = value;
             }
         }
     });
@@ -135,11 +131,21 @@ function renderContent(data) {
         const key = el.getAttribute('data-content-link');
         const value = getValue(data, key);
         if (value && String(value).trim() !== '') {
-            el.href = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
+            const cleanUrl = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
+            el.setAttribute('href', cleanUrl);
         }
     });
 
-    // 3. Списки с рендерерами
+    // 3. Изображения
+    document.querySelectorAll('[data-content-image]').forEach(el => {
+        const key = el.getAttribute('data-content-image');
+        const value = getValue(data, key);
+        if (value && String(value).trim() !== '') {
+            el.src = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
+        }
+    });
+
+    // 4. Списки
     const listRenderers = {
         'issues_list': renderIssues,
         'methods_list': renderMethods,
@@ -147,10 +153,11 @@ function renderContent(data) {
         'trust_list': renderTrust,
         'testimonials_list': renderTestimonials,
         'pricing_list': renderPricing,
-        'services_items': renderServices,
+        'services': renderServices,
         'packages_items': renderPackages,
         'education_items': renderSimpleList,
-        'how_it_works_steps': renderSimpleList
+        'how_it_works_steps': renderSimpleList,
+        'blog_posts': renderBlogPosts
     };
 
     Object.entries(listRenderers).forEach(([key, renderer]) => {
@@ -158,15 +165,6 @@ function renderContent(data) {
         if (container && Array.isArray(data[key]) && data[key].length > 0) {
             container.innerHTML = renderer(data[key]);
             reinitAnimations(container);
-        }
-    });
-
-    // 4. Изображения
-    document.querySelectorAll('[data-content-image]').forEach(el => {
-        const key = el.getAttribute('data-content-image');
-        const value = getValue(data, key);
-        if (value && String(value).trim() !== '') {
-            el.src = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
         }
     });
 }
@@ -185,8 +183,6 @@ function reinitAnimations(container) {
 
     container.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
-
-// --- Рендереры ---
 
 function renderIssues(items) {
     const icons = [
@@ -305,12 +301,27 @@ function renderSimpleList(items) {
     `).join('');
 }
 
+function renderBlogPosts(items) {
+    return items.map((item, i) => {
+        const tags = (item.tags || []).map(tag => `<span class="tag">${sanitize(tag)}</span>`).join('');
+        return `
+            <div class="blog-card reveal reveal-delay-${(i % 3) + 1}">
+                <div class="blog-card-content">
+                    ${tags}
+                    <h3>${sanitize(item.title)}</h3>
+                    <p>${sanitize(item.description)}</p>
+                    <a href="${sanitize(item.url)}">Читать статью →</a>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
 function sanitize(str) {
     if (!str) return '';
     if (typeof DOMPurify !== 'undefined') {
         return DOMPurify.sanitize(str);
     }
-    // Fallback: экранирование HTML
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
