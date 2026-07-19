@@ -329,3 +329,40 @@ content:
       - name: footer_text
         label: "Footer: Текст"
         type: string
+
+  - name: blog
+    label: "Страница Блог"
+    type: collection
+    path: content/pages
+    filename: blog.yml
+    fields:
+      - name: seo_title
+        label: "SEO: Заголовок"
+        type: string
+      - name: seo_description
+        label: "SEO: Описание"
+        type: text
+      - name: blog_title
+        label: "Blog: Заголовок"
+        type: string
+      - name: blog_subtitle
+        label: "Blog: Подзаголовок"
+        type: text
+      - name: blog_posts
+        label: "Blog: Список статей"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Название"
+            type: string
+          - name: description
+            label: "Описание"
+            type: text
+          - name: url
+            label: "Ссылка"
+            type: string
+          - name: tags
+            label: "Теги"
+            type: string
+            list: true
