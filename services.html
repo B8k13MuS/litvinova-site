@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-content="seo_title">Услуги и стоимость | Психолог Надежда Литвинова</title>
-    <meta name="description" data-content="seo_description" content="Индивидуальные консультации, EMDR-сессии, пакеты встреч. Прозрачные цены.">
-    
+    <title data-content="seo_title">Услуги — Надежда Литвинова | Психолог</title>
+    <meta name="description" data-content="seo_description" content="Индивидуальная психологическая помощь, EMDR-терапия, работа с травмой и ПТСР.">
+    <meta name="keywords" content="услуги психолога, EMDR терапия, психолог онлайн, консультация">
+    <link rel="canonical" href="https://litvinova-psy.ru/services.html">
+    <meta name="robots" content="index, follow">
+
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js" 
+        crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="site-header">
@@ -26,30 +33,37 @@
     <main>
         <section class="services-hero">
             <div class="container">
-                <h1 data-content="services_title">Форматы работы</h1>
-                <p data-content="services_subtitle">Выберите удобный формат консультации</p>
+                <span class="header-tag" data-content="header_tag">Услуги</span>
+                <h1 data-content="header_title">Услуги</h1>
+                <p class="header-subtitle" data-content="header_subtitle">Индивидуальный подход к каждому запросу</p>
+                <p class="intro-text" data-content="intro_text">Я предлагаю различные форматы работы, чтобы вы могли выбрать тот, который подходит именно вам. Все консультации проводятся онлайн.</p>
             </div>
         </section>
 
         <section class="services-list">
             <div class="container">
-                <div class="services-grid" data-content="services_items"></div>
+                <div class="services-grid" data-content="services"></div>
             </div>
         </section>
 
-        <section class="packages">
+        <section class="how-it-works">
             <div class="container">
-                <h2>Пакеты консультаций</h2>
-                <p class="section-subtitle" data-content="packages_intro">Выгоднее, чем поштучные сессии. Для разных запросов и глубины работы.</p>
-                <div class="packages-grid" data-content="packages_items"></div>
+                <h2 data-content="how_it_works_title">Как проходит работа</h2>
+                <div class="steps-list" data-content="how_it_works_steps"></div>
+            </div>
+        </section>
+
+        <section class="services-image-section">
+            <div class="container">
+                <img data-content-image="services_image" src="images/photo-session.jpg" alt="Психологическая консультация" loading="lazy">
             </div>
         </section>
 
         <section class="cta">
             <div class="container">
-                <h2 data-content="cta_title">Первая консультация — знакомство</h2>
-                <p data-content="cta_text">15–20 минут бесплатно. Обсудим ваш запрос и формат работы.</p>
-                <a href="contacts.html" class="btn btn-primary">Записаться на бесплатную беседу</a>
+                <h2 data-content="cta_title">Готовы начать?</h2>
+                <p data-content="cta_text">Запишитесь на первую консультацию, и мы вместе найдём лучший путь для вас.</p>
+                <a href="contacts.html" class="btn btn-primary" data-content="cta_button">Записаться</a>
             </div>
         </section>
     </main>
@@ -57,6 +71,10 @@
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Надежда Литвинова. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
         </div>
     </footer>
 
