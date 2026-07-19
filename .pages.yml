@@ -3,10 +3,11 @@ media:
   output: /images
 
 content:
-  - name: pages
-    label: "Страницы сайта"
+  - name: home
+    label: "Главная страница"
     type: collection
     path: content/pages
+    filename: index.yml
     fields:
       - name: seo_title
         label: "SEO: Заголовок страницы"
@@ -17,7 +18,7 @@ content:
       - name: hero_title
         label: "Hero: Главный заголовок"
         type: rich-text
-        description: "Используйте <br> для переносов"
+        description: "Используйте <br> или <em> для форматирования"
       - name: hero_description
         label: "Hero: Описание"
         type: rich-text
@@ -28,7 +29,7 @@ content:
         label: "Issues: Заголовок"
         type: string
       - name: issues_list
-        label: "Issues: Список"
+        label: "Issues: Список проблем"
         type: object
         list: true
         fields:
@@ -37,7 +38,7 @@ content:
             type: string
           - name: description
             label: "Описание"
-            type: rich-text
+            type: text
       - name: about_title
         label: "About: Заголовок"
         type: string
@@ -45,7 +46,7 @@ content:
         label: "Methods: Заголовок"
         type: string
       - name: methods_list
-        label: "Methods: Список"
+        label: "Methods: Список методов"
         type: object
         list: true
         fields:
@@ -54,12 +55,12 @@ content:
             type: string
           - name: description
             label: "Описание"
-            type: rich-text
+            type: text
       - name: process_title
         label: "Process: Заголовок"
         type: string
       - name: process_list
-        label: "Process: Список"
+        label: "Process: Список шагов"
         type: object
         list: true
         fields:
@@ -68,12 +69,12 @@ content:
             type: string
           - name: description
             label: "Описание"
-            type: rich-text
+            type: text
       - name: trust_title
         label: "Trust: Заголовок"
         type: string
       - name: trust_list
-        label: "Trust: Список"
+        label: "Trust: Список гарантий"
         type: object
         list: true
         fields:
@@ -82,17 +83,17 @@ content:
             type: string
           - name: description
             label: "Описание"
-            type: rich-text
+            type: text
       - name: testimonials_title
         label: "Testimonials: Заголовок"
         type: string
       - name: testimonials_list
-        label: "Testimonials: Список"
+        label: "Testimonials: Список отзывов"
         type: object
         list: true
         fields:
           - name: text
-            label: "Текст"
+            label: "Текст отзыва"
             type: rich-text
           - name: author
             label: "Автор"
@@ -104,7 +105,7 @@ content:
         label: "Pricing: Заголовок"
         type: string
       - name: pricing_list
-        label: "Pricing: Список"
+        label: "Pricing: Список тарифов"
         type: object
         list: true
         fields:
@@ -112,23 +113,219 @@ content:
             label: "Название"
             type: string
           - name: value
-            label: "Значение"
+            label: "Цена"
             type: string
           - name: description
             label: "Описание"
-            type: rich-text
+            type: text
           - name: featured
             label: "Популярный"
             type: boolean
           - name: badge
             label: "Бейдж"
             type: string
-      - name: form_title
-        label: "Form: Заголовок"
-        type: string
       - name: cta_title
         label: "CTA: Заголовок"
         type: string
+      - name: cta_text
+        label: "CTA: Текст"
+        type: text
       - name: contact_phone
         label: "CTA: Телефон"
+        type: string
+
+  - name: about
+    label: "Страница Обо мне"
+    type: collection
+    path: content/pages
+    filename: about.yml
+    fields:
+      - name: seo_title
+        label: "SEO: Заголовок"
+        type: string
+      - name: seo_description
+        label: "SEO: Описание"
+        type: text
+      - name: header_tag
+        label: "Header: Тег"
+        type: string
+      - name: header_title
+        label: "Header: Заголовок"
+        type: string
+      - name: header_subtitle
+        label: "Header: Подзаголовок"
+        type: string
+      - name: lead_text
+        label: "Lead: Вводный текст"
+        type: rich-text
+      - name: bio_paragraph_1
+        label: "Bio: Параграф 1"
+        type: rich-text
+      - name: bio_paragraph_2
+        label: "Bio: Параграф 2"
+        type: rich-text
+      - name: education_title
+        label: "Education: Заголовок"
+        type: string
+      - name: education_items
+        label: "Education: Список"
+        type: string
+        list: true
+      - name: approach_title
+        label: "Approach: Заголовок"
+        type: string
+      - name: approach_text
+        label: "Approach: Текст"
+        type: rich-text
+      - name: about_image
+        label: "Изображение"
+        type: image
+      - name: call_to_action
+        label: "CTA: Текст кнопки"
+        type: string
+      - name: call_to_action_link
+        label: "CTA: Ссылка"
+        type: string
+
+  - name: services
+    label: "Страница Услуги"
+    type: collection
+    path: content/pages
+    filename: services.yml
+    fields:
+      - name: seo_title
+        label: "SEO: Заголовок"
+        type: string
+      - name: seo_description
+        label: "SEO: Описание"
+        type: text
+      - name: header_tag
+        label: "Header: Тег"
+        type: string
+      - name: header_title
+        label: "Header: Заголовок"
+        type: string
+      - name: header_subtitle
+        label: "Header: Подзаголовок"
+        type: string
+      - name: intro_text
+        label: "Intro: Вводный текст"
+        type: rich-text
+      - name: services
+        label: "Services: Список услуг"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Название"
+            type: string
+          - name: description
+            label: "Описание"
+            type: rich-text
+          - name: duration
+            label: "Длительность"
+            type: string
+          - name: price
+            label: "Цена"
+            type: string
+      - name: how_it_works_title
+        label: "How: Заголовок"
+        type: string
+      - name: how_it_works_steps
+        label: "How: Шаги"
+        type: string
+        list: true
+      - name: cta_title
+        label: "CTA: Заголовок"
+        type: string
+      - name: cta_text
+        label: "CTA: Текст"
+        type: text
+      - name: cta_button
+        label: "CTA: Текст кнопки"
+        type: string
+      - name: services_image
+        label: "Изображение"
+        type: image
+      - name: cta_link
+        label: "CTA: Ссылка"
+        type: string
+
+  - name: contact
+    label: "Страница Контакты"
+    type: collection
+    path: content/pages
+    filename: contact.yml
+    fields:
+      - name: seo_title
+        label: "SEO: Заголовок"
+        type: string
+      - name: seo_description
+        label: "SEO: Описание"
+        type: text
+      - name: header_tag
+        label: "Header: Тег"
+        type: string
+      - name: header_title
+        label: "Header: Заголовок"
+        type: string
+      - name: header_subtitle
+        label: "Header: Подзаголовок"
+        type: string
+      - name: contact_info_title
+        label: "Contacts: Заголовок"
+        type: string
+      - name: phone
+        label: "Телефон"
+        type: string
+      - name: email
+        label: "Email"
+        type: string
+      - name: location
+        label: "Локация"
+        type: string
+      - name: telegram_label
+        label: "Telegram: Подпись"
+        type: string
+      - name: telegram_link
+        label: "Telegram: Ссылка"
+        type: string
+      - name: channel_label
+        label: "Канал: Подпись"
+        type: string
+      - name: channel_link
+        label: "Канал: Ссылка"
+        type: string
+      - name: whatsapp_label
+        label: "WhatsApp: Подпись"
+        type: string
+      - name: whatsapp_link
+        label: "WhatsApp: Ссылка"
+        type: string
+      - name: email_label
+        label: "Email: Подпись"
+        type: string
+      - name: email_link
+        label: "Email: Ссылка"
+        type: string
+      - name: form_title
+        label: "Form: Заголовок"
+        type: string
+      - name: form_description
+        label: "Form: Описание"
+        type: text
+      - name: form_submit_button
+        label: "Form: Текст кнопки"
+        type: string
+      - name: form_privacy_text
+        label: "Form: Текст согласия"
+        type: text
+      - name: response_time
+        label: "Form: Время ответа"
+        type: string
+      - name: contact_image
+        label: "Изображение"
+        type: image
+      - name: footer_text
+        label: "Footer: Текст"
         type: string
