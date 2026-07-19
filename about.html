@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-content="seo_title">Обо мне | Психолог Надежда Литвинова</title>
     <meta name="description" data-content="seo_description" content="Более 10 лет практики, EMDR, ММИЛ, интегративный подход.">
-    
+    <meta name="keywords" content="психолог Литвинова, EMDR, ММИЛ, интегративный подход, образование">
+    <link rel="canonical" href="https://litvinova-psy.ru/about.html">
+    <meta name="robots" content="index, follow">
+
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js" 
+        crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="site-header">
@@ -26,27 +33,31 @@
     <main>
         <section class="about-hero">
             <div class="container">
-                <h1 data-content="about_hero_title">Я верю, что каждый человек обладает внутренними ресурсами для восстановления.</h1>
-                <p data-content="about_hero_text">Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. Использую доказательные методы: EMDR и ММИЛ.</p>
+                <span class="header-tag" data-content="header_tag">Обо мне</span>
+                <h1 data-content="header_title">Надежда Литвинова</h1>
+                <p class="header-subtitle" data-content="header_subtitle">Психолог, специалист по EMDR и Интегративный подход</p>
+                <p class="lead-text" data-content="lead_text">Я верю, что каждый человек обладает внутренними ресурсами для восстановления. Моя задача — помочь вам их найти и активировать.</p>
             </div>
         </section>
 
         <section class="about-details">
             <div class="container">
-                <h2>Образование и квалификация</h2>
-                <ul class="credentials-list" data-content="about_credentials"></ul>
-                
-                <h2>Мой подход</h2>
-                <div class="approach-text" data-content="about_approach"></div>
-                
-                <a href="contacts.html" class="btn btn-primary">Записаться на консультацию</a>
-            </div>
-        </section>
+                <div class="about-image-wrapper">
+                    <img data-content-image="about_image" src="images/photo-main.jpg" alt="Надежда Литвинова — психолог" loading="lazy">
+                </div>
 
-        <section class="values">
-            <div class="container">
-                <h2>Чем руководствуюсь в работе</h2>
-                <div class="values-grid" data-content="about_values"></div>
+                <div class="about-bio">
+                    <p data-content="bio_paragraph_1">Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. За это время я работала с сотнями клиентов, помогая им преодолевать страхи, тревогу, последствия травм и стресса.</p>
+                    <p data-content="bio_paragraph_2">Использую доказательные методы: EMDR и ММИЛ. Постоянно прохожу супервизии и повышение квалификации, чтобы предлагать клиентам самые эффективные подходы.</p>
+                </div>
+
+                <h2 data-content="education_title">Образование и квалификация</h2>
+                <ul class="credentials-list" data-content="education_items"></ul>
+
+                <h2 data-content="approach_title">Мой подход</h2>
+                <div class="approach-text" data-content="approach_text"></div>
+
+                <a href="contacts.html" class="btn btn-primary" data-content="call_to_action">Записаться на консультацию</a>
             </div>
         </section>
     </main>
@@ -54,6 +65,10 @@
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Надежда Литвинова. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
         </div>
     </footer>
 
