@@ -82,7 +82,10 @@
     header nav a:hover::after{width:100%;}
     .menu-toggle{display:none;color:var(--text-primary);padding:8px;}
     .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 100px;background:var(--bg-primary);overflow:hidden;}
-    .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.08) 0%,transparent 70%);pointer-events:none;animation:orbPulse 8s ease-in-out infinite;}
+    /* Atmospheric warm glow behind the figure - positioned in the background */
+    .hero-glow-bg{position:absolute;top:10%;left:5%;width:55%;height:80%;background:radial-gradient(ellipse at 40% 50%,rgba(212,175,55,0.18) 0%,rgba(201,169,110,0.08) 25%,rgba(166,139,75,0.03) 45%,transparent 65%);pointer-events:none;z-index:0;animation:glowBreathe 7s ease-in-out infinite;}
+    @keyframes glowBreathe{0%,100%{transform:scale(1) translateX(0);opacity:0.9;}50%{transform:scale(1.08) translateX(-2%);opacity:1;}}
+    .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.06) 0%,transparent 70%);pointer-events:none;animation:orbPulse 8s ease-in-out infinite;}
     @keyframes orbPulse{0%,100%{transform:scale(1);opacity:0.6;}50%{transform:scale(1.1);opacity:1;}}
     .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;max-width:var(--container);margin:0 auto;padding:0 32px;position:relative;z-index:1;}
     .hero-content .eyebrow{margin-bottom:28px;}
@@ -97,22 +100,19 @@
     .trust-item{display:flex;flex-direction:column;gap:4px;}
     .trust-item strong{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--gold);line-height:1;}
     .trust-item span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;}
-    /* DIVA-style photo with warm gold glow */
-    .hero-image-wrapper{position:relative;}
-    .hero-image-wrapper img{width:100%;height:620px;object-fit:cover;border-radius:var(--radius-xl);position:relative;z-index:2;}
-    .hero-image-glow{position:absolute;inset:-50px;background:radial-gradient(ellipse at 45% 55%,rgba(212,175,55,0.45) 0%,rgba(201,169,110,0.18) 25%,rgba(166,139,75,0.06) 50%,transparent 75%);pointer-events:none;z-index:1;animation:glowBreathe 5s ease-in-out infinite;}
-    .hero-image-glow-outer{position:absolute;inset:-120px;background:radial-gradient(ellipse at 40% 60%,rgba(212,175,55,0.12) 0%,rgba(201,169,110,0.04) 35%,transparent 65%);pointer-events:none;z-index:0;}
-    @keyframes glowBreathe{0%,100%{transform:scale(1);opacity:0.85;}50%{transform:scale(1.12);opacity:1;}}
+    /* Photo - no artificial glow, photo itself has black background that blends with site */
+    .hero-image-wrapper{position:relative;z-index:2;}
+    .hero-image-wrapper img{width:100%;height:620px;object-fit:cover;border-radius:var(--radius-xl);}
     /* Gold decorative leaves */
-    .hero-ornament{position:absolute;left:-40px;top:50%;transform:translateY(-50%);width:300px;height:550px;pointer-events:none;z-index:3;}
+    .hero-ornament{position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:280px;height:520px;pointer-events:none;z-index:3;}
     .hero-ornament svg{width:100%;height:100%;}
     /* Concentric circles bottom right */
     .hero-circles{position:absolute;bottom:100px;right:80px;pointer-events:none;z-index:1;}
-    .hero-circle{position:absolute;border:1px solid rgba(201,169,110,0.15);border-radius:50%;}
+    .hero-circle{position:absolute;border:1px solid rgba(201,169,110,0.12);border-radius:50%;}
     .hero-circle.c1{width:180px;height:180px;bottom:0;right:0;animation:circlePulse 4s ease-in-out infinite;}
     .hero-circle.c2{width:260px;height:260px;bottom:-40px;right:-40px;animation:circlePulse 4s ease-in-out infinite 0.5s;}
     .hero-circle.c3{width:340px;height:340px;bottom:-80px;right:-80px;animation:circlePulse 4s ease-in-out infinite 1s;}
-    @keyframes circlePulse{0%,100%{transform:scale(1);opacity:0.4;border-color:rgba(201,169,110,0.12);}50%{transform:scale(1.05);opacity:0.7;border-color:rgba(201,169,110,0.25);}}.issues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--container);margin:0 auto;padding:0 32px;}
+    @keyframes circlePulse{0%,100%{transform:scale(1);opacity:0.35;border-color:rgba(201,169,110,0.1);}50%{transform:scale(1.05);opacity:0.6;border-color:rgba(201,169,110,0.22);}}.issues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--container);margin:0 auto;padding:0 32px;}
     .issue-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;transition:var(--trans);position:relative;overflow:hidden;}
     .issue-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:var(--trans);}
     .issue-card:hover{background:var(--bg-card-hover);border-color:var(--border-gold);transform:translateY(-4px);box-shadow:var(--shadow-gold);}
@@ -257,7 +257,9 @@
   </header>
 
   <section class="hero" aria-label="Главный экран">
-    <!-- Gold decorative leaves behind photo -->
+    <!-- Atmospheric warm glow behind figure -->
+    <div class="hero-glow-bg" aria-hidden="true"></div>
+    <!-- Gold decorative leaves -->
     <div class="hero-ornament" aria-hidden="true">
       <svg viewBox="0 0 400 600" fill="none" preserveAspectRatio="xMidYMid meet">
         <path d="M80 50C80 50 20 120 40 200C60 280 120 320 120 320" stroke="#C9A96E" stroke-width="1.2" fill="none" opacity="0.5"/>
@@ -278,8 +280,6 @@
     </div>
     <div class="hero-grid">
       <div class="hero-image-wrapper reveal reveal-delay-2">
-        <div class="hero-image-glow"></div>
-        <div class="hero-image-glow-outer"></div>
         <picture><source srcset="images/hero-photo.jpg" type="image/jpeg"><img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image"></picture>
       </div>
       <div class="hero-content reveal">
