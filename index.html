@@ -87,7 +87,8 @@
     .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;max-width:var(--container);margin:0 auto;padding:0 32px;position:relative;z-index:1;}
     .hero-content .eyebrow{margin-bottom:28px;}
     .hero-content h1{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:500;line-height:1.08;color:var(--text-primary);margin-bottom:28px;position:relative;}
-.hero-content h1::before{content:'';position:absolute;top:-20px;left:0;width:60px;height:2px;background:var(--gold);opacity:0.5;}
+    .hero-content h1 .gold-accent{color:var(--gold);position:relative;display:inline-block;}
+    .hero-content h1 .gold-accent::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:3px;background:var(--gold);opacity:0.3;}
     .hero-content h1 em{font-style:italic;color:var(--gold);position:relative;}
     .hero-content h1 em::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:3px;background:var(--gold);opacity:0.3;}
     .hero-lead{font-size:18px;color:var(--text-secondary);max-width:480px;margin-bottom:40px;line-height:1.75;}
@@ -96,12 +97,22 @@
     .trust-item{display:flex;flex-direction:column;gap:4px;}
     .trust-item strong{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--gold);line-height:1;}
     .trust-item span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;}
-    .hero-image{position:relative;}
-    .hero-image img{width:100%;height:620px;object-fit:cover;border-radius:var(--radius-xl);box-shadow:var(--shadow);}
-    .hero-image::before{content:'';position:absolute;top:-16px;right:-16px;bottom:16px;left:16px;border:1px solid var(--border-gold);border-radius:var(--radius-xl);pointer-events:none;z-index:-1;}
-    .floral-float{position:absolute;top:-40px;right:-30px;width:180px;height:180px;opacity:0.15;animation:float 6s ease-in-out infinite;}
-    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-15px) rotate(3deg);}}
-    .issues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--container);margin:0 auto;padding:0 32px;}
+    /* DIVA-style photo with warm gold glow */
+    .hero-image-wrapper{position:relative;}
+    .hero-image-wrapper img{width:100%;height:620px;object-fit:cover;border-radius:var(--radius-xl);position:relative;z-index:2;}
+    .hero-image-glow{position:absolute;inset:-50px;background:radial-gradient(ellipse at 45% 55%,rgba(212,175,55,0.45) 0%,rgba(201,169,110,0.18) 25%,rgba(166,139,75,0.06) 50%,transparent 75%);pointer-events:none;z-index:1;animation:glowBreathe 5s ease-in-out infinite;}
+    .hero-image-glow-outer{position:absolute;inset:-120px;background:radial-gradient(ellipse at 40% 60%,rgba(212,175,55,0.12) 0%,rgba(201,169,110,0.04) 35%,transparent 65%);pointer-events:none;z-index:0;}
+    @keyframes glowBreathe{0%,100%{transform:scale(1);opacity:0.85;}50%{transform:scale(1.12);opacity:1;}}
+    /* Gold decorative leaves */
+    .hero-ornament{position:absolute;left:-40px;top:50%;transform:translateY(-50%);width:300px;height:550px;pointer-events:none;z-index:3;}
+    .hero-ornament svg{width:100%;height:100%;}
+    /* Concentric circles bottom right */
+    .hero-circles{position:absolute;bottom:100px;right:80px;pointer-events:none;z-index:1;}
+    .hero-circle{position:absolute;border:1px solid rgba(201,169,110,0.15);border-radius:50%;}
+    .hero-circle.c1{width:180px;height:180px;bottom:0;right:0;animation:circlePulse 4s ease-in-out infinite;}
+    .hero-circle.c2{width:260px;height:260px;bottom:-40px;right:-40px;animation:circlePulse 4s ease-in-out infinite 0.5s;}
+    .hero-circle.c3{width:340px;height:340px;bottom:-80px;right:-80px;animation:circlePulse 4s ease-in-out infinite 1s;}
+    @keyframes circlePulse{0%,100%{transform:scale(1);opacity:0.4;border-color:rgba(201,169,110,0.12);}50%{transform:scale(1.05);opacity:0.7;border-color:rgba(201,169,110,0.25);}}.issues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--container);margin:0 auto;padding:0 32px;}
     .issue-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;transition:var(--trans);position:relative;overflow:hidden;}
     .issue-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:var(--trans);}
     .issue-card:hover{background:var(--bg-card-hover);border-color:var(--border-gold);transform:translateY(-4px);box-shadow:var(--shadow-gold);}
@@ -209,7 +220,8 @@
     .reveal-delay-2{transition-delay:0.2s;}
     .reveal-delay-3{transition-delay:0.3s;}
     .reveal-delay-4{transition-delay:0.4s;}
-    @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;text-align:center;gap:60px;}.hero-content .hero-lead{margin-left:auto;margin-right:auto;}.hero-cta{justify-content:center;}.hero-trust{justify-content:center;}.hero-image{max-width:500px;margin:0 auto;}.hero-image img{height:480px;}.floral-float{display:none;}.about-grid{grid-template-columns:1fr;gap:60px;}.about-image{max-width:500px;margin:0 auto;}.about-image img{height:420px;}.issues-grid,.methods-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr);}.process-grid{grid-template-columns:repeat(2,1fr);}.process-step:not(:last-child)::after{display:none;}.pricing-grid{grid-template-columns:repeat(2,1fr);max-width:640px;}.footer-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;text-align:center;gap:60px;}.hero-content .hero-lead{margin-left:auto;margin-right:auto;}.hero-cta{justify-content:center;}.hero-trust{justify-content:center;}.hero-image-wrapper{max-width:500px;margin:0 auto;}.hero-image-wrapper img{height:480px;}.hero-ornament{display:none;}
+    .hero-circles{display:none;}.about-grid{grid-template-columns:1fr;gap:60px;}.about-image{max-width:500px;margin:0 auto;}.about-image img{height:420px;}.issues-grid,.methods-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr);}.process-grid{grid-template-columns:repeat(2,1fr);}.process-step:not(:last-child)::after{display:none;}.pricing-grid{grid-template-columns:repeat(2,1fr);max-width:640px;}.footer-inner{grid-template-columns:1fr 1fr;}}
     @media(max-width:640px){.issues-grid,.methods-grid,.testimonials-grid,.process-grid,.pricing-grid,.trust-grid{grid-template-columns:1fr;}.section{padding:80px 0;}.section-header{margin-bottom:48px;}header nav{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:24px 32px;}header nav.open{display:block;}header nav ul{flex-direction:column;gap:20px;align-items:flex-start;}.menu-toggle{display:block;}.form{padding:36px 24px;}.hero-trust{flex-direction:column;gap:20px;}.footer-inner{grid-template-columns:1fr;gap:40px;}.footer-bottom{flex-direction:column;text-align:center;}.cta-links{flex-direction:column;gap:24px;}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1;transform:none;}}
   </style>
@@ -245,10 +257,34 @@
   </header>
 
   <section class="hero" aria-label="Главный экран">
+    <!-- Gold decorative leaves behind photo -->
+    <div class="hero-ornament" aria-hidden="true">
+      <svg viewBox="0 0 400 600" fill="none" preserveAspectRatio="xMidYMid meet">
+        <path d="M80 50C80 50 20 120 40 200C60 280 120 320 120 320" stroke="#C9A96E" stroke-width="1.2" fill="none" opacity="0.5"/>
+        <path d="M60 80C60 80 0 160 20 250C40 340 100 380 100 380" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.35"/>
+        <path d="M100 30C100 30 50 100 70 180C90 260 140 300 140 300" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/>
+        <path d="M120 100C120 100 180 60 220 90C260 120 240 180 200 200C160 220 120 180 120 100Z" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.3"/>
+        <path d="M50 400C50 400 20 480 60 540C100 600 160 560 160 560" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.35"/>
+        <path d="M30 450C30 450 0 530 50 580C100 630 140 590 140 590" stroke="#C9A96E" stroke-width="0.6" fill="none" opacity="0.25"/>
+        <ellipse cx="180" cy="150" rx="25" ry="40" stroke="#C9A96E" stroke-width="0.6" fill="none" opacity="0.2" transform="rotate(30 180 150)"/>
+        <ellipse cx="220" cy="220" rx="20" ry="35" stroke="#C9A96E" stroke-width="0.5" fill="none" opacity="0.15" transform="rotate(-20 220 220)"/>
+      </svg>
+    </div>
+    <!-- Concentric circles bottom right -->
+    <div class="hero-circles" aria-hidden="true">
+      <div class="hero-circle c1"></div>
+      <div class="hero-circle c2"></div>
+      <div class="hero-circle c3"></div>
+    </div>
     <div class="hero-grid">
+      <div class="hero-image-wrapper reveal reveal-delay-2">
+        <div class="hero-image-glow"></div>
+        <div class="hero-image-glow-outer"></div>
+        <picture><source srcset="images/hero-photo.jpg" type="image/jpeg"><img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image"></picture>
+      </div>
       <div class="hero-content reveal">
         <span class="eyebrow" data-content="eyebrow">Психолог · EMDR · ММИЛ · Онлайн по всему миру</span>
-        <h1 data-content="hero_title">Прошлое можно<br><em>переработать.</em><br>Будущее — выбрать.</h1>
+        <h1 data-content="hero_title">Прошлое можно<br><em>переработать.</em><br>Будущее — <span class="gold-accent">выбрать.</span></h1>
         <p class="hero-lead" data-content="hero_description">Помогаю справиться с травмой, тревогой, выгоранием и сложностями в отношениях. Работаю онлайн — из любой точки мира.</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn-lg"><span>Записаться на консультацию</span></a>
@@ -259,10 +295,6 @@
           <div class="trust-item"><strong data-content="hero_trust_2_label">EMDR</strong><span data-content="hero_trust_2_value">сертифицированный метод</span></div>
           <div class="trust-item"><strong data-content="hero_trust_3_label">Онлайн</strong><span data-content="hero_trust_3_value">по всему миру</span></div>
         </div>
-      </div>
-      <div class="hero-image reveal reveal-delay-2">
-        <picture><source srcset="images/hero-photo.jpg" type="image/jpeg"><img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image" style="object-position:center top;"></picture>
-        <div class="floral-float" aria-hidden="true"><svg viewBox="0 0 200 200" fill="none"><path d="M100 20C100 20 130 50 130 90C130 130 100 160 100 160C100 160 70 130 70 90C70 50 100 20 100 20Z" stroke="#C9A96E" stroke-width="1" fill="none"/><path d="M100 160C100 160 120 140 140 150C160 160 170 180 170 180" stroke="#C9A96E" stroke-width="0.8" fill="none"/><path d="M100 160C100 160 80 140 60 150C40 160 30 180 30 180" stroke="#C9A96E" stroke-width="0.8" fill="none"/><path d="M100 90C100 90 150 70 170 40" stroke="#C9A96E" stroke-width="0.8" fill="none"/><path d="M100 90C100 90 50 70 30 40" stroke="#C9A96E" stroke-width="0.8" fill="none"/><circle cx="100" cy="55" r="8" stroke="#C9A96E" stroke-width="0.8" fill="none"/><circle cx="100" cy="125" r="6" stroke="#C9A96E" stroke-width="0.8" fill="none"/></svg></div>
       </div>
     </div>
   </section>
