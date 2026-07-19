@@ -11,7 +11,7 @@
   <meta name="author" content="Надежда Литвинова">
   <meta property="og:title" content="Надежда Литвинова — Психолог, специалист по EMDR">
   <meta property="og:description" content="Помогаю справиться с травмой, тревогой, выгоранием. Онлайн по всему миру.">
-  <meta property="og:image" content="https://litvinova-psy.ru/images/photo-main.jpg">
+  <meta property="og:image" content="https://litvinova-psy.ru/images/hero-photo.jpg">
   <meta property="og:url" content="https://litvinova-psy.ru/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
@@ -85,8 +85,10 @@
     .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.08) 0%,transparent 70%);pointer-events:none;animation:orbPulse 8s ease-in-out infinite;}
     @keyframes orbPulse{0%,100%{transform:scale(1);opacity:0.6;}50%{transform:scale(1.1);opacity:1;}}
     .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;max-width:var(--container);margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+.hero-grid::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1px;height:60%;background:linear-gradient(to bottom,transparent,var(--border-gold),transparent);opacity:0.3;pointer-events:none;}
     .hero-content .eyebrow{margin-bottom:28px;}
-    .hero-content h1{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:500;line-height:1.08;color:var(--text-primary);margin-bottom:28px;}
+    .hero-content h1{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:500;line-height:1.08;color:var(--text-primary);margin-bottom:28px;position:relative;}
+.hero-content h1::before{content:'';position:absolute;top:-20px;left:0;width:60px;height:2px;background:var(--gold);opacity:0.5;}
     .hero-content h1 em{font-style:italic;color:var(--gold);position:relative;}
     .hero-content h1 em::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:3px;background:var(--gold);opacity:0.3;}
     .hero-lead{font-size:18px;color:var(--text-secondary);max-width:480px;margin-bottom:40px;line-height:1.75;}
@@ -246,7 +248,7 @@
   <section class="hero" aria-label="Главный экран">
     <div class="hero-grid">
       <div class="hero-content reveal">
-        <span class="eyebrow" data-content="eyebrow">Психолог · EMDR · Онлайн по всему миру</span>
+        <span class="eyebrow" data-content="eyebrow">Психолог · EMDR · ММИЛ · Онлайн по всему миру</span>
         <h1 data-content="hero_title">Прошлое можно<br><em>переработать.</em><br>Будущее — выбрать.</h1>
         <p class="hero-lead" data-content="hero_description">Помогаю справиться с травмой, тревогой, выгоранием и сложностями в отношениях. Работаю онлайн — из любой точки мира.</p>
         <div class="hero-cta">
@@ -260,7 +262,7 @@
         </div>
       </div>
       <div class="hero-image reveal reveal-delay-2">
-        <picture><source srcset="images/photo-main.webp" type="image/webp"><img src="images/photo-main.jpg" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image"></picture>
+        <picture><source srcset="images/hero-photo.jpg" type="image/jpeg"><img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог, специалист по EMDR" width="500" height="620" loading="eager" fetchpriority="high" data-content="hero_image" style="object-position:center top;"></picture>
         <div class="floral-float" aria-hidden="true"><svg viewBox="0 0 200 200" fill="none"><path d="M100 20C100 20 130 50 130 90C130 130 100 160 100 160C100 160 70 130 70 90C70 50 100 20 100 20Z" stroke="#C9A96E" stroke-width="1" fill="none"/><path d="M100 160C100 160 120 140 140 150C160 160 170 180 170 180" stroke="#C9A96E" stroke-width="0.8" fill="none"/><path d="M100 160C100 160 80 140 60 150C40 160 30 180 30 180" stroke="#C9A96E" stroke-width="0.8" fill="none"/><path d="M100 90C100 90 150 70 170 40" stroke="#C9A96E" stroke-width="0.8" fill="none"/><path d="M100 90C100 90 50 70 30 40" stroke="#C9A96E" stroke-width="0.8" fill="none"/><circle cx="100" cy="55" r="8" stroke="#C9A96E" stroke-width="0.8" fill="none"/><circle cx="100" cy="125" r="6" stroke="#C9A96E" stroke-width="0.8" fill="none"/></svg></div>
       </div>
     </div>
