@@ -1,107 +1,192 @@
 /**
- * Production-ready Content Loader для Pages CMS
- * Особенности: Кеширование, XSS-защита (DOMPurify), Graceful Degradation
+ * Content Loader для Pages CMS v2.0
+ * Улучшения: sessionStorage, таймаут fetch, UI-индикаторы, универсальные рендереры
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
     const path = window.location.pathname;
     const pageName = path.split('/').pop().replace('.html', '') || 'index';
     const yamlUrl = `content/pages/${pageName}.yml`;
-    
+
     const CACHE_KEY = `cms_cache_${pageName}`;
     const CACHE_TIME_KEY = `${CACHE_KEY}_time`;
-    const CACHE_DURATION = 5 * 60 * 1000; // 5 минут
+    const CACHE_DURATION = 60 * 60 * 1000; // 1 час
+
+    // Проверка библиотек
+    if (typeof jsyaml === 'undefined') {
+        console.error('CMS: js-yaml не загружен');
+        showIndicator('Ошибка загрузки библиотеки', 'error');
+        return;
+    }
 
     try {
         let data;
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
-        
-        // 1. Проверка кеша для мгновенной загрузки
+        let fromCache = false;
+
+        // Проверка кеша (sessionStorage)
+        const cachedData = sessionStorage.getItem(CACHE_KEY);
+        const cachedTime = sessionStorage.getItem(CACHE_TIME_KEY);
+
         if (cachedData && cachedTime && (Date.now() - parseInt(cachedTime)) < CACHE_DURATION) {
             data = jsyaml.load(cachedData);
+            fromCache = true;
         } else {
-            // 2. Загрузка с сервера
-            const response = await fetch(yamlUrl);
+            // Загрузка с таймаутом
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+            const response = await fetch(yamlUrl, { signal: controller.signal });
+            clearTimeout(timeoutId);
+
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            
+
             const yamlText = await response.text();
+            if (!yamlText.trim()) throw new Error('YAML пуст');
+
             data = jsyaml.load(yamlText);
-            
-            if (!data) throw new Error('YAML пуст или невалиден');
-            
-            // 3. Сохранение в кеш
-            localStorage.setItem(CACHE_KEY, yamlText);
-            localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+            if (!data || typeof data !== 'object') throw new Error('YAML невалиден');
+
+            // Сохранение в кеш
+            sessionStorage.setItem(CACHE_KEY, yamlText);
+            sessionStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
         }
 
-        // 4. Рендеринг данных
         renderContent(data);
 
+        if (fromCache) {
+            showIndicator('Контент загружен из кеша', 'info');
+        }
+
     } catch (error) {
-        console.warn('CMS Content Loader: используем fallback (оригинальный HTML). Ошибка:', error.message);
-        // Graceful degradation: ничего не делаем, пользователь видит оригинальный HTML
+        console.warn('CMS: используем fallback. Ошибка:', error.message);
+        showIndicator('Контент может быть неактуальным', 'warning');
     }
 });
+
+function showIndicator(message, type = 'info') {
+    const colors = {
+        info: 'rgba(33, 150, 243, 0.9)',
+        warning: 'rgba(255, 193, 7, 0.95)',
+        error: 'rgba(244, 67, 54, 0.9)'
+    };
+    const textColors = {
+        info: '#fff',
+        warning: '#000',
+        error: '#fff'
+    };
+
+    const indicator = document.createElement('div');
+    indicator.style.cssText = `
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        background: ${colors[type] || colors.info};
+        color: ${textColors[type] || '#fff'};
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-family: 'Inter', sans-serif;
+        z-index: 9999;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        max-width: 280px;
+        line-height: 1.4;
+    `;
+    indicator.textContent = message;
+    document.body.appendChild(indicator);
+
+    requestAnimationFrame(() => {
+        indicator.style.opacity = '1';
+        indicator.style.transform = 'translateY(0)';
+    });
+
+    setTimeout(() => {
+        indicator.style.opacity = '0';
+        indicator.style.transform = 'translateY(10px)';
+        setTimeout(() => indicator.remove(), 300);
+    }, 4000);
+}
 
 function renderContent(data) {
     if (!data || typeof data !== 'object') return;
 
-    // Хелпер для получения вложенных значений (напр., "seo.title")
     const getValue = (obj, path) => path.split('.').reduce((acc, part) => acc && acc[part], obj);
 
-    // 1. Обновление простых текстовых полей
+    // 1. Простые текстовые поля
     document.querySelectorAll('[data-content]').forEach(el => {
-        // Пропускаем поля, которые управляют ссылками (они обрабатываются отдельно)
         if (el.hasAttribute('data-content-link')) return;
-        
+
         const key = el.getAttribute('data-content');
         const value = getValue(data, key);
-        
-        // Обновляем ТОЛЬКО если значение есть и оно не пустое
+
         if (value !== undefined && value !== null && String(value).trim() !== '') {
-            // ✅ XSS ЗАЩИТА: Санитизация перед вставкой в DOM
             if (typeof DOMPurify !== 'undefined') {
                 el.innerHTML = DOMPurify.sanitize(value);
             } else {
-                el.innerHTML = value; // Fallback, если библиотека не загрузилась
+                el.textContent = value; // Безопасный fallback без HTML
             }
         }
     });
 
-    // 2. Обновление списков (карточек) с сохранением оригинальной верстки
+    // 2. Ссылки
+    document.querySelectorAll('[data-content-link]').forEach(el => {
+        const key = el.getAttribute('data-content-link');
+        const value = getValue(data, key);
+        if (value && String(value).trim() !== '') {
+            el.href = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
+        }
+    });
+
+    // 3. Списки с рендерерами
     const listRenderers = {
         'issues_list': renderIssues,
         'methods_list': renderMethods,
         'process_list': renderProcess,
         'trust_list': renderTrust,
         'testimonials_list': renderTestimonials,
-        'pricing_list': renderPricing
+        'pricing_list': renderPricing,
+        'services_items': renderServices,
+        'packages_items': renderPackages,
+        'education_items': renderSimpleList,
+        'how_it_works_steps': renderSimpleList
     };
 
     Object.entries(listRenderers).forEach(([key, renderer]) => {
         const container = document.querySelector(`[data-content="${key}"]`);
         if (container && Array.isArray(data[key]) && data[key].length > 0) {
             container.innerHTML = renderer(data[key]);
-            
-            // Переинициализация анимаций для новых элементов
-            if (typeof IntersectionObserver !== 'undefined') {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-                
-                container.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            }
+            reinitAnimations(container);
+        }
+    });
+
+    // 4. Изображения
+    document.querySelectorAll('[data-content-image]').forEach(el => {
+        const key = el.getAttribute('data-content-image');
+        const value = getValue(data, key);
+        if (value && String(value).trim() !== '') {
+            el.src = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
         }
     });
 }
 
-// --- Рендереры (точно копируют оригинальную HTML-структуру и SVG) ---
+function reinitAnimations(container) {
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    container.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// --- Рендереры ---
 
 function renderIssues(items) {
     const icons = [
@@ -184,14 +269,49 @@ function renderPricing(items) {
                 <div class="pricing-label">${sanitize(item.label)}</div>
                 <div class="pricing-value">${sanitize(item.value)}</div>
                 <p class="pricing-desc">${sanitize(item.description)}</p>
-                <a href="#contact" class="btn"><span>Записаться</span></a>
+                <a href="contacts.html#contact-form" class="btn"><span>Записаться</span></a>
             </div>
         `;
     }).join('');
 }
 
-// Локальная функция санитизации для шаблонов
+function renderServices(items) {
+    return items.map((item, i) => `
+        <div class="service-card reveal reveal-delay-${(i % 3) + 1}">
+            <h3>${sanitize(item.title)}</h3>
+            <p>${sanitize(item.description)}</p>
+            ${item.duration ? `<span class="service-duration">${sanitize(item.duration)}</span>` : ''}
+            ${item.price ? `<span class="service-price">${sanitize(item.price)}</span>` : ''}
+        </div>
+    `).join('');
+}
+
+function renderPackages(items) {
+    return items.map((item, i) => `
+        <div class="package-card reveal reveal-delay-${(i % 3) + 1}">
+            <h3>${sanitize(item.title || item.label || '')}</h3>
+            <p>${sanitize(item.description)}</p>
+            ${item.price ? `<div class="package-price">${sanitize(item.price)}</div>` : ''}
+        </div>
+    `).join('');
+}
+
+function renderSimpleList(items) {
+    return items.map((item, i) => `
+        <div class="simple-list-item reveal reveal-delay-${(i % 3) + 1}">
+            <span class="list-number">${i + 1}.</span>
+            <span>${sanitize(typeof item === 'string' ? item : item.title || item.text || '')}</span>
+        </div>
+    `).join('');
+}
+
 function sanitize(str) {
     if (!str) return '';
-    return typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(str) : str;
+    if (typeof DOMPurify !== 'undefined') {
+        return DOMPurify.sanitize(str);
+    }
+    // Fallback: экранирование HTML
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
 }
