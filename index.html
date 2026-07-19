@@ -82,8 +82,8 @@
     header nav a:hover::after{width:100%;}
     .menu-toggle{display:none;color:var(--text-primary);padding:8px;}
     .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 100px;background:var(--bg-primary);overflow:hidden;}
-    /* Warm atmospheric glow positioned behind the figure - visible through transparent PNG */
-    .hero-glow-bg{position:absolute;top:5%;left:2%;width:60%;height:90%;background:radial-gradient(ellipse at 45% 55%,rgba(212,175,55,0.28) 0%,rgba(201,169,110,0.14) 20%,rgba(166,139,75,0.05) 40%,transparent 65%);pointer-events:none;z-index:0;animation:glowBreathe 6s ease-in-out infinite;}
+    /* Subtle ambient glow for the whole left side */
+    .hero-glow-bg{position:absolute;top:0;left:0;width:55%;height:100%;background:radial-gradient(ellipse at 40% 50%,rgba(212,175,55,0.08) 0%,transparent 60%);pointer-events:none;z-index:0;}
     @keyframes glowBreathe{0%,100%{transform:scale(1) translateX(0);opacity:0.85;}50%{transform:scale(1.1) translateX(-1%);opacity:1;}}
     .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.05) 0%,transparent 70%);pointer-events:none;animation:orbPulse 8s ease-in-out infinite;}
     @keyframes orbPulse{0%,100%{transform:scale(1);opacity:0.5;}50%{transform:scale(1.1);opacity:0.8;}}
@@ -100,9 +100,9 @@
     .trust-item{display:flex;flex-direction:column;gap:4px;}
     .trust-item strong{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--gold);line-height:1;}
     .trust-item span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;}
-    /* Photo with transparent background - glow visible around figure silhouette */
-    .hero-image-wrapper{position:relative;z-index:2;}
-    .hero-image-wrapper img{width:100%;height:620px;object-fit:contain;border-radius:var(--radius-xl);filter:drop-shadow(0 0 40px rgba(201,169,110,0.15));}
+    /* Photo with transparent background - dark backdrop + glow around figure */
+    .hero-image-wrapper{position:relative;z-index:2;background:radial-gradient(ellipse at 50% 55%,rgba(212,175,55,0.22) 0%,rgba(201,169,110,0.08) 35%,rgba(10,10,10,0.95) 70%);border-radius:var(--radius-xl);overflow:hidden;}
+    .hero-image-wrapper img{width:100%;height:620px;object-fit:contain;display:block;position:relative;z-index:2;filter:drop-shadow(0 0 30px rgba(201,169,110,0.2));}
     /* Gold decorative leaves */
     .hero-ornament{position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:280px;height:520px;pointer-events:none;z-index:3;}
     .hero-ornament svg{width:100%;height:100%;}
