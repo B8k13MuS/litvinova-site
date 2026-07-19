@@ -88,7 +88,7 @@
     @keyframes glowBreathe{0%,100%{transform:scale(1) translateX(0);opacity:0.85;}50%{transform:scale(1.1) translateX(-1%);opacity:1;}}
     .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.05) 0%,transparent 70%);pointer-events:none;animation:orbPulse 8s ease-in-out infinite;}
     @keyframes orbPulse{0%,100%{transform:scale(1);opacity:0.5;}50%{transform:scale(1.1);opacity:0.8;}}
-    .hero-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:0;align-items:flex-start;max-width:none;margin:0 auto;padding:0 32px;position:relative;z-index:1;overflow:visible;}
+    .hero-grid{display:grid;grid-template-columns:0.6fr 1.4fr;gap:0;align-items:flex-start;max-width:none;margin:0 auto;padding:0 32px;position:relative;z-index:1;overflow:visible;}
     .hero-content .eyebrow{margin-bottom:28px;margin-top:60px;}
     .hero-content h1{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:500;line-height:1.08;color:var(--text-primary);margin-bottom:28px;position:relative;}
     .hero-content h1 .gold-accent{color:var(--gold);position:relative;display:inline-block;}
@@ -102,8 +102,8 @@
     .trust-item strong{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--gold);line-height:1;}
     .trust-item span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;}
     /* Intense warm glow behind figure - breathing animation */
-    .hero-image-glow{position:absolute;top:-80px;left:-10%;width:120%;height:600px;background:radial-gradient(ellipse at 50% 40%,rgba(255,160,60,0.7) 0%,rgba(255,200,100,0.4) 15%,rgba(212,175,55,0.15) 35%,transparent 60%);pointer-events:none;z-index:1;animation:divaGlow 3s ease-in-out infinite;}
-    .hero-image-glow-outer{position:absolute;top:-120px;left:-20%;width:140%;height:700px;background:radial-gradient(ellipse at 50% 45%,rgba(255,140,40,0.35) 0%,rgba(255,180,80,0.15) 20%,transparent 50%);pointer-events:none;z-index:0;animation:divaGlow 3s ease-in-out infinite 0.4s;}
+    .hero-image-glow{position:absolute;top:-30px;left:0%;width:100%;height:500px;background:radial-gradient(ellipse at 50% 40%,rgba(255,160,60,0.7) 0%,rgba(255,200,100,0.4) 15%,rgba(212,175,55,0.15) 35%,transparent 60%);pointer-events:none;z-index:1;animation:divaGlow 3s ease-in-out infinite;}
+    .hero-image-glow-outer{position:absolute;top:-60px;left:-10%;width:120%;height:600px;background:radial-gradient(ellipse at 50% 45%,rgba(255,140,40,0.35) 0%,rgba(255,180,80,0.15) 20%,transparent 50%);pointer-events:none;z-index:0;animation:divaGlow 3s ease-in-out infinite 0.4s;}
     @keyframes divaGlow{0%,100%{transform:scale(1) translateY(0);opacity:0.75;filter:blur(0px);}50%{transform:scale(1.18) translateY(-2%);opacity:1;filter:blur(3px);}}
     /* DIVA-style: transparent PNG + intense glow around figure silhouette */
     .hero-image-wrapper{position:relative;z-index:2;background:#0A0A0A;display:flex;align-items:center;justify-content:center;min-height:720px;}
