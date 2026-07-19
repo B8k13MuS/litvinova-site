@@ -2,16 +2,25 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initi<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-content="seo_title">Блог | Психолог Надежда Литвинова</title>
     <meta name="description" data-content="seo_description" content="Полезные материалы о психологии, психотерапии и психическом здоровье.">
-    
+    <meta name="keywords" content="психолог, блог, EMDR, Brainspotting, травма, тревога, выгорание">
+    <link rel="canonical" href="https://litvinova-psy.ru/blog.html">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js" 
+        crossorigin="anonymous"></script>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;">
 </head>
 <body>
     <header class="site-header">
@@ -45,251 +54,13 @@
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Надежда Литвинова. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
         </div>
     </footer>
 
     <script src="content-loader.js"></script>
-</body>
-</html>al-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <title>Блог — Надежда Литвинова | Статьи о психологии, EMDR, травме и выгорании</title>
-    <meta name="description" content="Блог психолога Надежды Литвиновой. Статьи о EMDR, Brainspotting, выгорании, тревоге, травме и психологическом здоровье.">
-    <meta name="keywords" content="психолог, блог, EMDR, Brainspotting, травма, тревога, выгорание, психическое здоровье, Надежда Литвинова">
-    <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/blog.html">
-    <meta property="og:title" content="Блог — Надежда Литвинова | Статьи о психологии, EMDR, травме и выгорании">
-    <meta property="og:description" content="Полезные материалы о психологии, психотерапии и психическом здоровье">
-    <meta property="og:image" content="https://b8k13mus.github.io/litvinova-site/images/og-image.jpg">
-    <meta property="og:url" content="https://b8k13mus.github.io/litvinova-site/blog.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background-color: #F5F0E8;
-            color: #1A2B4A;
-            line-height: 1.7;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header {
-            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
-            color: #F5F0E8;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(26,43,74,0.3);
-        }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.4rem; font-weight: bold; color: #C9A96E; }
-        .logo span { color: #F5F0E8; font-weight: normal; font-size: 0.9rem; display: block; }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav a { color: #F5F0E8; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
-        nav a:hover { color: #C9A96E; }
-        .mobile-menu-btn { display: none; background: none; border: none; color: #C9A96E; font-size: 1.5rem; cursor: pointer; }
-
-        .page-header {
-            background: linear-gradient(135deg, #1A2B4A 0%, #2d4a6f 100%);
-            color: #F5F0E8;
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-        .page-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        .page-header p { opacity: 0.9; font-size: 1.1rem; }
-
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 0; }
-        .blog-card {
-            background: #FAF8F4;
-            border-radius: 10px;
-            overflow: hidden;
-            border-top: 4px solid #C9A96E;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(26,43,74,0.1); }
-        .blog-card-content { padding: 30px; }
-        .blog-card h3 { color: #1A2B4A; font-size: 1.2rem; margin-bottom: 10px; }
-        .blog-card p { color: #555; font-size: 0.95rem; margin-bottom: 15px; }
-        .blog-card .tag {
-            display: inline-block;
-            background: rgba(201,169,110,0.15);
-            color: #1A2B4A;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
-        .blog-card a {
-            color: #C9A96E;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .blog-card a:hover { text-decoration: underline; }
-
-        footer {
-            background: #1A2B4A;
-            color: #F5F0E8;
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
-        .footer-links a { color: #C9A96E; text-decoration: none; }
-        .footer-copy { opacity: 0.6; font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #1A2B4A; padding: 20px; }
-            nav.active { display: block; }
-            nav ul { flex-direction: column; gap: 15px; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container header-inner">
-            <div class="logo">
-                Надежда Литвинова
-                <span>Психолог · EMDR · Brainspotting</span>
-            </div>
-            <button class="mobile-menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="index.html#about">Обо мне</a></li>
-                    <li><a href="index.html#methods">Методы</a></li>
-                    <li><a href="blog.html">Блог</a></li>
-                    <li><a href="checklists.html">Материалы</a></li>
-                    <li><a href="index.html#contact">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="page-header">
-        <div class="container">
-            <h1>Блог</h1>
-            <p>Полезные материалы о психологии, психотерапии и психическом здоровье</p>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Стресс</span>
-                    <span class="tag">Психология</span>
-                    <h3>Стресс: как понять и справиться</h3>
-                    <p>Что такое стресс, как он влияет на организм и какие простые техники помогают снизить его разрушительное влияние.</p>
-                    <a href="blog/stress.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">EMDR</span>
-                    <span class="tag">Травма</span>
-                    <h3>Что такое EMDR и как он помогает при травме</h3>
-                    <p>EMDR — один из самых эффективных методов работы с психологической травмой. Узнайте, как проходит терапия и кому она подходит.</p>
-                    <a href="blog/emdr-trauma.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Выгорание</span>
-                    <span class="tag">Самопомощь</span>
-                    <h3>Эмоциональное выгорание: признаки и способы восстановления</h3>
-                    <p>Как распознать выгорание на ранней стадии и что делать, чтобы восстановить силы и вернуть радость жизни.</p>
-                    <a href="blog/emotional-burnout.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Тревога</span>
-                    <span class="tag">Симптомы</span>
-                    <h3>7 признаков тревожного расстройства, которые нельзя игнорировать</h3>
-                    <p>Тревога может проявляться не только мыслями, но и телесными симптомами. На что обратить внимание.</p>
-                    <a href="blog/anxiety-signs.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Советы</span>
-                    <span class="tag">Выбор специалиста</span>
-                    <h3>Как выбрать психолога: 5 важных критериев</h3>
-                    <p>На что обращать внимание при выборе психолога, чтобы найти именно того специалиста, который вам подходит.</p>
-                    <a href="blog/choose-psychologist.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">ММИЛ</span>
-                    <span class="tag">Метафорические карты</span>
-                    <h3>Что такое ММИЛ: метод исследования через метафоры</h3>
-                    <p>Как метафорические ассоциативные карты помогают заглянуть в бессознательное и найти новые решения.</p>
-                    <a href="blog/mmil-diagnosis.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Brainspotting</span>
-                    <span class="tag">Травма</span>
-                    <h3>Brainspotting: что это и как работает метод точек фиксации взгляда</h3>
-                    <p>Brainspotting — метод, использующий точки фиксации взгляда для доступа к непереработанной травме. Чем отличается от EMDR и кому подходит.</p>
-                    <a href="blog/brainspotting-trauma.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">ПТСР</span>
-                    <span class="tag">Травма</span>
-                    <h3>ПТСР: признаки, симптомы и современные методы лечения</h3>
-                    <p>4 основных симптома посттравматического стрессового расстройства, когда обращаться за помощью и как лечится.</p>
-                    <a href="blog/ptsd-symptoms-treatment.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Панические атаки</span>
-                    <span class="tag">Самопомощь</span>
-                    <h3>Как справиться с панической атакой: 5 техник, которые работают</h3>
-                    <p>Дыхание 4-7-8, техника 5-4-3-2-1, прогрессивная релаксация и другие методы быстрого облегчения.</p>
-                    <a href="blog/panic-attack-techniques.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Отношения</span>
-                    <span class="tag">Токсичность</span>
-                    <h3>Токсичные отношения: 10 признаков и как выйти</h3>
-                    <p>Газлайтинг, контроль, эмоциональное игнорирование и другие признаки. Почему сложно уйти и 5 шагов к свободе.</p>
-                    <a href="blog/toxic-relationships.html">Читать статью →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-card-content">
-                    <span class="tag">Депрессия</span>
-                    <span class="tag">Симптомы</span>
-                    <h3>Депрессия: 5 признаков и как лечится</h3>
-                    <p>Не просто плохое настроение. 5 основных признаков, когда обращаться за помощью и современные методы лечения.</p>
-                    <a href="blog/depression-signs-treatment.html">Читать статью →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Главная</a>
-                <a href="blog.html">Блог</a>
-                <a href="index.html#contact">Контакты</a>
-            </div>
-            <p class="footer-copy">© 2026 Надежда Литвинова. Все права защищены.</p>
-        </div>
-    </footer>
 </body>
 </html>
