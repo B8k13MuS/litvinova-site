@@ -38,6 +38,39 @@ content:
           - name: seo_description
             label: "SEO: Описание"
             type: text
+                      - name: seo_description
+            label: "SEO: Описание"
+            type: text
+          - name: eyebrow
+            label: "Hero: Подзаголовок (eyebrow)"
+            type: string
+          - name: hero_trust_1_label
+            label: "Hero Trust 1: Заголовок"
+            type: string
+          - name: hero_trust_1_value
+            label: "Hero Trust 1: Описание"
+            type: string
+          - name: hero_trust_2_label
+            label: "Hero Trust 2: Заголовок"
+            type: string
+          - name: hero_trust_2_value
+            label: "Hero Trust 2: Описание"
+            type: string
+          - name: hero_trust_3_label
+            label: "Hero Trust 3: Заголовок"
+            type: string
+          - name: hero_trust_3_value
+            label: "Hero Trust 3: Описание"
+            type: string
+          - name: about_highlight
+            label: "About: Подсвеченный текст"
+            type: string
+          - name: footer_description
+            label: "Footer: Описание"
+            type: text
+          - name: hero_title
+            label: "Hero: Заголовок"
+            type: rich-text
           - name: hero_title
             label: "Hero: Заголовок"
             type: rich-text
