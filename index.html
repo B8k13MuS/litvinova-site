@@ -82,8 +82,9 @@
     header nav a:hover::after{width:100%;}
     .menu-toggle{display:none;color:var(--text-primary);padding:8px;}
     .hero{min-height:100vh;display:flex;align-items:flex-start;position:relative;padding:100px 0 60px;background:var(--bg-primary);overflow:hidden;}
-    /* Subtle ambient glow for the whole left side */
-    .hero-glow-bg{position:absolute;top:0;left:0;width:55%;height:100%;background:radial-gradient(ellipse at 40% 50%,rgba(212,175,55,0.08) 0%,transparent 60%);pointer-events:none;z-index:0;}
+    /* Warm ambient glow behind figure - DIVA style */
+    .hero-glow-bg{position:absolute;top:0;left:0;width:60%;height:100%;background:radial-gradient(ellipse at 45% 40%,rgba(255,200,100,0.12) 0%,rgba(212,175,55,0.06) 25%,transparent 55%);pointer-events:none;z-index:0;animation:ambientBreathe 6s ease-in-out infinite;}
+    @keyframes ambientBreathe{0%,100%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.05);}}
     @keyframes glowBreathe{0%,100%{transform:scale(1) translateX(0);opacity:0.85;}50%{transform:scale(1.1) translateX(-1%);opacity:1;}}
     .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,0.05) 0%,transparent 70%);pointer-events:none;animation:orbPulse 8s ease-in-out infinite;}
     @keyframes orbPulse{0%,100%{transform:scale(1);opacity:0.5;}50%{transform:scale(1.1);opacity:0.8;}}
@@ -100,9 +101,12 @@
     .trust-item{display:flex;flex-direction:column;gap:4px;}
     .trust-item strong{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--gold);line-height:1;}
     .trust-item span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;}
-    /* Photo with transparent background - seamless background + glow around figure */
+    /* DIVA-style: intense warm glow wrapping the figure, breathing animation */
     .hero-image-wrapper{position:relative;z-index:2;background:#0A0A0A;border-radius:0;overflow:visible;}
-    .hero-image-wrapper img{width:100%;height:720px;object-fit:cover;object-position:center 15%;display:block;background:transparent !important;position:relative;z-index:2;filter:drop-shadow(0 0 50px rgba(201,169,110,0.35));transform:scale(1.15);transform-origin:center top;}
+    .hero-image-wrapper::before{content:'';position:absolute;inset:-30px;background:radial-gradient(ellipse at 50% 45%,rgba(255,200,100,0.5) 0%,rgba(212,175,55,0.25) 20%,rgba(201,169,110,0.08) 45%,transparent 70%);pointer-events:none;z-index:1;animation:divaGlow 4s ease-in-out infinite;}
+    .hero-image-wrapper::after{content:'';position:absolute;inset:-60px;background:radial-gradient(ellipse at 50% 50%,rgba(255,180,80,0.15) 0%,rgba(212,175,55,0.05) 30%,transparent 60%);pointer-events:none;z-index:0;animation:divaGlow 4s ease-in-out infinite 0.5s;}
+    .hero-image-wrapper img{width:100%;height:720px;object-fit:cover;object-position:center 15%;display:block;background:transparent !important;position:relative;z-index:2;transform:scale(1.15);transform-origin:center top;}
+    @keyframes divaGlow{0%,100%{transform:scale(1);opacity:0.7;filter:blur(0px);}50%{transform:scale(1.15);opacity:1;filter:blur(2px);}}
     /* Gold decorative leaves */
     .hero-ornament{position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:280px;height:520px;pointer-events:none;z-index:3;}
     .hero-ornament svg{width:100%;height:100%;}
