@@ -5,9 +5,8 @@ media:
 content:
   - name: home
     label: "Главная страница"
-    type: collection
-    path: content/pages
-    filename: index.yml
+    type: file
+    path: content/pages/index.yml
     fields:
       - name: seo_title
         label: "SEO: Заголовок страницы"
@@ -136,9 +135,8 @@ content:
 
   - name: about
     label: "Страница Обо мне"
-    type: collection
-    path: content/pages
-    filename: about.yml
+    type: file
+    path: content/pages/about.yml
     fields:
       - name: seo_title
         label: "SEO: Заголовок"
@@ -189,9 +187,8 @@ content:
 
   - name: services
     label: "Страница Услуги"
-    type: collection
-    path: content/pages
-    filename: services.yml
+    type: file
+    path: content/pages/services.yml
     fields:
       - name: seo_title
         label: "SEO: Заголовок"
@@ -253,9 +250,8 @@ content:
 
   - name: contact
     label: "Страница Контакты"
-    type: collection
-    path: content/pages
-    filename: contact.yml
+    type: file
+    path: content/pages/contact.yml
     fields:
       - name: seo_title
         label: "SEO: Заголовок"
@@ -332,9 +328,8 @@ content:
 
   - name: blog
     label: "Страница Блог"
-    type: collection
-    path: content/pages
-    filename: blog.yml
+    type: file
+    path: content/pages/blog.yml
     fields:
       - name: seo_title
         label: "SEO: Заголовок"
