@@ -3,415 +3,132 @@ media:
   output: /images
 
 content:
-  - name: blog
-    label: "📝 Блог"
+  - name: pages
+    label: "Страницы сайта"
     type: collection
-    path: blog
-    filename: "{year}-{month}-{day}-{primary}.html"
-    view:
-      fields: [title, date]
+    path: content/pages
     fields:
-      - name: title
-        label: Заголовок поста
+      - name: seo_title
+        label: "SEO: Заголовок страницы"
         type: string
-        required: true
-      - name: date
-        label: Дата публикации
-        type: date
-      - name: body
-        label: Текст поста
+      - name: seo_description
+        label: "SEO: Описание"
+        type: text
+      - name: hero_title
+        label: "Hero: Главный заголовок"
         type: rich-text
-
-  - name: site_pages
-    label: "🌐 Страницы сайта"
-    type: group
-    items:
-      - name: homepage
-        label: "🏠 Главная страница"
-        type: file
-        path: content/pages/index.yml
-        format: yaml
+        description: "Используйте <br> для переносов"
+      - name: hero_description
+        label: "Hero: Описание"
+        type: rich-text
+      - name: hero_cta
+        label: "Hero: Текст кнопки"
+        type: string
+      - name: issues_title
+        label: "Issues: Заголовок"
+        type: string
+      - name: issues_list
+        label: "Issues: Список"
+        type: object
+        list: true
         fields:
-          - name: seo_title
-            label: "🔍 SEO — Заголовок страницы"
+          - name: title
+            label: "Название"
             type: string
-            description: "Отображается во вкладке браузера"
-          - name: seo_description
-            label: "🔍 SEO — Описание"
-            type: text
-            description: "Для Google и Яндекс"
-          - name: keywords
-            label: "🔍 SEO — Ключевые слова"
-            type: string
-            description: "Через запятую"
-
-          - name: hero_title
-            label: "⭐ Главный заголовок"
+          - name: description
+            label: "Описание"
             type: rich-text
-            description: "Большой текст на первом экране"
-          - name: hero_description
-            label: "⭐ Описание под заголовком"
-            type: rich-text
-          - name: hero_cta
-            label: "⭐ Текст кнопки"
-            type: string
-          - name: hero_cta_link
-            label: "⭐ Ссылка кнопки"
-            type: string
-            description: "Например: contacts.html#contact-form"
-
-          - name: hero_image
-            label: "🖼️ Фото на главной"
-            type: string
-            description: "Введите путь к фото, например: /images/photo-main.jpg"
-
-          - name: issues_title
-            label: "🎯 Заголовок 'С чем я работаю'"
-            type: string
-          - name: issues_list
-            label: "🎯 Список проблем"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
-            fields:
-              - name: title
-                label: "Название"
-                type: string
-              - name: description
-                label: "Описание"
-                type: text
-              - name: icon
-                label: "Иконка (опционально)"
-                type: string
-                description: "Например: heart, brain, shield"
-
-          - name: about_title
-            label: "👤 Заголовок 'Обо мне'"
-            type: string
-          - name: about_preview
-            label: "👤 Текст превью"
-            type: rich-text
-            description: "Короткое описание для главной страницы"
-
-          - name: methods_title
-            label: "🧠 Заголовок 'Как я работаю'"
-            type: string
-          - name: methods_list
-            label: "🧠 Методы"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
-            fields:
-              - name: title
-                label: "Название метода"
-                type: string
-              - name: description
-                label: "Описание"
-                type: text
-              - name: icon
-                label: "Иконка (опционально)"
-                type: string
-
-          - name: process_title
-            label: "📋 Заголовок 'Как проходит работа'"
-            type: string
-          - name: process_list
-            label: "📋 Шаги работы"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{step}"
-            fields:
-              - name: step
-                label: "Название шага"
-                type: string
-              - name: description
-                label: "Описание"
-                type: text
-              - name: icon
-                label: "Иконка (опционально)"
-                type: string
-
-          - name: trust_title
-            label: "🛡️ Заголовок 'Гарантии'"
-            type: string
-          - name: trust_list
-            label: "🛡️ Гарантии"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
-            fields:
-              - name: title
-                label: "Название"
-                type: string
-              - name: description
-                label: "Описание"
-                type: text
-              - name: icon
-                label: "Иконка (опционально)"
-                type: string
-
-          - name: testimonials_title
-            label: "💬 Заголовок 'Отзывы'"
-            type: string
-          - name: testimonials_list
-            label: "💬 Отзывы"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{review_author}"
-            fields:
-              - name: review_text
-                label: "Текст отзыва"
-                type: rich-text
-              - name: review_author
-                label: "Автор"
-                type: string
-
-          - name: pricing_title
-            label: "💰 Заголовок 'Тарифы'"
-            type: string
-          - name: pricing_list
-            label: "💰 Тарифы"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{label}"
-            fields:
-              - name: label
-                label: "Название"
-                type: string
-              - name: duration
-                label: "Длительность"
-                type: string
-              - name: description
-                label: "Описание"
-                type: text
-              - name: price
-                label: "Цена"
-                type: string
-
-          - name: cta_title
-            label: "📞 Заголовок 'Призыв к действию'"
-            type: string
-          - name: cta_text
-            label: "📞 Текст призыва"
-            type: rich-text
-          - name: contact_phone
-            label: "📞 Телефон"
-            type: string
-          - name: form_title
-            label: "📝 Заголовок формы"
-            type: string
-
-      - name: about_page
-        label: "👤 Обо мне"
-        type: file
-        path: content/pages/about.yml
-        format: yaml
+      - name: about_title
+        label: "About: Заголовок"
+        type: string
+      - name: methods_title
+        label: "Methods: Заголовок"
+        type: string
+      - name: methods_list
+        label: "Methods: Список"
+        type: object
+        list: true
         fields:
-          - name: seo_title
-            label: "🔍 SEO — Заголовок"
+          - name: title
+            label: "Название"
             type: string
-          - name: seo_description
-            label: "🔍 SEO — Описание"
-            type: text
-          - name: keywords
-            label: "🔍 SEO — Ключевые слова"
-            type: string
-          - name: header_tag
-            label: "🏷️ Тег"
-            type: string
-          - name: header_title
-            label: "⭐ Заголовок"
-            type: string
-          - name: header_subtitle
-            label: "⭐ Подзаголовок"
-            type: string
-          - name: lead_text
-            label: "📝 Вводный текст"
+          - name: description
+            label: "Описание"
             type: rich-text
-          - name: bio_paragraph_1
-            label: "📝 Биография — Параграф 1"
-            type: rich-text
-          - name: bio_paragraph_2
-            label: "📝 Биография — Параграф 2"
-            type: rich-text
-          - name: education_title
-            label: "🎓 Заголовок 'Образование'"
-            type: string
-          - name: education_items
-            label: "🎓 Образование"
-            type: string
-            list:
-              collapsible:
-                collapsed: false
-          - name: approach_title
-            label: "🎯 Заголовок 'Подход'"
-            type: string
-          - name: approach_text
-            label: "🎯 Текст 'Подход'"
-            type: rich-text
-          - name: call_to_action
-            label: "📞 Текст кнопки"
-            type: string
-          - name: call_to_action_link
-            label: "📞 Ссылка кнопки"
-            type: string
-
-      - name: services_page
-        label: "🛠️ Услуги"
-        type: file
-        path: content/pages/services.yml
-        format: yaml
+      - name: process_title
+        label: "Process: Заголовок"
+        type: string
+      - name: process_list
+        label: "Process: Список"
+        type: object
+        list: true
         fields:
-          - name: seo_title
-            label: "🔍 SEO — Заголовок"
+          - name: title
+            label: "Название"
             type: string
-          - name: seo_description
-            label: "🔍 SEO — Описание"
-            type: text
-          - name: keywords
-            label: "🔍 SEO — Ключевые слова"
-            type: string
-          - name: header_tag
-            label: "🏷️ Тег"
-            type: string
-          - name: header_title
-            label: "⭐ Заголовок"
-            type: string
-          - name: header_subtitle
-            label: "⭐ Подзаголовок"
-            type: string
-          - name: intro_text
-            label: "📝 Вводный текст"
+          - name: description
+            label: "Описание"
             type: rich-text
-          - name: services
-            label: "🛠️ Услуги"
-            type: object
-            list:
-              collapsible:
-                collapsed: false
-                summary: "{title}"
-            fields:
-              - name: title
-                label: "Название"
-                type: string
-              - name: description
-                label: "Описание"
-                type: rich-text
-              - name: duration
-                label: "Длительность"
-                type: string
-              - name: price
-                label: "Цена"
-                type: string
-          - name: how_it_works_title
-            label: "📋 Заголовок 'Как проходит работа'"
-            type: string
-          - name: how_it_works_steps
-            label: "📋 Шаги"
-            type: string
-            list:
-              collapsible:
-                collapsed: false
-          - name: cta_title
-            label: "📞 Заголовок CTA"
-            type: string
-          - name: cta_text
-            label: "📞 Текст CTA"
-            type: rich-text
-          - name: cta_button
-            label: "📞 Текст кнопки"
-            type: string
-          - name: cta_link
-            label: "📞 Ссылка"
-            type: string
-
-      - name: contact_page
-        label: "📞 Контакты"
-        type: file
-        path: content/pages/contact.yml
-        format: yaml
+      - name: trust_title
+        label: "Trust: Заголовок"
+        type: string
+      - name: trust_list
+        label: "Trust: Список"
+        type: object
+        list: true
         fields:
-          - name: seo_title
-            label: "🔍 SEO — Заголовок"
+          - name: title
+            label: "Название"
             type: string
-          - name: seo_description
-            label: "🔍 SEO — Описание"
-            type: text
-          - name: keywords
-            label: "🔍 SEO — Ключевые слова"
-            type: string
-          - name: header_tag
-            label: "🏷️ Тег"
-            type: string
-          - name: header_title
-            label: "⭐ Заголовок"
-            type: string
-          - name: header_subtitle
-            label: "⭐ Подзаголовок"
-            type: string
-          - name: contact_info_title
-            label: "📞 Заголовок контактов"
-            type: string
-          - name: phone
-            label: "📞 Телефон"
-            type: string
-          - name: email
-            label: "📧 Email"
-            type: string
-          - name: location
-            label: "📍 Локация"
-            type: string
-          - name: telegram_label
-            label: "📱 Telegram подпись"
-            type: string
-          - name: telegram_link
-            label: "📱 Telegram ссылка"
-            type: string
-          - name: channel_label
-            label: "📱 Канал подпись"
-            type: string
-          - name: channel_link
-            label: "📱 Канал ссылка"
-            type: string
-          - name: whatsapp_label
-            label: "📱 WhatsApp подпись"
-            type: string
-          - name: whatsapp_link
-            label: "📱 WhatsApp ссылка"
-            type: string
-          - name: email_label
-            label: "📧 Email подпись"
-            type: string
-          - name: email_link
-            label: "📧 Email ссылка"
-            type: string
-          - name: form_title
-            label: "📝 Заголовок формы"
-            type: string
-          - name: form_description
-            label: "📝 Описание формы"
+          - name: description
+            label: "Описание"
             type: rich-text
-          - name: form_submit_button
-            label: "📝 Текст кнопки"
+      - name: testimonials_title
+        label: "Testimonials: Заголовок"
+        type: string
+      - name: testimonials_list
+        label: "Testimonials: Список"
+        type: object
+        list: true
+        fields:
+          - name: text
+            label: "Текст"
+            type: rich-text
+          - name: author
+            label: "Автор"
             type: string
-          - name: form_privacy_text
-            label: "📝 Текст согласия"
-            type: text
-          - name: response_time
-            label: "⏱️ Время ответа"
+          - name: details
+            label: "Детали"
             type: string
-          - name: footer_text
-            label: "📄 Текст футера"
+      - name: pricing_title
+        label: "Pricing: Заголовок"
+        type: string
+      - name: pricing_list
+        label: "Pricing: Список"
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: "Название"
             type: string
+          - name: value
+            label: "Значение"
+            type: string
+          - name: description
+            label: "Описание"
+            type: rich-text
+          - name: featured
+            label: "Популярный"
+            type: boolean
+          - name: badge
+            label: "Бейдж"
+            type: string
+      - name: form_title
+        label: "Form: Заголовок"
+        type: string
+      - name: cta_title
+        label: "CTA: Заголовок"
+        type: string
+      - name: contact_phone
+        label: "CTA: Телефон"
+        type: string
