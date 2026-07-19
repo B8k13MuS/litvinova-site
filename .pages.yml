@@ -33,11 +33,11 @@ content:
         path: content/pages/index.yml
         format: yaml
         fields:
-          - name: seo_title
+          - name: title
             label: "🔍 SEO — Заголовок страницы"
             type: string
             description: "Отображается во вкладке браузера"
-          - name: seo_description
+          - name: description
             label: "🔍 SEO — Описание"
             type: text
             description: "Для Google и Яндекс"
@@ -69,7 +69,7 @@ content:
           - name: issues_title
             label: "🎯 Заголовок 'С чем я работаю'"
             type: string
-          - name: issues_list
+          - name: issues
             label: "🎯 Список проблем"
             type: object
             list:
@@ -106,7 +106,7 @@ content:
           - name: methods_title
             label: "🧠 Заголовок 'Как я работаю'"
             type: string
-          - name: methods_list
+          - name: methods
             label: "🧠 Методы"
             type: object
             list:
@@ -124,7 +124,7 @@ content:
           - name: process_title
             label: "📋 Заголовок 'Как проходит работа'"
             type: string
-          - name: process_list
+          - name: process_steps
             label: "📋 Шаги работы"
             type: object
             list:
@@ -142,7 +142,7 @@ content:
           - name: trust_title
             label: "🛡️ Заголовок 'Гарантии'"
             type: string
-          - name: trust_list
+          - name: trust_items
             label: "🛡️ Гарантии"
             type: object
             list:
@@ -160,7 +160,7 @@ content:
           - name: testimonials_title
             label: "💬 Заголовок 'Отзывы'"
             type: string
-          - name: testimonials_list
+          - name: testimonials
             label: "💬 Отзывы"
             type: object
             list:
@@ -184,7 +184,7 @@ content:
           - name: pricing_note
             label: "💰 Примечание"
             type: string
-          - name: pricing_list
+          - name: pricing_items
             label: "💰 Тарифы"
             type: object
             list:
@@ -251,10 +251,10 @@ content:
             label: "🖼️ Фото в профиле"
             type: string
             description: "Введите путь к фото, например: /images/photo-main.jpg"
-          - name: seo_title
+          - name: title
             label: "🔍 SEO — Заголовок"
             type: string
-          - name: seo_description
+          - name: description
             label: "🔍 SEO — Описание"
             type: text
           - name: keywords
@@ -323,10 +323,10 @@ content:
             label: "🖼️ Фоновое фото"
             type: string
             description: "Введите путь к фото, например: /images/photo-main.jpg"
-          - name: seo_title
+          - name: title
             label: "🔍 SEO — Заголовок"
             type: string
-          - name: seo_description
+          - name: description
             label: "🔍 SEO — Описание"
             type: text
           - name: keywords
@@ -409,10 +409,10 @@ content:
             label: "🖼️ Фото в контактах"
             type: string
             description: "Введите путь к фото, например: /images/photo-main.jpg"
-          - name: seo_title
+          - name: title
             label: "🔍 SEO — Заголовок"
             type: string
-          - name: seo_description
+          - name: description
             label: "🔍 SEO — Описание"
             type: text
           - name: keywords
