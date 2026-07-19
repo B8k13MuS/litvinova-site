@@ -1,160 +1,62 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-    <meta name="yandex-verification" content="94cb1003e6ae7f19" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="all">
-    <meta name="description" content="Надежда Литвинова — психолог с большим опытом работы. Специализация: EMDR, ММИЛ, интегративный подход. Постоянное обучение и супервизия. Онлайн по всему миру.">
-    <meta name="keywords" content="психолог Литвинова, специалист по EMDR, опыт психолога, интегративный подход">
-    <title>Обо мне — Надежда Литвинова | Психолог</title>
-    <link rel="canonical" href="https://b8k13mus.github.io/litvinova-site/about.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+    <title data-content="seo_title">Обо мне | Психолог Надежда Литвинова</title>
+    <meta name="description" data-content="seo_description" content="Более 10 лет практики, EMDR, ММИЛ, интегративный подход.">
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Главное меню">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">Надежда Литвинова</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navMenu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Главная</a></li>
-                <li role="none"><a href="about.html" class="nav-link active" role="menuitem">Обо мне</a></li>
-                <li role="none"><a href="methods.html" class="nav-link" role="menuitem">Методы</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">Услуги</a></li>
-                <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Блог</a></li>
-                <li role="none"><a href="contacts.html" class="nav-link" role="menuitem">Контакты</a></li>
-            </ul>
-            <a href="contacts.html#contact-form" class="nav-cta">Записаться</a>
-        </div>
-    </nav>
-
-    <header class="page-header" style="padding-top: 120px; padding-bottom: 60px; background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);">
-        <div class="container" style="text-align: center;">
-            <span class="section-tag" data-content="header_tag">Обо мне</span>
-            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);" data-content="header_title">Надежда Литвинова</h1>
-            <p style="color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;" data-content="header_subtitle">Психолог, специалист по EMDR и Интегративный подход</p>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Надежда Литвинова</a>
+            <nav class="main-nav">
+                <a href="index.html">Главная</a>
+                <a href="about.html">Обо мне</a>
+                <a href="services.html">Услуги</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="blog.html">Блог</a>
+            </nav>
         </div>
     </header>
 
-    <section style="padding: 80px 0; background: var(--color-white);">
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1 data-content="about_hero_title">Я верю, что каждый человек обладает внутренними ресурсами для восстановления.</h1>
+                <p data-content="about_hero_text">Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. Использую доказательные методы: EMDR и ММИЛ.</p>
+            </div>
+        </section>
+
+        <section class="about-details">
+            <div class="container">
+                <h2>Образование и квалификация</h2>
+                <ul class="credentials-list" data-content="about_credentials"></ul>
+                
+                <h2>Мой подход</h2>
+                <div class="approach-text" data-content="about_approach"></div>
+                
+                <a href="contacts.html" class="btn btn-primary">Записаться на консультацию</a>
+            </div>
+        </section>
+
+        <section class="values">
+            <div class="container">
+                <h2>Чем руководствуюсь в работе</h2>
+                <div class="values-grid" data-content="about_values"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img data-content="about_image" src="images/photo-main.jpg" alt="Надежда Литвинова" width="500" height="600" loading="eager">
-                </div>
-                <div class="about-content">
-                    <p class="about-lead" data-content="lead_text">Я верю, что каждый человек обладает внутренними ресурсами для восстановления. Моя задача — помочь вам их найти и активировать.</p>
-
-                    <p data-content="bio_paragraph_1">Более 10 лет я помогаю людям справляться с трудными жизненными ситуациями. За это время я работала с сотнями клиентов, помогая им преодолевать страхи, тревогу, последствия травм и стресса.</p>
-
-                    <p data-content="bio_paragraph_2">Использую доказательные методы: EMDR и ММИЛ. Постоянно прохожу супервизии и повышение квалификации, чтобы предлагать клиентам самые эффективные подходы.</p>
-
-                    <h3 style="font-family: var(--font-heading); color: var(--color-navy); margin: 32px 0 16px; font-size: 1.3rem;">Образование и квалификация</h3>
-                    <ul class="about-list">
-                        <li><span class="check">✓</span>  специалист по EMDR</li>
-                        <li><span class="check">✓</span> специалист по Интегративный подход</li>
-                        <li><span class="check">✓</span> Специалист по методу ММИЛ</li>
-                        <li><span class="check">✓</span> Регулярная супервизия и личная терапия</li>
-                    </ul>
-
-                    <h3 style="font-family: var(--font-heading); color: var(--color-navy); margin: 32px 0 16px; font-size: 1.3rem;">Мой подход</h3>
-                    <p>Я работаю в бережном, ненасильственном ключе. Не даю готовых ответов и не навязываю свою точку зрения. Вместо этого помогаю клиенту найти собственные ресурсы и решения.</p>
-                    <p>Каждая сессия — это совместная работа, где вы эксперт своей жизни, а я — проводник, знающий эффективные методы.</p>
-
-                    <div style="margin-top: 32px;">
-                        <a href="contacts.html#contact-form" class="btn btn-primary">Записаться на консультацию</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 80px 0; background: var(--color-cream);">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Ценности</span>
-                <h2 class="section-title">Чем руководствуюсь в работе</h2>
-            </div>
-            <div class="problems-grid">
-                <article class="problem-card" style="text-align: center;">
-                    <div class="problem-icon">🤝</div>
-                    <h3>Конфиденциальность</h3>
-                    <p>Всё, что происходит на сессии, остаётся между нами. Это фундамент доверительных отношений.</p>
-                </article>
-                <article class="problem-card" style="text-align: center;">
-                    <div class="problem-icon">💡</div>
-                    <h3>Доказательность</h3>
-                    <p>Использую только методы с научно подтверждённой эффективностью. Постоянно обучаюсь и супервизируюсь.</p>
-                </article>
-                <article class="problem-card" style="text-align: center;">
-                    <div class="problem-icon">🎯</div>
-                    <h3>Индивидуальность</h3>
-                    <p>Нет универсальных решений. Каждый клиент уникален, и подход подбирается под конкретного человека.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="footer-logo">🌿 Надежда Литвинова</span>
-                    <p class="footer-desc">Психолог, специалист по EMDR и Интегративный подход.</p>
-                </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Разделы</p>
-                    <ul>
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="about.html">Обо мне</a></li>
-                        <li><a href="methods.html">Методы</a></li>
-                        <li><a href="services.html">Услуги</a></li>
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <p class="footer-heading">Методы</p>
-                    <ul>
-                        <li><a href="methods.html#emdr">EMDR / ДПДГ</a></li>
-                        <li><a href="methods.html#brainspotting">Интегративный подход</a></li>
-                        <li><a href="methods.html#mmil">ММИЛ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <p class="footer-heading">Контакты</p>
-                    <a href="tel:+79185055715">+7 (918) 505-57-15</a>
-                    <a href="mailto:denas111222@gmail.com">denas111222@gmail.com</a>
-                    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener">Telegram</a>
-                    <a href="https://t.me/uspeh_prosto" target="_blank" rel="noopener">Канал в Telegram</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Надежда Литвинова. Все права защищены.</p>
-                <p><a href="privacy.html">Политика конфиденциальности</a></p>
-            </div>
+            <p>&copy; 2026 Надежда Литвинова. Все права защищены.</p>
         </div>
     </footer>
 
-    <script src="scripts.js" defer></script>
-
-    <!-- Telegram Chat Widget -->
-    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion="nadezhda_litvinova_coach" data-comments-limit="5" data-color="343638" data-dark-color="F0F0F0"></script>
-    <a href="https://t.me/nadezhda_litvinova_coach" target="_blank" rel="noopener" class="telegram-float" aria-label="Написать в Telegram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 4.5L2.5 12.5L9.5 14.5L12.5 21.5L21.5 4.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 14.5L12.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-
-<script src="content-loader.js"></script>
+    <script src="content-loader.js"></script>
 </body>
 </html>
