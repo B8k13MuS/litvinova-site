@@ -94,6 +94,21 @@ body {
     filter: blur(80px);
     z-index: 0;
 }
+.hero-bg-glow-red {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, 
+        rgba(220, 90, 60, 0.06) 0%, 
+        rgba(180, 60, 40, 0.03) 50%, 
+        transparent 70%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
 <div class="hero-bg-glow-red"></div>
 .hero-container {
     display: grid;
