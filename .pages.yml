@@ -1,4 +1,10 @@
+# Настройка папки для медиафайлов
+media:
+  input: "images"          # Папка, откуда CMS берёт картинки
+  output: "images"         # Папка, куда сохраняются новые загруженные фото
+
 content:
+  # --- СТРАНИЦЫ САЙТА ---
   - name: homepage
     label: "Главная страница"
     type: file
@@ -19,3 +25,47 @@ content:
       - name: confidential_val
         label: "Конфиденциальность (%)"
         type: string
+
+  - name: about
+    label: "Обо мне"
+    type: file
+    path: "about.html"
+    fields:
+      - name: body
+        label: "Содержимое страницы"
+        type: rich-text
+
+  - name: services
+    label: "Услуги"
+    type: file
+    path: "services.html"
+    fields:
+      - name: body
+        label: "Содержимое страницы"
+        type: rich-text
+
+  - name: pricing
+    label: "Тарифы"
+    type: file
+    path: "pricing.html"
+    fields:
+      - name: body
+        label: "Содержимое страницы"
+        type: rich-text
+
+  # --- БЛОГ (Коллекция статей) ---
+  - name: blog
+    label: "Блог"
+    type: collection
+    path: "blog"
+    format: html
+    fields:
+      - name: title
+        label: "Заголовок статьи"
+        type: string
+      - name: date
+        label: "Дата публикации"
+        type: date
+      - name: body
+        label: "Текст статьи"
+        type: rich-text
