@@ -3,6 +3,7 @@ media:
   output: "images"
 
 content:
+  # --- 1. ГЛАВНАЯ СТРАНИЦА ---
   - name: homepage
     label: "Главная страница"
     type: file
@@ -21,10 +22,65 @@ content:
         label: "Подзаголовок / Описание"
         type: text
 
+  # --- 2. ОБО МНЕ ---
+  - name: about
+    label: "Обо мне"
+    type: file
+    path: "about.html"
+    fields:
+      - name: meta_title
+        label: "SEO Заголовок"
+        type: string
+      - name: body
+        label: "Текст страницы (HTML)"
+        type: text
+
+  # --- 3. УСЛУГИ И ЦЕНЫ ---
+  - name: services
+    label: "Услуги и расценки"
+    type: file
+    path: "services.html"
+    fields:
+      - name: meta_title
+        label: "SEO Заголовок"
+        type: string
+      - name: body
+        label: "Текст страницы (HTML)"
+        type: text
+
+  # --- 4. КАК Я РАБОТАЮ (МЕТОДЫ) ---
+  - name: methods
+    label: "Как я работаю"
+    type: file
+    path: "methods.html"
+    fields:
+      - name: meta_title
+        label: "SEO Заголовок"
+        type: string
+      - name: body
+        label: "Текст страницы (HTML)"
+        type: text
+
+  # --- 5. КОНТАКТЫ ---
+  - name: contacts
+    label: "Контакты"
+    type: file
+    path: "contacts.html"
+    fields:
+      - name: meta_title
+        label: "SEO Заголовок"
+        type: string
+      - name: body
+        label: "Текст страницы (HTML)"
+        type: text
+
+  # --- 6. БЛОГ ---
   - name: blog
     label: "Блог"
     type: collection
-    path: "blog"
+    path: ""
+    filename: "blog-{slug}.html"
+    exclude: ["blog.html"]
     view:
       fields: [title, date]
     fields:
@@ -36,4 +92,4 @@ content:
         type: date
       - name: body
         label: "Текст статьи"
-        type: rich-text
+        type: text
