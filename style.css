@@ -15,6 +15,7 @@
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
     --color-gold-dark: #aa8c2c;
+    --color-green-dark: #1a2f1a;
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --container-width: 1440px;
@@ -31,7 +32,7 @@ body {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 60px;
 }
 
 /* ========================================
@@ -129,107 +130,113 @@ body {
 }
 
 /* ========================================
-   HERO SECTION
+   HERO SECTION — DIVA STYLE
    ======================================== */
 .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
-    padding: 160px 80px 100px;
+    background: linear-gradient(135deg, #0a1a0a 0%, #0a0a0a 40%, #1a1a1a 100%);
+    padding: 120px 0 80px;
     overflow: hidden;
+}
+
+.hero-bg-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decoration-flower-left {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 800px;
+    opacity: 0.4;
+}
+
+.decoration-flower-right {
+    position: absolute;
+    right: -50px;
+    bottom: -100px;
+    width: 500px;
+    height: 700px;
+    opacity: 0.3;
 }
 
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
     align-items: center;
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
-.hero-photo-wrapper {
+.hero-photo-section {
     position: relative;
-    width: 100%;
-    max-width: 550px;
-    aspect-ratio: 4/5;
+    height: 85vh;
+    max-height: 900px;
 }
 
 .hero-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    position: relative;
-    z-index: 2;
+    object-position: top center;
+    border-radius: 0;
 }
 
-.hero-photo-glow {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
-    filter: blur(40px);
-    z-index: 1;
-    animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { opacity: 0.6; transform: scale(1); }
-    to { opacity: 1; transform: scale(1.05); }
-}
-
-.hero-photo-frame {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px solid var(--color-gold);
-    border-radius: 25px;
-    z-index: 3;
-    pointer-events: none;
-}
-
-.hero-content {
+.hero-content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-left: 40px;
-    max-width: 650px;
+}
+
+.hero-text-content {
+    margin-bottom: 60px;
 }
 
 .hero-eyebrow {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--color-gold);
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     font-weight: 500;
 }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 56px;
+    font-size: 72px;
     font-weight: 600;
-    line-height: 1.15;
-    margin-bottom: 24px;
+    line-height: 1.1;
+    margin-bottom: 32px;
     color: var(--color-text);
 }
 
 .hero-title em {
     color: var(--color-gold);
     font-style: italic;
+    display: block;
 }
 
 .hero-subtitle {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 20px;
+    line-height: 1.6;
     color: var(--color-text-muted);
-    margin-bottom: 40px;
-    max-width: 540px;
+    max-width: 500px;
 }
 
 .hero-trust {
@@ -248,7 +255,7 @@ body {
 
 .trust-number {
     font-family: var(--font-heading);
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 700;
     color: var(--color-gold);
     line-height: 1;
@@ -260,6 +267,38 @@ body {
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.hero-circle-decoration {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 70%, transparent 100%);
+    border: 2px solid var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.circle-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--color-gold);
+    line-height: 1.3;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
 }
 
 .hero-divider {
@@ -277,7 +316,7 @@ body {
    ======================================== */
 .btn {
     display: inline-block;
-    padding: 14px 32px;
+    padding: 16px 36px;
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 500;
@@ -291,17 +330,18 @@ body {
 .btn-gold {
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
     color: var(--color-bg);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
 }
 
 .btn-gold:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
 }
 
 .btn-large {
-    padding: 18px 40px;
+    padding: 20px 48px;
     font-size: 16px;
+    align-self: flex-start;
 }
 
 .btn-outline {
@@ -326,7 +366,7 @@ body {
    ABOUT PREVIEW
    ======================================== */
 .about-preview {
-    padding: 120px 80px;
+    padding: 120px 0;
     background: var(--color-bg-secondary);
 }
 
@@ -338,77 +378,78 @@ body {
 
 .about-preview-text h2 {
     font-family: var(--font-heading);
-    font-size: 42px;
-    margin-bottom: 24px;
+    font-size: 48px;
+    margin-bottom: 32px;
     color: var(--color-gold);
 }
 
 .about-highlight {
     font-family: var(--font-heading);
-    font-size: 24px;
+    font-size: 26px;
     font-style: italic;
     color: var(--color-text);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     line-height: 1.5;
 }
 
 .about-preview-text p {
     color: var(--color-text-muted);
-    margin-bottom: 32px;
-    font-size: 16px;
+    margin-bottom: 36px;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 /* ========================================
    SERVICES PREVIEW
    ======================================== */
 .services-preview {
-    padding: 120px 80px;
+    padding: 120px 0;
     background: var(--color-bg);
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 42px;
+    font-size: 48px;
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
     color: var(--color-gold);
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 36px;
 }
 
 .service-card {
     background: var(--color-bg-secondary);
-    padding: 40px 32px;
-    border-radius: 15px;
+    padding: 48px 36px;
+    border-radius: 20px;
     border: 1px solid rgba(212, 175, 55, 0.2);
     transition: all 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: var(--color-gold);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
 }
 
 .service-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 56px;
+    margin-bottom: 24px;
 }
 
 .service-card h3 {
     font-family: var(--font-heading);
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 26px;
+    margin-bottom: 18px;
     color: var(--color-text);
 }
 
 .service-card p {
     color: var(--color-text-muted);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -417,40 +458,41 @@ body {
    ======================================== */
 .footer {
     background: var(--color-bg-secondary);
-    padding: 80px 80px 40px;
+    padding: 100px 0 50px;
     border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 64px;
-    margin-bottom: 64px;
+    gap: 80px;
+    margin-bottom: 80px;
 }
 
 .footer-column h3 {
     font-family: var(--font-heading);
-    font-size: 20px;
+    font-size: 22px;
     color: var(--color-gold);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .footer-column p {
     color: var(--color-text-muted);
-    margin-bottom: 20px;
-    font-size: 15px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .footer-contacts {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .footer-contact {
     color: var(--color-text);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
@@ -462,13 +504,13 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .footer-links a {
     color: var(--color-text-muted);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
@@ -478,13 +520,13 @@ body {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 40px;
+    padding-top: 50px;
     border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .footer-bottom p {
     color: var(--color-text-muted);
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* ========================================
@@ -495,25 +537,21 @@ body {
         padding: 0 40px;
     }
     
-    .hero {
-        padding: 140px 40px 80px;
-    }
-    
     .hero-container {
-        gap: 60px;
+        gap: 40px;
     }
     
-    .hero-content {
+    .hero-content-section {
         padding-left: 20px;
     }
     
     .hero-title {
-        font-size: 48px;
+        font-size: 56px;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
     }
 }
 
@@ -527,7 +565,7 @@ body {
     }
     
     .hero {
-        padding: 120px 20px 60px;
+        padding: 100px 0 60px;
     }
     
     .hero-container {
@@ -535,22 +573,21 @@ body {
         gap: 40px;
     }
     
-    .hero-photo-wrapper {
-        max-width: 400px;
-        margin: 0 auto;
+    .hero-photo-section {
+        height: 60vh;
     }
     
-    .hero-content {
+    .hero-content-section {
         padding-left: 0;
         text-align: center;
     }
     
     .hero-title {
-        font-size: 36px;
+        font-size: 42px;
     }
     
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .hero-trust {
@@ -558,9 +595,24 @@ body {
         gap: 32px;
     }
     
+    .btn-large {
+        align-self: center;
+    }
+    
+    .hero-circle-decoration {
+        width: 140px;
+        height: 140px;
+        bottom: 80px;
+        right: 40px;
+    }
+    
+    .circle-content {
+        font-size: 14px;
+    }
+    
     .section-title,
     .about-preview-text h2 {
-        font-size: 32px;
+        font-size: 36px;
     }
     
     .services-grid {
@@ -570,15 +622,15 @@ body {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 28px;
+        font-size: 32px;
     }
     
     .trust-number {
-        font-size: 28px;
+        font-size: 32px;
     }
     
     .btn-large {
-        padding: 16px 32px;
-        font-size: 14px;
+        padding: 18px 36px;
+        font-size: 15px;
     }
 }
