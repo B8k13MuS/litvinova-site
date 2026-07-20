@@ -1,171 +1,21 @@
+---
+meta_title: "Обо мне — Надежда Литвинова, психолог"
+meta_description: "Психолог, специализируюсь на работе с травмой, тревожными расстройствами, самооценкой, выгоранием и кризисами в отношениях."
+about_title: "Обо мне"
+about_subtitle: "Надежда Литвинова — дипломированный психолог, EMDR-терапевт"
+about_text: "Я помогаю людям справляться с эмоциональными трудностями, травмирующим опытом, тревогой и выгоранием. В своей работе использую научно доказанные методы психотерапии, создавая безопасное и поддерживающее пространство для каждого клиента."
+---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обо мне — Надежда Литвинова, психолог</title>
-    <meta name="description" content="Психолог, специализируюсь на работе с травмой, тревожными расстройствами, самооценкой, выгоранием и кризисами в отношениях.">
+    <title>{{ page.meta_title }}</title>
+    <meta name="description" content="{{ page.meta_description }}">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Дополнительные стили для about.html */
-        body {
-            background: #050505;
-        }
-        
-        .about-hero {
-            padding: 140px 0 80px;
-            text-align: center;
-            background: #050505;
-        }
-        
-        .about-hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 56px;
-            color: #d4af37;
-            margin-bottom: 32px;
-        }
-        
-        .about-hero p {
-            font-size: 20px;
-            color: #b0b0b0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .about-content {
-            padding: 80px 0;
-            background: #0a0a0a;
-        }
-        
-        .about-content p {
-            color: #e0e0e0;
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 32px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .about-content strong {
-            color: #d4af37;
-        }
-        
-        .about-content .highlight {
-            color: #d4af37;
-            font-style: italic;
-            font-size: 16px;
-            margin-top: 40px;
-        }
-        
-        .how-i-work {
-            padding: 100px 0;
-            background: #050505;
-        }
-        
-        .how-i-work h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px;
-            color: #d4af37;
-            text-align: center;
-            margin-bottom: 64px;
-        }
-        
-        .work-step {
-            margin-bottom: 48px;
-            padding: 40px;
-            background: #0a0a0a;
-            border-radius: 15px;
-            border-left: 4px solid #d4af37;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .work-step h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            color: #d4af37;
-            margin-bottom: 16px;
-        }
-        
-        .work-step p {
-            color: #b0b0b0;
-            line-height: 1.7;
-            margin: 0;
-        }
-        
-        .advantages {
-            padding: 100px 0;
-            background: #0a0a0a;
-        }
-        
-        .advantages h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px;
-            color: #d4af37;
-            text-align: center;
-            margin-bottom: 64px;
-        }
-        
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .advantage-card {
-            padding: 40px;
-            background: #050505;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        
-        .advantage-card .icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .advantage-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            color: #d4af37;
-            margin-bottom: 16px;
-        }
-        
-        .advantage-card p {
-            color: #b0b0b0;
-            line-height: 1.6;
-            margin: 0;
-        }
-        
-        .cta-section {
-            padding: 100px 0;
-            text-align: center;
-            background: #050505;
-        }
-        
-        .cta-section h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px;
-            color: #d4af37;
-            margin-bottom: 24px;
-        }
-        
-        .cta-section p {
-            color: #b0b0b0;
-            font-size: 18px;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -177,107 +27,26 @@
             <nav class="nav">
                 <a href="index.html" class="nav-link">Главная</a>
                 <a href="about.html" class="nav-link active">Обо мне</a>
-                <a href="methods.html" class="nav-link">Методы</a>
-                <a href="services.html" class="nav-link">С чем работаю</a>
-                <a href="process.html" class="nav-link">Процесс</a>
-                <a href="pricing.html" class="nav-link">Тарифы</a>
+                <a href="services.html" class="nav-link">Услуги</a>
                 <a href="blog.html" class="nav-link">Блог</a>
-                <a href="#contact" class="btn btn-gold">Записаться</a>
+                <a href="index.html#contact" class="btn btn-gold">Записаться</a>
             </nav>
         </div>
     </header>
 
-    <section class="about-hero">
+    <section style="padding: 120px 0 60px 0;">
         <div class="container">
-            <h1>Обо мне</h1>
-            <p>Психолог, специализируюсь на работе с травмой, тревожными расстройствами, самооценкой, выгоранием и кризисами в отношениях.</p>
-        </div>
-    </section>
-
-    <section class="about-content">
-        <div class="container">
-            <p>Я помогаю людям выходить из повторяющихся сценариев, снимать внутренние блоки и выстраивать устойчивые, тёплые отношения с собой и близкими. В работе опираюсь на доказательные и глубоко проработанные методы: <strong>ММИЛ-диагностику, КПТ, РЭПТ, DBT</strong>, а также на техники переработки травм — <strong>ДПДГ, Брейнспоттинг, RPT, ЭОТ</strong>.</p>
-            <p>Такой комплексный подход позволяет не просто "разговаривать о проблеме", а точечно выявлять корень напряжения, безопасно его перерабатывать и закреплять новые, более устойчивые реакции. Работаю с запросами от острых кризисов до тонкой настройки качества жизни и отношений. Моя цель — чтобы вы не просто поняли, "почему так происходит", а реально почувствовали, что стало легче, и смогли действовать по-новому.</p>
-            <p class="highlight">Работаю онлайн по всему миру — каждая сессия проходит в безопасной и конфиденциальной обстановке. Подбираю метод индивидуально под запрос клиента.</p>
-        </div>
-    </section>
-
-    <section class="how-i-work">
-        <div class="container">
-            <h2>Как я работаю</h2>
-            
-            <div class="work-step">
-                <h3>01. Диагностика</h3>
-                <p>Провожу комплексную оценку состояния: использую ММИЛ и другие валидные методики, собираю анамнез, выявляю ключевые триггеры и ресурсы. На основе данных формирую точный план работы и подбираю методы с подтверждённой эффективностью.</p>
-            </div>
-
-            <div class="work-step">
-                <h3>02. Работа над запросом и выявление глубинных причин</h3>
-                <p>Разбираем повторяющиеся сценарии и автоматические реакции, работаем с корневыми установками. Сочетание <strong>КПТ, ЭОТ, ЭФТ, ОРКТ, RPT, DBT, ДПДГ и Brainspotting</strong> — позволяет подбирать стратегию индивидуально. Не один метод для всех, а лучший метод для вас.</p>
-            </div>
-
-            <div class="work-step">
-                <h3>03. Позитивный сценарий</h3>
-                <p>Тренируем и закрепляем новые модели поведения через поведенческие эксперименты и навыки саморегуляции. Идём к целям и достижениям к выбранному будущему.</p>
+            <h1 class="section-title" style="text-align: left;">{{ page.about_title }}</h1>
+            <h2 style="color: #d4af37; font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 20px;">{{ page.about_subtitle }}</h2>
+            <div style="color: #cccccc; font-size: 16px; line-height: 1.8; max-width: 800px;">
+                <p>{{ page.about_text }}</p>
             </div>
         </div>
     </section>
 
-    <section class="advantages">
+    <footer class="footer">
         <div class="container">
-            <h2>Почему мне доверяют</h2>
-            
-            <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="icon">🎓</div>
-                    <h3>Документальное образование</h3>
-                    <p>Высшее психологическое образование, специализированное обучение по методикам проработки.</p>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="icon">🔒</div>
-                    <h3>Конфиденциальность</h3>
-                    <p>Полная конфиденциальность и соблюдение этического кодекса психолога.</p>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="icon">🛡️</div>
-                    <h3>Безопасная среда</h3>
-                    <p>Никаких осуждений и давления. Пространство, где можно быть собой и говорить открыто. Нет позиции «сверху» или «снизу», мы равны.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Готовы начать изменения?</h2>
-            <p>Запишитесь на первую консультацию, и мы определим, как я могу вам помочь</p>
-            <a href="#contact" class="btn btn-gold btn-large">Записаться на консультацию</a>
-        </div>
-    </section>
-
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Контакты</h3>
-                    <p>Работаю онлайн по всему миру</p>
-                    <a href="tel:+79185055715" class="footer-contact">+7 (918) 505-57-15</a>
-                    <a href="https://t.me/nadezhda_litvinova_coach" class="footer-contact">@nadezhda_litvinova_coach</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Навигация</h3>
-                    <ul class="footer-links">
-                        <li><a href="about.html">Обо мне</a></li>
-                        <li><a href="services.html">Услуги</a></li>
-                        <li><a href="pricing.html">Тарифы</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Надежда Литвинова. Все права защищены.</p>
-            </div>
+            <p>© 2026 Надежда Литвинова. Все права защищены.</p>
         </div>
     </footer>
 </body>
