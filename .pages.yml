@@ -8,26 +8,17 @@ content:
     type: file
     path: "index.html"
     fields:
-      - name: body
-        label: "Содержимое"
+      - name: meta_title
+        label: "SEO: Заголовок страницы (Title)"
+        type: string
+      - name: meta_description
+        label: "SEO: Описание (Description)"
         type: text
-
-  - name: about
-    label: "Обо мне"
-    type: file
-    path: "about.html"
-    fields:
-      - name: body
-        label: "Содержимое"
-        type: text
-
-  - name: services
-    label: "Услуги"
-    type: file
-    path: "services.html"
-    fields:
-      - name: body
-        label: "Содержимое"
+      - name: hero_title
+        label: "Главный заголовок"
+        type: string
+      - name: hero_subtitle
+        label: "Подзаголовок / Описание"
         type: text
 
   - name: blog
