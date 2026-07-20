@@ -3,15 +3,14 @@ media:
   output: "images"
 
 content:
-  # --- СТРАНИЦЫ САЙТА ---
   - name: homepage
     label: "Главная страница"
     type: file
     path: "index.html"
     fields:
       - name: body
-        label: "HTML-код"
-        type: code
+        label: "Содержимое"
+        type: text
 
   - name: about
     label: "Обо мне"
@@ -19,8 +18,8 @@ content:
     path: "about.html"
     fields:
       - name: body
-        label: "HTML-код"
-        type: code
+        label: "Содержимое"
+        type: text
 
   - name: services
     label: "Услуги"
@@ -28,30 +27,22 @@ content:
     path: "services.html"
     fields:
       - name: body
-        label: "HTML-код"
-        type: code
+        label: "Содержимое"
+        type: text
 
-  # --- БЛОГ (Коллекция статей) ---
   - name: blog
     label: "Блог"
     type: collection
     path: "blog"
-    format: markdown
     view:
-      fields: [title, date, tags]
+      fields: [title, date]
     fields:
       - name: title
         label: "Заголовок статьи"
         type: string
       - name: date
-        label: "Дата публикации"
+        label: "Дата"
         type: date
-      - name: description
-        label: "Краткое описание (для карточки)"
-        type: text
-      - name: tags
-        label: "Теги / Категории"
-        type: list
       - name: body
         label: "Текст статьи"
         type: rich-text
