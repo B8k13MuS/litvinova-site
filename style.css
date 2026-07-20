@@ -27,15 +27,15 @@ body {
 }
 
 /* ==========================================
-   HEADER (ИСПРАВЛЕНО: Ширина, размытие и отступы)
+   HEADER
    ========================================== */
 .header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Добавлено: фиксирует ширину шапки */
-    background: rgba(10, 4, 1, 0.85); /* Полупрозрачный тёмный фон */
-    backdrop-filter: blur(12px); /* Эффект матового стекла */
+    width: 100%;
+    background: rgba(10, 4, 1, 0.85);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 179, 67, 0.25);
     padding: 16px 0;
     z-index: 1000;
@@ -45,11 +45,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px; /* Отступ между логотипом и навигацией */
+    gap: 40px;
 }
 
 .logo {
-    flex-shrink: 0; /* Не дает логотипу сжиматься */
+    flex-shrink: 0;
 }
 
 .logo h1 {
@@ -84,30 +84,37 @@ body {
 }
 
 /* ==========================================
-   HERO SECTION (ИСПРАВЛЕНО: Отступ под шапку)
+   HERO SECTION & DIVIDER LINE
    ========================================== */
 .hero {
-  position: relative; /* Чтобы линия привязалась к низу секции */
-  padding-bottom: 60px; /* Отступ, чтобы линия не перекрывала кнопки */
+    position: relative; /* Контекст позиционирования для линии */
+    padding-top: 120px; /* Отступ сверху под фиксированную шапку */
+    padding-bottom: 80px; /* Отступ снизу, чтобы контент не перекрывал линию */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
+/* Разделительная волнистая линия во всю ширину */
 .hero-divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  overflow: hidden;
-  line-height: 0;
-  pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    line-height: 0;
+    pointer-events: none;
+    z-index: 5;
 }
 
 .hero-divider svg {
-  width: 100%;
-  height: 100%;
-  /* Мягкое золотое свечение линии, как на образце */
-  filter: drop-shadow(0px 2px 8px rgba(255, 179, 67, 0.6));
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 2px 8px rgba(255, 179, 67, 0.6));
 }
+
 /* ТЁПЛОЕ ЗОЛОТОЕ СВЕЧЕНИЕ */
 .hero-bg-glow {
     position: absolute;
@@ -129,6 +136,7 @@ body {
     align-items: center;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 /* УВЕЛИЧЕННОЕ ФОТО */
@@ -173,7 +181,6 @@ body {
     font-style: italic;
 }
 
-/* ВЫДЕЛЕНИЕ ТЕКСТА (Плашка в стиле diva.school) */
 .hero-highlight {
     background: #FFCF86;
     color: #1a0a00;
@@ -216,7 +223,7 @@ body {
 }
 
 /* ==========================================
-   BUTTONS & ROUND ACCENT (Как на diva.school)
+   BUTTONS
    ========================================== */
 .btn-group {
     display: flex;
@@ -249,7 +256,6 @@ body {
     box-shadow: 0 6px 25px rgba(255, 179, 67, 0.5);
 }
 
-/* Круглая акцентная кнопка с кольцами (Diva Style) */
 .btn-round-glow {
     position: relative;
     width: 140px;
