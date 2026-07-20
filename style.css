@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 :root {
     --color-bg: #1a0a00;
@@ -84,38 +88,19 @@ body {
 }
 
 /* ==========================================
-   HERO SECTION & DIVIDER LINE
+   HERO SECTION
    ========================================== */
 .hero {
-    position: relative; /* Контекст позиционирования для линии */
-    padding-top: 120px; /* Отступ сверху под фиксированную шапку */
-    padding-bottom: 80px; /* Отступ снизу, чтобы контент не перекрывал линию */
+    position: relative;
+    padding-top: 120px; /* Отступ под шапку */
+    padding-bottom: 0;  /* Фото уходит до самого низа */
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     overflow: hidden;
 }
 
-/* Разделительная волнистая линия во всю ширину */
-.hero-divider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    overflow: hidden;
-    line-height: 0;
-    pointer-events: none;
-    z-index: 5;
-}
-
-.hero-divider svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0px 2px 8px rgba(255, 179, 67, 0.6));
-}
-
-/* ТЁПЛОЕ ЗОЛОТОЕ СВЕЧЕНИЕ */
+/* Золотистое свечение за фото */
 .hero-bg-glow {
     position: absolute;
     top: 50%;
@@ -139,26 +124,38 @@ body {
     width: 100%;
 }
 
-/* УВЕЛИЧЕННОЕ ФОТО */
+/* --- ОБРАБОТКА ФОТОГРАФИИ ДЛЯ ПЛАВНОГО ПЕРЕХОДА --- */
+.hero-photo-section {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
 .hero-photo-wrapper {
     position: relative;
-    height: 80vh;
-    max-height: 800px;
+    width: 100%;
+    height: 85vh;
+    max-height: 850px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end; /* Выравнивание фото строго по нижнему краю */
 }
 
 .hero-photo {
     height: 100%;
     width: auto;
     object-fit: contain;
-    object-position: center center;
+    object-position: bottom center;
     filter: drop-shadow(0 0 50px rgba(255, 179, 67, 0.35));
+    
+    /* Мягкая маска: плавное растворение нижнего среза картинки */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 98%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 98%);
 }
 
 .hero-content {
     padding-left: 20px;
+    padding-bottom: 60px;
 }
 
 .hero-eyebrow {
@@ -220,6 +217,25 @@ body {
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* --- ВОЛНИСТАЯ ЛИНИЯ-РАЗДЕЛИТЕЛЬ СНИЗУ --- */
+.hero-divider {
+    position: absolute;
+    bottom: -1px; /* Прижимаем стык в стык */
+    left: 0;
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    line-height: 0;
+    pointer-events: none;
+    z-index: 10; /* Линия идёт поверх фото */
+}
+
+.hero-divider svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 2px 8px rgba(255, 179, 67, 0.6));
 }
 
 /* ==========================================
