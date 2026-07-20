@@ -1,10 +1,11 @@
 /* ========================================
-   DIVA STYLE V2.0 - LITVINOVA PSY
+   DIVA STYLE V3.0 - ТОЧНАЯ КОПИЯ ОБРАЗЦА
    ======================================== */
 :root {
     --color-bg: #050505;
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
+    --color-gold-dark: #aa8c2c;
     --color-text: #ffffff;
     --color-text-muted: #b0b0b0;
     --font-heading: 'Cormorant Garamond', serif;
@@ -33,9 +34,9 @@ body {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(5, 5, 5, 0.9);
+    background: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
     padding: 20px 0;
 }
 .header-container { display: flex; justify-content: space-between; align-items: center; }
@@ -53,20 +54,20 @@ body {
 }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
 
-/* --- HERO SECTION (DIVA STYLE) --- */
+/* --- HERO SECTION — ИСПРАВЛЕНО ПОЛНОСТЬЮ --- */
 .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    /* Теплый градиент как в DIVA */
-    background: radial-gradient(circle at 30% 50%, rgba(180, 100, 20, 0.15) 0%, transparent 60%),
+    /* Тёплый градиент как в DIVA — яркий оранжево-золотой */
+    background: radial-gradient(circle at 25% 50%, rgba(200, 120, 30, 0.25) 0%, rgba(180, 100, 20, 0.1) 30%, transparent 60%),
                 linear-gradient(to right, #050505 0%, #0a0a0a 100%);
-    padding-top: 100px;
+    padding-top: 80px; /* Уменьшен отступ сверху — фото поднимается выше */
     overflow: hidden;
 }
 
-/* Декоративные орнаменты (SVG) */
+/* Декоративные орнаменты — ЯРКИЕ И ЧЁТКИЕ */
 .diva-ornaments {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -75,65 +76,70 @@ body {
 }
 .ornament-left {
     position: absolute;
-    left: -100px; top: 50%; transform: translateY(-50%);
-    width: 800px; height: 800px;
-    opacity: 0.4;
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+    left: -150px; top: 50%; transform: translateY(-50%);
+    width: 900px; height: 900px;
+    opacity: 0.6; /* Увеличена яркость */
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.3));
 }
 .ornament-right {
     position: absolute;
-    right: -50px; bottom: -100px;
-    width: 600px; height: 600px;
-    opacity: 0.3;
+    right: -80px; bottom: -150px;
+    width: 700px; height: 700px;
+    opacity: 0.4;
 }
 
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 40px; /* Уменьшен gap — фото ближе к тексту */
     align-items: center;
     width: 100%;
 }
 
-/* Фото с эффектом "Ауры" */
+/* ФОТО — ПОДНЯТО ВЫШЕ И УВЕЛИЧЕНО */
 .hero-photo-wrapper {
     position: relative;
-    height: 85vh;
-    max-height: 900px;
+    height: 95vh; /* Увеличено с 85vh до 95vh — фото занимает почти весь экран */
+    max-height: 1000px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Изменено с center на flex-start — фото поднимается вверх */
+    margin-top: -40px; /* Отрицательный margin — поднимает фото ещё выше */
 }
 
 .hero-photo {
     height: 100%;
     width: auto;
     object-fit: contain;
+    object-position: top center; /* Фокус на верхней части фото */
     position: relative;
     z-index: 2;
-    /* Легкая тень для объема */
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
 }
 
-/* Золотое свечение ЗА фото (как в DIVA) */
+/* ЗОЛОТОЕ СВЕЧЕНИЕ — ЯРКОЕ И ТЁПЛОЕ КАК В DIVA */
 .hero-glow-bg {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 40%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 120%; height: 80%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(180, 100, 20, 0.1) 40%, transparent 70%);
-    filter: blur(60px);
+    width: 140%; height: 90%;
+    /* Яркий оранжево-золотой градиент */
+    background: radial-gradient(circle, rgba(220, 140, 40, 0.5) 0%, rgba(200, 120, 30, 0.3) 30%, rgba(180, 100, 20, 0.15) 50%, transparent 70%);
+    filter: blur(80px);
     z-index: 1;
-    animation: pulseGlow 4s infinite alternate;
+    animation: pulseGlow 3s infinite alternate;
 }
 
 @keyframes pulseGlow {
-    0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+    0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
 
 /* Текстовый блок */
-.hero-content { padding-left: 40px; }
+.hero-content { 
+    padding-left: 20px; 
+    padding-top: 40px; /* Добавлен отступ сверху для выравнивания с фото */
+}
 .hero-eyebrow {
     color: var(--color-gold);
     font-size: 12px;
@@ -171,20 +177,21 @@ body {
 .trust-number { font-family: var(--font-heading); font-size: 36px; color: var(--color-gold); line-height: 1; }
 .trust-label { font-size: 11px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
 
-/* Круглый элемент "Начни новую жизнь" */
+/* Круглый элемент */
 .hero-circle {
     position: absolute;
-    bottom: 100px; right: 100px;
+    bottom: 120px; right: 120px;
     width: 180px; height: 180px;
     border-radius: 50%;
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border: 2px solid rgba(212, 175, 55, 0.6);
+    background: radial-gradient(circle, rgba(220, 140, 40, 0.3) 0%, rgba(200, 120, 30, 0.1) 50%, transparent 70%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     z-index: 3;
     animation: float 6s ease-in-out infinite;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
 }
 .circle-text {
     font-family: var(--font-heading);
@@ -202,13 +209,13 @@ body {
 /* Адаптив */
 @media (max-width: 1024px) {
     .hero-container { grid-template-columns: 1fr; text-align: center; }
-    .hero-photo-wrapper { height: 60vh; margin-bottom: 40px; }
+    .hero-photo-wrapper { height: 70vh; margin-top: 0; }
     .hero-content { padding-left: 0; display: flex; flex-direction: column; align-items: center; }
     .hero-trust { justify-content: center; }
-    .hero-circle { display: none; } /* Скрываем на планшетах, чтобы не мешал */
-    .ornament-left { width: 100%; left: 0; opacity: 0.2; }
+    .hero-circle { display: none; }
+    .ornament-left { width: 100%; left: 0; opacity: 0.3; }
 }
 @media (max-width: 768px) {
     .hero-title { font-size: 48px; }
-    .nav { display: none; } /* Тут нужно добавить бургер-меню */
+    .nav { display: none; }
 }
