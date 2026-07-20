@@ -3,50 +3,55 @@ media:
   output: "images"
 
 content:
-  # --- ГЛАВНАЯ СТРАНИЦА ---
+  # --- СТРАНИЦЫ САЙТА ---
   - name: homepage
     label: "Главная страница"
     type: file
     path: "index.html"
     fields:
       - name: body
-        label: "HTML-код страницы"
+        label: "HTML-код"
         type: code
 
-  # --- ОБО МНЕ ---
   - name: about
     label: "Обо мне"
     type: file
     path: "about.html"
     fields:
       - name: body
-        label: "HTML-код страницы"
+        label: "HTML-код"
         type: code
 
-  # --- УСЛУГИ ---
   - name: services
     label: "Услуги"
     type: file
     path: "services.html"
     fields:
       - name: body
-        label: "HTML-код страницы"
+        label: "HTML-код"
         type: code
 
-  # --- БЛОГ (Статьи) ---
+  # --- БЛОГ (Коллекция статей) ---
   - name: blog
     label: "Блог"
     type: collection
     path: "blog"
+    format: markdown
     view:
-      fields: [title, date]
+      fields: [title, date, tags]
     fields:
       - name: title
         label: "Заголовок статьи"
         type: string
       - name: date
-        label: "Дата"
+        label: "Дата публикации"
         type: date
+      - name: description
+        label: "Краткое описание (для карточки)"
+        type: text
+      - name: tags
+        label: "Теги / Категории"
+        type: list
       - name: body
-        label: "Текст статьи (Markdown/HTML)"
+        label: "Текст статьи"
         type: rich-text
