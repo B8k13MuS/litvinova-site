@@ -1,18 +1,21 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --color-bg: #050505;
-    --color-gold: #d4af37;
-    --color-gold-light: #f4d03f;
-    --color-text: #ffffff;
-    --color-text-muted: #b0b0b0;
+    --color-bg: #1a0a00;
+    --color-bg-warm: #2a1000;
+    --color-gold: #FFB343;
+    --color-gold-light: #FFCF86;
+    --color-orange: #FF5A00;
+    --color-text: #FFF8F0;
+    --color-text-muted: #D4A574;
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
 }
 
 body {
     font-family: var(--font-body);
-    background: var(--color-bg);
+    background: linear-gradient(180deg, #1a0a00 0%, #2a1000 50%, #1a0a00 100%);
+    background-attachment: fixed;
     color: var(--color-text);
     line-height: 1.6;
 }
@@ -28,7 +31,7 @@ body {
     position: fixed;
     top: 0;
     background: rgba(5, 5, 5, 0.98);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(255, 179, 67, 0.35);
     padding: 20px 0;
     z-index: 1000;
 }
@@ -75,7 +78,7 @@ body {
     display: flex;
     align-items: center;
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0f0f0f 100%);
+    background: linear-gradient(135deg, #2a0a00 0%, #5c1a00 40%, #8B2500 70%, #2a0a00 100%);
 }
 
 /* ТЁПЛОЕ ЗОЛОТОЕ СВЕЧЕНИЕ (без зелёного!) */
@@ -86,7 +89,7 @@ body {
     transform: translateY(-50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(180, 120, 40, 0.1) 40%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 179, 67, 0.4) 0%, rgba(180, 120, 40, 0.1) 40%, transparent 70%);
     filter: blur(80px);
     z-index: 0;
 }
@@ -116,7 +119,7 @@ body {
     object-fit: contain;
     object-position: center center;
     /* Свечение только по контуру PNG */
-    filter: drop-shadow(0 0 80px rgba(212, 175, 55, 0.4)) 
+    filter: drop-shadow(0 0 80px rgba(255, 179, 67, 0.5)) 
             drop-shadow(0 0 150px rgba(200, 140, 40, 0.2));
 }
 
@@ -156,8 +159,8 @@ body {
     gap: 40px;
     margin-bottom: 40px;
     padding: 25px 0;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid rgba(255, 179, 67, 0.35);
+    border-bottom: 1px solid rgba(255, 179, 67, 0.35);
 }
 
 .trust-number {
@@ -186,15 +189,15 @@ body {
 }
 
 .btn-gold {
-    background: linear-gradient(135deg, var(--color-gold), #aa8c2c);
+    background: linear-gradient(135deg, var(--color-gold), #E08A2A);
     color: #000;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 179, 67, 0.45);
 }
 
 .btn-gold:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 6px 20px rgba(255, 179, 67, 0.55);
 }
 
 .btn-large {
@@ -209,14 +212,15 @@ body {
 }
 
 .btn-outline:hover {
-    background: var(--color-gold);
+    background: linear-gradient(135deg, #FFB343 0%, #FF5A00 100%);
+    box-shadow: 0 4px 20px rgba(255, 90, 0, 0.4);
     color: #000;
 }
 
 /* ABOUT & SERVICES */
 .about-preview, .services-preview {
     padding: 100px 0;
-    background: #0a0a0a;
+    background: #2a0a00;
 }
 
 .about-preview h2, .section-title {
@@ -251,10 +255,10 @@ body {
 }
 
 .service-card {
-    background: #111;
+    background: #2a1000;
     padding: 40px;
     border-radius: 15px;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(255, 179, 67, 0.25);
 }
 
 .service-icon {
@@ -279,7 +283,7 @@ body {
 .footer {
     background: #050505;
     padding: 80px 0 40px;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-top: 1px solid rgba(255, 179, 67, 0.25);
 }
 
 .footer-content {
@@ -321,8 +325,8 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 40px;
-    border-top: 1px solid #111;
-    color: #555;
+    border-top: 1px solid #2a1000;
+    color: #8B5A2B;
     font-size: 12px;
 }
 
