@@ -16,6 +16,6 @@ content:
       - name: clients_count
         label: "Количество клиентов"
         type: string
-      - name: confidential_val"
+      - name: confidential_val
         label: "Конфиденциальность (%)"
         type: string
