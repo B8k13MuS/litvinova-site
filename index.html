@@ -29,61 +29,56 @@
                 <a href="#contact" class="btn btn-gold nav-cta" data-content="cta_button">Записаться</a>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Открыть меню">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (DIVA Style) -->
     <section class="hero">
-    <!-- Декоративные орнаменты — яркие и чёткие -->
-    <div class="diva-ornaments">
-        <svg class="ornament-left" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M250 50C250 50 350 150 350 250C350 350 250 450 250 450C250 450 150 350 150 250C150 150 250 50 250 50Z" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
-            <path d="M250 100C250 100 320 180 320 250C320 320 250 400 250 400C250 400 180 320 180 250C180 180 250 100 250 100Z" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
-            <circle cx="250" cy="250" r="12" fill="#d4af37" opacity="0.7"/>
-            <path d="M50 250Q150 200 250 250T450 250" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
-            <path d="M250 50Q300 150 250 250T250 450" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
-            <path d="M100 150Q200 100 250 200T400 150" stroke="#d4af37" stroke-width="0.8" opacity="0.4"/>
-            <path d="M100 350Q200 400 250 300T400 350" stroke="#d4af37" stroke-width="0.8" opacity="0.4"/>
-        </svg>
-        <svg class="ornament-right" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <circle cx="150" cy="150" r="120" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
-             <circle cx="150" cy="150" r="90" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
-             <circle cx="150" cy="150" r="60" stroke="#d4af37" stroke-width="0.5" opacity="0.5"/>
-        </svg>
-    </div>
-
-    <div class="container hero-container">
-        <!-- Фото поднято выше -->
-        <div class="hero-photo-wrapper">
-            <div class="hero-glow-bg"></div>
-            <img src="images/hero-photo.jpg" alt="Надежда Литвинова" class="hero-photo">
+        <!-- Декоративные орнаменты -->
+        <div class="diva-ornaments">
+            <svg class="ornament-left" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M250 50C250 50 350 150 350 250C350 350 250 450 250 450C250 450 150 350 150 250C150 150 250 50 250 50Z" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+                <path d="M250 100C250 100 320 180 320 250C320 320 250 400 250 400C250 400 180 320 180 250C180 180 250 100 250 100Z" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/>
+                <circle cx="250" cy="250" r="8" fill="#d4af37" opacity="0.4"/>
+            </svg>
         </div>
 
-        <!-- Текст -->
-        <div class="hero-content">
-            <p class="hero-eyebrow">EMDR · ММИЛ · ОНЛАЙН ПО ВСЕМУ МИРУ</p>
-            <h1 class="hero-title">Прошлое можно <em>переработать.</em><br>Будущее выбрать.</h1>
-            <p class="hero-subtitle">Помогу справиться с травмой, тревогой, ПТСР и сложностями в отношениях. Работаю из любой точки мира.</p>
-            
-            <div class="hero-trust">
-                <div class="trust-item"><span class="trust-number">7+</span><span class="trust-label">лет практики</span></div>
-                <div class="trust-item"><span class="trust-number">500+</span><span class="trust-label">клиентов</span></div>
-                <div class="trust-item"><span class="trust-number">100%</span><span class="trust-label">конфиденциально</span></div>
+        <div class="container hero-container">
+            <!-- Фото без рамок, со свечением от контура -->
+            <div class="hero-photo-wrapper">
+                <img src="images/hero-photo.jpg" alt="Надежда Литвинова" class="hero-photo" data-content-image="hero_image">
             </div>
 
-            <a href="#contact" class="btn btn-gold btn-large">Записаться на консультацию</a>
-        </div>
-    </div>
+            <!-- Текст -->
+            <div class="hero-content">
+                <p class="hero-eyebrow" data-content="hero_eyebrow">EMDR · ММИЛ · ОНЛАЙН ПО ВСЕМУ МИРУ</p>
+                <h1 class="hero-title" data-content="hero_title">Прошлое можно <em>переработать.</em><br>Будущее выбрать.</h1>
+                <p class="hero-subtitle" data-content="hero_subtitle">Помогу справиться с травмой, тревогой, ПТСР и сложностями в отношениях. Работаю из любой точки мира.</p>
+                
+                <div class="hero-trust">
+                    <div class="trust-item" data-content="hero_trust_1">
+                        <span class="trust-number">7+</span><span class="trust-label">лет практики</span>
+                    </div>
+                    <div class="trust-item" data-content="hero_trust_2">
+                        <span class="trust-number">500+</span><span class="trust-label">клиентов</span>
+                    </div>
+                    <div class="trust-item" data-content="hero_trust_3">
+                        <span class="trust-number">100%</span><span class="trust-label">конфиденциально</span>
+                    </div>
+                </div>
 
-    <!-- Круглый элемент -->
-    <div class="hero-circle">
-        <div class="circle-text">Начни<br>новую<br>жизнь</div>
-    </div>
-</section>
+                <a href="#contact" class="btn btn-gold btn-large" data-content-link="cta_button_link">Записаться на консультацию</a>
+            </div>
+        </div>
+
+        <!-- Круглый элемент "Начни новую жизнь" -->
+        <div class="hero-circle">
+            <div class="circle-text">Начни<br>новую<br>жизнь</div>
+        </div>
+    </section>
+
     <!-- About Preview -->
     <section class="about-preview">
         <div class="container">
