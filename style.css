@@ -86,11 +86,15 @@ body {
     transform: translateY(-50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(180, 120, 40, 0.1) 40%, transparent 70%);
+    /* Золотое свечение — в 2 раза светлее */
+    background: radial-gradient(circle, 
+        rgba(212, 175, 55, 0.12) 0%, 
+        rgba(180, 120, 40, 0.05) 40%, 
+        transparent 70%);
     filter: blur(80px);
     z-index: 0;
 }
-
+<div class="hero-bg-glow-red"></div>
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -115,11 +119,12 @@ body {
     width: auto;
     object-fit: contain;
     object-position: center center;
-    /* Свечение только по контуру PNG */
-    filter: drop-shadow(0 0 80px rgba(212, 175, 55, 0.4)) 
-            drop-shadow(0 0 150px rgba(200, 140, 40, 0.2));
+    /* Золотое свечение — в 2 раза светлее */
+    filter: drop-shadow(0 0 80px rgba(212, 175, 55, 0.2)) 
+            drop-shadow(0 0 150px rgba(200, 140, 40, 0.1))
+            /* Красноватый подтон для глубины */
+            drop-shadow(0 0 100px rgba(220, 90, 60, 0.08));
 }
-
 .hero-content {
     padding-left: 40px;
 }
