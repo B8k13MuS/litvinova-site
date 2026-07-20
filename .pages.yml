@@ -1,71 +1,52 @@
-# Настройка папки для медиафайлов
 media:
-  input: "images"          # Папка, откуда CMS берёт картинки
-  output: "images"         # Папка, куда сохраняются новые загруженные фото
+  input: "images"
+  output: "images"
 
 content:
-  # --- СТРАНИЦЫ САЙТА ---
+  # --- ГЛАВНАЯ СТРАНИЦА ---
   - name: homepage
     label: "Главная страница"
     type: file
     path: "index.html"
     fields:
-      - name: hero_title
-        label: "Hero: Заголовок"
-        type: string
-      - name: hero_subtitle
-        label: "Hero: Описание"
-        type: text
-      - name: exp_years
-        label: "Опыт (лет)"
-        type: string
-      - name: clients_count
-        label: "Количество клиентов"
-        type: string
-      - name: confidential_val
-        label: "Конфиденциальность (%)"
-        type: string
+      - name: body
+        label: "HTML-код страницы"
+        type: code
 
+  # --- ОБО МНЕ ---
   - name: about
     label: "Обо мне"
     type: file
     path: "about.html"
     fields:
       - name: body
-        label: "Содержимое страницы"
-        type: rich-text
+        label: "HTML-код страницы"
+        type: code
 
+  # --- УСЛУГИ ---
   - name: services
     label: "Услуги"
     type: file
     path: "services.html"
     fields:
       - name: body
-        label: "Содержимое страницы"
-        type: rich-text
+        label: "HTML-код страницы"
+        type: code
 
-  - name: pricing
-    label: "Тарифы"
-    type: file
-    path: "pricing.html"
-    fields:
-      - name: body
-        label: "Содержимое страницы"
-        type: rich-text
-
-  # --- БЛОГ (Коллекция статей) ---
+  # --- БЛОГ (Статьи) ---
   - name: blog
     label: "Блог"
     type: collection
     path: "blog"
-    format: html
+    view:
+      fields: [title, date]
     fields:
       - name: title
         label: "Заголовок статьи"
         type: string
       - name: date
-        label: "Дата публикации"
+        label: "Дата"
         type: date
       - name: body
-        label: "Текст статьи"
+        label: "Текст статьи (Markdown/HTML)"
         type: rich-text
