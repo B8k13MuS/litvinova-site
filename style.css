@@ -6,7 +6,7 @@
     align-items: center;
     padding: 120px 0 80px;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0f0f0f 100%);
-    overflow: hidden;
+    /* overflow: hidden removed — was clipping h1 glyphs */
 }
 
 .hero-bg-glow {
