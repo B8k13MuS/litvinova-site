@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Надежда Литвинова — Психолог · EMDR · Онлайн</title>
+    <title data-content="page_title">Надежда Литвинова — Психолог · EMDR · Онлайн</title>
     <meta name="description" content="Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР и сложностями в отношениях. EMDR, ММИЛ. Онлайн по всему миру.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +15,8 @@
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <h1>Надежда Литвинова</h1>
-                <p>ПСИХОЛОГ · EMDR · ОНЛАЙН</p>
+                <h1 data-content="site_name">Надежда Литвинова</h1>
+                <p data-content="site_tagline">ПСИХОЛОГ · EMDR · ОНЛАЙН</p>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link active">Главная</a>
@@ -26,7 +26,7 @@
                 <a href="process.html" class="nav-link">Процесс</a>
                 <a href="pricing.html" class="nav-link">Тарифы</a>
                 <a href="blog.html" class="nav-link">Блог</a>
-                <a href="#contact" class="btn btn-gold nav-cta">Записаться</a>
+                <a href="#contact" class="btn btn-gold nav-cta" data-content="cta_button">Записаться</a>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Открыть меню">
                 <span></span>
@@ -56,31 +56,35 @@
 
         <div class="container hero-container">
             <div class="hero-photo-section">
-                <img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог" class="hero-photo">
+                <div class="hero-photo-wrapper">
+                    <img src="images/hero-photo.jpg" alt="Надежда Литвинова — психолог" class="hero-photo" data-content-image="hero_image">
+                    <div class="hero-photo-glow"></div>
+                    <div class="hero-photo-frame"></div>
+                </div>
             </div>
             <div class="hero-content-section">
                 <div class="hero-text-content">
-                    <p class="hero-eyebrow">EMDR · ММИЛ · ОНЛАЙН ПО ВСЕМУ МИРУ</p>
-                    <h1 class="hero-title">Прошлое можно <em>переработать.</em> Будущее выбрать.</h1>
-                    <p class="hero-subtitle">Помогу справиться с травмой, тревогой, ПТСР и сложностями в отношениях. Работаю из любой точки мира.</p>
+                    <p class="hero-eyebrow" data-content="hero_eyebrow">EMDR · ММИЛ · ОНЛАЙН ПО ВСЕМУ МИРУ</p>
+                    <h1 class="hero-title" data-content="hero_title">Прошлое можно <em>переработать.</em> Будущее выбрать.</h1>
+                    <p class="hero-subtitle" data-content="hero_subtitle">Помогу справиться с травмой, тревогой, ПТСР и сложностями в отношениях. Работаю из любой точки мира.</p>
                 </div>
                 
                 <div class="hero-trust">
-                    <div class="trust-item">
+                    <div class="trust-item" data-content="hero_trust_1">
                         <span class="trust-number">7+</span>
                         <span class="trust-label">лет практики</span>
                     </div>
-                    <div class="trust-item">
+                    <div class="trust-item" data-content="hero_trust_2">
                         <span class="trust-number">500+</span>
                         <span class="trust-label">клиентов</span>
                     </div>
-                    <div class="trust-item">
+                    <div class="trust-item" data-content="hero_trust_3">
                         <span class="trust-number">100%</span>
                         <span class="trust-label">удовлетворённости</span>
                     </div>
                 </div>
 
-                <a href="#contact" class="btn btn-gold btn-large">Записаться на консультацию</a>
+                <a href="#contact" class="btn btn-gold btn-large" data-content-link="cta_button_link">Записаться на консультацию</a>
             </div>
         </div>
 
@@ -101,9 +105,9 @@
         <div class="container">
             <div class="about-preview-content">
                 <div class="about-preview-text">
-                    <h2>Обо мне</h2>
-                    <p class="about-highlight">Я — Надежда Литвинова, сертифицированный психолог, специалист по EMDR-терапии и методу метафорических карт.</p>
-                    <p>Моя миссия — помочь вам освободиться от груза прошлого и создать жизнь, о которой вы мечтаете. Я использую только доказательные методы, которые дают результат уже после нескольких сессий.</p>
+                    <h2 data-content="about_title">Обо мне</h2>
+                    <p class="about-highlight" data-content="about_highlight">Я — Надежда Литвинова, сертифицированный психолог, специалист по EMDR-терапии и методу метафорических карт.</p>
+                    <p data-content="about_text">Моя миссия — помочь вам освободиться от груза прошлого и создать жизнь, о которой вы мечтаете. Я использую только доказательные методы, которые дают результат уже после нескольких сессий.</p>
                     <a href="about.html" class="btn btn-outline">Подробнее</a>
                 </div>
             </div>
@@ -113,27 +117,27 @@
     <!-- Services Preview -->
     <section class="services-preview">
         <div class="container">
-            <h2 class="section-title">С чем я работаю</h2>
+            <h2 class="section-title" data-content="services_title">С чем я работаю</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🧠</div>
-                    <h3>Тревога и панические атаки</h3>
-                    <p>Помогу найти причины тревоги и научиться справляться с ней без таблеток</p>
+                    <h3 data-content="service_1_title">Тревога и панические атаки</h3>
+                    <p data-content="service_1_desc">Помогу найти причины тревоги и научиться справляться с ней без таблеток</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💔</div>
-                    <h3>Травма и ПТСР</h3>
-                    <p>EMDR-терапия помогает переработать травматичный опыт и вернуться к жизни</p>
+                    <h3 data-content="service_2_title">Травма и ПТСР</h3>
+                    <p data-content="service_2_desc">EMDR-терапия помогает переработать травматичный опыт и вернуться к жизни</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">👥</div>
-                    <h3>Отношения</h3>
-                    <p>Разберёмся с конфликтами, страхом близости и созависимостью</p>
+                    <h3 data-content="service_3_title">Отношения</h3>
+                    <p data-content="service_3_desc">Разберёмся с конфликтами, страхом близости и созависимостью</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">😔</div>
-                    <h3>Депрессия и апатия</h3>
-                    <p>Найдём ресурсы для возвращения радости и смысла</p>
+                    <h3 data-content="service_4_title">Депрессия и апатия</h3>
+                    <p data-content="service_4_desc">Найдём ресурсы для возвращения радости и смысла</p>
                 </div>
             </div>
             <a href="services.html" class="btn btn-outline btn-center">Все направления</a>
@@ -145,8 +149,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Контакты</h3>
-                    <p>Работаю онлайн по всему миру. Первая консультация — бесплатно.</p>
+                    <h3 data-content="footer_title">Контакты</h3>
+                    <p data-content="footer_description">Работаю онлайн по всему миру. Первая консультация — бесплатно.</p>
                     <div class="footer-contacts">
                         <a href="tel:+79185055715" class="footer-contact">+7 (918) 505-57-15</a>
                         <a href="https://t.me/nadezhda_litvinova_coach" class="footer-contact" target="_blank">@nadezhda_litvinova_coach</a>
@@ -154,7 +158,7 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Навигация</h3>
+                    <h3 data-content="footer_links_title">Навигация</h3>
                     <ul class="footer-links">
                         <li><a href="about.html">Обо мне</a></li>
                         <li><a href="services.html">Услуги</a></li>
@@ -163,13 +167,13 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Соцсети</h3>
-                    <p>Подпишитесь на мой Telegram-канал</p>
+                    <h3 data-content="footer_social_title">Соцсети</h3>
+                    <p data-content="footer_social_desc">Подпишитесь на мой Telegram-канал</p>
                     <a href="https://t.me/uspeh_prosto" class="btn btn-gold" target="_blank">@uspeh_prosto</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Надежда Литвинова. Все права защищены.</p>
+                <p data-content="footer_copyright">© 2026 Надежда Литвинова. Все права защищены.</p>
             </div>
         </div>
     </footer>
