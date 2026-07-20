@@ -9,6 +9,163 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для about.html */
+        body {
+            background: #050505;
+        }
+        
+        .about-hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            background: #050505;
+        }
+        
+        .about-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            color: #d4af37;
+            margin-bottom: 32px;
+        }
+        
+        .about-hero p {
+            font-size: 20px;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+        
+        .about-content p {
+            color: #e0e0e0;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-content strong {
+            color: #d4af37;
+        }
+        
+        .about-content .highlight {
+            color: #d4af37;
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+        
+        .how-i-work {
+            padding: 100px 0;
+            background: #050505;
+        }
+        
+        .how-i-work h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .work-step {
+            margin-bottom: 48px;
+            padding: 40px;
+            background: #0a0a0a;
+            border-radius: 15px;
+            border-left: 4px solid #d4af37;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .work-step h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: #d4af37;
+            margin-bottom: 16px;
+        }
+        
+        .work-step p {
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .advantages {
+            padding: 100px 0;
+            background: #0a0a0a;
+        }
+        
+        .advantages h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .advantage-card {
+            padding: 40px;
+            background: #050505;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .advantage-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .advantage-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 16px;
+        }
+        
+        .advantage-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: #050505;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #d4af37;
+            margin-bottom: 24px;
+        }
+        
+        .cta-section p {
+            color: #b0b0b0;
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -30,82 +187,72 @@
         </div>
     </header>
 
-    <section class="about-hero" style="padding: 140px 0 80px; text-align: center;">
+    <section class="about-hero">
         <div class="container">
-            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 56px; color: #d4af37; margin-bottom: 32px;">Обо мне</h1>
-            <p style="font-size: 20px; color: #b0b0b0; max-width: 800px; margin: 0 auto;">Психолог, специализируюсь на работе с травмой, тревожными расстройствами, самооценкой, выгоранием и кризисами в отношениях.</p>
+            <h1>Обо мне</h1>
+            <p>Психолог, специализируюсь на работе с травмой, тревожными расстройствами, самооценкой, выгоранием и кризисами в отношениях.</p>
         </div>
     </section>
 
-    <section class="about-content" style="padding: 80px 0; background: #0a0a0a;">
+    <section class="about-content">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <p style="color: #e0e0e0; font-size: 18px; line-height: 1.8; margin-bottom: 32px;">
-                    Я помогаю людям выходить из повторяющихся сценариев, снимать внутренние блоки и выстраивать устойчивые, тёплые отношения с собой и близкими. В работе опираюсь на доказательные и глубоко проработанные методы: <strong>ММИЛ-диагностику, КПТ, РЭПТ, DBT</strong>, а также на техники переработки травм — <strong>ДПДГ, Брейнспоттинг, RPT, ЭОТ</strong>.
-                </p>
-                <p style="color: #e0e0e0; font-size: 18px; line-height: 1.8; margin-bottom: 32px;">
-                    Такой комплексный подход позволяет не просто "разговаривать о проблеме", а точечно выявлять корень напряжения, безопасно его перерабатывать и закреплять новые, более устойчивые реакции. Работаю с запросами от острых кризисов до тонкой настройки качества жизни и отношений. Моя цель — чтобы вы не просто поняли, "почему так происходит", а реально почувствовали, что стало легче, и смогли действовать по-новому.
-                </p>
-                <p style="color: #d4af37; font-size: 16px; font-style: italic; margin-top: 40px;">
-                    Работаю онлайн по всему миру — каждая сессия проходит в безопасной и конфиденциальной обстановке. Подбираю метод индивидуально под запрос клиента.
-                </p>
-            </div>
+            <p>Я помогаю людям выходить из повторяющихся сценариев, снимать внутренние блоки и выстраивать устойчивые, тёплые отношения с собой и близкими. В работе опираюсь на доказательные и глубоко проработанные методы: <strong>ММИЛ-диагностику, КПТ, РЭПТ, DBT</strong>, а также на техники переработки травм — <strong>ДПДГ, Брейнспоттинг, RPT, ЭОТ</strong>.</p>
+            <p>Такой комплексный подход позволяет не просто "разговаривать о проблеме", а точечно выявлять корень напряжения, безопасно его перерабатывать и закреплять новые, более устойчивые реакции. Работаю с запросами от острых кризисов до тонкой настройки качества жизни и отношений. Моя цель — чтобы вы не просто поняли, "почему так происходит", а реально почувствовали, что стало легче, и смогли действовать по-новому.</p>
+            <p class="highlight">Работаю онлайн по всему миру — каждая сессия проходит в безопасной и конфиденциальной обстановке. Подбираю метод индивидуально под запрос клиента.</p>
         </div>
     </section>
 
-    <section class="how-i-work" style="padding: 100px 0;">
+    <section class="how-i-work">
         <div class="container">
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; color: #d4af37; text-align: center; margin-bottom: 64px;">Как я работаю</h2>
+            <h2>Как я работаю</h2>
             
-            <div class="work-steps" style="max-width: 900px; margin: 0 auto;">
-                <div class="work-step" style="margin-bottom: 48px; padding: 40px; background: #0a0a0a; border-radius: 15px; border-left: 4px solid #d4af37;">
-                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #d4af37; margin-bottom: 16px;">01. Диагностика</div>
-                    <p style="color: #b0b0b0; line-height: 1.7; margin: 0;">Провожу комплексную оценку состояния: использую ММИЛ и другие валидные методики, собираю анамнез, выявляю ключевые триггеры и ресурсы. На основе данных формирую точный план работы и подбираю методы с подтверждённой эффективностью.</p>
-                </div>
+            <div class="work-step">
+                <h3>01. Диагностика</h3>
+                <p>Провожу комплексную оценку состояния: использую ММИЛ и другие валидные методики, собираю анамнез, выявляю ключевые триггеры и ресурсы. На основе данных формирую точный план работы и подбираю методы с подтверждённой эффективностью.</p>
+            </div>
 
-                <div class="work-step" style="margin-bottom: 48px; padding: 40px; background: #0a0a0a; border-radius: 15px; border-left: 4px solid #d4af37;">
-                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #d4af37; margin-bottom: 16px;">02. Работа над запросом и выявление глубинных причин</div>
-                    <p style="color: #b0b0b0; line-height: 1.7; margin: 0;">Разбираем повторяющиеся сценарии и автоматические реакции, работаем с корневыми установками. Сочетание <strong>КПТ, ЭОТ, ЭФТ, ОРКТ, RPT, DBT, ДПДГ и Brainspotting</strong> — позволяет подбирать стратегию индивидуально. Не один метод для всех, а лучший метод для вас.</p>
-                </div>
+            <div class="work-step">
+                <h3>02. Работа над запросом и выявление глубинных причин</h3>
+                <p>Разбираем повторяющиеся сценарии и автоматические реакции, работаем с корневыми установками. Сочетание <strong>КПТ, ЭОТ, ЭФТ, ОРКТ, RPT, DBT, ДПДГ и Brainspotting</strong> — позволяет подбирать стратегию индивидуально. Не один метод для всех, а лучший метод для вас.</p>
+            </div>
 
-                <div class="work-step" style="margin-bottom: 48px; padding: 40px; background: #0a0a0a; border-radius: 15px; border-left: 4px solid #d4af37;">
-                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #d4af37; margin-bottom: 16px;">03. Позитивный сценарий</div>
-                    <p style="color: #b0b0b0; line-height: 1.7; margin: 0;">Тренируем и закрепляем новые модели поведения через поведенческие эксперименты и навыки саморегуляции. Идём к целям и достижениям к выбранному будущему.</p>
-                </div>
+            <div class="work-step">
+                <h3>03. Позитивный сценарий</h3>
+                <p>Тренируем и закрепляем новые модели поведения через поведенческие эксперименты и навыки саморегуляции. Идём к целям и достижениям к выбранному будущему.</p>
             </div>
         </div>
     </section>
 
-    <section class="advantages" style="padding: 100px 0; background: #0a0a0a;">
+    <section class="advantages">
         <div class="container">
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; color: #d4af37; text-align: center; margin-bottom: 64px;">Почему мне доверяют</h2>
+            <h2>Почему мне доверяют</h2>
             
-            <div class="advantages-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-                <div class="advantage-card" style="padding: 40px; background: #050505; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1);">
-                    <div style="font-size: 48px; margin-bottom: 20px;">🎓</div>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #d4af37; margin-bottom: 16px;">Документальное образование</h3>
-                    <p style="color: #b0b0b0; line-height: 1.6; margin: 0;">Высшее психологическое образование, специализированное обучение по методикам проработки.</p>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="icon">🎓</div>
+                    <h3>Документальное образование</h3>
+                    <p>Высшее психологическое образование, специализированное обучение по методикам проработки.</p>
                 </div>
 
-                <div class="advantage-card" style="padding: 40px; background: #050505; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1);">
-                    <div style="font-size: 48px; margin-bottom: 20px;">🔒</div>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #d4af37; margin-bottom: 16px;">Конфиденциальность</h3>
-                    <p style="color: #b0b0b0; line-height: 1.6; margin: 0;">Полная конфиденциальность и соблюдение этического кодекса психолога.</p>
+                <div class="advantage-card">
+                    <div class="icon">🔒</div>
+                    <h3>Конфиденциальность</h3>
+                    <p>Полная конфиденциальность и соблюдение этического кодекса психолога.</p>
                 </div>
 
-                <div class="advantage-card" style="padding: 40px; background: #050505; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1);">
-                    <div style="font-size: 48px; margin-bottom: 20px;">️</div>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #d4af37; margin-bottom: 16px;">Безопасная среда</h3>
-                    <p style="color: #b0b0b0; line-height: 1.6; margin: 0;">Никаких осуждений и давления. Пространство, где можно быть собой и говорить открыто. Нет позиции «сверху» или «снизу», мы равны.</p>
+                <div class="advantage-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Безопасная среда</h3>
+                    <p>Никаких осуждений и давления. Пространство, где можно быть собой и говорить открыто. Нет позиции «сверху» или «снизу», мы равны.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" style="padding: 100px 0; text-align: center;">
+    <section class="cta-section">
         <div class="container">
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; color: #d4af37; margin-bottom: 24px;">Готовы начать изменения?</h2>
-            <p style="color: #b0b0b0; font-size: 18px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Запишитесь на первую консультацию, и мы определим, как я могу вам помочь</p>
+            <h2>Готовы начать изменения?</h2>
+            <p>Запишитесь на первую консультацию, и мы определим, как я могу вам помочь</p>
             <a href="#contact" class="btn btn-gold btn-large">Записаться на консультацию</a>
         </div>
     </section>
