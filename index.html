@@ -39,6 +39,14 @@ hero_subtitle: "Профессиональный психолог. Помогу 
         transition: all 0.2s ease;
       }
 
+      .btn {
+        display: inline-block;
+        transition: opacity 0.2s ease;
+      }
+      .btn:hover {
+        opacity: 0.9;
+      }
+
       @media (max-width: 900px) {
         .lp-grid3 {
           grid-template-columns: 1fr !important;
@@ -55,15 +63,17 @@ hero_subtitle: "Профессиональный психолог. Помогу 
 </head>
 <body>
 
-<x-dc>
 <div style="background:#F9F6F0; color:#2C3E50;">
 
   <!-- ============ HEADER ============ -->
   <header style="border-bottom: 1px solid #efe7d9; background: #fff; position: sticky; top: 0; z-index: 100;">
       <div class="header-container" style="max-width: 1200px; margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;">
-          <div class="logo">
-              <h1 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #2C3E50; margin: 0;">{{ page.hero_title }}</h1>
-              <p style="font-size: 11px; letter-spacing: .15em; color: #a98a6e; text-transform: uppercase; margin-top: 2px;">ПСИХОЛОГ · EMDR · ОНЛАЙН</p>
+          <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 40px; height: 40px; background: #2C3E50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #E8A87C; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px;">НЛ</div>
+              <div>
+                  <h1 style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #2C3E50; margin: 0; line-height: 1.2;">{{ page.hero_title }}</h1>
+                  <p style="font-size: 10px; letter-spacing: .15em; color: #a98a6e; text-transform: uppercase; margin-top: 2px;">ПСИХОЛОГ · EMDR · ОНЛАЙН</p>
+              </div>
           </div>
           <nav class="nav" style="display: flex; gap: 28px; align-items: center;">
               <a href="index.html" class="nav-link active" style="color: #2C3E50; font-weight: 600; font-size: 14px;">Главная</a>
@@ -90,10 +100,10 @@ hero_subtitle: "Профессиональный психолог. Помогу 
           {{ page.hero_subtitle }}
         </p>
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="#contact" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; font-size: 15px;">
+          <a href="#contact" class="btn" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; font-size: 15px;">
             Записаться на консультацию
           </a>
-          <a href="about.html" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">
+          <a href="about.html" class="btn" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">
             Узнать больше
           </a>
         </div>
@@ -161,7 +171,7 @@ hero_subtitle: "Профессиональный психолог. Помогу 
           <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Анализ текущей ситуации</div>
           <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>План дальнейших шагов</div>
         </div>
-        <a href="#contact" style="display: block; text-align: center; width: 100%; padding: 15px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Выбрать</a>
+        <a href="#contact" class="btn" style="display: block; text-align: center; width: 100%; padding: 15px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Выбрать</a>
       </div>
 
       <!-- Card 2 (Featured) -->
@@ -178,7 +188,7 @@ hero_subtitle: "Профессиональный психолог. Помогу 
           <div style="display: flex; gap: 10px; font-size: 15px; color: #e1e7ed;"><span style="color: #E8A87C;">—</span>Персональные практики и домашние задания</div>
           <div style="display: flex; gap: 10px; font-size: 15px; color: #e1e7ed;"><span style="color: #E8A87C;">—</span>Закрепление устойчивого результата</div>
         </div>
-        <a href="#contact" style="display: block; text-align: center; width: 100%; padding: 15px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Записаться на месяц</a>
+        <a href="#contact" class="btn" style="display: block; text-align: center; width: 100%; padding: 15px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Записаться на месяц</a>
       </div>
 
       <!-- Card 3 -->
@@ -195,7 +205,7 @@ hero_subtitle: "Профессиональный психолог. Помогу 
           <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Приоритетная запись на удобное время</div>
           <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Доступ к закрытым материалам</div>
         </div>
-        <a href="#contact" style="display: block; text-align: center; width: 100%; padding: 15px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Выбрать</a>
+        <a href="#contact" class="btn" style="display: block; text-align: center; width: 100%; padding: 15px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Выбрать</a>
       </div>
     </div>
   </section>
@@ -241,8 +251,8 @@ hero_subtitle: "Профессиональный психолог. Помогу 
           <p style="color: #7a8591; font-size: 16px; margin-bottom: 36px;">Выберите удобный мессенджер для связи</p>
           
           <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-              <a href="https://t.me/" target="_blank" style="padding: 16px 36px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Telegram</a>
-              <a href="https://wa.me/" target="_blank" style="padding: 16px 36px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">WhatsApp</a>
+              <a href="https://t.me/" target="_blank" class="btn" style="padding: 16px 36px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Telegram</a>
+              <a href="https://wa.me/" target="_blank" class="btn" style="padding: 16px 36px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">WhatsApp</a>
           </div>
       </div>
   </section>
@@ -275,7 +285,6 @@ hero_subtitle: "Профессиональный психолог. Помогу 
   </footer>
 
 </div>
-</x-dc>
 
 </body>
 </html>
