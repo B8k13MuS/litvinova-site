@@ -1,288 +1,108 @@
 ---
+title: "Главная страница"
 meta_title: "Надежда Литвинова — Психолог · EMDR · Онлайн"
 meta_description: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР. ДПДГ (EMDR), Брейнспоттинг, КПТ. Онлайн по всему миру."
+hero_subtitle: "ПРАКТИКУЮЩИЙ ПСИХОЛОГ"
 hero_title: "Надежда Литвинова"
-hero_subtitle: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР."
+hero_description: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР."
+hero_image: "images/photo_2026-07-12_14-08-45.jpg"
+btn_primary_text: "Записаться на консультацию"
+btn_primary_link: "#contact"
+btn_secondary_text: "Узнать больше"
+btn_secondary_link: "about.html"
+about_title: "Обо мне"
+about_description: "Я помогаю людям находить внутренние ресурсы и справляться с тяжелыми эмоциональными состояниями."
 ---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.meta_title }}</title>
-    <meta name="description" content="{{ page.meta_description }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.meta_title }}</title>
+  <meta name="description" content="{{ page.meta_description }}">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Базовые стили для сохранения сетки и кнопок */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: #2C3E50;
+      background-color: #fff;
+    }
+    .btn {
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    @media (max-width: 768px) {
+      .lp-grid3 {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
       }
-      
-      html {
-        scroll-behavior: smooth;
-        font-family: 'Inter', sans-serif;
-        color: #2C3E50;
-        background-color: #F9F6F0;
-      }
-
-      body {
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      a {
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
-
-      .btn {
-        display: inline-block;
-        transition: opacity 0.2s ease;
-      }
-      .btn:hover {
-        opacity: 0.9;
-      }
-
-      @media (max-width: 900px) {
-        .lp-grid3 {
-          grid-template-columns: 1fr !important;
-        }
-        .lp-row {
-          flex-direction: column !important;
-        }
-        .header-container {
-          flex-direction: column !important;
-          gap: 16px !important;
-        }
-      }
-    </style>
+    }
+  </style>
 </head>
 <body>
 
-<div style="background:#F9F6F0; color:#2C3E50;">
-
-  <!-- ============ HEADER ============ -->
-  <header style="border-bottom: 1px solid #efe7d9; background: #fff; position: sticky; top: 0; z-index: 100;">
-      <div class="header-container" style="max-width: 1200px; margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;">
-          <div class="logo" style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 40px; height: 40px; background: #2C3E50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #E8A87C; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px;">НЛ</div>
-              <div>
-                  <h1 style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #2C3E50; margin: 0; line-height: 1.2;">{{ page.hero_title }}</h1>
-                  <p style="font-size: 10px; letter-spacing: .15em; color: #a98a6e; text-transform: uppercase; margin-top: 2px;">ПСИХОЛОГ · EMDR · ОНЛАЙН</p>
-              </div>
-          </div>
-          <nav class="nav" style="display: flex; gap: 28px; align-items: center;">
-              <a href="index.html" class="nav-link active" style="color: #2C3E50; font-weight: 600; font-size: 14px;">Главная</a>
-              <a href="about.html" class="nav-link" style="color: #52606d; font-size: 14px;">Обо мне</a>
-              <a href="services.html" class="nav-link" style="color: #52606d; font-size: 14px;">Услуги</a>
-              <a href="blog.html" class="nav-link" style="color: #52606d; font-size: 14px;">Блог</a>
-              <a href="#contact" class="btn btn-gold" style="padding: 10px 20px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 14px;">Записаться</a>
-          </nav>
-      </div>
-  </header>
-
-  <!-- ============ HERO SECTION ============ -->
-  <section style="min-height: 85vh; display: flex; align-items: center; padding: 80px 40px; position: relative;">
-    <div style="max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="lp-grid3">
+  <!-- HERO SECTION -->
+  <section style="background: #FAF8F5; padding: 60px 40px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="lp-grid3">
+      
+      <!-- Левый текстовый блок -->
       <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
           <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-          <span style="font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">Практикующий психолог</span>
+          <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">
+            {{ page.hero_subtitle }}
+          </span>
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(38px, 4.8vw, 60px); line-height: 1.15; color: #2C3E50; margin-bottom: 24px; font-weight: 600;">
+
+        <h1 style="font-size: 48px; color: #2C3E50; margin-bottom: 24px; font-weight: 400; line-height: 1.2;">
           {{ page.hero_title }}
         </h1>
-        <p style="font-size: 18px; color: #52606d; margin-bottom: 40px; max-width: 500px; line-height: 1.6;">
-          {{ page.hero_subtitle }}
+
+        <p style="font-size: 18px; color: #666; margin-bottom: 32px; line-height: 1.6;">
+          {{ page.hero_description }}
         </p>
+
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="#contact" class="btn" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; font-size: 15px;">
-            Записаться на консультацию
+          <a href="{{ page.btn_primary_link }}" class="btn" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; text-decoration: none;">
+            {{ page.btn_primary_text }}
           </a>
-          <a href="about.html" class="btn" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">
-            Узнать больше
+          <a href="{{ page.btn_secondary_link }}" class="btn" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; text-decoration: none;">
+            {{ page.btn_secondary_text }}
           </a>
         </div>
       </div>
+
+      <!-- Правый блок с портретом -->
       <div style="position: relative; display: flex; justify-content: center;">
-  <img src="images/photo_2026-07-12_14-08-45.jpg" alt="Надежда Литвинова" style="width: 100%; max-width: 440px; height: 520px; object-fit: cover; border-radius: 4px; border: 1px solid #ede5d6;">
-</div>
+        <img src="{{ page.hero_image }}" alt="{{ page.hero_title }}" style="width: 100%; max-width: 440px; height: 520px; object-fit: cover; border-radius: 4px; border: 1px solid #ede5d6;">
+      </div>
+
     </div>
   </section>
 
-  <!-- ============ ABOUT SECTION ============ -->
+  <!-- ABOUT SECTION -->
   <section id="about" style="background: #fff; border-top: 1px solid #efe7d9; border-bottom: 1px solid #efe7d9;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 104px 40px;">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="lp-grid3">
         <div>
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
             <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-            <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">Обо мне</span>
+            <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">
+              {{ page.about_title }}
+            </span>
           </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(30px, 3.6vw, 42px); color: #2C3E50; margin-bottom: 24px; font-weight: 600;">
-            13+ лет помогает людям обретать опору
-          </h2>
-          <p style="font-size: 16px; color: #52606d; margin-bottom: 20px; line-height: 1.7;">
-            В своей практике я комбинирую доказательные методы психотерапии (EMDR/ДПДГ, Брейнспоттинг, КПТ) и практические инструменты коучинга. Моя цель — создать безопасное пространство, где вы сможете преодолеть травмы и найти решения.
+          <p style="font-size: 18px; color: #555; line-height: 1.7;">
+            {{ page.about_description }}
           </p>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <div style="background: #F9F6F0; padding: 30px; border-radius: 4px; border: 1px solid #ede5d6;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #E8A87C; margin-bottom: 8px;">13+</div>
-            <div style="font-size: 14px; color: #6b7682;">Лет успешной практики</div>
-          </div>
-          <div style="background: #F9F6F0; padding: 30px; border-radius: 4px; border: 1px solid #ede5d6;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #E8A87C; margin-bottom: 8px;">1500+</div>
-            <div style="font-size: 14px; color: #6b7682;">Проведенных сессий</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
-
-  <!-- ============ PRICING SECTION ============ -->
-  <section id="pricing" style="max-width: 1200px; margin: 0 auto; padding: 104px 40px;">
-    <div style="text-align: center; margin-bottom: 60px;">
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 18px;">
-        <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-        <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">Форматы работы</span>
-        <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-      </div>
-      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(30px, 3.6vw, 46px); color: #2C3E50; font-weight: 600;">Стоимость услуг</h2>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;" class="lp-grid3">
-      <!-- Card 1 -->
-      <div style="background: #fff; border: 1px solid #ede5d6; border-radius: 4px; padding: 40px 34px;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #2C3E50; margin: 0 0 6px; font-weight: 600;">Разовая сессия</h3>
-        <p style="font-size: 14px; color: #7a8591; margin: 0 0 24px; line-height: 1.5;">Разбор разового запроса или знакомство с форматом работы.</p>
-        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50;">4 500 ₽</span>
-          <span style="font-size: 14px; color: #9aa4af;">/ 60 мин</span>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Индивидуальная консультация</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Анализ текущей ситуации</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>План дальнейших шагов</div>
-        </div>
-        <a href="#contact" class="btn" style="display: block; text-align: center; width: 100%; padding: 15px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Выбрать</a>
-      </div>
-
-      <!-- Card 2 (Featured) -->
-      <div style="background: #2C3E50; border-radius: 4px; padding: 40px 34px; color: #fff; position: relative;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin: 0 0 6px; font-weight: 600;">Месячное сопровождение</h3>
-        <p style="font-size: 14px; color: #a9b5c1; margin: 0 0 24px; line-height: 1.5;">Системная работа для получения видимых изменений.</p>
-        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #fff;">16 000 ₽</span>
-          <span style="font-size: 14px; color: #a9b5c1;">/ 4 сессии</span>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #e1e7ed;"><span style="color: #E8A87C;">—</span>4 индивидуальные сессии по 60 мин</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #e1e7ed;"><span style="color: #E8A87C;">—</span>Поддержка в мессенджере между встречами</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #e1e7ed;"><span style="color: #E8A87C;">—</span>Персональные практики и домашние задания</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #e1e7ed;"><span style="color: #E8A87C;">—</span>Закрепление устойчивого результата</div>
-        </div>
-        <a href="#contact" class="btn" style="display: block; text-align: center; width: 100%; padding: 15px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Записаться на месяц</a>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background: #fff; border: 1px solid #ede5d6; border-radius: 4px; padding: 40px 34px;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #2C3E50; margin: 0 0 6px; font-weight: 600;">Глубокая трансформация</h3>
-        <p style="font-size: 14px; color: #7a8591; margin: 0 0 24px; line-height: 1.5;">Для фундаментальной проработки нескольких сфер.</p>
-        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50;">42 000 ₽</span>
-          <span style="font-size: 14px; color: #9aa4af;">/ 3 месяца</span>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>12 сессий и полное сопровождение</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Глубокая работа с травмами и блоками</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Приоритетная запись на удобное время</div>
-          <div style="display: flex; gap: 10px; font-size: 15px; color: #52606d;"><span style="color: #E8A87C;">—</span>Доступ к закрытым материалам</div>
-        </div>
-        <a href="#contact" class="btn" style="display: block; text-align: center; width: 100%; padding: 15px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Выбрать</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BLOG SECTION ============ -->
-  <section id="blog" style="background: #fff; border-top: 1px solid #efe7d9; border-bottom: 1px solid #efe7d9;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 104px 40px;">
-      <div style="text-align: center; margin-bottom: 60px;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 18px;">
-          <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-          <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">полезное</span>
-          <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-        </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 46px); color: #2C3E50; margin: 0;">Статьи и материалы</h2>
-      </div>
-      <div class="lp-grid3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
-        <sc-for list="{{ posts }}" as="post">
-          <div style="border: 1px solid #ede5d6; border-radius: 4px; overflow: hidden; background: #fff;">
-            <div style="height: 180px; background: repeating-linear-gradient(45deg, #efe8da, #efe8da 9px, #e8dfcd 9px, #e8dfcd 18px); display: flex; align-items: center; justify-content: center;">
-              <span style="font-family: ui-monospace, monospace; font-size: 11px; color: #9a8c76; background: rgba(249, 246, 240, .85); padding: 4px 8px; border-radius: 2px;">обложка статьи</span>
-            </div>
-            <div style="padding: 24px;">
-              <div style="font-size: 12px; color: #a98a6e; margin-bottom: 8px;">{{ post.date }}</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 19px; color: #2C3E50; margin: 0 0 10px; font-weight: 600;">{{ post.title }}</h3>
-              <p style="font-size: 14px; color: #6b7682; line-height: 1.5; margin: 0 0 16px;">{{ post.excerpt }}</p>
-              <a href="{{ post.url }}" style="text-decoration: none; color: #2C3E50; font-weight: 600; font-size: 14px;">Читать далее →</a>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT SECTION ============ -->
-  <section id="contact" style="padding: 104px 40px; text-align: center;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 18px;">
-              <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-              <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">Связь</span>
-              <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-          </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50; margin-bottom: 12px; font-weight: 600;">Записаться на консультацию</h2>
-          <p style="color: #7a8591; font-size: 16px; margin-bottom: 36px;">Выберите удобный мессенджер для связи</p>
-          
-          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-              <a href="https://t.me/" target="_blank" class="btn" style="padding: 16px 36px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Telegram</a>
-              <a href="https://wa.me/" target="_blank" class="btn" style="padding: 16px 36px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">WhatsApp</a>
-          </div>
-      </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer style="background: #2C3E50; color: #aab6c2; padding: 80px 40px 40px;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <div class="lp-row" style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 60px;">
-        <div>
-          <span style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #fff;">{{ page.hero_title }}</span>
-          <p style="font-size: 13px; color: #7a8591; margin: 8px 0 0;">Психолог · EMDR · 13+ лет практики</p>
-        </div>
-        <div style="display: flex; gap: 40px;">
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <a href="about.html" style="color: #aab6c2; font-size: 14px;">Обо мне</a>
-            <a href="services.html" style="color: #aab6c2; font-size: 14px;">Услуги</a>
-            <a href="#pricing" style="color: #aab6c2; font-size: 14px;">Стоимость</a>
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <a href="https://t.me/" style="color: #E8A87C; font-size: 14px;">Telegram</a>
-            <a href="https://wa.me/" style="color: #E8A87C; font-size: 14px;">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-      <div style="border-top: 1px solid #3c4f63; padding-top: 24px; font-size: 12px; color: #6b7885; display: flex; justify-content: space-between;">
-        <span>© 2026 Надежда Литвинова. Все права защищены.</span>
-        <span>Политика конфиденциальности</span>
-      </div>
-    </div>
-  </footer>
-
-</div>
 
 </body>
 </html>
