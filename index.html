@@ -1,7 +1,7 @@
 ---
 title: "Главная страница"
 meta_title: "Надежда Литвинова — Психолог · EMDR · Онлайн"
-meta_description: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР. ДПДГ (EMDR), Брейнспоттинг, КПТ. Онлайн по всему миру."
+meta_description: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР."
 hero_subtitle: "ПРАКТИКУЮЩИЙ ПСИХОЛОГ"
 hero_title: "Надежда Литвинова"
 hero_description: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР."
@@ -10,8 +10,6 @@ btn_primary_text: "Записаться на консультацию"
 btn_primary_link: "#contact"
 btn_secondary_text: "Узнать больше"
 btn_secondary_link: "about.html"
-about_title: "Обо мне"
-about_description: "Я помогаю людям находить внутренние ресурсы и справляться с тяжелыми эмоциональными состояниями."
 ---
 <!DOCTYPE html>
 <html lang="ru">
@@ -21,36 +19,45 @@ about_description: "Я помогаю людям находить внутрен
   <title>{{ page.meta_title }}</title>
   <meta name="description" content="{{ page.meta_description }}">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Базовые стили для сохранения сетки и кнопок */
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      color: #2C3E50;
-      background-color: #fff;
-    }
-    .btn {
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-    .btn:hover {
-      opacity: 0.9;
-    }
-    @media (max-width: 768px) {
-      .lp-grid3 {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-    }
-  </style>
 </head>
 <body>
 
+  <!-- HEADER / НАВИГАЦИЯ -->
+  <header style="background: #FAF8F5; padding: 20px 40px; border-bottom: 1px solid #efe7d9;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+      
+      <!-- Логотип -->
+      <a href="index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+        <div style="width: 44px; height: 44px; background: #2C3E50; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #E8A87C; font-weight: 700; font-size: 16px; font-family: Georgia, serif;">
+          НЛ
+        </div>
+        <div>
+          <div style="font-family: Georgia, serif; font-size: 20px; color: #2C3E50; font-weight: 600; line-height: 1.1;">
+            Надежда Литвинова
+          </div>
+          <div style="font-size: 11px; letter-spacing: .15em; color: #a98a6e; text-transform: uppercase; margin-top: 2px;">
+            ПСИХОЛОГ · EMDR · ОНЛАЙН
+          </div>
+        </div>
+      </a>
+
+      <!-- Навигация и кнопка -->
+      <nav style="display: flex; align-items: center; gap: 32px;">
+        <a href="index.html" style="color: #2C3E50; text-decoration: none; font-size: 15px; font-weight: 500;">Главная</a>
+        <a href="about.html" style="color: #666; text-decoration: none; font-size: 15px;">Обо мне</a>
+        <a href="services.html" style="color: #666; text-decoration: none; font-size: 15px;">Услуги</a>
+        <a href="blog.html" style="color: #666; text-decoration: none; font-size: 15px;">Блог</a>
+        <a href="#contact" style="background: #E8A87C; color: #fff; padding: 10px 22px; border-radius: 2px; text-decoration: none; font-size: 14px; font-weight: 600;">Записаться</a>
+      </nav>
+
+    </div>
+  </header>
+
   <!-- HERO SECTION -->
   <section style="background: #FAF8F5; padding: 60px 40px;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="lp-grid3">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
       
-      <!-- Левый текстовый блок -->
+      <!-- Левый блок с текстом -->
       <div>
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
           <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
@@ -59,19 +66,19 @@ about_description: "Я помогаю людям находить внутрен
           </span>
         </div>
 
-        <h1 style="font-size: 48px; color: #2C3E50; margin-bottom: 24px; font-weight: 400; line-height: 1.2;">
+        <h1 style="font-family: Georgia, serif; font-size: 52px; color: #2C3E50; margin: 0 0 24px 0; font-weight: 400; line-height: 1.15;">
           {{ page.hero_title }}
         </h1>
 
-        <p style="font-size: 18px; color: #666; margin-bottom: 32px; line-height: 1.6;">
+        <p style="font-size: 18px; color: #666; margin: 0 0 32px 0; line-height: 1.6; max-width: 480px;">
           {{ page.hero_description }}
         </p>
 
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="{{ page.btn_primary_link }}" class="btn" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; text-decoration: none;">
+          <a href="{{ page.btn_primary_link }}" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; text-decoration: none; font-size: 15px;">
             {{ page.btn_primary_text }}
           </a>
-          <a href="{{ page.btn_secondary_link }}" class="btn" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; text-decoration: none;">
+          <a href="{{ page.btn_secondary_link }}" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; text-decoration: none; font-size: 15px;">
             {{ page.btn_secondary_text }}
           </a>
         </div>
@@ -82,25 +89,6 @@ about_description: "Я помогаю людям находить внутрен
         <img src="{{ page.hero_image }}" alt="{{ page.hero_title }}" style="width: 100%; max-width: 440px; height: 520px; object-fit: cover; border-radius: 4px; border: 1px solid #ede5d6;">
       </div>
 
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about" style="background: #fff; border-top: 1px solid #efe7d9; border-bottom: 1px solid #efe7d9;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 104px 40px;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="lp-grid3">
-        <div>
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
-            <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-            <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">
-              {{ page.about_title }}
-            </span>
-          </div>
-          <p style="font-size: 18px; color: #555; line-height: 1.7;">
-            {{ page.about_description }}
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
