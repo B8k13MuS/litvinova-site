@@ -1,8 +1,26 @@
 ---
+title: "Главная страница"
 meta_title: "Надежда Литвинова — Психолог · EMDR · Онлайн"
 meta_description: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР. ДПДГ (EMDR), Брейнспоттинг, КПТ. Онлайн по всему миру."
+hero_badge: "Практикующий психолог"
 hero_title: "Надежда Литвинова"
 hero_subtitle: "Профессиональный психолог. Помогу справиться с травмой, тревогой, ПТСР."
+hero_image: "images/photo_2026-07-12_14-08-45.jpg"
+btn_primary_text: "Записаться на консультацию"
+btn_secondary_text: "Узнать больше"
+about_title: "13+ лет помогает людям обретать опору"
+about_description: "В своей практике я комбинирую доказательные методы психотерапии (EMDR/ДПДГ, Брейнспоттинг, КПТ) и практические инструменты коучинга. Моя цель — создать безопасное пространство, где вы сможете преодолеть травмы и найти решения."
+price_1_title: "Разовая сессия"
+price_1_desc: "Разбор разового запроса или знакомство с форматом работы."
+price_1_val: "4 500 ₽"
+price_2_title: "Месячное сопровождение"
+price_2_desc: "Системная работа для получения видимых изменений."
+price_2_val: "16 000 ₽"
+price_3_title: "Глубокая трансформация"
+price_3_desc: "Для фундаментальной проработки нескольких сфер."
+price_3_val: "42 000 ₽"
+telegram_url: "https://t.me/"
+whatsapp_url: "https://wa.me/"
 ---
 <!DOCTYPE html>
 <html lang="ru">
@@ -91,7 +109,7 @@ hero_subtitle: "Профессиональный психолог. Помогу 
       <div>
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
           <span style="width: 40px; height: 1px; background: #E8A87C;"></span>
-          <span style="font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">Практикующий психолог</span>
+          <span style="font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">{{ page.hero_badge }}</span>
         </div>
         <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(38px, 4.8vw, 60px); line-height: 1.15; color: #2C3E50; margin-bottom: 24px; font-weight: 600;">
           {{ page.hero_title }}
@@ -101,16 +119,16 @@ hero_subtitle: "Профессиональный психолог. Помогу 
         </p>
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
           <a href="#contact" class="btn" style="padding: 16px 32px; background: #2C3E50; color: #fff; border-radius: 2px; font-weight: 600; font-size: 15px;">
-            Записаться на консультацию
+            {{ page.btn_primary_text }}
           </a>
           <a href="about.html" class="btn" style="padding: 16px 32px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">
-            Узнать больше
+            {{ page.btn_secondary_text }}
           </a>
         </div>
       </div>
       <div style="position: relative; display: flex; justify-content: center;">
-  <img src="images/photo_2026-07-12_14-08-45.jpg" alt="Надежда Литвинова" style="width: 100%; max-width: 440px; height: 520px; object-fit: cover; border-radius: 4px; border: 1px solid #ede5d6;">
-</div>
+        <img src="{{ page.hero_image }}" alt="{{ page.hero_title }}" style="width: 100%; max-width: 440px; height: 520px; object-fit: cover; border-radius: 4px; border: 1px solid #ede5d6;">
+      </div>
     </div>
   </section>
 
@@ -124,10 +142,10 @@ hero_subtitle: "Профессиональный психолог. Помогу 
             <span style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #a98a6e;">Обо мне</span>
           </div>
           <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(30px, 3.6vw, 42px); color: #2C3E50; margin-bottom: 24px; font-weight: 600;">
-            13+ лет помогает людям обретать опору
+            {{ page.about_title }}
           </h2>
           <p style="font-size: 16px; color: #52606d; margin-bottom: 20px; line-height: 1.7;">
-            В своей практике я комбинирую доказательные методы психотерапии (EMDR/ДПДГ, Брейнспоттинг, КПТ) и практические инструменты коучинга. Моя цель — создать безопасное пространство, где вы сможете преодолеть травмы и найти решения.
+            {{ page.about_description }}
           </p>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -158,10 +176,10 @@ hero_subtitle: "Профессиональный психолог. Помогу 
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;" class="lp-grid3">
       <!-- Card 1 -->
       <div style="background: #fff; border: 1px solid #ede5d6; border-radius: 4px; padding: 40px 34px;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #2C3E50; margin: 0 0 6px; font-weight: 600;">Разовая сессия</h3>
-        <p style="font-size: 14px; color: #7a8591; margin: 0 0 24px; line-height: 1.5;">Разбор разового запроса или знакомство с форматом работы.</p>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #2C3E50; margin: 0 0 6px; font-weight: 600;">{{ page.price_1_title }}</h3>
+        <p style="font-size: 14px; color: #7a8591; margin: 0 0 24px; line-height: 1.5;">{{ page.price_1_desc }}</p>
         <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50;">4 500 ₽</span>
+          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50;">{{ page.price_1_val }}</span>
           <span style="font-size: 14px; color: #9aa4af;">/ 60 мин</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
@@ -174,10 +192,10 @@ hero_subtitle: "Профессиональный психолог. Помогу 
 
       <!-- Card 2 (Featured) -->
       <div style="background: #2C3E50; border-radius: 4px; padding: 40px 34px; color: #fff; position: relative;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin: 0 0 6px; font-weight: 600;">Месячное сопровождение</h3>
-        <p style="font-size: 14px; color: #a9b5c1; margin: 0 0 24px; line-height: 1.5;">Системная работа для получения видимых изменений.</p>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin: 0 0 6px; font-weight: 600;">{{ page.price_2_title }}</h3>
+        <p style="font-size: 14px; color: #a9b5c1; margin: 0 0 24px; line-height: 1.5;">{{ page.price_2_desc }}</p>
         <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #fff;">16 000 ₽</span>
+          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #fff;">{{ page.price_2_val }}</span>
           <span style="font-size: 14px; color: #a9b5c1;">/ 4 сессии</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
@@ -191,10 +209,10 @@ hero_subtitle: "Профессиональный психолог. Помогу 
 
       <!-- Card 3 -->
       <div style="background: #fff; border: 1px solid #ede5d6; border-radius: 4px; padding: 40px 34px;">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #2C3E50; margin: 0 0 6px; font-weight: 600;">Глубокая трансформация</h3>
-        <p style="font-size: 14px; color: #7a8591; margin: 0 0 24px; line-height: 1.5;">Для фундаментальной проработки нескольких сфер.</p>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #2C3E50; margin: 0 0 6px; font-weight: 600;">{{ page.price_3_title }}</h3>
+        <p style="font-size: 14px; color: #7a8591; margin: 0 0 24px; line-height: 1.5;">{{ page.price_3_desc }}</p>
         <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50;">42 000 ₽</span>
+          <span style="font-family: 'Playfair Display', serif; font-size: 38px; color: #2C3E50;">{{ page.price_3_val }}</span>
           <span style="font-size: 14px; color: #9aa4af;">/ 3 месяца</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
@@ -249,8 +267,8 @@ hero_subtitle: "Профессиональный психолог. Помогу 
           <p style="color: #7a8591; font-size: 16px; margin-bottom: 36px;">Выберите удобный мессенджер для связи</p>
           
           <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-              <a href="https://t.me/" target="_blank" class="btn" style="padding: 16px 36px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Telegram</a>
-              <a href="https://wa.me/" target="_blank" class="btn" style="padding: 16px 36px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">WhatsApp</a>
+              <a href="{{ page.telegram_url }}" target="_blank" class="btn" style="padding: 16px 36px; background: #E8A87C; color: #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">Telegram</a>
+              <a href="{{ page.whatsapp_url }}" target="_blank" class="btn" style="padding: 16px 36px; background: transparent; color: #2C3E50; border: 1px solid #2C3E50; border-radius: 2px; font-weight: 600; font-size: 15px;">WhatsApp</a>
           </div>
       </div>
   </section>
@@ -270,8 +288,8 @@ hero_subtitle: "Профессиональный психолог. Помогу 
             <a href="#pricing" style="color: #aab6c2; font-size: 14px;">Стоимость</a>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <a href="https://t.me/" style="color: #E8A87C; font-size: 14px;">Telegram</a>
-            <a href="https://wa.me/" style="color: #E8A87C; font-size: 14px;">WhatsApp</a>
+            <a href="{{ page.telegram_url }}" style="color: #E8A87C; font-size: 14px;">Telegram</a>
+            <a href="{{ page.whatsapp_url }}" style="color: #E8A87C; font-size: 14px;">WhatsApp</a>
           </div>
         </div>
       </div>
