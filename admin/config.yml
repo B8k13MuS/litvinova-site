@@ -1,73 +1,84 @@
 backend:
-  name: github
-  repo: B8k13MuS/litvinova-site
+  name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
-locale: 'ru'
-
-publish_mode: simple
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 collections:
   - name: "pages"
-    label: "Страницы сайта"
+    label: "Страницы"
     files:
-      - name: "index"
+      - file: "index.html"
         label: "Главная страница"
-        file: "index.html"
+        name: "index"
         fields:
-          - { label: "Заголовок (title)", name: "title", widget: "string" }
-          - { label: "Meta описание", name: "description", widget: "text" }
+          # SEO & META
+          - label: "SEO Настройки"
+            name: "seo_group"
+            widget: "object"
+            fields:
+              - { label: "Заголовок вкладки (Title)", name: "title", widget: "string", required: true, hint: "Рекомендуется 50-60 символов" }
+              - { label: "Описание для поисковиков (Description)", name: "description", widget: "text", required: true, hint: "Рекомендуется 120-160 символов" }
 
-      - name: "about"
-        label: "Обо мне"
-        file: "about.html"
-        fields:
-          - { label: "Заголовок", name: "title", widget: "string" }
-          - { label: "Контент", name: "body", widget: "markdown" }
+          # HERO SECTION
+          - label: "Главный экран (Hero)"
+            name: "hero_group"
+            widget: "object"
+            fields:
+              - { label: "Бейдж / Статус", name: "hero_badge", widget: "string", required: false, hint: "Маленькая плашка над заголовком (например: Онлайн-консультации)" }
+              - { label: "Имя / Главный заголовок", name: "hero_title", widget: "string", required: true }
+              - { label: "Подзаголовок (Специализация)", name: "hero_subtitle", widget: "string", required: true }
+              - { label: "Краткое описание", name: "hero_description", widget: "text", required: true }
+              - { label: "Главная фотография", name: "hero_image", widget: "image", required: true, hint: "Рекомендуемый размер: 800x1000px, вертикальное фото" }
+              - { label: "Текст кнопки 1 (Основная)", name: "primary_btn_text", widget: "string", required: true }
+              - { label: "Ссылка кнопки 1", name: "primary_btn_link", widget: "string", required: true }
+              - { label: "Текст кнопки 2 (Второстепенная)", name: "secondary_btn_text", widget: "string", required: false }
+              - { label: "Ссылка кнопки 2", name: "secondary_btn_link", widget: "string", required: false }
 
-      - name: "services"
-        label: "Услуги"
-        file: "services.html"
-        fields:
-          - { label: "Заголовок", name: "title", widget: "string" }
-          - { label: "Контент", name: "body", widget: "markdown" }
+          # ABOUT SECTION
+          - label: "Секция 'Обо мне'"
+            name: "about_group"
+            widget: "object"
+            fields:
+              - { label: "Заголовок секции", name: "about_title", widget: "string", required: true }
+              - { label: "Подзаголовок секции", name: "about_subtitle", widget: "string", required: false }
+              - { label: "Абзац 1", name: "about_text_1", widget: "text", required: true }
+              - { label: "Абзац 2", name: "about_text_2", widget: "text", required: false }
+              - { label: "Цифра опыта (лет)", name: "about_experience_years", widget: "string", required: false, hint: "Например: 8+" }
+              - { label: "Подпись под опытом", name: "about_experience_label", widget: "string", required: false }
+              - { label: "Количество клиентов", name: "about_clients_count", widget: "string", required: false, hint: "Например: 500+" }
+              - { label: "Подпись под клиентами", name: "about_clients_label", widget: "string", required: false }
 
-      - name: "contacts"
-        label: "Контакты"
-        file: "contacts.html"
-        fields:
-          - { label: "Телефон", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Telegram", name: "telegram", widget: "string" }
+          # PRICING SECTION
+          - label: "Секция 'Стоимость'"
+            name: "pricing_group"
+            widget: "object"
+            fields:
+              - { label: "Заголовок секции", name: "pricing_title", widget: "string", required: true }
+              - { label: "Подзаголовок секции", name: "pricing_subtitle", widget: "string", required: false }
+              - label: "Тарифные карточки"
+                name: "rates"
+                widget: "list"
+                required: true
+                fields:
+                  - { label: "Название тарифа", name: "title", widget: "string", required: true }
+                  - { label: "Стоимость", name: "price", widget: "string", required: true }
+                  - { label: "Длительность/Формат", name: "duration", widget: "string", required: false, hint: "Например: 50 минут" }
+                  - { label: "Описание", name: "description", widget: "text", required: false }
+                  - { label: "Преимущества (списком)", name: "features", widget: "list", field: { label: "Пункт", name: "feature", widget: "string" } }
+                  - { label: "Сделать выделенной карточкой?", name: "is_popular", widget: "boolean", default: false }
+                  - { label: "Текст кнопки", name: "btn_text", widget: "string", required: true, default: "Записаться" }
+                  - { label: "Ссылка кнопки", name: "btn_link", widget: "string", required: true, default: "#contacts" }
 
-  - name: "blog"
-    label: "Статьи блога"
-    folder: "blog"
-    create: true
-    delete: true
-    extension: html
-    format: frontmatter
-    slug: "{{slug}}"
-    fields:
-      - { label: "Заголовок", name: "title", widget: "string" }
-      - { label: "Дата публикации", name: "date", widget: "datetime" }
-      - { label: "Meta описание (SEO)", name: "description", widget: "text" }
-      - { label: "Изображение", name: "image", widget: "image", required: false }
-      - { label: "Теги", name: "tags", widget: "list", required: false }
-      - { label: "Контент статьи", name: "body", widget: "markdown" }
-
-  - name: "reviews"
-    label: "Отзывы клиентов"
-    folder: "_reviews"
-    create: true
-    delete: true
-    extension: html
-    format: frontmatter
-    fields:
-      - { label: "Имя клиента", name: "name", widget: "string" }
-      - { label: "Дата", name: "date", widget: "datetime" }
-      - { label: "Текст отзыва", name: "body", widget: "markdown" }
-      - { label: "Рейтинг", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+          # CONTACTS SECTION
+          - label: "Секция 'Контакты'"
+            name: "contacts_group"
+            widget: "object"
+            fields:
+              - { label: "Заголовок секции", name: "contacts_title", widget: "string", required: true }
+              - { label: "Подзаголовок секции", name: "contacts_subtitle", widget: "string", required: false }
+              - { label: "Ссылка Telegram", name: "telegram_link", widget: "string", required: false, hint: "Формат: https://t.me/username" }
+              - { label: "Ссылка WhatsApp", name: "whatsapp_link", widget: "string", required: false, hint: "Формат: https://wa.me/79000000000" }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "Примечание под контактами", name: "contacts_note", widget: "string", required: false }
