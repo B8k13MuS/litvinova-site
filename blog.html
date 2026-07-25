@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -27,50 +27,50 @@
         </div>
     </header>
 
-    <section style="padding: 120px 0 60px 0; background: #050505;">
+    <section style="padding: 120px 0 60px 0; background: var(--bg-white);">
         <div class="container">
             <h1 class="section-title" style="text-align: left; margin-bottom: 15px;">Блог</h1>
-            <p style="color: #b0b0b0; font-size: 18px; margin-bottom: 50px;">Полезные материалы о психологии, психотерапии и психическом здоровье</p>
+            <p style="color: var(--text-muted); font-size: 18px; margin-bottom: 50px;">Полезные материалы о психологии, психотерапии и психическом здоровье</p>
 
-            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-                
+            <div class="blog-grid">
+
                 <!-- Статья 1 -->
-                <article style="background: #0a0a0a; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                <article class="card">
                     <div>
                         <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px; border-radius: 20px; font-size: 12px;">Стресс</span>
-                            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px; border-radius: 20px; font-size: 12px;">Психология</span>
+                            <span class="badge">Стресс</span>
+                            <span class="badge">Психология</span>
                         </div>
-                        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; margin-bottom: 12px; line-height: 1.3;">Стресс: как понять и справиться</h2>
-                        <p style="color: #a0a0a0; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Что такое стресс, как он влияет на организм и какие простые техники помогают снизить его разрушительное влияние.</p>
+                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Стресс: как понять и справиться</h2>
+                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Что такое стресс, как он влияет на организм и какие простые техники помогают снизить его разрушительное влияние.</p>
                     </div>
-                    <a href="blog/stress.html" style="color: #d4af37; text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
+                    <a href="blog/stress.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
                 </article>
 
                 <!-- Статья 2 -->
-                <article style="background: #0a0a0a; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                <article class="card">
                     <div>
                         <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px; border-radius: 20px; font-size: 12px;">EMDR</span>
-                            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px; border-radius: 20px; font-size: 12px;">Травма</span>
+                            <span class="badge">EMDR</span>
+                            <span class="badge">Травма</span>
                         </div>
-                        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; margin-bottom: 12px; line-height: 1.3;">Что такое EMDR и как он помогает при травме</h2>
-                        <p style="color: #a0a0a0; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">EMDR — один из самых эффективных методов работы с психологической травмой. Узнайте, как проходит терапия и кому она подходит.</p>
+                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Что такое EMDR и как он помогает при травме</h2>
+                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">EMDR — один из самых эффективных методов работы с психологической травмой. Узнайте, как проходит терапия и кому она подходит.</p>
                     </div>
-                    <a href="blog/emdr.html" style="color: #d4af37; text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
+                    <a href="blog/emdr-trauma.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
                 </article>
 
                 <!-- Статья 3 -->
-                <article style="background: #0a0a0a; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                <article class="card">
                     <div>
                         <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px; border-radius: 20px; font-size: 12px;">Выгорание</span>
-                            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px; border-radius: 20px; font-size: 12px;">Самопомощь</span>
+                            <span class="badge">Выгорание</span>
+                            <span class="badge">Самопомощь</span>
                         </div>
-                        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; margin-bottom: 12px; line-height: 1.3;">Эмоциональное выгорание: признаки и способы восстановления</h2>
-                        <p style="color: #a0a0a0; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Как распознать выгорание на ранней стадии и что делать, чтобы восстановить силы и вернуть радость жизни.</p>
+                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Эмоциональное выгорание: признаки и способы восстановления</h2>
+                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Как распознать выгорание на ранней стадии и что делать, чтобы восстановить силы и вернуть радость жизни.</p>
                     </div>
-                    <a href="blog/burnout.html" style="color: #d4af37; text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
+                    <a href="blog/emotional-burnout.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
                 </article>
 
             </div>
