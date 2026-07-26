@@ -9,18 +9,46 @@ content:
     type: file
     path: "index.html"
     fields:
-      - name: meta_title
-        label: "SEO: Заголовок страницы (Title)"
-        type: string
-      - name: meta_description
-        label: "SEO: Описание (Description)"
-        type: text
-      - name: hero_title
-        label: "Главный заголовок"
-        type: string
-      - name: hero_subtitle
-        label: "Подзаголовок / Описание"
-        type: text
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: meta_description, label: "SEO: Описание", type: text }
+      - { name: hero_badge, label: "Бейдж над заголовком", type: string }
+      - { name: hero_title, label: "Главный заголовок", type: string }
+      - { name: hero_subtitle, label: "Подзаголовок", type: string }
+      - { name: hero_description, label: "Описание под подзаголовком", type: text }
+      - { name: hero_image, label: "Фото (герой)", type: image }
+      - { name: hero_image_alt, label: "Описание фото (для поисковиков)", type: string }
+      - { name: primary_btn_text, label: "Кнопка 1: текст", type: string }
+      - { name: primary_btn_link, label: "Кнопка 1: ссылка", type: string }
+      - { name: secondary_btn_text, label: "Кнопка 2: текст", type: string }
+      - { name: secondary_btn_link, label: "Кнопка 2: ссылка", type: string }
+      - { name: about_title, label: "«Обо мне»: заголовок", type: string }
+      - { name: about_subtitle, label: "«Обо мне»: подзаголовок", type: string }
+      - { name: about_text_1, label: "«Обо мне»: текст (абзац 1)", type: text }
+      - { name: about_text_2, label: "«Обо мне»: текст (абзац 2)", type: text }
+      - { name: about_experience_years, label: "Лет практики (число)", type: string }
+      - { name: about_experience_label, label: "Подпись под числом лет", type: string }
+      - { name: about_clients_count, label: "Клиентов (число)", type: string }
+      - { name: about_clients_label, label: "Подпись под числом клиентов", type: string }
+      - { name: pricing_title, label: "«Цены»: заголовок", type: string }
+      - { name: pricing_subtitle, label: "«Цены»: подзаголовок", type: string }
+      - name: rates
+        label: "Тарифы"
+        type: list
+        fields:
+          - { name: title, label: "Название тарифа", type: string }
+          - { name: price, label: "Цена", type: string }
+          - { name: duration, label: "Длительность", type: string }
+          - { name: description, label: "Описание", type: text }
+          - { name: features, label: "Что входит (список)", type: list }
+          - { name: is_popular, label: "Отметить как популярный", type: boolean }
+          - { name: btn_text, label: "Текст кнопки", type: string }
+          - { name: btn_link, label: "Ссылка кнопки", type: string }
+      - { name: contacts_title, label: "«Контакты»: заголовок", type: string }
+      - { name: contacts_subtitle, label: "«Контакты»: подзаголовок", type: string }
+      - { name: telegram_link, label: "Ссылка на Telegram", type: string }
+      - { name: whatsapp_link, label: "Ссылка на WhatsApp (оставьте пустым, чтобы скрыть)", type: string }
+      - { name: email, label: "Email", type: string }
+      - { name: contacts_note, label: "Примечание под контактами", type: string }
 
   # --- 2. ОБО МНЕ ---
   - name: about
@@ -28,38 +56,62 @@ content:
     type: file
     path: "about.html"
     fields:
-      - name: meta_title
-        label: "SEO Заголовок"
-        type: string
-      - name: body
-        label: "Текст страницы (HTML)"
-        type: text
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: meta_description, label: "SEO: Описание", type: text }
+      - { name: about_title, label: "Заголовок", type: string }
+      - { name: about_subtitle, label: "Подзаголовок", type: string }
+      - { name: about_text_1, label: "Текст (абзац 1)", type: text }
+      - { name: about_text_2, label: "Текст (абзац 2)", type: text }
 
-  # --- 3. УСЛУГИ И ЦЕНЫ ---
-  - name: services
-    label: "Услуги и расценки"
-    type: file
-    path: "services.html"
-    fields:
-      - name: meta_title
-        label: "SEO Заголовок"
-        type: string
-      - name: body
-        label: "Текст страницы (HTML)"
-        type: text
-
-  # --- 4. КАК Я РАБОТАЮ (МЕТОДЫ) ---
+  # --- 3. МЕТОДЫ ---
   - name: methods
-    label: "Как я работаю"
+    label: "Методы работы"
     type: file
     path: "methods.html"
     fields:
-      - name: meta_title
-        label: "SEO Заголовок"
-        type: string
-      - name: body
-        label: "Текст страницы (HTML)"
-        type: text
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: meta_description, label: "SEO: Описание", type: text }
+      - { name: header_title, label: "Заголовок страницы", type: string }
+      - { name: header_subtitle, label: "Подзаголовок страницы", type: text }
+      - name: methods
+        label: "Методы"
+        type: list
+        fields:
+          - { name: number, label: "Номер (напр. 01)", type: string }
+          - { name: title, label: "Название метода", type: string }
+          - { name: intro, label: "Описание (абзацы)", type: list }
+          - { name: helps_with, label: "С чем помогает (список)", type: list }
+          - { name: cta_text, label: "Текст кнопки записи", type: string }
+          - { name: side_title, label: "Заголовок бокового блока", type: string }
+      - { name: final_title, label: "Заключительный блок: заголовок", type: string }
+      - { name: final_text, label: "Заключительный блок: текст", type: text }
+      - { name: final_button, label: "Заключительный блок: кнопка", type: string }
+
+  # --- 4. УСЛУГИ И ЦЕНЫ ---
+  - name: services
+    label: "Услуги"
+    type: file
+    path: "services.html"
+    fields:
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: meta_description, label: "SEO: Описание", type: text }
+      - { name: header_title, label: "Заголовок страницы", type: string }
+      - { name: header_subtitle, label: "Подзаголовок", type: string }
+      - { name: intro_text, label: "Вводный текст", type: text }
+      - name: services
+        label: "Список услуг"
+        type: list
+        fields:
+          - { name: title, label: "Название услуги", type: string }
+          - { name: description, label: "Описание", type: text }
+          - { name: duration, label: "Длительность", type: string }
+          - { name: price, label: "Цена (необязательно)", type: string }
+      - { name: how_it_works_title, label: "«Как проходит работа»: заголовок", type: string }
+      - { name: how_it_works_steps, label: "Шаги работы (список)", type: list }
+      - { name: services_image, label: "Фото", type: image }
+      - { name: cta_title, label: "Блок записи: заголовок", type: string }
+      - { name: cta_text, label: "Блок записи: текст", type: text }
+      - { name: cta_button, label: "Блок записи: текст кнопки", type: string }
 
   # --- 5. КОНТАКТЫ ---
   - name: contacts
@@ -67,29 +119,56 @@ content:
     type: file
     path: "contacts.html"
     fields:
-      - name: meta_title
-        label: "SEO Заголовок"
-        type: string
-      - name: body
-        label: "Текст страницы (HTML)"
-        type: text
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: meta_description, label: "SEO: Описание", type: text }
+      - { name: header_title, label: "Заголовок страницы", type: string }
+      - { name: header_subtitle, label: "Подзаголовок", type: string }
+      - { name: phone, label: "Телефон", type: string }
+      - { name: location, label: "Локация / формат", type: string }
+      - { name: telegram_label, label: "Telegram: подпись", type: string }
+      - { name: telegram_link, label: "Telegram: ссылка", type: string }
+      - { name: channel_label, label: "Канал: подпись", type: string }
+      - { name: channel_link, label: "Канал: ссылка", type: string }
+      - { name: email_label, label: "Email: подпись", type: string }
+      - { name: email_link, label: "Email: ссылка (mailto:...)", type: string }
+      - { name: response_time, label: "Текст про время ответа", type: string }
+      - { name: form_title, label: "Форма: заголовок", type: string }
+      - { name: form_description, label: "Форма: описание", type: text }
+      - { name: form_submit_button, label: "Форма: текст кнопки", type: string }
+      - { name: contact_image, label: "Фото", type: image }
 
-  # --- 6. БЛОГ ---
-  - name: blog
-    label: "Блог"
+  # --- 6. БЛОГ: ГЛАВНАЯ СТРАНИЦА СПИСКА ---
+  - name: blog_index
+    label: "Блог — список статей на странице /blog"
+    type: file
+    path: "blog.html"
+    fields:
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: blog_title, label: "Заголовок страницы", type: string }
+      - { name: blog_subtitle, label: "Подзаголовок", type: string }
+      - name: blog_posts
+        label: "Карточки статей (порядок = порядок на странице)"
+        type: list
+        fields:
+          - { name: title, label: "Заголовок карточки", type: string }
+          - { name: description, label: "Краткое описание", type: text }
+          - { name: url, label: "Ссылка на статью (напр. blog/stress.html)", type: string }
+          - { name: tags, label: "Теги", type: list }
+
+  # --- 7. СТАТЬИ БЛОГА (заголовок, дата — текст статьи пока правится в GitHub) ---
+  - name: blog_articles
+    label: "Статьи блога — заголовок и дата"
     type: collection
-    path: ""
-    filename: "blog-{slug}.html"
-    exclude: ["blog.html"]
+    path: "blog"
+    filename: "*.html"
     view:
       fields: [title, date]
     fields:
-      - name: title
-        label: "Заголовок статьи"
-        type: string
-      - name: date
-        label: "Дата"
-        type: date
-      - name: body
-        label: "Текст статьи"
-        type: text
+      - { name: title, label: "Заголовок статьи", type: string }
+      - { name: date, label: "Дата публикации", type: date }
+
+  # --- 8. ЮРИДИЧЕСКАЯ СТРАНИЦА ---
+  - name: privacy
+    label: "Политика конфиденциальности"
+    type: file
+    path: "privacy.html"

@@ -879,3 +879,35 @@ a { color: inherit; }
   .nav-menu { display: none; }
   .mobile-menu-btn { display: block; }
 }
+
+/* =============================================
+   METHOD-BLOCK (methods.html)
+   ============================================= */
+.method-block { padding: 80px 0; background: var(--bg-white); }
+.method-block--dark { background: var(--bg-dark); color: var(--text-on-dark); }
+.method-block__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.method-block--dark .method-block__grid > div:first-child { order: 2; }
+.method-block--dark .method-block__side { order: 1; }
+.method-block__number { font-family: var(--font-display); font-size: 64px; font-weight: 600; color: var(--accent); opacity: 0.35; line-height: 1; }
+.method-block__title { font-family: var(--font-display); font-size: 32px; margin: 8px 0 24px; }
+.method-block p { margin-bottom: 16px; font-size: 16px; line-height: 1.7; }
+.method-block--dark p { color: var(--text-on-dark-muted); }
+.method-block:not(.method-block--dark) p { color: var(--text-muted); }
+.method-block__subheading { font-family: var(--font-display); font-size: 18px; margin: 24px 0 12px; color: var(--accent); }
+.method-block__list { list-style: none; margin-bottom: 24px; }
+.method-block__list li { margin-bottom: 8px; font-size: 15px; }
+.method-block__side {
+  padding: 40px; border-radius: var(--radius-lg);
+  background: var(--bg); border: 1px solid var(--border);
+}
+.method-block--dark .method-block__side { background: rgba(255,255,255,0.05); border-color: var(--border-dark); }
+.method-block__side h3 { font-family: var(--font-display); font-size: 20px; margin-bottom: 20px; }
+.method-block__side .steps-list { gap: 20px; }
+.method-block__side .process-step h3 { font-size: 16px; margin-bottom: 4px; }
+.method-block__side .process-step p { font-size: 14px; margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .method-block__grid { grid-template-columns: 1fr; }
+  .method-block--dark .method-block__grid > div:first-child,
+  .method-block--dark .method-block__side { order: 0; }
+}

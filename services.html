@@ -1,83 +1,138 @@
+---
+meta_title: "Услуги — Надежда Литвинова | Психолог"
+meta_description: "Индивидуальная психологическая помощь, EMDR-терапия, работа с травмой и ПТСР, тревогой, выгоранием. Онлайн по всему миру."
+
+header_tag: "Услуги"
+header_title: "Услуги"
+header_subtitle: "Индивидуальный подход к каждому запросу"
+intro_text: "Я предлагаю различные форматы работы, чтобы вы могли выбрать тот, который подходит именно вам. Все консультации проводятся онлайн."
+
+services:
+  - title: "Индивидуальная консультация"
+    description: "Личная работа с вашим запросом в комфортном темпе. Подходит для работы с тревогой, депрессией, стрессом, отношениями и личностным ростом."
+    duration: "50 минут"
+    price: ""
+  - title: "EMDR-терапия"
+    description: "Специализированный метод для работы с травмой, ПТСР, фобиями, паническими атаками и сложными воспоминаниями."
+    duration: "60-90 минут"
+    price: ""
+  - title: "Работа с травмой и ПТСР"
+    description: "Комплексный подход к преодолению последствий психологической травмы с использованием EMDR и других доказательных методов."
+    duration: "Индивидуально"
+    price: ""
+  - title: "Помощь при тревоге и панических атаках"
+    description: "Понимание причин тревоги, развитие навыков саморегуляции и постепенное освобождение от панических состояний."
+    duration: "50 минут"
+    price: ""
+  - title: "Поддержка при выгорании"
+    description: "Восстановление ресурсов, поиск баланса, возвращение смысла и радости в профессиональную деятельность."
+    duration: "50 минут"
+    price: ""
+  - title: "Консультации для пар"
+    description: "Помощь в преодолении кризисов, улучшение коммуникации, восстановление близости и взаимопонимания."
+    duration: "80 минут"
+    price: ""
+
+how_it_works_title: "Как проходит работа"
+how_it_works_steps:
+  - "Первичная консультация: знакомство, определение запроса, план работы"
+  - "Регулярные встречи: работа с запросом, развитие навыков, поддержка изменений"
+  - "Завершение: закрепление результатов, план дальнейшей поддержки"
+
+services_image: "/images/photo-session.jpg"
+cta_title: "Готовы начать?"
+cta_text: "Запишитесь на первую консультацию, и мы вместе найдём лучший путь для вас."
+cta_button: "Записаться"
+cta_link: "contacts.html#contact-form"
+---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-content="seo_title">Услуги — Надежда Литвинова | Психолог</title>
-    <meta name="description" data-content="seo_description" content="Индивидуальная психологическая помощь, EMDR-терапия, работа с травмой и ПТСР.">
-    <meta name="keywords" content="услуги психолога, EMDR терапия, психолог онлайн, консультация">
-    <link rel="canonical" href="https://litvinova-psy.ru/services.html">
-    <meta name="robots" content="index, follow">
-
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" 
-        integrity="sha384-+pxiN6T7yvpryuJmE1gM9PX7yQit15auDb+ZwwvJOd/4be2Cie5/IuVXgQb/S9du" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js" 
-        integrity="sha384-cwS6YdhLI7XS60eoDiC+egV0qHp8zI+Cms46R0nbn8JrmoAzV9uFL60etMZhAnSu" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.meta_title | default: 'Услуги — Надежда Литвинова' }}</title>
+  <meta name="description" content="{{ page.meta_description }}">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="index.html" class="logo">Надежда Литвинова</a>
-            <nav class="main-nav">
-                <a href="index.html">Главная</a>
-                <a href="about.html">Обо мне</a>
-                <a href="services.html">Услуги</a>
-                <a href="contacts.html">Контакты</a>
-                <a href="blog.html">Блог</a>
-            </nav>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo">Надежда Литвинова</a>
+      <nav class="header__nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="about.html" class="nav__link">Обо мне</a>
+        <a href="methods.html" class="nav__link">Методы</a>
+        <a href="services.html" class="nav__link">Услуги</a>
+        <a href="blog.html" class="nav__link">Блог</a>
+        <a href="contacts.html" class="nav__link">Контакты</a>
+        <a href="contacts.html#contact-form" class="btn btn--small btn--outline">Записаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="services-hero">
+    <div class="container">
+      {% if page.header_tag %}<span class="header-tag">{{ page.header_tag }}</span>{% endif %}
+      <h1 class="header-subtitle">{{ page.header_title | default: 'Услуги' }}</h1>
+      {% if page.header_subtitle %}<p class="section-subtitle">{{ page.header_subtitle }}</p>{% endif %}
+      {% if page.intro_text %}<p class="intro-text">{{ page.intro_text }}</p>{% endif %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        {% for item in page.services %}
+        <div class="service-card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          {% if item.duration %}<span class="service-duration">{{ item.duration }}</span>{% endif %}
+          {% if item.price %}<span class="service-price">{{ item.price }}</span>{% endif %}
         </div>
-    </header>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <section class="services-hero">
-            <div class="container">
-                <span class="header-tag" data-content="header_tag">Услуги</span>
-                <h1 data-content="header_title">Услуги</h1>
-                <p class="header-subtitle" data-content="header_subtitle">Индивидуальный подход к каждому запросу</p>
-                <p class="intro-text" data-content="intro_text">Я предлагаю различные форматы работы, чтобы вы могли выбрать тот, который подходит именно вам. Все консультации проводятся онлайн.</p>
-            </div>
-        </section>
-
-        <section class="services-list">
-            <div class="container">
-                <div class="services-grid" data-content="services"></div>
-            </div>
-        </section>
-
-        <section class="how-it-works">
-            <div class="container">
-                <h2 data-content="how_it_works_title">Как проходит работа</h2>
-                <div class="steps-list" data-content="how_it_works_steps"></div>
-            </div>
-        </section>
-
-        <section class="services-image-section">
-            <div class="container">
-                <img data-content-image="services_image" src="images/photo-session.jpg" alt="Психологическая консультация" loading="lazy">
-            </div>
-        </section>
-
-        <section class="cta">
-            <div class="container">
-                <h2 data-content="cta_title">Готовы начать?</h2>
-                <p data-content="cta_text">Запишитесь на первую консультацию, и мы вместе найдём лучший путь для вас.</p>
-                <a href="contacts.html" class="btn btn-primary" data-content="cta_button">Записаться</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Надежда Литвинова. Все права защищены.</p>
-            <div class="footer-links">
-                <a href="privacy.html">Политика конфиденциальности</a>
-                <a href="contacts.html">Контакты</a>
-            </div>
+  {% if page.how_it_works_steps %}
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header"><h2 class="section-title">{{ page.how_it_works_title | default: 'Как проходит работа' }}</h2></div>
+      <div class="steps-list">
+        {% for step in page.how_it_works_steps %}
+        <div class="process-step">
+          <span class="step-number">{{ forloop.index }}</span>
+          <div><p>{{ step }}</p></div>
         </div>
-    </footer>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
 
-    <script src="content-loader.js"></script>
+  {% if page.services_image %}
+  <section class="services-image-section">
+    <div class="container"><img src="{{ page.services_image }}" alt="{{ page.header_title }}"></div>
+  </section>
+  {% endif %}
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h2>{{ page.cta_title | default: 'Готовы начать?' }}</h2>
+        {% if page.cta_text %}<p>{{ page.cta_text }}</p>{% endif %}
+        <a href="{{ page.cta_link | default: 'contacts.html' }}" class="btn btn--primary">{{ page.cta_button | default: 'Записаться' }}</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <p class="footer__copy">© 2026 Надежда Литвинова. Все права защищены.</p>
+    </div>
+  </footer>
 </body>
 </html>

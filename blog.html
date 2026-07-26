@@ -1,11 +1,83 @@
+---
+meta_title: "Блог | Психолог Надежда Литвинова"
+meta_description: "Полезные материалы о психологии, психотерапии и психическом здоровье."
+blog_title: "Блог"
+blog_subtitle: "Полезные материалы о психологии, психотерапии и психическом здоровье"
+
+blog_posts:
+  - title: "Стресс: как понять и справиться"
+    description: "Что такое стресс, как он влияет на организм и какие простые техники помогают снизить его разрушительное влияние."
+    url: "blog/stress.html"
+    tags: ["Стресс", "Психология"]
+  - title: "Что такое EMDR и как он помогает при травме"
+    description: "EMDR — один из самых эффективных методов работы с психологической травмой. Узнайте, как проходит терапия и кому она подходит."
+    url: "blog/emdr-trauma.html"
+    tags: ["EMDR", "Травма"]
+  - title: "Эмоциональное выгорание: признаки и способы восстановления"
+    description: "Как распознать выгорание на ранней стадии и что делать, чтобы восстановить силы и вернуть радость жизни."
+    url: "blog/emotional-burnout.html"
+    tags: ["Выгорание", "Самопомощь"]
+  - title: "7 признаков тревожного расстройства, которые нельзя игнорировать"
+    description: "Тревога может проявляться по-разному. Узнайте ключевые симптомы, требующие внимания специалиста."
+    url: "blog/anxiety-signs.html"
+    tags: ["Тревога", "Симптомы"]
+  - title: "Brainspotting: что это и как работает"
+    description: "Brainspotting — мощный метод работы с травмой через точки зрительной фиксации."
+    url: "blog/brainspotting-chto-eto.html"
+    tags: ["Brainspotting", "Травма"]
+  - title: "Тревога: как справиться самостоятельно"
+    description: "Практические техники и упражнения для снижения тревожности в повседневной жизни."
+    url: "blog/trevoga-kak-spravitsya.html"
+    tags: ["Тревога", "Самопомощь"]
+  - title: "ПТСР: признаки, симптомы и современные методы лечения"
+    description: "Посттравматическое стрессовое расстройство: как распознать и какие методы терапии эффективны."
+    url: "blog/ptsd-symptoms-treatment.html"
+    tags: ["Травма", "Стресс"]
+  - title: "Токсичные отношения: 10 признаков и как выйти"
+    description: "Как распознать токсичные паттерны в отношениях и выстроить здоровые границы."
+    url: "blog/toxic-relationships.html"
+    tags: ["Отношения"]
+  - title: "Треугольник Карпмана в отношениях: как выйти из ролей"
+    description: "Жертва, спасатель, преследователь — как разорвать деструктивный круг в общении."
+    url: "blog/karpman-triangle.html"
+    tags: ["Отношения"]
+  - title: "Как выбрать психолога: 5 важных критериев"
+    description: "На что обратить внимание при выборе специалиста, чтобы терапия была эффективной."
+    url: "blog/choose-psychologist.html"
+    tags: ["Советы"]
+  - title: "Привязанность и тревога: почему мы боимся потерять близких"
+    description: "Тревожная привязанность: причины, проявления и путь к безопасным отношениям."
+    url: "blog/anxious-attachment.html"
+    tags: ["Тревога", "Отношения"]
+  - title: "Brainspotting: работа с травмой через точки взгляда"
+    description: "Как метод Brainspotting помогает переработать травматический опыт через визуальную фиксацию."
+    url: "blog/brainspotting-trauma.html"
+    tags: ["Brainspotting", "Травма"]
+  - title: "Что такое ММИЛ: метод исследования через метафоры"
+    description: "Метафорические ассоциативные карты как инструмент диагностики и терапии."
+    url: "blog/mmil-diagnosis.html"
+    tags: ["Диагностика"]
+  - title: "Как справиться с панической атакой: 5 техник"
+    description: "Проверенные способы остановить паническую атаку и снизить тревожность."
+    url: "blog/panic-attack-techniques.html"
+    tags: ["Тревога"]
+  - title: "Депрессия: 5 признаков и как лечится"
+    description: "Как отличить депрессию от просто плохого настроения и где искать помощь."
+    url: "blog/depression-signs-treatment.html"
+    tags: ["Депрессия"]
+  - title: "Стресс и современная жизнь"
+    description: "Актуальные подходы к управлению стрессом в условиях высоких нагрузок."
+    url: "blog/2026-07-12-stress.html"
+    tags: ["Стресс"]
+---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог | Надежда Литвинова — Психолог</title>
-    <meta name="description" content="Полезные статьи о психотерапии, EMDR, стрессе, выгорании и ментальном здоровье.">
-    <link rel="stylesheet" href="style.css">
+    <title>{{ page.meta_title | default: 'Блог — Надежда Литвинова' }}</title>
+    <meta name="description" content="{{ page.meta_description }}">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -29,187 +101,22 @@
 
     <section style="padding: 120px 0 60px 0; background: var(--bg-white);">
         <div class="container">
-            <h1 class="section-title" style="text-align: left; margin-bottom: 15px;">Блог</h1>
-            <p style="color: var(--text-muted); font-size: 18px; margin-bottom: 50px;">Полезные материалы о психологии, психотерапии и психическом здоровье</p>
+            <h1 class="section-title" style="text-align: left; margin-bottom: 15px;">{{ page.blog_title | default: 'Блог' }}</h1>
+            <p style="color: var(--text-muted); font-size: 18px; margin-bottom: 50px;">{{ page.blog_subtitle }}</p>
 
             <div class="blog-grid">
-
+                {% for post in page.blog_posts %}
                 <article class="card">
                     <div>
                         <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Стресс</span>
+                            {% for tag in post.tags %}<span class="badge">{{ tag }}</span>{% endfor %}
                         </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Стресс</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Что такое стресс, как он влияет на организм и как с ним справляться. Статья психолога Надежды Литвиновой.</p>
+                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">{{ post.title }}</h2>
+                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">{{ post.description }}</p>
                     </div>
-                    <a href="blog/stress.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
+                    <a href="{{ post.url }}" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
                 </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Травма</span><span class="badge">EMDR</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Что такое EMDR и как он помогает при травме</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">EMDR — эффективный метод работы с травмой и ПТСР. Узнайте, как проходит терапия, кому она подходит и что говорят исследования.</p>
-                    </div>
-                    <a href="blog/emdr-trauma.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Выгорание</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Эмоциональное выгорание: признаки и способы восстановления</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Как распознать выгорание на ранней стадии и что делать, чтобы восстановить силы и вернуть радость жизни.</p>
-                    </div>
-                    <a href="blog/emotional-burnout.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Тревога</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">7 признаков тревожного расстройства, которые нельзя игнорировать</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Тревога может проявляться не только мыслями, но и телесными симптомами. На что обратить внимание и когда обращаться к специалисту.</p>
-                    </div>
-                    <a href="blog/anxiety-signs.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Травма</span><span class="badge">Brainspotting</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Brainspotting: что это и как работает метод, которого нет у других | Надежда Литвинова</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Brainspotting — метод работы с травмой через точку фиксации взгляда. Исследования Horton, Glantschnig, Foo. В России редкая компетенция. ...</p>
-                    </div>
-                    <a href="blog/brainspotting-chto-eto.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Тревога</span><span class="badge">Brainspotting</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Как справиться с тревогой: 5 проверенных техник от психолога | Надежда Литвинова</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">5 эффективных техник от психолога для снижения тревоги. Дыхательные упражнения, когнитивные методы, Brainspotting. Проверено на 500+ клие...</p>
-                    </div>
-                    <a href="blog/trevoga-kak-spravitsya.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Травма</span><span class="badge">Стресс</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">ПТСР: признаки, симптомы и современные методы лечения</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Посттравматическое стрессовое расстройство — что это, 4 основных симптома, когда обращаться за помощью и как лечится. Подробный гид.</p>
-                    </div>
-                    <a href="blog/ptsd-symptoms-treatment.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Отношения</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Токсичные отношения: 10 признаков и как выйти</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Токсичные отношения — 10 признаков, почему сложно уйти и 5 шагов к свободе. Практическое руководство.</p>
-                    </div>
-                    <a href="blog/toxic-relationships.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">EMDR</span><span class="badge">Отношения</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Треугольник Карпмана в отношениях: как выйти из роли жертвы | Надежда Литвинова</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Что такое треугольник Карпмана и как он разрушает отношения. Роли жертвы, спасателя и преследователя. Как выйти из деструктивных паттерно...</p>
-                    </div>
-                    <a href="blog/karpman-triangle.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Советы</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Как выбрать психолога: 5 важных критериев</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">На что обращать внимание при выборе психолога, чтобы найти именно того специалиста, который вам подходит.</p>
-                    </div>
-                    <a href="blog/choose-psychologist.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Тревога</span><span class="badge">EMDR</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Привязанность и тревога: почему мы боимся потерять партнёра | Надежда Литвинова</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Тревожная привязанность в отношениях: почему возникает, как проявляется, как влияет на пару. Как EMDR и интегративный подход помогают соз...</p>
-                    </div>
-                    <a href="blog/anxious-attachment.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Травма</span><span class="badge">EMDR</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Brainspotting: что это и как работает метод точек фиксации взгляда</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Brainspotting — метод психотерапии, использующий точки фиксации взгляда для работы с травмой. Узнайте, как проходит сессия и чем отличает...</p>
-                    </div>
-                    <a href="blog/brainspotting-trauma.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Диагностика</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Что такое ММИЛ: метод исследования через метафоры</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Как метафорические ассоциативные карты помогают заглянуть в бессознательное и найти новые решения.</p>
-                    </div>
-                    <a href="blog/mmil-diagnosis.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Тревога</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Как справиться с панической атакой: 5 техник, которые работают</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Паническая атака — что происходит в организме и 5 проверенных техник для быстрого облегчения. Практическое руководство.</p>
-                    </div>
-                    <a href="blog/panic-attack-techniques.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Депрессия</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Депрессия: 5 признаков и как лечится</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Депрессия — это не плохое настроение. 5 основных признаков, когда обращаться за помощью и современные методы лечения.</p>
-                    </div>
-                    <a href="blog/depression-signs-treatment.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <span class="badge">Стресс</span>
-                        </div>
-                        <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--text); margin-bottom: 12px; line-height: 1.3;">Стресс</h2>
-                        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Стресс. Статья психолога Надежды Литвиновой.</p>
-                    </div>
-                    <a href="blog/2026-07-12-stress.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 15px;">Читать статью &rarr;</a>
-                </article>
-
+                {% endfor %}
             </div>
         </div>
     </section>
