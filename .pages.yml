@@ -155,9 +155,9 @@ content:
           - { name: url, label: "Ссылка на статью (напр. blog/stress.html)", type: string }
           - { name: tags, label: "Теги", type: list }
 
-  # --- 7. СТАТЬИ БЛОГА (заголовок, дата — текст статьи пока правится в GitHub) ---
+  # --- 7. СТАТЬИ БЛОГА ---
   - name: blog_articles
-    label: "Статьи блога — заголовок и дата"
+    label: "Статьи блога"
     type: collection
     path: "blog"
     filename: "*.html"
@@ -166,9 +166,32 @@ content:
     fields:
       - { name: title, label: "Заголовок статьи", type: string }
       - { name: date, label: "Дата публикации", type: date }
+      - { name: description, label: "Краткое описание (для карточки в списке)", type: text }
+      - { name: tags, label: "Теги", type: list }
+      - { name: body, label: "Текст статьи (HTML)", type: rich-text }
 
-  # --- 8. ЮРИДИЧЕСКАЯ СТРАНИЦА ---
+  # --- 9. ЮРИДИЧЕСКАЯ СТРАНИЦА ---
   - name: privacy
     label: "Политика конфиденциальности"
     type: file
     path: "privacy.html"
+
+  # --- 10. БЕСПЛАТНЫЕ МАТЕРИАЛЫ (чек-листы) ---
+  - name: checklists_index
+    label: "Материалы — список карточек на странице /checklists"
+    type: file
+    path: "checklists.html"
+    fields:
+      - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
+      - { name: page_title, label: "Заголовок страницы", type: string }
+      - { name: page_subtitle, label: "Подзаголовок", type: string }
+      - name: items
+        label: "Карточки материалов"
+        type: list
+        fields:
+          - { name: icon, label: "Иконка (эмодзи)", type: string }
+          - { name: title, label: "Заголовок карточки", type: string }
+          - { name: description, label: "Описание", type: text }
+          - { name: features, label: "Список пунктов", type: list }
+          - { name: url, label: "Ссылка на файл материала", type: string }
+          - { name: button_text, label: "Текст кнопки", type: string }

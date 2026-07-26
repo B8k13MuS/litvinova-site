@@ -1,3 +1,36 @@
+---
+meta_title: "Бесплатные материалы | Надежда Литвинова"
+page_title: "Бесплатные материалы"
+page_subtitle: "Практические чек-листы и гайды для вашего психологического здоровья"
+items:
+  - icon: "😰"
+    title: "Чек-лист: 7 признаков тревоги"
+    description: "Узнайте, какие сигналы тела и разума указывают на тревожное расстройство."
+    features:
+      - "Физические симптомы"
+      - "Поведенческие изменения"
+      - "Когда обращаться к специалисту"
+    url: "checklists/anxiety-checklist.html"
+    button_text: "📥 Скачать чек-лист"
+  - icon: "🔥"
+    title: "Гайд: Как распознать выгорание"
+    description: "Ранние признаки эмоционального выгорания и шаги к восстановлению."
+    features:
+      - "3 компонента выгорания"
+      - "7 ранних признаков"
+      - "План действий"
+    url: "checklists/burnout-guide.html"
+    button_text: "📥 Скачать гайд"
+  - icon: "🫁"
+    title: "Техника: Дыхание при панической атаке"
+    description: "Карточка с техникой 4-7-8 для быстрого облегчения."
+    features:
+      - "Пошаговая инструкция"
+      - "Когда применять"
+      - "Дополнительные техники"
+    url: "checklists/breathing-technique.html"
+    button_text: "📥 Скачать технику"
+---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -110,38 +143,25 @@
 
     <div class="page-header">
         <div class="container">
-            <h1>Бесплатные материалы</h1>
-            <p>Практические чек-листы и гайды для вашего психологического здоровья</p>
+            <h1 style="font-family: var(--font-display);">{{ page.page_title }}</h1>
+            <p>{{ page.page_subtitle }}</p>
         </div>
     </div>
 
     <div class="container">
         <div class="checklists-grid">
+            {% for item in page.items %}
             <div class="checklist-card">
-                <div class="icon">😰</div>
-                <h3>Чек-лист: 7 признаков тревоги</h3>
-                <p>Узнайте, какие сигналы тела и разума указывают на тревожное расстройство.</p>
+                <div class="icon">{{ item.icon }}</div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
                 <ul>
-                    <li>Физические симптомы</li>
-                    <li>Поведенческие изменения</li>
-                    <li>Когда обращаться к специалисту</li>
+                    {% for f in item.features %}<li>{{ f }}</li>{% endfor %}
                 </ul>
-                <a href="checklists/anxiety-checklist.html" class="download-btn">📥 Скачать чек-лист</a>
+                <a href="{{ item.url }}" class="download-btn">{{ item.button_text }}</a>
             </div>
-            <div class="checklist-card">
-                <div class="icon">🔥</div>
-                <h3>Гайд: Как распознать выгорание</h3>
-                <p>Ранние признаки эмоционального выгорания и шаги к восстановлению.</p>
-                <ul>
-                    <li>3 компонента выгорания</li>
-                    <li>7 ранних признаков</li>
-                    <li>План действий</li>
-                </ul>
-                <a href="checklists/burnout-guide.html" class="download-btn">📥 Скачать гайд</a>
-            </div>
-            <div class="checklist-card">
-                <div class="icon">🫁</div>
-                <h3>Техника: Дыхание при панической атаке</h3>
+            {% endfor %}
+<h3>Техника: Дыхание при панической атаке</h3>
                 <p>Карточка с техникой 4-7-8 для быстрого облегчения.</p>
                 <ul>
                     <li>Пошаговая инструкция</li>
