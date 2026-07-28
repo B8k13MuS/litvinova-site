@@ -8,6 +8,7 @@ content:
     label: "Главная страница"
     type: file
     path: "index.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: meta_description, label: "SEO: Описание", type: text }
@@ -55,6 +56,7 @@ content:
     label: "Обо мне"
     type: file
     path: "about.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: meta_description, label: "SEO: Описание", type: text }
@@ -68,6 +70,7 @@ content:
     label: "Методы работы"
     type: file
     path: "methods.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: meta_description, label: "SEO: Описание", type: text }
@@ -92,6 +95,7 @@ content:
     label: "Услуги"
     type: file
     path: "services.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: meta_description, label: "SEO: Описание", type: text }
@@ -118,6 +122,7 @@ content:
     label: "Контакты"
     type: file
     path: "contacts.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: meta_description, label: "SEO: Описание", type: text }
@@ -142,6 +147,7 @@ content:
     label: "Блог — список статей на странице /blog"
     type: file
     path: "blog.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: blog_title, label: "Заголовок страницы", type: string }
@@ -160,6 +166,7 @@ content:
     label: "Статьи блога"
     type: collection
     path: "blog"
+    format: yaml-frontmatter
     filename: "*.html"
     view:
       fields: [title, date]
@@ -175,12 +182,14 @@ content:
     label: "Политика конфиденциальности"
     type: file
     path: "privacy.html"
+    format: yaml-frontmatter
 
   # --- 10. БЕСПЛАТНЫЕ МАТЕРИАЛЫ (чек-листы) ---
   - name: checklists_index
     label: "Материалы — список карточек на странице /checklists"
     type: file
     path: "checklists.html"
+    format: yaml-frontmatter
     fields:
       - { name: meta_title, label: "SEO: Заголовок страницы", type: string }
       - { name: page_title, label: "Заголовок страницы", type: string }
@@ -201,6 +210,7 @@ content:
     label: "Материалы — содержимое отдельных файлов"
     type: collection
     path: "checklists"
+    format: yaml-frontmatter
     filename: "*.html"
     view:
       fields: [title]
