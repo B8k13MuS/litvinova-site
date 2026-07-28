@@ -71,7 +71,7 @@ contacts_note: "Обычно я отвечаю в течение 2-3 часов 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=2">
 </head>
 <body>
 
@@ -130,7 +130,7 @@ contacts_note: "Обычно я отвечаю в течение 2-3 часов 
       <div class="hero__media">
         {% if page.hero_image %}
           <img 
-            src="{{ page.hero_image }}" 
+            src="{{ page.hero_image }}?v=2" 
             alt="{{ page.hero_image_alt | default: page.hero_title }}" 
             class="hero__img"
             loading="eager"
