@@ -195,3 +195,15 @@ content:
           - { name: features, label: "Список пунктов", type: list }
           - { name: url, label: "Ссылка на файл материала", type: string }
           - { name: button_text, label: "Текст кнопки", type: string }
+
+  # --- 11. ОТДЕЛЬНЫЕ ФАЙЛЫ ЧЕК-ЛИСТОВ ---
+  - name: checklist_files
+    label: "Материалы — содержимое отдельных файлов"
+    type: collection
+    path: "checklists"
+    filename: "*.html"
+    view:
+      fields: [title]
+    fields:
+      - { name: title, label: "Заголовок", type: string }
+      - { name: body, label: "Содержимое (HTML)", type: rich-text }
