@@ -47,7 +47,6 @@ content:
       - { name: contacts_title, label: "«Контакты»: заголовок", type: string }
       - { name: contacts_subtitle, label: "«Контакты»: подзаголовок", type: string }
       - { name: telegram_link, label: "Ссылка на Telegram", type: string }
-      - { name: whatsapp_link, label: "Ссылка на WhatsApp (оставьте пустым, чтобы скрыть)", type: string }
       - { name: email, label: "Email", type: string }
       - { name: contacts_note, label: "Примечание под контактами", type: string }
 
