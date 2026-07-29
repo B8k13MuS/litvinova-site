@@ -30,6 +30,23 @@ content:
       - { name: about_experience_label, label: "Подпись под числом лет", type: string }
       - { name: about_clients_count, label: "Клиентов (число)", type: string }
       - { name: about_clients_label, label: "Подпись под числом клиентов", type: string }
+      - { name: issues_title, label: "«С чем я работаю»: заголовок", type: string }
+      - { name: issues_subtitle, label: "«С чем я работаю»: подзаголовок", type: string }
+      - name: issues
+        label: "Карточки «С чем я работаю»"
+        type: list
+        fields:
+          - { name: title, label: "Название", type: string }
+          - { name: description, label: "Описание", type: text }
+      - { name: process_title, label: "«Как проходит работа»: заголовок", type: string }
+      - { name: process_subtitle, label: "«Как проходит работа»: подзаголовок", type: string }
+      - name: process_steps
+        label: "Шаги процесса"
+        type: list
+        fields:
+          - { name: number, label: "Номер (напр. 01)", type: string }
+          - { name: title, label: "Название шага", type: string }
+          - { name: description, label: "Описание", type: text }
       - { name: pricing_title, label: "«Цены»: заголовок", type: string }
       - { name: pricing_subtitle, label: "«Цены»: подзаголовок", type: string }
       - name: rates
@@ -44,11 +61,27 @@ content:
           - { name: is_popular, label: "Отметить как популярный", type: boolean }
           - { name: btn_text, label: "Текст кнопки", type: string }
           - { name: btn_link, label: "Ссылка кнопки", type: string }
+      - { name: testimonials_title, label: "«Отзывы»: заголовок", type: string }
+      - { name: testimonials_subtitle, label: "«Отзывы»: подзаголовок / примечание", type: string }
+      - name: testimonials
+        label: "Отзывы клиентов (публикуйте только с согласия клиента)"
+        type: list
+        fields:
+          - { name: quote, label: "Текст отзыва", type: text }
+          - { name: author, label: "Имя (по желанию — можно оставить только имя и возраст)", type: string }
+      - { name: faq_title, label: "«Частые вопросы»: заголовок", type: string }
+      - name: faq_items
+        label: "Вопросы и ответы"
+        type: list
+        fields:
+          - { name: question, label: "Вопрос", type: string }
+          - { name: answer, label: "Ответ", type: text }
       - { name: contacts_title, label: "«Контакты»: заголовок", type: string }
       - { name: contacts_subtitle, label: "«Контакты»: подзаголовок", type: string }
       - { name: telegram_link, label: "Ссылка на Telegram", type: string }
       - { name: email, label: "Email", type: string }
       - { name: contacts_note, label: "Примечание под контактами", type: string }
+      - { name: contacts_form_action, label: "Formspree endpoint для формы записи", type: string }
 
   # --- 2. ОБО МНЕ ---
   - name: about

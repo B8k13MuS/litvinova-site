@@ -25,6 +25,40 @@ about_experience_label: "лет практики"
 about_clients_count: "500+"
 about_clients_label: "клиентов"
 
+# ISSUES SECTION — "С ЧЕМ Я РАБОТАЮ"
+issues_title: "С чем я работаю"
+issues_subtitle: "Если узнаёте себя хотя бы в одном пункте — это уже повод обратиться"
+issues:
+  - title: "Тревога"
+    description: "Постоянное беспокойство, которое мешает быть в настоящем моменте и спокойно спать."
+  - title: "Страхи"
+    description: "Состояния, которые не дают действовать, выбирать и двигаться вперёд."
+  - title: "Травматичный опыт"
+    description: "Болезненные события прошлого, которые продолжают влиять на жизнь сейчас."
+  - title: "Выгорание"
+    description: "Хроническая усталость, апатия и потеря интереса к тому, что раньше радовало."
+  - title: "Сложности в отношениях"
+    description: "Повторяющиеся сценарии, недоверие, трудности в близости с другими людьми."
+  - title: "Низкая самооценка"
+    description: "Постоянная самокритика и ощущение, что вы недостаточно хороши."
+
+# PROCESS SECTION — "КАК ПРОХОДИТ РАБОТА"
+process_title: "Как проходит работа"
+process_subtitle: "Прозрачный процесс на каждом этапе"
+process_steps:
+  - number: "01"
+    title: "Первая встреча"
+    description: "Знакомство, обсуждение запроса и того, что вас беспокоит. Определяем, в каком направлении двигаться."
+  - number: "02"
+    title: "Работа с причиной"
+    description: "Бережно и постепенно разбираем то, что лежит в основе — а не только видимый симптом."
+  - number: "03"
+    title: "Инструменты"
+    description: "Даю практики и техники, которые остаются с вами и помогают между сессиями."
+  - number: "04"
+    title: "Устойчивый результат"
+    description: "Спокойствие и внутренняя опора, которые сохраняются, а не исчезают после сессии."
+
 # PRICING / RATES SECTION
 pricing_title: "Стоимость и варианты работы"
 pricing_subtitle: "Прозрачные условия и удобный формат онлайн-встреч"
@@ -54,12 +88,34 @@ rates:
     btn_text: "Начать курс"
     btn_link: "#contacts"
 
+# TESTIMONIALS SECTION — "ОТЗЫВЫ"
+# Отзывы редактируются через Pages CMS. Замените плейсхолдеры на реальные
+# отзывы клиентов (с их согласия) — до этого момента они не публикуются.
+testimonials_title: "Отзывы"
+testimonials_subtitle: "Реальные отзывы клиентов появятся здесь после добавления через Pages CMS"
+testimonials: []
+
+# FAQ SECTION
+faq_title: "Частые вопросы"
+faq_items:
+  - question: "Сколько длится одна сессия?"
+    answer: "Стандартная консультация длится 50–60 минут."
+  - question: "Как проходят сессии — очно или онлайн?"
+    answer: "Приём проходит онлайн (Zoom или Telegram), что удобно из любого города и страны."
+  - question: "Сколько сессий обычно нужно?"
+    answer: "Зависит от запроса: разовая консультация подходит для точечного разбора ситуации, а для устойчивых изменений обычно нужен курс из нескольких встреч — это обсуждается индивидуально на первой сессии."
+  - question: "Что если я не знаю, с чего начать?"
+    answer: "Это нормально. Первая сессия как раз и нужна, чтобы вместе разобраться в запросе и определить дальнейший формат работы."
+  - question: "Это конфиденциально?"
+    answer: "Да, всё, что обсуждается на сессиях, конфиденциально и не передаётся третьим лицам."
+
 # CONTACTS SECTION
 contacts_title: "Контакты и запись"
 contacts_subtitle: "Выберите удобный способ связи"
 telegram_link: "https://t.me/nadezhda_litvinova_coach"
 email: "denas111222@gmail.com"
 contacts_note: "Обычно я отвечаю в течение 2-3 часов в рабочее время."
+contacts_form_action: "https://formspree.io/f/xzdlvqyb"
 ---
 <!DOCTYPE html>
 <html lang="ru">
@@ -177,6 +233,51 @@ contacts_note: "Обычно я отвечаю в течение 2-3 часов 
     </div>
   </section>
 
+  <!-- СЕКЦИЯ С ЧЕМ Я РАБОТАЮ -->
+  {% if page.issues and page.issues.size > 0 %}
+  <section id="issues" class="issues section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">{{ page.issues_title | default: 'С чем я работаю' }}</h2>
+        {% if page.issues_subtitle %}
+          <p class="section-subtitle">{{ page.issues_subtitle }}</p>
+        {% endif %}
+      </div>
+      <div class="issues__grid">
+        {% for issue in page.issues %}
+          <div class="card issue-card">
+            <h3 class="issue-card__title">{{ issue.title }}</h3>
+            <p class="issue-card__description">{{ issue.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- СЕКЦИЯ КАК ПРОХОДИТ РАБОТА -->
+  {% if page.process_steps and page.process_steps.size > 0 %}
+  <section id="process" class="process section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">{{ page.process_title | default: 'Как проходит работа' }}</h2>
+        {% if page.process_subtitle %}
+          <p class="section-subtitle">{{ page.process_subtitle }}</p>
+        {% endif %}
+      </div>
+      <div class="process__grid">
+        {% for step in page.process_steps %}
+          <div class="process-step-card">
+            <span class="process-step-card__number">{{ step.number }}</span>
+            <h3 class="process-step-card__title">{{ step.title }}</h3>
+            <p class="process-step-card__description">{{ step.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
   <!-- СЕКЦИЯ ТАРИФЫ / СТОИМОСТЬ -->
   <section id="pricing" class="pricing section">
     <div class="container">
@@ -228,6 +329,50 @@ contacts_note: "Обычно я отвечаю в течение 2-3 часов 
     </div>
   </section>
 
+  <!-- СЕКЦИЯ ОТЗЫВЫ -->
+  <section id="testimonials" class="testimonials section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">{{ page.testimonials_title | default: 'Отзывы' }}</h2>
+        {% if page.testimonials_subtitle %}
+          <p class="section-subtitle">{{ page.testimonials_subtitle }}</p>
+        {% endif %}
+      </div>
+
+      {% if page.testimonials and page.testimonials.size > 0 %}
+        <div class="testimonials__grid">
+          {% for t in page.testimonials %}
+            <div class="card testimonial-card">
+              <p class="testimonial-card__quote">«{{ t.quote }}»</p>
+              {% if t.author %}<p class="testimonial-card__author">{{ t.author }}</p>{% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="testimonials__empty">Отзывы пока не добавлены. Реальные отзывы клиентов (с их согласия) можно добавить через Pages CMS — они появятся здесь.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ FAQ -->
+  {% if page.faq_items and page.faq_items.size > 0 %}
+  <section id="faq" class="faq section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">{{ page.faq_title | default: 'Частые вопросы' }}</h2>
+      </div>
+      <div class="faq__list">
+        {% for item in page.faq_items %}
+          <details class="faq-item">
+            <summary class="faq-item__question">{{ item.question }}</summary>
+            <p class="faq-item__answer">{{ item.answer }}</p>
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
   <!-- СЕКЦИЯ КОНТАКТЫ -->
   <section id="contacts" class="contacts section">
     <div class="container contacts__container">
@@ -255,6 +400,16 @@ contacts_note: "Обычно я отвечаю в течение 2-3 часов 
           <p class="contacts__note">{{ page.contacts_note }}</p>
         {% endif %}
       </div>
+
+      {% if page.contacts_form_action %}
+        <form class="contact-form contacts__form" action="{{ page.contacts_form_action }}" method="POST">
+          <label>Ваше имя *<input type="text" name="name" placeholder="Как вас зовут" required></label>
+          <label>Телефон или Telegram *<input type="text" name="contact" placeholder="Телефон или @username" required></label>
+          <label>Ваш запрос<textarea name="message" rows="4" placeholder="Коротко опишите, с чем хотели бы поработать"></textarea></label>
+          <label class="checkbox-label"><input type="checkbox" required> Согласен(а) на обработку персональных данных</label>
+          <button type="submit" class="btn btn--primary">Отправить заявку</button>
+        </form>
+      {% endif %}
     </div>
   </section>
 

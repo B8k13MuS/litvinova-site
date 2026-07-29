@@ -911,3 +911,91 @@ a { color: inherit; }
   .method-block--dark .method-block__grid > div:first-child,
   .method-block--dark .method-block__side { order: 0; }
 }
+
+/* =============================================
+   ГЛАВНАЯ: С ЧЕМ Я РАБОТАЮ / ПРОЦЕСС / ОТЗЫВЫ / FAQ
+   ============================================= */
+
+/* --- issues --- */
+.issues { background: var(--bg-white); }
+.issues__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.issue-card__title { font-family: var(--font-display); font-size: 21px; margin-bottom: 10px; }
+.issue-card__description { color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+
+/* --- process (grid version, homepage) --- */
+.process { background: var(--bg); }
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.process-step-card { border-top: 2px solid var(--border); padding-top: 24px; }
+.process-step-card__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.process-step-card__title { font-family: var(--font-display); font-size: 20px; margin-bottom: 8px; }
+.process-step-card__description { color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+
+/* --- testimonials --- */
+.testimonials { background: var(--bg-white); }
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.testimonial-card__quote { font-family: var(--font-display); font-style: italic; font-size: 18px; line-height: 1.6; margin-bottom: 16px; color: var(--text); }
+.testimonial-card__author { font-size: 14px; color: var(--text-muted); }
+.testimonials__empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 15px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+/* --- faq --- */
+.faq { background: var(--bg); }
+.faq__list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+}
+.faq-item__question {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 18px;
+  list-style: none;
+}
+.faq-item__question::-webkit-details-marker { display: none; }
+.faq-item__question::after { content: "+"; float: right; color: var(--accent); }
+.faq-item[open] .faq-item__question::after { content: "–"; }
+.faq-item__answer { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+
+/* --- contacts: two-column with form --- */
+.contacts__container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; text-align: left; }
+.contacts__content { max-width: none; margin: 0; }
+.contacts__form { margin: 0; max-width: none; }
+.contacts__form label { color: var(--text-on-dark-muted); }
+.contacts__form input, .contacts__form textarea { background: rgba(255,255,255,0.06); border-color: var(--border-dark); color: var(--text-on-dark); }
+.contacts__form input::placeholder, .contacts__form textarea::placeholder { color: rgba(241,243,246,0.4); }
+.contacts__form .checkbox-label { color: var(--text-on-dark-muted); }
+
+@media (max-width: 900px) {
+  .process__grid { grid-template-columns: repeat(2, 1fr); }
+  .contacts__container { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .process__grid { grid-template-columns: 1fr; }
+}
