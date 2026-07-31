@@ -1007,3 +1007,46 @@ a { color: inherit; }
 @media (max-width: 560px) {
   .process__grid { grid-template-columns: 1fr; }
 }
+
+/* --- 152-ФЗ: баннер согласия на обработку персональных данных --- */
+.consent-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.consent-banner--hidden { transform: translateY(100%); opacity: 0; }
+
+.consent-banner__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.consent-banner__text {
+  flex: 1;
+  min-width: 240px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-on-dark-muted);
+  margin: 0;
+}
+
+.consent-banner__link { color: var(--accent-light); text-decoration: underline; }
+.consent-banner__link:hover { color: var(--accent); }
+
+.consent-banner__btn { flex-shrink: 0; }
+
+@media (max-width: 560px) {
+  .consent-banner__container { padding: 16px 20px; gap: 14px; }
+  .consent-banner__btn { width: 100%; }
+}
