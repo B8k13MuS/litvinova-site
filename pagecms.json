@@ -1,1 +1,18 @@
-
+{
+  "name": "litvinova-site",
+  "repo": "B8k13MuS/litvinova-site",
+  "branch": "main",
+  "media_folder": "images",
+  "content": [
+    {
+      "name": "pages",
+      "type": "collection",
+      "path": "",
+      "fields": [
+        {"name": "title", "type": "string", "label": "Заголовок"},
+        {"name": "description", "type": "text", "label": "Описание"},
+        {"name": "content", "type": "markdown", "label": "Содержимое"}
+      ]
+    }
+  ]
+}
